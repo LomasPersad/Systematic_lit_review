@@ -6,7 +6,10 @@ from bs4 import BeautifulSoup
 import pandas as pd
 import time
 
+"""
+This is a web scraper for Gscholar. works ok
 
+"""
 #header = {'user-agent':'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/91.0.4472.114 Safari/537.36'}
 headers = {'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36'} 
 
