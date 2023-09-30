@@ -1,0 +1,143 @@
+---
+title: "Process data"
+author: "LPersad"
+date: "2023-08-29"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(tidyr)
+```
+
+## Resources
+metagear
+http://lajeunesse.myweb.usf.edu/metagear/metagear_basic_vignette.html
+
+
+create flowdiagram online
+https://estech.shinyapps.io/prisma_flowdiagram/
+
+# Review of systematic review/ meta-analysis process
+
+https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/preface.html
+
+
+
+
+```{r paper data}
+
+
+# Import the CSV file
+data <- read.csv("review_243232_20230830051716.csv")
+
+# Step 1: Clean Data Remove columns with no data
+data_cleaned <- data %>% select_if(~ any(!is.na(.)))
+
+# Arrange the rows by ID
+data_cleaned <- df %>% arrange(data_cleaned$Covidence..)
+
+df_arranged <- data_cleaned[order(data_cleaned$Covidence..), ]
+
+
+# Find IDs that are not unique
+non_unique_ids <- df_arranged$Covidence..[duplicated(df_arranged$Covidence..) | duplicated(df_arranged$Covidence.., fromLast = TRUE)]
+
+# Display the non-unique IDs
+test <- unique(non_unique_ids)
+
+# output only those studies
+
+reduced_data <- df_arranged[df_arranged$Covidence.. %in% test, ]
+
+
+# Pivot the data frame to combine rows
+# combined_df <- reduced_data %>%
+#   pivot_wider(names_from = Reviewer.Name, values_from = Specific.tension..N.cm2., names_prefix = "Reviewer_")
+# 
+# # Print the combined data frame
+# print(combined_df)
+
+
+
+write.table(reduced_data, file = "twoReviewers.csv", sep = ",", dec = ".", row.names = FALSE, quote = TRUE)
+
+```
+## Loading
+```{r}
+# Load the required library
+#library(tidyr)
+
+# columns_to_stack <- c(
+#   "X.Number.of.subjects..N.5",
+#   "Gender.5",
+#   "Muscle.5",
+#   "Muscle.Volume..cm3..5",
+#   "Fascicle.length..cm..5",
+#   "PSCA.or.CSA...cm2..5",
+#   "Muscle.torque..Nm..5",
+#   "Muscle.Force..N..5",
+#   "Specific.tension..N.cm2..5",
+#   "Miscellaneous.5"
+# )
+
+df2 <- read.csv("review_243232_20230830051716.csv")
+df<-head(df2,1)
+
+# Use regular expressions to select columns with names ending in a period and a number
+columns_to_stack <- names(df)[grepl("\\.\\d+$", names(df))]
+
+# Use pivot_longer to stack the columns
+df_long <- pivot_longer(df, cols = all_of(columns_to_stack), names_to = "Variable", values_to = "Value")
+
+# View the resulting data frame
+head(df_long)
+
+
+
+
+```
+
+##Testing
+```{r paper data}
+
+
+
+# Step 2: Group rows with the same ID and different reviewers
+# data_grouped <- data_cleaned %>%
+#   group_by(ID) %>%
+#   summarise_all(list(~ paste(na.omit(.), collapse = ", ")))
+
+# Step 3: Calculate consensus (assuming consensus is calculated by majority agreement)
+get_consensus <- function(reviewers) {
+  reviewers <- unlist(strsplit(reviewers, ", "))
+  unique_reviewers <- unique(reviewers)
+  consensus <- NULL
+  
+  for (reviewer in unique_reviewers) {
+    count <- sum(reviewers == reviewer, na.rm = TRUE)
+    if (count > length(reviewers) / 2) { # Simple majority agreement
+      consensus <- reviewer
+      break
+    }
+  }
+  
+  return(consensus)
+}
+
+data_grouped$consensus <- sapply(data_cleaned$Reviewers, get_consensus)
+
+# Display the cleaned and processed data
+print(data_grouped)
+
+```
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

@@ -1,0 +1,495 @@
+Covidence #,Study ID,Title,Reviewer Name,Study ID,Title,Country in which the study conducted,:,Method 1 Muscle Volume measurement,Method 1 Fiber /fascicle length measurement ,Method 1 PCSA /ACSA calculation method,Method 1 Torque measurement method,Method 1 Force measurement/calculation method,Method 1 miscellaneous,Method 2 Muscle Volume measurement,Method 2 Fiber /fascicle length measurement ,Method 2 PCSA /ACSA calculation method,Method 2 Torque measurement method,Method 2 Force measurement/calculation method,Method 2 miscellaneous,Method 3 Muscle Volume measurement,Method 3 Fiber /fascicle length measurement ,Method 3 PCSA /ACSA calculation method,Method 3 Torque measurement method,Method 3 Force measurement/calculation method,Method 3 miscellaneous,Study design,:,population type/ muscle 1 Type,population type/ muscle 1 Age (years),population type/ muscle 1 Height (cm),population type/ muscle 1 Weight (kg),population type/ muscle 1 other,population type/ muscle 2 Type,population type/ muscle 2 Age (years),population type/ muscle 2 Height (cm),population type/ muscle 2 Weight (kg),population type/ muscle 2 other,population type/ muscle 3 Type,population type/ muscle 3 Age (years),population type/ muscle 3 Height (cm),population type/ muscle 3 Weight (kg),population type/ muscle 3 other,population type/ muscle 4 Type,population type/ muscle 4 Age (years),population type/ muscle 4 Height (cm),population type/ muscle 4 Weight (kg),population type/ muscle 4 other,population type/ muscle 5 Type,population type/ muscle 5 Age (years),population type/ muscle 5 Height (cm),population type/ muscle 5 Weight (kg),population type/ muscle 5 other, population type/ muscle 6 Type, population type/ muscle 6 Age (years), population type/ muscle 6 Height (cm), population type/ muscle 6 Weight (kg), population type/ muscle 6 other, population type/ muscle 7 Type, population type/ muscle 7 Age (years), population type/ muscle 7 Height (cm), population type/ muscle 7 Weight (kg), population type/ muscle 7 other, population type/ muscle 8 Type, population type/ muscle 8 Age (years), population type/ muscle 8 Height (cm), population type/ muscle 8 Weight (kg), population type/ muscle 8 other, population type/ muscle 9 Type, population type/ muscle 9 Age (years), population type/ muscle 9 Height (cm), population type/ muscle 9 Weight (kg), population type/ muscle 9 other, population type/ muscle `10 Type, population type/ muscle `10 Age (years), population type/ muscle `10 Height (cm), population type/ muscle `10 Weight (kg), population type/ muscle `10 other,:," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous,Notes
+2837,Bamman 2000,Evaluation of the strength-size relationship in vivo using various muscle size indices.,Consensus,Bamman 2000,Evaluation of the strength-size relationship in vivo using various muscle size indices,United States,"",Estimated from manually traced CSA on MRI slides. Each slide was extrapolated to 1 cm thickness to calculate the volume and all slices were summed to find the volume of the entire length. ,"Fiber length was not directly measured. Obtained from previous cadaveric studies. Fiber length of each muscle was estimated from muscle length using fiber length/muscle length ratios reported previously. 
+SOL 0.06
+MG 0.14
+LG 0.23
+Angles of pennation were 
+SOL 25
+MG 17
+LG 8
+","From MRI,
+CSA was determined by manually tracing the area around the
+muscles on a computer-generated image of each slice in the set.The image yielding the largest CSA was used as ACSA.
+
+The PCSA of triceps surae was estimated from VOLm, angle of pennation,
+and fiber length for each individual muscle in triceps surae (soleus, SOL; medial gastrocnemius, MG; lateral gastrocnemius, LG) 
+
+PCSA=Vol*cos(alpha)/fiber length
+
+PCSA was computed as the sum of the individual PCSAs for SOL,
+MG, and LG.",none," subject’s right foot was
+restrained at the ankle using three 4.5-cm straps which held the foot against
+a 10.6-cm foot pedal mounted at 1.83 rad (105° or 15° plantar flexion).
+
+Force was measured 10.6 cm above the bottom of the heel. This distance
+was selected to allow the pedal mounted to the force transducer to be
+approximately half the length of an average foot (7). This design minimized
+contributions from the foot muscles when measuring force output during
+plantar flexor MVC.
+
+ Force output was measured using a calibrated force transducer. The transducer was calibrated with loads ranging from 200.2 to 1201.2 N yielding R2 = 0.999","","","","","","","","","","","","","",Cross sectional study,"",Untrained group / triceps surae n=32,36 SD 8 ,165 SD 7 ,67.6 SD 8.8,"Total body lean mass 40.6 SD 3.8
+Lower leg lean mass 2115 SD 359", Endurance trained group / triceps surae n=7,34 SD 5,165 SD 6,55.6 SD 5,"Total body lean mass 44.2 SD 2.9
+Lower leg lean mass 2568 SD 297","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",32,untrained Female,Triceps surae ,628 ± 123.5,"SOL 0.06
+MG 0.14
+LG 0.23
+",PCSA 291.2 ± 53.0,V,"",568.2 ± 104.2,1.97 ± 0.29,"MRI, each CSA slice was extrapolated to 1 cm thickness , yielding a slice volume in cm3. The slice volumes were then
+summed along the length of the muscle group
+",Cadaveric studies/lit values of fiber to muscle length,"The PCSA for each individual muscle (soleus, medial gastrocnemius, lateral gastrocnemius) was calculated using the appropriate muscle volume, fiber length, and angle of pennation. Then, the PCSAs of these individual muscles were summed to obtain the total PCSA of the triceps surae muscle group
+
+ie Sum of SOl, MG and LG individual PCSA
+
+PCSA=Vol*cos(alpha)/fiber length","","Force output was measured using a calibrated force transducer. The highest peak force attained during the contractions was considered the MVC strength.
+
+Force transducer 10.6cm above heel","Force measurement was obtained from the plantar flexor maximum voluntary strength testing. The calculations and information related to PCSA estimation from fiber lengths (literature), angles of pennation (literature), and muscle volume (measured).
+
+MVC/PCSA","",32,untrained Female,Triceps surae,628 ± 123.5,"",ACSA 39.9 ± 5.9,V,"",568.2 ± 104.2,14.3 ± 2.0,no change,Cadaveric studies/lit values of fiber to muscle length,ACSA= largest CSA from MRI,"","","Force measurement was obtained from the plantar flexor maximum voluntary strength testing. The calculations and information related to PCSA estimation from fiber lengths (literature), angles of pennation (literature), and muscle volume (measured).
+
+MVC/PCSA","",7,Trained Female,Triceps surae,730.9 ± 112.3,"",PCSA 337.2 ± 57.1,V,"",637.7 ± 188.8,1.87 ± 0.35,no change,Cadaveric studies/lit values of fiber to muscle length,"Sum of SOl, MG and LG individual PCSA
+
+PCSA=Vol*cos(alpha)/fiber length","","","Force measurement was obtained from the plantar flexor maximum voluntary strength testing. The calculations and information related to PCSA estimation from fiber lengths (literature), angles of pennation (literature), and muscle volume (measured).
+
+MVC/PCSA","",7,Trained Female,Triceps surae,730.9 ± 112.3,"",ACSA 44.7 ± 6.2,V,"",637.7 ± 188.8,14.0 ± 2.6,no change,Cadaveric studies/lit values of fiber to muscle length,ACSA= largest CSA from MRI,"","","Force measurement was obtained from the plantar flexor maximum voluntary strength testing. The calculations and information related to PCSA estimation from fiber lengths (literature), angles of pennation (literature), and muscle volume (measured).
+
+MVC/PCSA","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
+2680,Erskine 2010,Resistance training increases in vivo quadriceps femoris muscle specific tension in young men.,Consensus,Erskine 2010 Acta Phys,"Resistance training increases in vivo quadriceps femoris
+muscle specific tension in young men",UK,""," The volume of each
+of the component QF muscles [vastus lateralis (VL), vastus intermedius (VI), rectus femoris (RF) and vastus medialis (VM)] was calculated from serial axial MRI","Fascicle length (Lf) and pennation angle (hp) of the VL, VI, RF and VM muscles were measured during MVC using ultrasonography along the mid-sagittal plane at
+50% of the length of each muscle. ","Dividing each compo-
+nent muscle volume by its respective Lf provided the PCSA of the individual muscles
+
+each constituent muscle PCSA was multiplied by the cosine of its respective hp to provide four reduced PCSAs.
+
+
+Dividing each compo-
+nent muscle volume by its respective Lf provided the PCSA of the individual muscles. he sum of these four PCSAs gave the whole QF PCSA (Erskine et al. 2009).
+
+","Antagonist muscle co-activation was estimated by determining the electromyographic (EMG) activity of the biceps femoris muscle during MVC. The interpolated twitch technique was used to determine the level of maximal voluntary QF muscle activation at 90  of knee flexion. This level of activation was applied to the MVC at optimum angle, which, when corrected for antagonist muscle coactivation, provided true maximum torque (TMT)
+
+dPT was determined from sagittal and coronal-plane knee scans
+obtained from a magnetic resonance imaging (MRI)
+scanner (G-Scan; Esaote Biomedica, Genoa, Italy).","To calculate maximum QF muscle force recorded at the patellar tendon, it was necessary to divide TMT by the patellar tendon moment arm length (dPT). dPT was determined from sagittal and coronal-plane knee scans obtained from a magnetic resonance imaging (MRI)
+
+Corrections were made for the difference between dPT at full extension and optimum joint angle (Baltzopoulos 1995) and between rest and MVC (Tsaopoulos et al. 2006)
+
+A minimum of two
+maximal voluntarily isometric leg extensions (MVCs) were performed on the chair of an isokinetic dynamometer (Cybex Norm; Cybex International, New York,
+NY, USA) at 70, 80 and 90
+ of knee flexion.  Each MVC lasted 2–3 s with a rest interval of 2 min between each contraction. Antagonist
+muscle co-activation was estimated by determining the electromyographic (EMG) activity of the biceps femoris muscle during MVC. The interpolated twitch technique was used to determine the level of maximal voluntary QF muscle activation at 90
+ of knee flexion. This level
+of activation was applied to the MVC at optimum
+angle, which, when corrected for antagonist muscle co-activation, provided true maximum torque (TMT). To calculate maximum QF muscle force recorded at the patellar tendon, it was necessary to divide TMT by the patellar tendon moment arm length (dPT).
+Maximum patellar tendon
+force (Ft) was thus calculated as TMT/dPT.","Maximum voluntary contraction torque, voluntary QF
+muscle activation, antagonist muscle co-activation and
+patellar tendon moment arm were measured in the right
+limb, together with muscle volume and architecture of
+each of the four component muscles in the QF muscle
+group, to determine in vivo QF specific tension before
+and after 9 weeks of intensive leg-extension resistance
+training.
+
+Maximum patellar tendon force was subsequently
+divided by the sum of these reduced PCSAs to provide
+QF specific tension.","","","","","","","","","","","","",Non-randomised experimental study,"","n=17, untrained male",20.1 SD 2.3,176.9 SD 4.7,76.1 SD 10.1,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",17 untrained,Male,QF,2074 SD 221,"",231 SD 24,mixed,269 SD 50,6296 SD 988,29.5 SD 4.1 ," The volume of each
+of the component QF muscles [vastus lateralis (VL), vastus intermedius (VI), rectus femoris (RF) and vastus medialis (VM)] was calculated from serial axial MRI
+
+individual muscle volume measured from serial axial MRI","measured using ultrasound during MVC
+
+Fascicle length (Lf) and pennation angle (hp) of the VL, VI, RF and VM muscles were measured during MVC using ultrasonography along the mid-sagittal plane at
+50% of the length of each muscle. ","Dividing each compo-
+nent muscle volume by its respective Lf provided the PCSA of the individual muscles. he sum of these four PCSAs gave the whole QF PCSA (Erskine et al. 2009).
+
+rPCSA=VOL*cos(alpha)/lf
+summed for each muscle to yield QF rPCSA","torque corrected for antagonist activation and submax activation of  QF.
+
+dPT was determined from sagittal and coronal-plane knee scans
+obtained from a magnetic resonance imaging (MRI)
+scanner (G-Scan; Esaote Biomedica, Genoa, Italy).","using measured patella tendon moment arm, corrected r the difference
+between dPT at full extension and optimum joint angle
+and between rest and MVC
+
+A minimum of two
+maximal voluntarily isometric leg extensions (MVCs) were performed on the chair of an isokinetic dynamometer (Cybex Norm; Cybex International, New York,
+NY, USA) at 70, 80 and 90
+ of knee flexion.  Each MVC lasted 2–3 s with a rest interval of 2 min between each contraction. Antagonist
+muscle co-activation was estimated by determining the electromyographic (EMG) activity of the biceps femoris muscle during MVC. The interpolated twitch technique was used to determine the level of maximal voluntary QF muscle activation at 90
+ of knee flexion. This level
+of activation was applied to the MVC at optimum
+angle, which, when corrected for antagonist muscle co-activation, provided true maximum torque (TMT). To calculate maximum QF muscle force recorded at the patellar tendon, it was necessary to divide TMT by the patellar tendon moment arm length (dPT).
+Maximum patellar tendon
+force (Ft) was thus calculated as TMT/dPT.","As the force generated by each component QF muscle would be reduced according to
+the hp when resolved along the patellar tendon, each constituent muscle PCSA was multiplied by the cosine
+of its respective hp to provide four reduced PCSAs.
+Maximum patellar tendon force was subsequently divided by the sum of these reduced PCSAs to provide QF specific tension.
+
+patella force/ QF rPCSA","",17 untrained,"",VL,677 SD 94,8.8 SD 1.1,"","","","",25.5 SD 5.1 ,"","","","","","",pennation angle: 16.2 ± 2.4,17 untrained,"",VI,586 SD117,10.3 SD 1.9,"","","","","","","","","","","",pennation angle: 13.2 ± 3.2,17 untrained,"",RF,345 SD 56,7.2 SD 1.7,"","","","","","","","","","","",pennation angle: 26.5 ± 4.6,17 untrained,"",VM,466 SD 55,10.3 SD 1.2,"","","","","","","","","","","",pennation angle: 24.5 ± 6.8,"","","","","","","","","","","","","","","","","",17 trained,"",QF,2188 SD 245,"",245 SD 34 ,"",350 SD 57,8023 SD 826,35.5 SD 5.1 ,"","","","","","","",17 trained,"",VL,704 SD 106,8.8 SD 1.2,"","","","","","","","","","","",pennation angle: 16.9 ± 2.4,17 trained,"",VI,609 SD 118,10.4 SD 1.6,"","","","","","","","","","","",pennation angle: 13.8 ± 3.1,17 trained,"",RF,375 SD 57,7.4 SD 1.9,"","","","","","","","","","","",pennation angle: 27.0 ± 4.2,17 trained,"",VM,500 SD 57,10.3 SD 1.3,"","","","","","","","","","","",pennation angle: 24.9 ± 7.4,""
+2664,Erskine 2011,What causes in vivo muscle specific tension to increase following resistance training?,Consensus,Erskine 2011,"What causes in vivo muscle specific tension to increase
+following resistance training?",UK,"","Calculated based on the equation by Morse et al. 2007 using: 
+Femur length: measured with ultrasound
+ACSA: MRI taken at 40% of femur length and calculating the area of each muscle. ","ultrasound measured during MVC
+
+Using the method 2 of Erskine et al 2009. 
+During MVC at the optimal knee angle, VL muscle fascicle length was measured using ultrasonography. This measurement was taken at a 50% of femur length along the mid-sagittal plane of the VL muscle","At 40% of femur length MRI was used to measure each component of QF muscle. 
+Calculated by dividing Vm by VL fascicle length
+
+Muscle volume/ VL fiber length.
+VL assumed to represent average architecture of QF
+","Isometric leg extension MVC were performed on a dynamometer at optimal knee joint angle. Antagonist muscle coactivation estimated assuming a linear relationship between torque and EMG activity of biceps femoris. 
+Interpolated twitch technique used to determine max volunatry QF muscle activation. 
+Patellar tendon moment arm: MRI
+Correcting MVC torque for QF muscle activation and antag coact. true maximal torque.
+
+
+Correcting MVC torque for QF muscle activation and
+antagonist muscle coactivation provided true maximal
+torque"," Maximal patellar tendon force calculated with: 
+F = TMT x d(PT)-1
+
+ patellar tendon moment arm
+(dPT) was determined via MRI","QF specific tension was determined from measurements
+of maximal voluntary contractions of the QF muscle
+with superimposed electrical stimulation and antagonist
+muscle activity assessed from EMG signals, together with
+a magnetic resonance imaging (MRI) measurement of
+ACSA and determination of fascicle pennation angle and
+length for the vastus lateralis (VL) muscle, as described
+in method 2 of Erskine et al. 2009","17 participants: Volume of each constituent muscle was measured. 
+
+one MRI 40% femur length and regression to estimate volume","17 participants: Using method 1 of Erskine et al. 2009 
+Fascicle length and pennation angle determined for each of the 4 heads of the QF. ","
+individual muscle volume/fiber length ","","","","","","","","","",Non-randomised experimental study,"",Untrained males/ Quadriceps femoris n=42,20 SD 3,178 SD 6,74 SD 9,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","Method 2 Before training
+42",m,QF,2084 SD 243,"VL : 8.9 SD 1.4 
+",238 SD 41,both,248 SD 50,"5809 SD 1067
+",25.9 SD 5.3,"single MRI and regression
+Calculated based on the equation by Morse et al. 2007 using: 
+Femur length: measured with ultrasound
+ACSA: MRI taken at 40% of femur length and calculating the area of each muscle. 
+
+","Using the method 2 of Erskine et al 2009. 
+During MVC at the optimal knee angle, VL muscle fascicle length was measured using ultrasonography. This measurement was taken at a 50% of femur length along the mid-sagittal plane of the VL muscle
+
+only VL fl used ","At 40% of femur length MRI was used to measure each component of QF muscle. 
+Calculated by dividing Vm by VL fascicle length
+
+rPCSA=vol*cos(alpha_VL)/fiber length_VL","Correcting MVC torque for QF muscle activation and
+antagonist muscle coactivation
+
+Isometric leg extension MVC were performed on a dynamometer at optimal knee joint angle. Antagonist muscle coactivation estimated assuming a linear relationship between torque and EMG activity of biceps femoris. 
+Interpolated twitch technique used to determine max volunatry QF muscle activation. 
+Patellar tendon moment arm: MRI
+Correcting MVC torque for QF muscle activation and antag coact. true maximal torque.","using lit moment arm.
+
+ Maximal patellar tendon force calculated with: 
+F = TMT x d(PT)-1","force/reduced pcsa
+
+PCSA multiplied by the cosine of VL θp to provide reduced QF PCRSA. 
+Max patellar force divided by the reduced QF PCSA to profide QF specific tension. ","","Method 2 After training
+42",m,QF,2200 SD 277,VL : 8.9 SD 1.4,253 SD 43,both,315 SD 64,7152 SD 1386,30.3 SD 6.7,"","","","","","","","Method 1 Before training
+17",m,QF,"2116 SD 257
+",VL : 9.1 SD 1.3,235 SD 35,both,244 SD 55,5896 SD 1151,26.5 SD 5.4,"Multiple MRI
+17 participants: Volume of each constituent muscle was measured. ","17 participants: Using method 1 of Erskine et al. 2009 
+Fascicle length and pennation angle determined for each of the 4 heads of the QF. 
+","individual muscle volume/fiber length
+
+for each muscle
+rPCSA=vol*cos(alpha)/fiber length","","","",Method 1 more detailed. individual muscle volume measured from multiple MRI scans and individual fiber length,"Method 1 After training
+17 ",m,QF,2237 SD 309,VL : 9.0 SD 1.5,252 SD 41,both,315 SD 66,7316 SD 1357,30.8 SD 5.3,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
+2653,Erskine 2010,Inter-individual variability in the adaptation of human muscle specific tension to progressive resistance training.,Consensus,Erskine 2010,Inter-individual variability in the adaptation of human muscle specific tension to progressive resistance training,UK,"","Femur length was measured as the distance from the tibi-
+ofemoral point of contact to the proximal insertion of the
+VL muscle, identified using ultrasonography. Oil-filled beads were attached to the
+skin at the measurement location (corresponding to 40% of
+femur length from the distal end). 
+The participant was
+scanned in the supine position, and five serial axial slices
+were acquired around the position of the beads using a spin
+echo T1-weighted protocol. 
+Slice thickness 5 mm; interslice gap 5 mm.
+The ACSA
+of each constituent QF muscle and a series of regression
+equations, QF volume was estimated by adapting a previously published method (Morse et al. 2007)
+","During MVC at optimum knee joint angle, ultrasound
+scans of the vastus lateralis (VL) muscle fascicle length
+(Lf) and pennation angle (hp) were acquired at 50% of the
+muscle length along the mid-sagittal plane and Lf and hp
+were subsequently measured using digitizing software."," QF PCSA was calculated
+by dividing the estimated QF volume by VL Lf","Isometric leg-extension MVC torque was assessed using an isokinetic dynamometer with the knee joint angle set at 70–90 knee flexion (depending on the angle at which peak torque was produced, defined as the optimum angle
+True maximal torque (TMT) was calculated as:
+TMT= MVCcorr/ (1-t/T)
+where t is the amplitude of the superimposed twitch, T the value of the twitch before the MVC and MVCcorr is the MVC corrected for co-activation.","The patellar tendon moment arm (dPT) was quantified using a
+0.2-T magnetic resonance imaging (MRI) scanner. PT was defined
+as the length of the perpendicular line between the axis of the
+patellar tendon and the TFCP (Tsaopoulos et al. 2006). This value
+was subsequently multiplied by 1.14 to account for a 14%
+increase in dPT from rest to MVC (Tsaopoulos et al. 2007).
+Maximum isometric QF force (F) was thus calculated as:
+F = TMT/dPT","using method 2 of Erskine 2009
+
+Training-
+unilateral knee
+extension exercises were performed three times a week for a period of 9 weeks on the right leg. The single repetition maximum (1 RM) was determined at the beginning of the training programme and reassessed at the start of each week on a standard leg-extension machine
+","","","","","","","","","","","","",Non-randomised experimental study,"",53 untrained males,20 SD 3,178 SD 5,77 SD 11,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",53 Before training,Male,"QF, before training",2080 SD 254,8.9 SD 1.3,237 SD 41,V and S ,246 SD 51,5722 SD 1036,25.6 SD 5.1,"MRI and literature regression
+
+Femur length was measured as the distance from the tibi-
+ofemoral point of contact to the proximal insertion of the
+VL muscle, identified using ultrasonography. Oil-filled beads were attached to the
+skin at the measurement location (corresponding to 40% of
+femur length from the distal end). 
+The participant was
+scanned in the supine position, and five serial axial slices
+were acquired around the position of the beads using a spin
+echo T1-weighted protocol. 
+Slice thickness 5 mm; interslice gap 5 mm.
+The ACSA
+of each constituent QF muscle and a series of regression
+equations, QF volume was estimated by adapting a previously published method (Morse et al. 2007)
+","Ultrasound of VL during MVC
+
+During MVC at optimum knee joint angle, ultrasound
+scans of the vastus lateralis (VL) muscle fascicle length
+(Lf) and pennation angle (hp) were acquired at 50% of the
+muscle length along the mid-sagittal plane and Lf and hp
+were subsequently measured using digitizing software.","rPCSA=VOL*cos(alpha_VL)/fiber length_VL
+
+Dividing the estimated QF volume by VL Lf.","MVC corrected for antagonist co activation, and activation level
+
+Isometric leg-extension MVC torque was assessed using an
+isokinetic dynamometer (Cybex Norm, Cybex International, NY, USA), with the knee joint angle set at 70–90 knee flexion (depending on the angle at which peak torque was produced, defined as the optimum angle). Each MVC lasted 2–3 s and there was a rest-interval of 60 s between each contraction. 
+Biceps femoris muscle EMG activity was recorded during isometric knee flexion MVC at optimum joint angle (Kellis and Baltzopoulos 1997), and
+the torque produced by the hamstrings during knee extension MVC was estimated assuming a linear relationship
+between torque and EMG activity (Reeves et al. 2004). The addition of the estimated antagonist torque during MVC knee extension to the actual MVC knee extension torque provided the overall MVC knee extension torque.","calculated using measured moment arm at full extension and literature values for optimal joint + 14% correction due to an increase from rest to MVC.
+
+The patellar tendon moment arm (dPT) was quantified using a
+0.2-T magnetic resonance imaging (MRI) scanner. PT was defined
+as the length of the perpendicular line between the axis of the
+patellar tendon and the TFCP (Tsaopoulos et al. 2006). This value
+was subsequently multiplied by 1.14 to account for a 14%
+increase in dPT from rest to MVC (Tsaopoulos et al. 2007).
+Maximum isometric QF force (F) was thus calculated as:
+F = TMT/dPT","ST= force/rPCSA
+
+QF PCSA was multiplied by the cosine of the VL hp [which can be used as an approximation of the hp for the whole QF
+muscle (Erskine et al. 2009)] to provide the reduced QF PCSA. Force was subsequently divided by the reduced
+QF PCSA to provide QF specific tension.","",53 after training ,Male,"QF, after training",2201 SD 277,8.9 SD 1.4,251 SD 43,V and S,310 SD 62,6968 SD 1343,29.8 SD 6.4,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
+2649,Erskine 2009,In vivo specific tension of the human quadriceps femoris muscle.,Consensus,Erskine 2009,In vivo specific tension of the human quadriceps femoris muscle,UK,"","The muscle volume was calculated using contiguous axial ACSA scans taken from the tibiofemoral joint to the iliac crest. MRI slice thickness was set at 2.8 mm. 15 scans at 3.08 cm intervals.  
+A spline curve was fitted to the ACSA data points associated with each of 4 component muscles and muscle volume was calculated as the area under the curve (Seynnes 2008)
+","Measurements of muscle fascicle length (Lf) and
+pennation angle (hp) were performed on selected images
+using digitizing software. 
+Pennation angle was measured as the angle between the muscle fascicular paths and their insertion to the deep aponeurosis. 
+Lf was measured by tracing the fascicle echo from origin to insertion on US image. If one end of fascicle extended beyond the end of the US image the Lf was estimated by extrapolating the superficial and lower aponeuroses as well as the fascicle.  In the case of the bi-
+pennate RF muscle, only the lateral hp and Lf was analysed. 
+he Lf and hp of each constituent muscle was
+multiplied by the ratio of its respective volume to total QF
+volume. The sum of these values represented the weighted
+mean QF Lf and hp at optimum joint angle.","The PCSA of each of the four constituent muscles of the
+QF was calculated by dividing the component muscle
+volume by its respective optimum Lf. The total RF volume
+was divided by the lateral Lf. The complete QF PCSA was
+given by the sum of the PCSAs of the four constituent
+muscles","To calculate patellar tendon forces, the torque developed at
+the knee must be divided by the patellar tendon moment
+arm length (dPT). The procedure used to measure dPT has
+been described elsewhere (Tsaopoulos et al. 2006).  Briefly,
+dPT was quantified using a 0.2-T MRI scanner. PT was defined as
+the length of the perpendicular line between the axis of the
+patellar tendon and the TFCP (Tsaopoulos et al. 2006).
+Previously reported values of dPT length at full extension
+(0 knee flexion) and angles of 70, 80 and 90 knee flexion (Baltzopoulos 1995) were used to provide the necessary ratios with which to estimate dPT length at optimum knee
+joint angle, i.e.
+1. dPT 70/dPT 0 = 1.08
+2. dPT 80/dPT 0 = 1.03
+3. dPT 90/dPT 0 = 0.99
+The appropriate ratio was applied to the dPT measured at
+full extension to provide the estimated dPT at optimum joint
+angle, which was subsequently multiplied by 1.14 to
+account for a 14% increase in dPT from rest to MVC
+(Tsaopoulos et al. 2007)
+
+
+
+dynamometer with antagonist (hamstring) muscle
+co-activation check
+Participants were asked to perform a minimum of
+two MVCs (if the second attempt was [10% higher than the first, a third attempt was made to ensure a true MVC
+was achieved) at three separate knee joint angles (70, 80,and 90 of knee flexion; 0
+ equalling full extension)
+
+The procedure for determining the level of voluntary muscle
+activation using the interpolated twitch technique (ITT) 
+True maximal torque (TMT)
+was calculated as:
+TMT= MVCcorr/(1-t/T)
+
+where t is the amplitude of the superimposed twitch, T the
+value of the twitch before the MVC and MVCorr the
+MVC corrected for co-activation. The percentage
+activation was given by:
+100(1-t/T)","Patellar tendon force
+(Ft) was determined from MVC, accounting for antagonist
+muscle co-activation, the level of voluntary muscle activa-
+tion, patellar tendon moment arm (dPT) and optimum muscle
+fascicle pennation angle (hp)
+
+
+To calculate patellar tendon forces, the torque developed at
+the knee must be divided by the patellar tendon moment
+arm length (dPT), quantified using a 0.2-T MRI scanner
+
+Previously reported values of dPT length at full extension (0 knee flexion) and angles of 70 , 80 and 90 knee flexion (Baltzopoulos 1995) were used to provide the necessary ratios with which to estimate dPT length at optimum knee joint angle
+
+The appropriate ratio was applied to the dPT measured at
+full extension to provide the estimated dPT at optimum joint
+angle, which was subsequently multiplied by 1.14 to
+account for a 14% increase in dPT from rest to MVC
+(Tsaopoulos et al. 2007).","Method 1 was the most detailed assess-
+ment of specific tension, where QF PCSA was calculated by
+accounting for the optimum fascicle length (Lf) and volume
+of each of the four constituent muscles. Patellar tendon force
+(Ft) was determined from MVC, accounting for antagonist
+muscle co-activation, the level of voluntary muscle activa-
+tion, patellar tendon moment arm (dPT) and optimum muscle
+fascicle pennation angle (hp)",QF volume was estimated from a single QF ACSA measured at 40% of femur length. Regressions equations used to estimate the volume of the QF muscles (Morse 2007). 551 cm3 was added to the QF volume to provide accurate estimation. ,"VL Lf measured during MVC at optimum
+joint angle was assumed to be representative of the mean Lf
+for the entire QF.","Quadriceps femoris PCSA was calculated by dividing
+the estimated QF volume by the fascicle length (Lf) of the
+VL only ","","VL muscle geometry at MVC was
+assumed to be representative of the mean QF architecture"," Method 2 was identical to
+Method 1, except that the VL muscle geometry at MVC was
+assumed to be representative of the mean QF architecture.
+Additionally, QF volume was estimated from a single ACSA and the femur length, as described by Morse et al. (2007) 
+
+To circumvent some of the problems associated with making multiple measurements, a simpler method was employed in which QF muscle volume was calculated from a single ACSA and the geometry of the VL muscle was considered representative of the total QF muscle architec-
+ture (Method 2)","","","","","","",Cross sectional study,"","young males, n=27",21.3 SD 3.4,177 SD 5.8,76.2 SD 10.1,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",27 - Method 1,m,Method1 Quads mean,2054 SD 261,94 SD 7,226 SD 28,"Both
+",264 SD 47,"6,335 SD 957 ",30.3 SD 4.9,"MRI of leg ~15 scans
+
+The muscle volume was calculated using contiguous axial ACSA scans taken from the tibiofemoral joint to the iliac crest. MRI slice thickness was set at 2.8 mm. 15 scans at 3.08 cm intervals.  
+A spline curve was fitted to the ACSA data points associated with each of 4 component muscles and muscle volume was calculated as the area under the curve (Seynnes 2008)
+","Ultrasound, measured during MVC, for each muscle.
+Measurements of muscle fascicle length (Lf) and
+pennation angle (hp) were performed on selected images
+using digitizing software. 
+Pennation angle was measured as the angle between the muscle fascicular paths and their insertion to the deep aponeurosis. 
+Lf was measured by tracing the fascicle echo from origin to insertion on US image. If one end of fascicle extended beyond the end of the US image the Lf was estimated by extrapolating the superficial and lower aponeuroses as well as the fascicle.  In the case of the bi-
+pennate RF muscle, only the lateral hp and Lf was analysed. 
+he Lf and hp of each constituent muscle was
+multiplied by the ratio of its respective volume to total QF
+volume. The sum of these values represented the weighted
+mean QF Lf and hp at optimum joint angle.","reduced QF PCSA= sum(PCSA)*cos alpha
+
+The PCSA of each of the four constituent muscles of the
+QF was calculated by dividing the component muscle
+volume by its respective optimum Lf. The total RF volume
+was divided by the lateral Lf. The complete QF PCSA was
+given by the sum of the PCSAs of the four constituent
+muscles","To calculate patellar tendon forces, the torque developed at
+the knee must be divided by the patellar tendon moment
+arm length (dPT). The procedure used to measure dPT has
+been described elsewhere (Tsaopoulos et al. 2006).  Briefly,
+dPT was quantified using a 0.2-T MRI scanner. PT was defined as
+the length of the perpendicular line between the axis of the
+patellar tendon and the TFCP (Tsaopoulos et al. 2006).
+Previously reported values of dPT length at full extension
+(0 knee flexion) and angles of 70, 80 and 90 knee flexion (Baltzopoulos 1995) were used to provide the necessary ratios with which to estimate dPT length at optimum knee
+joint angle, i.e.
+1. dPT 70/dPT 0 = 1.08
+2. dPT 80/dPT 0 = 1.03
+3. dPT 90/dPT 0 = 0.99
+The appropriate ratio was applied to the dPT measured at
+full extension to provide the estimated dPT at optimum joint
+angle, which was subsequently multiplied by 1.14 to
+account for a 14% increase in dPT from rest to MVC
+(Tsaopoulos et al. 2007)
+
+
+
+MVC torque measured, corrected for hamstring coactivation and submax activation (using interpolated twitch technique)","patella tendon moment arm measured in supine, knee extended position ( MRI). Literature values used to calculate moment arm at optimum knee angle. 
+
+Patellar tendon force
+(Ft) was determined from MVC, accounting for antagonist
+muscle co-activation, the level of voluntary muscle activa-
+tion, patellar tendon moment arm (dPT) and optimum muscle
+fascicle pennation angle (hp)","Method 1: Consequently, a reduced PCSA (rPCSA) of the complete QF
+muscle was determined as the sum of the PCSAs of the
+four constituent muscles, each multiplied by the cosine of
+the appropriate hp
+
+ST= patella tendon force/ reduced QF PCSA","",27 - Method 1,m,Method 2 Quads mean,2117 SD 238,VL 91 SD 12,236 SD 34,Both,264 SD 47,"6,335 SD 957 ",29.1 SD 4.8,"1 MRI at 40% femur length + lit regression equations + 551cm3 correction 
+
+QF volume was estimated from a single QF ACSA measured at 40% of femur length. Regressions equations used to estimate the volume of the QF muscles (Morse 2007). 551 cm3 was added to the QF volume to provide accurate estimation. ","VL Lf measured during MVC at optimum
+joint angle was assumed to be representative of the mean Lf
+for the entire QF.","Quadriceps femoris PCSA was calculated by dividing the estimated QF volume by the fascicle length (Lf) of the VL only
+
+reduced QF PCSA= (PCSA)*cos alpha_vl
+
+Quadriceps femoris PCSA was calculated by dividing
+the estimated QF volume by the fascicle length (Lf) of the
+VL only ",same as Method 1,"same as Method 1
+
+VL muscle geometry at MVC was
+assumed to be representative of the mean QF architecture","Method 2: Quadriceps femoris PCSA was calculated by dividing
+the estimated QF volume by the fascicle length (Lf) of the
+VL only ","",27 - Method 1,m,VL, 674 SD 123,"",75.1 SD 14.5,"","","","","","","","","","","",27 - Method 1,m,VI, 580 SD 103,"",56.5 SD 13.7,"","","","","","","","","","","",17 - Method 2 ,m,RF, 339 SD 61,"",49.8 SD 10.9,"","","","","","","","","","","",17 - Method 2 ,m,VM, 461 SD 69,"",44.4 SD 6.4,"","","","","","","","","","","","17 - Method 2 
+",m,"","","",224.9 SD 27.1,"","","","","","","","","","","",17 - Method 2 ,m,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","
+MVC (Nm)
+ 264 ± 47
+Antagonist co-activation (%)
+ 16.5 ± 8.6
+Voluntary activation (%)
+ 92.8 ± 3.7
+dPT (cm)
+ 4.8 ± 0.3
+Patellar tendon force (N)
+ 6,335 ± 957
+MVC maximal voluntary contraction, dPT patellar tendon moment arm"
+2646,Fukunaga 1996,Specific tension of human plantar flexors and dorsiflexors.,Consensus,Fukunaga 1996,Specific tension of human plantar flexors and dorsiflexors,United States,"","Muscle length was measured as the distance between the most proximal and the most distal images in which the muscle was visible on MRI axial scans. 
+Muscle volume = sum ACSA x distance between each section ","Fiber length = muscle length x k
+k ratio of fiber length to muscle length reported by Wickiewicz et al. Data from 2 cadavers used to increase data robustness for Soleous mean fiber length 2.0 and 2.3 cm,. ","ACSA: MRI 1.5 T, T1 axial plane performed slice thickness 10 mm, interslice gap 0 mm. Contiguous axial 10 mm section of the RLL were measured, number of sections obtained for each subject was 47-49. 
+PCSA=muscle volume x cos 0/fiber length
+0: angle of muscle fiber pennation in one dimension reported by Wickiewicz et al. 
+
+Vol*cos(alpha)/fiber length","The length of the moment arm of aquiles tendon and TA were calculated from sagittal plane images of ancle (method of Rugg et al). Images at 90 and 120º akle. 
+Torque measured for plantar flexors and dorsiflexors Cybex dynamometer. Supine, knee fully extended and secured. 
+Maximum static plantar flexion or dorsiflexion contractions (5 s duration) at least 3 times at ankle joint angles of 90, 100, 110, 120º on each of 2 test days. 
+
+
+ Peak torque measured under any condition was used as max. torque.",moment arm of achilles tendon and TA calculated in saggital plane from MRI according to Rugg et al 1990,"","","","","","","","","","","","","",Cross sectional study,"","Normal healthy men, n=8",33.5 SD 9.4,176.9 SD 5.5 ,75.0 SD 6.8,"Plantar flexors: Tricep surae ( MG, LG, Sol), FHL, TP, FDL,PL, PB 
+Dorsiflexor grp:TA,EDL ,EHL,PT,Pop","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",8,Male,"Plantar flexors: MG, LG, Sol, FHL, TP, FDL, PL, PB. 
+Dorsiflexors: TA, EDL, Pop","",Muscle length reported,"",V,"Plantar flexors
+90: 174.7 SD 6.1
+100: 150.5 SD 9.7
+110: 110.6 SD 9.8
+120: 82.7 SD 8.7 
+
+Dorsiflexors
+90: 14.9 SD 3.1 
+100: 24.2 SD 2.3
+110: 29.7 SD 1.2 
+120: 32.9 SD 0.8","Plantar flexors
+90: 3623 SD 136
+100: 3020 SD 193
+110: 2152 SD 190
+120: 1577 SD 166
+
+Dorsiflexors
+90: 304 SD 65
+100: 537 SD 54
+110: 715 SD 32
+120: 832 SD 19 ","Plantar flexors
+90: 10.8 SD 0.2 (only Tricep surae)
+8 (if total PF PCSA used)
+100: 9 SD 0.3
+110: 6.3 SD 0.3
+120: 4.6 SD 0.4
+
+Dorsiflexors
+90: 8.5 SD 1.6
+100: 15.6 SD 1.2
+110: 21 SD 1.0
+120: 24.5 SD 1.1","Muscle length was measured as the distance between the most proximal and the most distal images in which the muscle was visible on MRI axial scans. 
+Muscle volume = sum ACSA x distance between each section ","Fiber length = muscle length x k
+k ratio of fiber length to muscle length reported by Wickiewicz et al. Data from 2 cadavers used to increase data robustness for Soleous mean fiber length 2.0 and 2.3 cm,. ","ACSA: MRI 1.5 T, T1 axial plane performed slice thickness 10 mm, interslice gap 0 mm. Contiguous axial 10 mm section of the RLL were measured, number of sections obtained for each subject was 47-49. 
+PCSA=muscle volume x cos 0/fiber length
+0: angle of muscle fiber pennation in one dimension reported by Wickiewicz et al. ","The length of the moment arm of aquiles tendon and TA were calculated from sagittal plane images of ancle (method of Rugg et al). Images at 90 and 120º akle. 
+Torque measured for plantar flexors and dorsiflexors Cybex dynamometer. Supine, knee fully extended and secured. 
+Maximum static plantar flexion or dorsiflexion contractions (5 s duration) at least 3 times at ankle joint angles of 90, 100, 110, 120º on each of 2 test days. ","","","","","",MG,249.9 SD 13.5,23.5 SD 0.9,70.8 SD 2.5,"","","","","","","","","","","","","",LG,144.9 SD 8.9,21.8 SD 0.6,28.3 SD 1.4,"","","","","","","","","","","","","",Sol,503.5 SD 22.5,32.4 SD 1.2 ,247.6 SD 14.2 ,"","","","","","","","","","","","","",TS group,898.3 SD 36.8,25.9 SD 0.8,346.7 SD 16.2,"","","","","","","","","","","","","",PF group,1234 SD 46,"",434.6 SD 19.3,"","","","","","","","",using measured moment arm for TA and Achilles tendon and Peak torque,F/rPCSA,"","","",TA,151.4 SD 8.6,30.0 SD 0.9,19.7 SD 1.3,"","","","","","","","","","","","","",EDL,114.5 SD 7.4,33.8 SD 0.9,14.9 SD 1.1,"","","","","","","","","","","","","",DF group,265.9 SD 13.9,"",34.6 SD 2.1 ,"","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","","",""
