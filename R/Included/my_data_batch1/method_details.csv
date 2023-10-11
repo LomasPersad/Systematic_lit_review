@@ -1,0 +1,713 @@
+CovidenceID,Method, Muscle Volume measurement, Fiber /fascicle length measurement , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, miscellaneous
+4184,1,,"sagittal ultrasound pictures of vastus lateralis (VL) and vastus intermedius (VI).
+", Quadriceps CSA was measured from a CT X-ray scan taken at half femur height. Subjects were supine with the legs straight during scanning, The maximum voluntary isometric contraction strength (MVC) of the quadriceps was measured using a conventional strength-testing chair in which the subject was seated  with the hip and knee at right angles (Edwards et al. 1977). The  best of three values was measured at each test,"The maximum voluntary isometric contraction strength (MVC) of the quadriceps was measured using a conventional strength-testing chair in which the subject was seated with the hip and knee at right angles (Edwards et al. 1977). The best of three values was measured at each test. During the manoeuvre a percutaneous twitch superimposition technique (Ruther- ford et al. 1986) was used to test whether subjects could maximally activate their quadriceps during the isometric contraction
+
+The force-generating capacity of the muscle was calculated as the ratio MVC/CSA.",
+4184,2,,,,,,
+4184,3,,,,,,
+4162,1,"MRI
+four heads of the quadriceps muscles from transverse plane images at 25 mm intervals from the distal to the proximal ends of the quadriceps. These cross-sectional areas were summed and multiplied by the distance between slices (2.5 cm) to estimate quadriceps muscle volume","The fascicle length and pennation angle used in these calculations were estimated using real-time B-mode Ultrasonography with a 7.5-MHz linear array probe. Measurements were collected at the mid belly of each of the four heads of the quadriceps muscles in the sagittal plane at the moment of peak force during MVC contractions
+
+ Imaging software (Image J; v1.39b; National Institutes of 
+Health, Bethesda, MA) was used to determine muscle fascicle length 
+from the superficial to the deep aponeurosis.","Physiological cross-sectional area was calculated for each quadriceps muscle as: [muscle volume/fascicle length], and the sum taken as quadriceps PCSA","custom-built isometric dynamometer was used to assess knee extension MVC torque of the dominant leg with participants sitting with the knee and hip angles at 90
+
+Voluntary activation was assessed using a version of the interpolated twitch technique (28,29) with stimulating electrodes covering the proximal and distal portions of the quadriceps
+
+current increased to deliver supramaximal “doublet” (two 200-μs pulses separated by 10 ms) stimuli over the quadriceps muscle group. Stimulation was applied to the relaxed muscle 1  s prior to a maximal voluntary effort and then again at the highest point of the MVC. In the cross-sectional study, a third doublet was also applied 2 s after the MVC. The voluntary activation test was performed twice and the result giving the highest voluntary activation was accepted.","pecific force was estimated as: 
+[(external torque/moment arm)/(PCSA * pennation angle)] or simpli-
+fied to: [Patella tendon force/(PCSA * pennation angle)] 
+
+The patella tendon moment arm was imaged with the leg at full extension and estimated from sagittal plane slices as the distance from the mid-contact point between the femoral condyles and tibial plateau to the patella tendon. The moment arm length was multiplied by 0.99 to adjust for the difference between full knee extension to 90° flexion (24) [the angle at which maximal voluntary contraction (MVC) was measured] and the resulting value was multiplied by 1.14 to adjust for the 14% increase in moment arm in transition from rest to MVC
+
+The patella tendon force was estimated
+from the moment equilibrium equation around the knee joint (27) by dividing the MVC torque by the patella tendon moment arm length.
+
+For calculations of in situ specific force, the quadriceps PCSA was multiplied by the cosine of the fascicle pennation angle to account for the reduction in transmission of forces from fibers to aponeurosis to adjust for the angle between the fascicles and the line of pull through the patella tendon. Specific force was estimated as: [(external torque/moment arm)/(PCSA * pennation angle)] or simplified to: [Patella tendon force/(PCSA * pennation angle)
+
+The external force used in the calculation of specific force was the “true MVC”, which is the estimated MVC if full voluntary activation was possible: True MVC = MVC immediately prior to the superimposed doublet/(1 – t/T). Where t was the amplitude of the superimposed doublet (ie, the size of the additional peak) and T the value of the doublet applied to the resting muscle 1 s prior to MVC.",
+4162,2,,,,,,
+4162,3,,,,,,
+4135,1,"Serial axial plane MRI scans were acquired along the length of the GL using a fixed 0.2 T MRI scanner
+
+To estimate GL muscle volume (VOL),ACSA of each slice was summed and multiplied by the slice thickness inclusive of gap
+","Muscle architecture was recorded from participants dur-ing performance of PF MVC 
+Fibre fascicle length (Lf) and pennation angle () were measured using B-Mode, real time ultrasonography
+",PCSA (cm2) was calculated as the ratio of GL VOL(cm3) to Lf (cm).,"Isometric plantarflexion (PF) maximal voluntary contraction (MVC) torque was recorded with the subjects in a prone position and the left foot secured to the foot adapter of an isokinetic dynamometer
+
+Two isometric maximal voluntary plantarflexion contractions (MVC) were performed at an ankle joint angle of -20° (the foot in dorsiflexion), 2 min separated each MVC attempt. The foot was placed at -20° as this has previously been shown to be the optimum fascicle length within the physiological range of the gastrocnemius muscle (Maganaris2003)
+
+The sum of the torque generated during the strongest MVC and that of the twitch-doublet was considered at the true maximal MVC and used for the calculation ofspecific tension [as described previously by Fukunaga et al. (1996) and Maganaris et al. (2001)
+
+The value of torque calculated with this method probably represents a peak MVC, and not the true maximal MVC as would have been obtained by adding a tetanus rather than doublet to the voluntary torque. However, considering that the delivery of a tetanic current is extremely painful and that the population involved older individuals, we opted to use a doublet instead.
+Two maximal isometric dorsiflexion (DF) contractions were performed after the PF MVC to obtain maximal dorsiflexion electromyographic (EMG) data for calculation of antagonist co-activation in the tibialis anterior. PF and DF MVC attempts were held for approximately 4 s, a time amply sufficient to reach a torque plateau.
+
+In order to obtain an estimation of specific force without the confounding variable of increased muscle activation resulting from training, supramaximal doublets were superimposed over the second plantarflexor MVC.
+
+The plantarflexor torque used in the estimation of specific force was determined as: PF MVC torque +superimposed doublet torque, as described previously (Maganaris et al. 2001).
+
+The co-activation torque produced by the dorsiflexors was estimated assuming a linear relation between torque and EMG activity. To determine isolated plantar flexor torque, the dorsiflexor coactivation torque was added to the net plantarflexor torque that was obtained during Plantarflexor MVC.
+","In vivo MRI was performed to determine moment arm
+length of the achilles tendon at rest.  F=tq/MA
+
+In vivo MRI was performed to determine moment arm length of the achilles tendon at rest. A series of sagittal plane scans were taken of the left ankle with the foot secured at a right angle to the tibia (0°), at ¡ 20° dorsiflexion and 20° plantarflexion. Three scans were required to determine the centre of rotation of the talocrural joint from the method described previously (Rugg et al. 1990).
+
+Achilles tendon force was calculated by dividing PF
+torque by the achilles tendon moment arm length.
+
+In order to estimate the contribution of the GL to achilles tendon force, the relative PCSA of the GL within the triceps surae was calculated
+
+
+We have previously determined that the GL constitutes 11% of the triceps surae PCSA(Morse et al. 2005a), and the triceps surae group was estimated to represent 91% of the total PF PCSA in the elderly (Wickiewicz et al. 1983); hence this seems to justify the assumption that the triceps surae PCSA represents the main PCSA of the plantarflexors
+
+Once the GL component of the achilles tendon force was calculated, this was divided by cos  to determine the fascicle force (Ff).
+
+Specific force of the GL muscle was calculated by dividing GL Ff by GL PCSA.
+
+",
+4135,2,,,,,,
+4135,3,,,,,,
+4128,1,"maging-based methods were used for a 
+double aim: the measurement through segmentation of 
+volumes and muscle length for Biceps Brachii (Bic), 
+Brachialis (Bra) and Brachioradialis (Brd) muscles and to 
+extract moment arm (MA),","MRI acquisition on a Philips system was used to acquire limb images. 
+ In literature fiber length/muscle length 
+ratios can be found [6] and allow us to define a value of fiber 
+lengths sized on the individual muscle dimensions.","Vm/lf
+
+In literature fiber length/muscle length ratios can be found [6] and allow us to define a value of fiber lengths sized on the individual muscle dimensions
+","The 
+participants were then asked to perform a maximal voluntary 
+isometric contraction (MVC) of 5 seconds with the dominant 
+arm at 90° flexion position in order to assess the maximal 
+external force generated.","TQ/MA: maging-based  methods were used for a 
+double aim: the measurement through segmentation of 
+volumes and muscle length for Biceps Brachii (Bic), 
+Brachialis (Bra) and Brachioradialis (Brd) muscles and to 
+extract moment arm (MA), 
+
+MRI used  to extract moment arm (MA),
+ and adjustment of MA at 90° angle was performed 
+using modified Ramsay equation
+
+The participants were then asked to perform a maximal voluntary isometric contraction (MVC) of 5 seconds with the dominant arm at 90° flexion position in order to assess the maximal external force generated
+
+Measurements of forearm length was obtained by determining the anatomical distance between standard bony landmarks
+
+In order to assess forces generated by the muscles at fiber
+level, a biomechanical model of the arm was define
+
+Percentage of each muscle's moment (Mi) was calculated starting from the total joint moment as the ratio
+
+M%=PCSAxMA / sum(PCSAxMA)
+
+F=M/MA
+
+ST=F/(PCSAxCos(alpha))
+",
+4128,2,,,,,,
+4128,3,,,,,,
+4127,1," In young adults, the CSA
+was added on alternate slices. Then, the sum was multiplied
+by 1 cm. ",,"A series of cross-sectional images of the right arm was
+obtained using an MRI 
+ Two scans were performed as follows. The first
+scans were carried out from the head of the humerus to the
+applied marker. The second scans were performed from the
+marker to the distal end of elbow flexors. 
+The maximal value of CSA was adopted as ACSA","The TQ of elbow flexion was measured using a torque meter
+
+The subjects seated on a test
+chair, and their right arms were secured to the torque meter
+with an unelastic belt. The subjects kept 90◦ of shoulder joint
+flexion angle and elbow joint angle, and their wrists were fixed
+in a position halfway between supination and pronation. The
+subjects performed MVC of isometric elbow joint flexion
+for 3 s
+
+The TQ measurements
+were performed two times with at least a 5 min interval. If
+the difference between two values of TQ was >10% of the
+higher one, the TQ was measured one more time. In two
+or three TQ measurements, the highest value was adopted.
+","The TQ was converted to F by dividing it by the forearm
+length (the distance from the head of radius to the processus
+styloideus) of each subject",
+4127,2,"In elderly individuals, the MV was calculated by
+multiplying the sum of the CSA of elbow flexors along their
+length by the interval of 1 cm.",,,,,
+4127,3,,,,,,
+2995,1,"The arm was imaged in four segments from the top of the humerus to the wrist by moving the extremity coil three times
+Muscle volume was calculated as the summation of cross-
+sectional area times slice thickness (7 mm) for all slices along
+the length of the muscle
+
+The biceps brachii, brachialis, and bra-
+chioradialis muscles were traced in each image and together
+made up the EFs. The brachioradialis volume was then estimated to be 39% of the combined volume of these three muscles
+Muscle volume was calculated as the summation of cross-
+sectional area times slice thickness (7 mm) for all slices along the length of the muscle. 
+
+","Muscle length was the distance between the most proximal and the most distal images in which the muscle was visible.
+
+Muscle fiber length was estimated by multiplying muscle length (from MRI) by the fiber length-to-muscle length ratio determined in cadavers (38). The ratios used were 0.60, 0.49, 0.68, and 0.33 for the biceps brachii, brachialis, brachioradialis, and triceps brachii, respectively (38).
+
+It was assumed that the fiber length-to-muscle length ratio was the same in the young and old men
+
+No data are available for the fiber length-to-muscle length ratio in the anconeus, so it was assumed to be the same as the biceps brachii because the fibers run parallel in both muscles
+
+","MRI: The PCSA was calculated by dividing muscle volume by the estimated fiber (fascicle)
+length. The PCSA of the triceps brachii was multiplied by the cosine
+of the fiber pennation angle, assumed to be 15° for both groups, whereas the EFs were assumed to have no pennation","The subjects were supine on a padded
+table and the left arm (nondominant in all cases) was placed
+in a custom-designed force dynamometer. The elbow joint was flexed 100° (180° 5 full extension), and the forearm was fully supinated to record optimum MVCs of the EFs and EEs. The MVCs were determined during each of three visits to the laboratory over 2-4 wk. Three to four MVCs, each held for 4 s with a 3-min rest, were recorded for each of the EFs and EEs during all visits. The highest MVC of
+the three visits was used to calculate muscle activation.  
+","MVC recorded. 
+The subjects were supine on a padded table and the left arm (nondominant in all cases) was placed in a custom-designed force dynamometer
+
+The ventral (or dorsal, for EEs) aspect of the wrist was secured with a strap to a padded curved bar, that had a strain gauge attached for measuring force
+
+A modified twitch interpolation technique was used to assess the level of muscle activation during the MVC
+
+Coactivation during the MVC was determined by recording the EMG activity over the antagonist muscle(s)
+
+","The biceps brachii, brachialis, and brachioradialis muscles were traced in each image and together made up the (Elbow Flexors)  EFs. The triceps brachii and anconeus were traced and together made up the (Elbow Extensors) EEs. The pronator teres and the extensor carpi radialis longus muscles, which together generate 15% of EF torque (38), were not included in the EF volume because they were not clearly visible in the imagesover their entire length. The brachioradialis, extensor carpiradialis longus, and brevis muscles were traced as a group
+The brachioradialis volume was then estimated to be 39% ofthe combined volume of these three muscles (4). The length of the brachioradialis, however, could be determined because the origin and insertion regions were clearly evident in all images. The coracobrachialis muscle was traced as part of the biceps brachii because these two muscles could not be sepa-rated convincingly throughout their entire length. In bothyoung and old cadavers, the coracobrachialis is 23% of the weight of the biceps brachii plus the coracobrachialis (47). To exclude the coracobrachialis from the EF volume, the biceps brachii volume was reduced by 23% in all subjects."
+2995,2,"The triceps brachii and anconeus were
+traced and together made up the EEs.",,,,,
+2995,3,,,,,,
+2837,1,Estimated from manually traced CSA on MRI slides. Each slide was extrapolated to 1 cm thickness to calculate the volume and all slices were summed to find the volume of the entire length. ,"Fiber length was not directly measured. Obtained from previous cadaveric studies. Fiber length of each muscle was estimated from muscle length using fiber length/muscle length ratios reported previously. 
+SOL 0.06
+MG 0.14
+LG 0.23
+Angles of pennation were 
+SOL 25
+MG 17
+LG 8
+","From MRI,
+CSA was determined by manually tracing the area around the
+muscles on a computer-generated image of each slice in the set.The image yielding the largest CSA was used as ACSA.
+
+The PCSA of triceps surae was estimated from VOLm, angle of pennation,
+and fiber length for each individual muscle in triceps surae (soleus, SOL; medial gastrocnemius, MG; lateral gastrocnemius, LG) 
+
+PCSA=Vol*cos(alpha)/fiber length
+
+PCSA was computed as the sum of the individual PCSAs for SOL,
+MG, and LG.",none," subject’s right foot was
+restrained at the ankle using three 4.5-cm straps which held the foot against
+a 10.6-cm foot pedal mounted at 1.83 rad (105° or 15° plantar flexion).
+
+Force was measured 10.6 cm above the bottom of the heel. This distance
+was selected to allow the pedal mounted to the force transducer to be
+approximately half the length of an average foot (7). This design minimized
+contributions from the foot muscles when measuring force output during
+plantar flexor MVC.
+
+ Force output was measured using a calibrated force transducer. The transducer was calibrated with loads ranging from 200.2 to 1201.2 N yielding R2 = 0.999",
+2837,2,,,,,,
+2837,3,,,,,,
+2833,1,"The volume of each muscle was calculated using cubic
+spline interpolation of the measured ACSA values/slices, expressed relative to % femur length. Femur length
+was defined by the number of slices between the proximal greater
+trochanter and the knee joint space, multiplied by the slice thickness.
+For muscle mass distribution, interpolated ACSA for each individual
+muscle at 5% intervals of femur length were used and expressed
+relative to ACSAMAX. Total quadriceps volume (QVOL) was the sum
+of the individual muscle volumes. QACSAMAX was calculated by the
+summation of the maximal ACSA from each individual muscle.","Ultrasonographic images were captured at 10 locations throughout the four constituent muscles of the quadriceps (i.e., 2 or 3 locations per muscle) to comprehensively quantify fascicle length ,FL and alpha of the whole muscle group
+
+Specific sites were over the mid muscle belly (median longitudinal line, i.e., 50% of superficial mediolateral width) at the following percentages of thigh length proximal to the knee joint space: VM 20% (VMDIS) and 40% (VMPRX), VL and VI at 30%(VLDIS, VIDIS), 50% (VLMID, VIMID) and 70% (VLPRX, VIPRX), and RF 55% (RFMID) and 75% (RFPRX).
+
+Muscle fascicle length was used as an index of fiber length and sarcomeres in series, and was measured as the length of the fascicular path between the insertions into the superficial and deep aponeurosis
+
+alpha  and FL were averaged over each individual muscle, before calculating an overall quadriceps mean averaged over the four constituents (Qalpha and QFL).","QACSAMAX was calculated by the summation of the maximal ACSA from each individual muscle
+
+PCSA (PCSA) was calculated per constituent muscle as individual muscle volume divided by FL (mean of sites for that constituent), then summed to give quadriceps physiological cross-sectional area (QPCSA)
+
+To correct for force transmission to the tendon, EFFPCSA was calculated as this theoretically best index of muscular force/torque production. Specifically, individual muscle EFFPCSA was calculated by multiplying PCSA by cosine of mean alpha
+
+Participants reported to the MRI scanner (1.5-T Signa HDxt, GE) The quadriceps muscles [vastus lateralis (VL), vastus intermedius
+(VI), vastus medialis (VM), and rectus femoris (RF)] were manually outlined to determine ACSA in every third image (i.e., every 15 mm;","Participants were positioned in an isometric dynamometer with knee and hip angles of 115° and 125° (180°  full extension), respectively.
+
+Surface electromyography (EMG) of the hamstring muscles (bi-
+ceps femoris long head and semitendinosus) was recorded using a wireless EMG system
+
+The highest instantaneous torque recorded during any MVC was defined as knee extension MVT 
+
+
+knee and hip angles of 115° and 125° (180°   full extension), respectively. . An ankle strap (35 mm width reinforced canvas webbing) was placed ~15% of tibial length (distance from lateral malleolus to knee joint space) above the medial malleolus and positioned perpendicular to the tibia and in series with a calibrated S-Beam strain gauge. articipants performed 3– 4 MVCs of the knee extensors for 3– 4 s duration interspersed with  30s rest and were instructed to “push as hard as possible.” A horizontal cursor indicating the greatest torque obtained within the session was displayed for biofeedback, and verbal encouragement was provided during all MVCs. The highest instantaneous torque recorded during any MVC was defined as knee extension MVT.
+same for knee flexion MVT ","Tendon force was
+calculated as MVT divided by moment arm
+
+sagittal scans of the knee used to assess patella tendon moment arm (PTMA).
+Tendon force was calculated as MVT divided by moment arm. 
+
+For maximal voluntary specific tension measurements PTMA length for the MVT specific knee angle was estimated from previously published data fitted with a quadratic function (48) scaled to each participant’s measured moment arm length at 163° as previously (56).
+
+ST was determined first by the calculation ofmaximal tendon force; this was done by correcting knee extension MVT for antagonist torque [HEMG at knee extensor MVT normal-ized to HEMGMAX (i.e., at KF MVT) multiplied by KF MVT] to provide torque from the knee extensors only
+
+assumes a linear relationship between EMG amplitude and
+torque
+
+This knee extensor muscle torque was divided by corrected PTMA (see above) and the subsequent muscle force divided by QEFFPCSA to calculate ST
+
+","musculoskeletal imaging measurements
+(B-mode ultrasonography and MRI) were performed. Magnetic reso-
+nance T1-weighted axial plane images of the thigh were acquired to
+measure quadriceps muscle size (QVOL and QACSAMAX) with sag-
+ittal scans of the knee used to assess patella tendon moment arm
+(PTMA)."
+2833,2,,,,,,
+2833,3,,,,,,
+2821,1,Muscle volume was determined by summing the anatomical CSA of each image times the thickness (10 mm). ,The pennation angle and fascicle length of VL were measured during MVC using an ultrasonic apparatus,"physiological CSA of VL was calculated by dividing muscle volume by fascicle length (e.g., Reeves et al., 2004).
+
+
+
+The cross-sectional area (CSA) of the quad-
+riceps femoris muscle was measured by magnetic  resonance imaging scans.From the series axial images, outlines of each muscle were traced, and the traced images were transferred to a computer for calculation of the anatomical CSA using digitizing software. 
+the physiological CSA of 
+VL was calculated by dividing muscle volume by fascicle length","Maximal voluntary isometric strength (MVC) of the knee extensor muscles was determined using an electrical dynamometer
+
+When the voluntary torque peaked, evoked 
+twitch contractions were imposed by supramaximal 
+electrical stimulations.
+
+The difference between peak twitch force and MVC force (twitch force) was measured. Afterward the twitch imposed on the resting muscle after MVC (control twitch force) was measured. The voluntary activation (%) of the knee extensor muscles was calculated as: {1 – (twitch force during MVC / control twitch force)} * 100 as previously reported (Becker & Awiszus, 2001).
+
+
+Maximal voluntary isometric strength (MVC) of 
+the knee extensor muscles was determined using an 
+electrical dynamometer (Myoret, Asics, Japan). The 
+participant sat in an adjustable chair with support 
+for the back and the hip joint fl exed at an angle of 
+80° (full extension = 0°) to standardize the mea-
+surements and localize the action to the appropriate 
+muscle group. The ankle was fi rmly attached to the lever arm of the dynamometer with a strap and fi xed 
+with the knee joint fl exed at an angle of 90°. 
+When the voluntary torque peaked, evoked 
+twitch contractions were imposed by supramaximal 
+electrical stimulations. The stimulating electrodes 
+were placed on the skin over the femoral nerve at 
+the inguinal region (cathode) and the midbelly of 
+the quadriceps muscle (anode).","The knee joint torque (TQ) measured by the dynamometer was converted to muscle force (Fm) by the following equations:
+Ft = TQ · MA–1
+Fm = k · Ft 
+where Ft and k represent tendon force and relative contribution of VL to the quadriceps femoris muscles in terms of physiological cross-sectional area, and MA is the moment arm length of quadriceps femoris muscles at 90° of knee flexion, which is estimated from the thigh length of each participant (Kubo et al., 2001)
+
+The fascicle force (Ff) of VL was calculated by the following equation: 
+Ff = Fm · cos P-1
+where cos P is the cosine of the angle of pennation of VL
+
+
+
+Specific tension of VL was calculated by dividing fascicle force by physiological CSA","One leg was trained using the low load with vascular occlusion (LLO) while the other leg was trained using the high load without vascular occlusion (HL).
+
+
+In LLO, the proximal portion was compressed by a specially designed elastic belt. The belt contained a small pneumatic bag along its inner surface which could be connected to an electronic pressure gauge so as to monitor the occlusion pressure
+
+In HL the participants performed 4 sets of exercise with an inter-set interval of 1 min
+"
+2821,2,,,,,,
+2821,3,,,,,,
+2680,1," The volume of each
+of the component QF muscles [vastus lateralis (VL), vastus intermedius (VI), rectus femoris (RF) and vastus medialis (VM)] was calculated from serial axial MRI","Fascicle length (Lf) and pennation angle (hp) of the VL, VI, RF and VM muscles were measured during MVC using ultrasonography along the mid-sagittal plane at
+50% of the length of each muscle. ","Dividing each compo-
+nent muscle volume by its respective Lf provided the PCSA of the individual muscles
+
+each constituent muscle PCSA was multiplied by the cosine of its respective hp to provide four reduced PCSAs.
+
+
+Dividing each compo-
+nent muscle volume by its respective Lf provided the PCSA of the individual muscles. he sum of these four PCSAs gave the whole QF PCSA (Erskine et al. 2009).
+
+","Antagonist muscle co-activation was estimated by determining the electromyographic (EMG) activity of the biceps femoris muscle during MVC. The interpolated twitch technique was used to determine the level of maximal voluntary QF muscle activation at 90  of knee flexion. This level of activation was applied to the MVC at optimum angle, which, when corrected for antagonist muscle coactivation, provided true maximum torque (TMT)
+
+dPT was determined from sagittal and coronal-plane knee scans
+obtained from a magnetic resonance imaging (MRI)
+scanner (G-Scan; Esaote Biomedica, Genoa, Italy).","To calculate maximum QF muscle force recorded at the patellar tendon, it was necessary to divide TMT by the patellar tendon moment arm length (dPT). dPT was determined from sagittal and coronal-plane knee scans obtained from a magnetic resonance imaging (MRI)
+
+Corrections were made for the difference between dPT at full extension and optimum joint angle (Baltzopoulos 1995) and between rest and MVC (Tsaopoulos et al. 2006)
+
+A minimum of two
+maximal voluntarily isometric leg extensions (MVCs) were performed on the chair of an isokinetic dynamometer (Cybex Norm; Cybex International, New York,
+NY, USA) at 70, 80 and 90
+ of knee flexion.  Each MVC lasted 2–3 s with a rest interval of 2 min between each contraction. Antagonist
+muscle co-activation was estimated by determining the electromyographic (EMG) activity of the biceps femoris muscle during MVC. The interpolated twitch technique was used to determine the level of maximal voluntary QF muscle activation at 90
+ of knee flexion. This level
+of activation was applied to the MVC at optimum
+angle, which, when corrected for antagonist muscle co-activation, provided true maximum torque (TMT). To calculate maximum QF muscle force recorded at the patellar tendon, it was necessary to divide TMT by the patellar tendon moment arm length (dPT).
+Maximum patellar tendon
+force (Ft) was thus calculated as TMT/dPT.","Maximum voluntary contraction torque, voluntary QF
+muscle activation, antagonist muscle co-activation and
+patellar tendon moment arm were measured in the right
+limb, together with muscle volume and architecture of
+each of the four component muscles in the QF muscle
+group, to determine in vivo QF specific tension before
+and after 9 weeks of intensive leg-extension resistance
+training.
+
+Maximum patellar tendon force was subsequently
+divided by the sum of these reduced PCSAs to provide
+QF specific tension."
+2680,2,,,,,,
+2680,3,,,,,,
+2679,1,"By summing the ACSA of the muscle along its length and then multiplying the sum by the interval of 10 ram, 
+muscle volume (Vm) was determined.
+
+
+
+MRI, 
+Before and after training, series cross-sectional images of the upper extremities were obtained by MRI scans with a body coil
+
+a slice thickness of 10 mm were used with a repetition time of 900 ms and an echo time of 17 ms
+
+From each cross-sectional image of the upper extremity, outlines of the triceps brachii muscle were traced and ACSA was calculated
+
+By summing the ACSA of the muscle along its length and then multiplying the sum by the interval of 10 mm, muscle volume (Vm) was determined","Muscle length was defined as the distance between the most prox- 
+imal and the most distal images in which the muscle was visible in the MRI scan.
+
+
+On the same site where muscle layer thickness was measured, the 
+centre of the ultrasonic transducer
+Measurements of 
+muscle layer thickness and fascicle angles were done both for the 
+right and left arms of each subject
+
+Muscle length was defined as the distance between the most proximal and the most distal images in which the muscle was visible.
+
+
+From the muscle layer thickness and the fascicle angle, the length of fascicles (lf) across the deep and superficial aponeuroses 
+was estimated from the following equation: 
+
+If = muscle layer thickness,*sin-1 (alpha) 
+where alpha is the fascicle angle of the long head determined by ultrasound.
+"," From If and Vm, PCSA of 
+the triceps brachii muscle was obtained 
+i.e. 
+PCSA = Vm /If
+
+
+MRI scans with a body coil (Signa 1.5T, GE Electronics, USA). Spin-echo, multislice sequences with a slice thickness of 10 mm were used with a repetition time of 900 ms and an echo time of 17 ms. ransverse scans were carried out with an interspaced gap of 0 ram, from the  elbow joint to the head of humerus.
+ From If and Vm, PCSA of the triceps brachii muscle was obtained (An et al. 1981), i.e.PCSA = Vm/If
+
+"," the subject was seated on an adjustable chair with support for the back, elbow, shoulders, and hips. The measurement of elbow extension torque was carried out with the subject seated, with the arm supported on the horizontal plane on a padded table. The torque was corrected for gravitational moments of the forearm and the lever arm. Isometric torques were measured twice to three times at the elbow joint angle in the range of 45-70 ° (full extension corresponds to O °) 
+and the maximal value was adopted.
+
+
+Maximal voluntary isometric, concentric, and eccentric strength 
+of elbow extensors were measured before and after training using an isokinetic dynamometer
+
+The torque was corrected for gravitational moments of the forearm and the lever arm. Isometric torques were measured twice to three times at the elbow joint 
+angle in the range of 45-70 ° (full extension corresponds to O °) and the maximal value was adopted
+
+Concentric and eccentric peak torque was also measured at velocities 30, 90, and 180°-s-1, 
+in the range of joint angles between 25 ° and 90 °","TQ/MA
+
+
+Torque output was divided by the moment arm of the triceps brachii muscles which was derived from the previous study (Kawakami et al. 1994)  correcting for difference in forearm length, and the force acting on the triceps tendon was estimated.
+
+The tendon force was then divided by the PCSA of the total triceps muscle to give specific tension.","oment arm of the triceps brachii tousles which was derived from the previous study (Kawakami et al. 1994), correcting for difference in forearm length
+
+Muscle layer thickness of the triceps brachii muscle was measured with a B-mode ultrasound apparatus A single cross-sectional plane was imaged at 40% of the distance from the lateral epicondyle to the acromion process of the scapula, starting at the lateral epicondyle"
+2679,2,,,,,,
+2679,3,,,,,,
+2677,1,"Volume calculated from accumulated ASCA *MRI cutting distance. 
+
+
+Series cross-sectional images of the upper extremities were obtained by MRI.Transverse slices of 0.005-m thick were 
+taken with a repetition time of 600 ms and an echo time of 15 ms.
+The number of cross-sectional images ranged from 45 
+to 50, depending on the upper extremity lengths of the subjects.
+
+By summing the ACSA of the muscle along its length and then multiplying the sum by the interval of 0.01 m, muscle volume (Vmu) was determine","Muscle length (lmu) was defined as the dis- 
+tance between the most proximal and the most distal images in 
+which the muscle was visible
+
+
+From MRI, Muscle length (lmu) was defined as the distance between the most proximal and the most distal images in which the muscle was visible. 
+
+The pennation angles were obtained from human cadavers (Amis et al. 1979). The If was determined from lmu multiplied by lf/lmu which was derived from the previous study (Edgerton et al. 1986), i.e
+lf:lmu ratio from cadavers","eries cross-sectional images of the upper extremities were obtained by MRI with a body coil Transverse slices of 0.005-m thick were taken with a repetition time of 600 ms and an echo time of 15 ms. Acquisition of data was repeated three times and averaged for a single slice. the photographed cross-section MRI 
+of the upper extremity, outlines of main elbow flexor muscles [biceps brachii (BIC), brachialis (BRA), brachioradialis (BRD)] 
+and elbow extensor muscles [triceps brachii (TRI) were digitized and anatomical CSA (ACSA) of each muscle were 
+calculated. Muscle length (lmu) was defined as the dis- 
+tance between the most proximal and the most distal images in which the muscle was visible
+ By summing the ACSA of the mus- 
+cle along its length and then multiplying the sum by the interval of 0.01 m, muscle volume (Vmu) was determined. 
+For elbow flexor muscles: PCSA = Vm/Length 
+For elbow extensor muscles: PCSA = Vm*Length(-1)*cos 0","Maximal voluntary isometric, concentric, 
+and eccentric strength of elbow flexors and extensors was mea- 
+sured using an isokinetic dynamometer
+
+Isometric torque was measured three times each at elbow joint angles 0.873, 1.222, 1.571, and 1.920 rad (full extension corresponds to zero), and the maximal value was adopted. The maximal torque was observed at 1.571 rad for flexion and at 1.222 rad for extension. Concentric and eccentric torque was defined as the torque at the specific joint angle (flexion, 1.571 rad; extension, 1.222 rad) at which the maximal isometric torque was observed. Velocities during concentric and eccentric muscle actions were 0.524, 1.571, 
+and 3.142 rad.s-1. ","F=TQ/MA
+
+
+Moment arms of B1C, BRA, BRD, and TRI were measured using MRI. Sagittal slices of 0.005-m thickness were obtained for the upper extremity of the dominant side at intervals of 0.005 m and interspaced gaps of 0 m.
+The elbow joint angle was kept at 1.571 rad. Procedures were similar to those of Rugg et aI. (1990) and Spoor and van Leeuwen 
+(1992)
+
+As for elbow flexors, averaged values of the moment arms of agonists were calculated (weighed by the relative PCSA to total) and considered the representative moment arm for all the flexors.","Moment arms of B1C, 
+BRA, BRD, and TRI were measured using MRI. "
+2677,2,,,,,,
+2677,3,,,,,,
+2664,1,"Calculated based on the equation by Morse et al. 2007 using: 
+Femur length: measured with ultrasound
+ACSA: MRI taken at 40% of femur length and calculating the area of each muscle. ","ultrasound measured during MVC
+
+Using the method 2 of Erskine et al 2009. 
+During MVC at the optimal knee angle, VL muscle fascicle length was measured using ultrasonography. This measurement was taken at a 50% of femur length along the mid-sagittal plane of the VL muscle","At 40% of femur length MRI was used to measure each component of QF muscle. 
+Calculated by dividing Vm by VL fascicle length
+
+Muscle volume/ VL fiber length.
+VL assumed to represent average architecture of QF
+","Isometric leg extension MVC were performed on a dynamometer at optimal knee joint angle. Antagonist muscle coactivation estimated assuming a linear relationship between torque and EMG activity of biceps femoris. 
+Interpolated twitch technique used to determine max volunatry QF muscle activation. 
+Patellar tendon moment arm: MRI
+Correcting MVC torque for QF muscle activation and antag coact. true maximal torque.
+
+
+Correcting MVC torque for QF muscle activation and
+antagonist muscle coactivation provided true maximal
+torque"," Maximal patellar tendon force calculated with: 
+F = TMT x d(PT)-1
+
+ patellar tendon moment arm
+(dPT) was determined via MRI","QF specific tension was determined from measurements
+of maximal voluntary contractions of the QF muscle
+with superimposed electrical stimulation and antagonist
+muscle activity assessed from EMG signals, together with
+a magnetic resonance imaging (MRI) measurement of
+ACSA and determination of fascicle pennation angle and
+length for the vastus lateralis (VL) muscle, as described
+in method 2 of Erskine et al. 2009"
+2664,2,"17 participants: Volume of each constituent muscle was measured. 
+
+one MRI 40% femur length and regression to estimate volume","17 participants: Using method 1 of Erskine et al. 2009 
+Fascicle length and pennation angle determined for each of the 4 heads of the QF. ","
+individual muscle volume/fiber length ",,,
+2664,3,,,,,,
+2653,1,"Femur length was measured as the distance from the tibi-
+ofemoral point of contact to the proximal insertion of the
+VL muscle, identified using ultrasonography. Oil-filled beads were attached to the
+skin at the measurement location (corresponding to 40% of
+femur length from the distal end). 
+The participant was
+scanned in the supine position, and five serial axial slices
+were acquired around the position of the beads using a spin
+echo T1-weighted protocol. 
+Slice thickness 5 mm; interslice gap 5 mm.
+The ACSA
+of each constituent QF muscle and a series of regression
+equations, QF volume was estimated by adapting a previously published method (Morse et al. 2007)
+","During MVC at optimum knee joint angle, ultrasound
+scans of the vastus lateralis (VL) muscle fascicle length
+(Lf) and pennation angle (hp) were acquired at 50% of the
+muscle length along the mid-sagittal plane and Lf and hp
+were subsequently measured using digitizing software."," QF PCSA was calculated
+by dividing the estimated QF volume by VL Lf","Isometric leg-extension MVC torque was assessed using an isokinetic dynamometer with the knee joint angle set at 70–90 knee flexion (depending on the angle at which peak torque was produced, defined as the optimum angle
+True maximal torque (TMT) was calculated as:
+TMT= MVCcorr/ (1-t/T)
+where t is the amplitude of the superimposed twitch, T the value of the twitch before the MVC and MVCcorr is the MVC corrected for co-activation.","The patellar tendon moment arm (dPT) was quantified using a
+0.2-T magnetic resonance imaging (MRI) scanner. PT was defined
+as the length of the perpendicular line between the axis of the
+patellar tendon and the TFCP (Tsaopoulos et al. 2006). This value
+was subsequently multiplied by 1.14 to account for a 14%
+increase in dPT from rest to MVC (Tsaopoulos et al. 2007).
+Maximum isometric QF force (F) was thus calculated as:
+F = TMT/dPT","using method 2 of Erskine 2009
+
+Training-
+unilateral knee
+extension exercises were performed three times a week for a period of 9 weeks on the right leg. The single repetition maximum (1 RM) was determined at the beginning of the training programme and reassessed at the start of each week on a standard leg-extension machine
+"
+2653,2,,,,,,
+2653,3,,,,,,
+2651,1,"Muscle volume was estimated from a series of continuous
+axial-plane MRIs along the lower leg
+
+Muscle volume was estimated from a series of continuous
+axial-plane  MRI
+
+In each slice, the anatomical cross-sectional areas (ACSAs) of Sol and TA were digitized, and the respective muscle volumes were calculated asthe product of the sum of the ACSAs in all slices times the MRI slice thickness.","Sonograph
+
+pennation angles and fascicular lengths were measured using ultrasonography during MVC
+
+For the bipennate TA, the fascicular length and pennation angle of each unipennate half were measured separately, and average values across the two halves were used for further analyses","Estimations of PCSA were obtained from the ratio of muscle volume to fascicular length. Sol was treated as a unipennate muscle (2, 10), and TA was treated as two separate equidimensional unipennate parts, each one occupying half the whole muscle volume. The whole TA PCSA was obtained by adding the PCSAs of the two unipennate halves","Joint moments were measured during electrical stimulation
+
+Three minutes after the completion of all six voluntary contractions, isometric ankle moments were generated by means of percutaneous electrical stimulation of Sol and TA
+
+Furthermore, at the adopted knee position of 60°, the biarticular gastrocnemius is slack (yet active during Sol stimulation),thus transmitting only a minor force to the calcaneus during plantar flexion contraction (12, 15, 16). Therefore, the ankle moments recorded during stimulation in our experiment were considered to have negligible contributions from muscles other than Sol and TA
+
+Subjects were securely fixed in the prone position on an isokinetic dynamometer.Three
+isometric plantar flexion maximum voluntary contractions
+(MVCs) and three dorsiflexion MVCs were performed. Maximal tetanic contractions were
+produced by 2 s of stimulation at frequencies of 100 Hz using bipolar wave pulses of a duration of 100 ms. ","moment arm measured using MRI during MVC
+
+sagittal-plane MRIs of the foot were taken at rest and during plantar flexion and dorsiflexion MVCs at ankle angles corresponding to 15°of dorsiflexion, neutral ankle position, and 15° of plantarflexion
+
+Tendon force was calculated by dividing joint moment by
+the moment arm length
+
+Muscle force was calculated by dividing tendon force by the
+cosine of pennation angle","Two approaches were followed to estimate specific tension. First, muscle moments during electrical stimulation and moment arm lengths, fascicular lengths, and pennation angles during MVC were used (data set A). Then, MVC moments, moment arm lengths at rest, and cadaveric fascicular lengths and pennation angles were used (data set B)"
+2651,2,,"cadaver fascicle lengths and pennation angle
+Cadaveric pennation angles reported byWickiewicz et al. (43) were included. Fascicular lengths were estimated with the assumption that the muscle fascicle length-to-muscle length ratio is constant for a given muscle across different cadavers
+Muscle length was measured in vivo as the distance between the most proximal and most distal axial-plane MRIs in which the muscle was visible
+
+muscle fascicle length-to-muscle length ratio is
+0.06 in soleus (Sol) and 0.25 in T
+
+",,"Joint moments were measured during maximum voluntary contraction (MVC)
+
+No passive forces were detected by the dynamometer load cell in the plantar flexion and dorsiflexion directions at the position studied (see also Ref. 38). Three isometric plantar flexion maximum voluntary contractions (MVCs) and three dorsiflexion MVCs were performed 2 min apart, after having compensated for the effect of gravity by performing dynamic weighing of the limb. The highest plantar flexion and dorsiflexion MVC moments obtained were used for further analyses",Moment arm measured at rest,
+2651,3,,,,,,
+2649,1,"The muscle volume was calculated using contiguous axial ACSA scans taken from the tibiofemoral joint to the iliac crest. MRI slice thickness was set at 2.8 mm. 15 scans at 3.08 cm intervals.  
+A spline curve was fitted to the ACSA data points associated with each of 4 component muscles and muscle volume was calculated as the area under the curve (Seynnes 2008)
+","Measurements of muscle fascicle length (Lf) and
+pennation angle (hp) were performed on selected images
+using digitizing software. 
+Pennation angle was measured as the angle between the muscle fascicular paths and their insertion to the deep aponeurosis. 
+Lf was measured by tracing the fascicle echo from origin to insertion on US image. If one end of fascicle extended beyond the end of the US image the Lf was estimated by extrapolating the superficial and lower aponeuroses as well as the fascicle.  In the case of the bi-
+pennate RF muscle, only the lateral hp and Lf was analysed. 
+he Lf and hp of each constituent muscle was
+multiplied by the ratio of its respective volume to total QF
+volume. The sum of these values represented the weighted
+mean QF Lf and hp at optimum joint angle.","The PCSA of each of the four constituent muscles of the
+QF was calculated by dividing the component muscle
+volume by its respective optimum Lf. The total RF volume
+was divided by the lateral Lf. The complete QF PCSA was
+given by the sum of the PCSAs of the four constituent
+muscles","To calculate patellar tendon forces, the torque developed at
+the knee must be divided by the patellar tendon moment
+arm length (dPT). The procedure used to measure dPT has
+been described elsewhere (Tsaopoulos et al. 2006).  Briefly,
+dPT was quantified using a 0.2-T MRI scanner. PT was defined as
+the length of the perpendicular line between the axis of the
+patellar tendon and the TFCP (Tsaopoulos et al. 2006).
+Previously reported values of dPT length at full extension
+(0 knee flexion) and angles of 70, 80 and 90 knee flexion (Baltzopoulos 1995) were used to provide the necessary ratios with which to estimate dPT length at optimum knee
+joint angle, i.e.
+1. dPT 70/dPT 0 = 1.08
+2. dPT 80/dPT 0 = 1.03
+3. dPT 90/dPT 0 = 0.99
+The appropriate ratio was applied to the dPT measured at
+full extension to provide the estimated dPT at optimum joint
+angle, which was subsequently multiplied by 1.14 to
+account for a 14% increase in dPT from rest to MVC
+(Tsaopoulos et al. 2007)
+
+
+
+dynamometer with antagonist (hamstring) muscle
+co-activation check
+Participants were asked to perform a minimum of
+two MVCs (if the second attempt was [10% higher than the first, a third attempt was made to ensure a true MVC
+was achieved) at three separate knee joint angles (70, 80,and 90 of knee flexion; 0
+ equalling full extension)
+
+The procedure for determining the level of voluntary muscle
+activation using the interpolated twitch technique (ITT) 
+True maximal torque (TMT)
+was calculated as:
+TMT= MVCcorr/(1-t/T)
+
+where t is the amplitude of the superimposed twitch, T the
+value of the twitch before the MVC and MVCorr the
+MVC corrected for co-activation. The percentage
+activation was given by:
+100(1-t/T)","Patellar tendon force
+(Ft) was determined from MVC, accounting for antagonist
+muscle co-activation, the level of voluntary muscle activa-
+tion, patellar tendon moment arm (dPT) and optimum muscle
+fascicle pennation angle (hp)
+
+
+To calculate patellar tendon forces, the torque developed at
+the knee must be divided by the patellar tendon moment
+arm length (dPT), quantified using a 0.2-T MRI scanner
+
+Previously reported values of dPT length at full extension (0 knee flexion) and angles of 70 , 80 and 90 knee flexion (Baltzopoulos 1995) were used to provide the necessary ratios with which to estimate dPT length at optimum knee joint angle
+
+The appropriate ratio was applied to the dPT measured at
+full extension to provide the estimated dPT at optimum joint
+angle, which was subsequently multiplied by 1.14 to
+account for a 14% increase in dPT from rest to MVC
+(Tsaopoulos et al. 2007).","Method 1 was the most detailed assess-
+ment of specific tension, where QF PCSA was calculated by
+accounting for the optimum fascicle length (Lf) and volume
+of each of the four constituent muscles. Patellar tendon force
+(Ft) was determined from MVC, accounting for antagonist
+muscle co-activation, the level of voluntary muscle activa-
+tion, patellar tendon moment arm (dPT) and optimum muscle
+fascicle pennation angle (hp)"
+2649,2,QF volume was estimated from a single QF ACSA measured at 40% of femur length. Regressions equations used to estimate the volume of the QF muscles (Morse 2007). 551 cm3 was added to the QF volume to provide accurate estimation. ,"VL Lf measured during MVC at optimum
+joint angle was assumed to be representative of the mean Lf
+for the entire QF.","Quadriceps femoris PCSA was calculated by dividing
+the estimated QF volume by the fascicle length (Lf) of the
+VL only ",,"VL muscle geometry at MVC was
+assumed to be representative of the mean QF architecture"," Method 2 was identical to
+Method 1, except that the VL muscle geometry at MVC was
+assumed to be representative of the mean QF architecture.
+Additionally, QF volume was estimated from a single ACSA and the femur length, as described by Morse et al. (2007) 
+
+To circumvent some of the problems associated with making multiple measurements, a simpler method was employed in which QF muscle volume was calculated from a single ACSA and the geometry of the VL muscle was considered representative of the total QF muscle architec-
+ture (Method 2)"
+2649,3,,,,,,
+2648,1,"The volumes of the vastus lateralis (VL), vastusintermedialis (VI), vastus medialis (VM) and rectusfemoris (RF) muscles of the participants’ dominant leg were measured from axial-plane MRIs
+
+
+From these images, the cross-sectional areas of individual muscles were measured in scans at 18.9 mm intervals. The volume of each muscle head was calculated as the sum of the cross-sectional area in all scans multiplied by the distance between each measured slice (1.89 cm)
+","The fascicle
+length, taking into account any curvature, was measured
+from the point of insertion on the superficial and deep
+aponeuroses
+
+At the joint angle that corresponded to the greatest estimated Fquad, additional MVCs were performed during which ultrasound recordings were made of the VL, VI, VM and RF muscles. The recordings were taken from the mid-belly of each muscle, which, in the case of VL, VM and RF, was at 39, 22 and 56% of the distance from the proximal edge of the patella to the anterior superior iliac spine, respectively.
+
+For the VI muscle, the mean of the fascicle architecture from the anterior and lateral portion was used to describe the architecture of the whole muscle.","PCSA is
+equal to the ratio between muscle volume and optimal
+fascicle length","Participants were seated and securely strapped on the seat of an isokinetic dynamometer
+
+The level of antagonistic co-activation during the knee extension MVC was estimated from the moment–electromyogram (EMG) relationship of the knee flexor muscles. At each joint angle, participants also performed isometric knee flexions at 10, 20, 50, 70 and 100% of MVC, during which the surface EMG from the biceps femoris muscle was recorded through two
+
+The EMG of the biceps femoris during the knee extensions was then compared with the knee flexion moment–EMG relationship to determine the corresponding joint moment that this muscle would produce as an antagonist
+
+The level of voluntary activation was quantified from superimposed and resting doublets using the interpolated twitch technique
+
+Percentage activation = [1 − (superimposed doublet moment/resting doublet moment)] × 100
+
+The MVC moment produced by the quadriceps (QuadMVC) was estimated as the sum of the measured joint moment (JointMVC) and the calculated antagonist moment. To correct for any deficit in voluntary activation andthus to estimate the moment that would be produced by the quadriceps if they were fully activated (Quad100%)
+","Specific tension = (tendon force × cos θ−1)/PCSA
+
+The PCSA × cos θ of the entire quadriceps was therefore calculated as the sum of the PCSA × cos θ of each quadriceps head. The Fquad was then divided by the quadriceps PCSA × cos θ to determine the specific tension of the entire quadriceps muscle
+
+The PTMA was measured from sagittal-plane magnetic resonance images (MRI) taken at each knee angle with
+a 0.2 T MRI scanner .The MVC moment produced by the quadriceps
+(QuadMVC) was estimated as the sum of the measured
+joint moment (JointMVC) and the calculated antagonist moment. To correct for any deficit in voluntary activation and thus to estimate the moment that would be produced by the quadriceps if they were fully activated (Quad100%) the
+QuadMVC moment and ITT were used in eqn (2), assuming a linear relationship between moment and voluntary The calculated Quad100% was then used to calculate peak
+patellar tendon force (F pt) during a fully activated effort
+by dividing Quad100% by the PTMA at the knee angle measured by the goniometer during that trial. Finally, the Fquad was calculated from the F pt using the ratios provided by Buff et al. (1988), which account for the fact that the patella is not a frictionless pulley for transmitting force from the quadriceps to the tibia.","The ITT is susceptible to errors resulting from changes in series elastic stiffness between joint angles, which makes it an unsuitable means of quantifying activation level across a range of joint angles (Bampouras et al. 2006). However, recent experiments in adults and children indicate that the level of knee extensor muscle activation does not differ across knee joint angles and that the ITT outcome at 90 deg knee flexion is a realistic estimate of voluntary activation for the quadriceps muscle across all knee joint angles (O’Brien et al. 2009b)
+
+
+By incorporating the size and architecture measurements of all four quadriceps heads in the calculation of a specific tension for the entire quadriceps muscle, the errors associated with distributing the tendon force between the separate heads was minimized
+"
+2648,2,,,,,,
+2648,3,,,,,,
+2646,1,"Muscle length was measured as the distance between the most proximal and the most distal images in which the muscle was visible on MRI axial scans. 
+Muscle volume = sum ACSA x distance between each section ","Fiber length = muscle length x k
+k ratio of fiber length to muscle length reported by Wickiewicz et al. Data from 2 cadavers used to increase data robustness for Soleous mean fiber length 2.0 and 2.3 cm,. ","ACSA: MRI 1.5 T, T1 axial plane performed slice thickness 10 mm, interslice gap 0 mm. Contiguous axial 10 mm section of the RLL were measured, number of sections obtained for each subject was 47-49. 
+PCSA=muscle volume x cos 0/fiber length
+0: angle of muscle fiber pennation in one dimension reported by Wickiewicz et al. 
+
+Vol*cos(alpha)/fiber length","The length of the moment arm of aquiles tendon and TA were calculated from sagittal plane images of ancle (method of Rugg et al). Images at 90 and 120º akle. 
+Torque measured for plantar flexors and dorsiflexors Cybex dynamometer. Supine, knee fully extended and secured. 
+Maximum static plantar flexion or dorsiflexion contractions (5 s duration) at least 3 times at ankle joint angles of 90, 100, 110, 120º on each of 2 test days. 
+
+
+ Peak torque measured under any condition was used as max. torque.",moment arm of achilles tendon and TA calculated in saggital plane from MRI according to Rugg et al 1990,
+2646,2,,,,,,
+2646,3,,,,,,

@@ -1,0 +1,254 @@
+CovidenceID,Entry," Number of subjects, N", Gender, Muscle, Muscle Volume (cm3), Fascicle length (cm), PSCA or CSA  (cm2), Voluntary (V) or Stimulated (S) Force measurement, Muscle torque (Nm), Muscle Force (N), Specific tension (N/cm2), Muscle Volume measurement method, Fiber /fascicle length measurement method , PCSA /ACSA calculation method, Torque measurement method, Force measurement/calculation method, Specific tension calculation method, Miscellaneous,aveVol (cm3),aveFL (cm),avePCSA (cm2),aveTorque (Nm),aveForce (N),aveST (N/cm2)
+4196,1,12,mixed,GRACILIS,, 12.9 SD 3.3, 13.1 SD 7.1,S,,,17.1 SD 8.4,"we used a three-dimensional photogrammetry approach to estimate muscle volume for PCSA calculation in which the entire specimen was first scanned and then the skin flap was removed electronically using editing software (Persad
+et al., 2021, 2022). Average volume errors using this software using cadaveric tissue and a water displacement
+standard was 7% (n = 6 gracilis muscles).","Because we could not measure optimal fibre length directly in our subjects during isometric testing, we used a functional surrogate for optimal fibre length, the
+full-width at half maximum (FWHM) calculated from
+their force vs. length relationship. The FWHM is the width of the active force vs. muscle length curve at half the
+maximum force (Fig. 3B). A linear relationship between FWHM and optimal fibre length has been established
+across several mammalian species and muscles (Winters
+et al., 2011) (Fig. 3C). To calculate FWHM, we fit each patient’s calculated fully active force vs. muscle length data to a quadratic curve and then calculated width at half the calculated maximum force from the equation. Optimal fibre length was then calculated from the previously established linear relationship between FWHM and optimal fibre length","we used a three-dimensional photogrammetry approach to
+estimate muscle volume for PCSA calculation in which the entire specimen was first scanned and then the skin flap was removed electronically using editing software (Persad
+et al., 2021, 2022). ",,"BFT directly on tendon. Force recorded by the BFT was then scaled up based on the twitch force change recorded for each subject at each JC at 50% and 100% CMAP stimulation intensit. Calculating this scaling factor across JCs within each subject thus incorporated any muscle length-dependent activation variability. An additional 6% force increment was measured when the muscle was stimulated at the
+maximum frequency of 50 Hz (P50) compared to the submaximal value of 20 Hz (P20). Force scale with P50 P20 and Tw 100 Tw 50.",F/PCSA,,,12.9,13.1,,,17.1
+4196,2,,,,,,,,,,,,,,,,,,,,,,,
+4196,3,,,,,,,,,,,,,,,,,,,,,,,
+4196,4,,,,,,,,,,,,,,,,,,,,,,,
+4196,5,,,,,,,,,,,,,,,,,,,,,,,
+4196,6,,,,,,,,,,,,,,,,,,,,,,,
+4196,7,,,,,,,,,,,,,,,,,,,,,,,
+4196,8,,,,,,,,,,,,,,,,,,,,,,,
+4196,9,,,,,,,,,,,,,,,,,,,,,,,
+4196,10,,,,,,,,,,,,,,,,,,,,,,,
+4196,11,,,,,,,,,,,,,,,,,,,,,,,
+4106,1,6,m,GM,245.9 SD 36.7,"3.29 SD 0.23
+
+","62.5 SD 10.8
+",V,,448,13.3,"This was done from a series of eighty contiguous MRI axial images, 5 mm thick, obtained at rest with a whole body 1.5 T scanner. The total
+volume was then calculated by adding up the individual ACSA of each image and multiplying the sum by the slice thickness (5 mm)
+",Muscle length was measured as the distance between the most proximal and most distal images in which the GM was identifiable.,"For each of the eighty axial images the anatomical cross-sectional area (ACSA) of the gastrocnemius medialis (GM) was calculated.
+PCSA = ( V/Lf) cos(theta)
+
+PCSA at rest=46.5","The subjects sat on a couch with the back supported and the lower limbs fully extended. All measurements were carried out on the right leg, dominant in all the subjects, with the foot positioned at
+90 deg relative to a footplate The force exerted by the plantar flexors was measured by connecting the footplate to a force transducer. ","From the data of Fukunaga et al. (1992), it may be calculated that the GM PCSA is about 18 % of the total PCSA of themain plantar flexors (gastrocnemius medialis and lateralis,soleus, tibialis posterior and peroneus longus). Therefore, atMVC, the force developed by the GM should be 18 % of the total force developed by the plantar flexors (2489 N), i.e.448 N
+
+
+ This was given by the ratio between the
+moment arm of the Achilles' tendon, 4*7 + 0 1 cm, measured on a MRI image at a footplate angle of 90 deg
+(with respect to the tibia) and the moment arm of the external force, 15-2 + 1 0 cm. Both moment arms were measured as the distance from the centre of rotation of the ankle as reference point.","GM force/GM PCSA at rest, corrected for footplate angle.","fiber length at rest: 5.08 ± 0.36
+
+PCSA at rest: 46.5 ± 5.7
+
+ST at rest: 9.6",245.9,3.29,62.5,,448.0,13.3
+4106,2,6,m,PF,,,,,755.3 SD 23.8,2489 SD 200,,,,,"the MVC was divided by 0.308 + 0.02, the mechanical advantage of this lever system. This was given by the ratio between the moment arm of the Achilles' tendon, 4.7 + 0.1 cm, measured on a MRI image at a footplate angle of 90 deg (with respect to the tibia) and the moment arm of the external force, 15.2 + 1.0 cm. Both moment arms were measured as the distance from the centre of rotation of the ankle as reference point",,,,,,,755.3,2489.0,
+4106,3,,,,,,,,,,,,,,,,,,,,,,,
+4106,4,,,,,,,,,,,,,,,,,,,,,,,
+4106,5,,,,,,,,,,,,,,,,,,,,,,,
+4106,6,,,,,,,,,,,,,,,,,,,,,,,
+4106,7,,,,,,,,,,,,,,,,,,,,,,,
+4106,8,,,,,,,,,,,,,,,,,,,,,,,
+4106,9,,,,,,,,,,,,,,,,,,,,,,,
+4106,10,,,,,,,,,,,,,,,,,,,,,,,
+4106,11,,,,,,,,,,,,,,,,,,,,,,,
+4070,1,"9, experimental, pre training",Mixed,VL,254.3 SD 76,8.4 SD 0.8,30.4 SD 8.9,Mixed,,847.9 SD 365.3,27 SD 6.3,"MRI scan, ASCA acculation * distance
+
+Volume of the entire VL muscle was calculated by summing up all of the inter-ACSA volumes, All sections were treated as truncated cone","measured in subset (n=6) during MVC
+
+The VL muscle fascicles generally extended off the ultrasound scan window, and it was, therefore, necessary to estimate part of the fascicle length. With the use of digitizing software (NIH image version 1.61, National Institutes of Health, Bethesda, MD), the visible portion of the fascicle was measured, and the remaining part was estimated, assuming linear contin-
+uation of the fascicle and aponeurosis in the proximal direction.","Volume_VL/lf
+
+B-mode ultrasonography measured ASCA.
+PCSA= volume/length","max torque=T_KE + T_coactivation
+
+
+The sum of the maximal knee extension joint torque (maximal voluntary torque + superimposed stimulation torque) and the estimated antagonistic cocontraction torque from the knee flexors
+(TQcoac) was divided by the MRI-based estimate of the patella tendon
+moment arm length (MAPT) .The relative contribution of the VL muscle to the patella tendon force calculated from Eq. 1 was estimated from the relative PCSA of
+the VL muscle with respect to the entire quadriceps muscle group, from the data of Narici et al. The VL muscle fascicle force was estimated by dividing VL
+muscle force by the cosine of the angle of pennation of fascicles, measured during maximal isometric contraction","Fpt=T_max/MA
+
+F_VL=Fpt*VL_PCSA_ratio
+
+F_fascicle=F_VL/cos(alpha)
+
+
+
+Patella tendon mo-
+ment arm lengths were assessed using a 0.2-T MRI scanner (E-Scan,
+Esaote Biomedica, Genoa, Italy) to allow calculation of tendon forces",F_fascicle/PCSA,,254.3,8.4,30.4,,847.9,27.0
+4070,2,"9, experimental, post training",Mixed,VL,270.3 SD 81.3,9.3 SD 1.3,29.1 SD 8.4,,,939.3 SD 347.8,32.1 SD 7.4,,,,,,,,270.3,9.3,29.1,,939.3,32.1
+4070,3,"9, Control, pre training",Mixed,VL,291 SD 79.8,8.4 SD 0.7,34.5 SD 8.6,,,791.5 SD 192.1,23.6 SD 6.1,,,,,,,,291.0,8.4,34.5,,791.5,23.6
+4070,4,"9, Control, post training",Mixed,VL,291.1 SD 78.9,8.6 SD 0.9,34.1 SD 8.7,,,717.2 SD 202.7,21.5 SD 5.3,,,,,,,,291.1,8.6,34.1,,717.2,21.5
+4070,5,"9, experimental, pre training",Mixed,QF,,,,,121.4 SD 61,,,,,,,,,,,,,121.4,,
+4070,6,"9, experimental, post training",Mixed,QF,,,,,131.1 SD 55.3,,,,,,,,,,,,,131.1,,
+4070,7,"9, Control, pre training",Mixed,QF,,,,,122.2 SD 33.5,,,,,,,,,,,,,122.2,,
+4070,8,"9, Control, post training",Mixed,QF,,,,,108.2 SD 29.3,,,,,,,,,,,,,108.2,,
+4070,9,,,,,,,,,,,,,,,,,,,,,,,
+4070,10,,,,,,,,,,,,,,,,,,,,,,,
+4070,11,,,,,,,,,,,,,,,,,,,,,,,
+4040,1,12 men,M, PF,,,,V,179 SD 33.6,3865 SD 525,," Serial axial plane MRI scans were acquired along the length of the lateral head of the gastrocnemius muscle (GL) using
+a fixed 0.2-T MRI scanner . The first scan was centered at the lower edge of the patella and was sufficient to include the origin of the GL; subsequent scans were carried out in contiguous 7-cm sections distally until the myotendi-
+nous junction of the GL had been included (Fig. 1). Axial plane scans were obtained using a T1-weighted three-dimensional isotropic profile . Participants were supine for 15 min before the scan to allow fluid shifts to occur. ACSA  was then multiplied by the slice thickness (inclusive of gap) to give an estimate of muscle volume
+. ","Fiber fascicle length (Lf) and pennation angle  were measured using B-Mode, real-time ultrasonography at the time point of MVC. Fascicle length Lf was defined as the length of the fascicle between the deep and superficial aponeurose
+","The ACSA of the GL muscle was measured from each scan using digitizing software and imaging software (NIH image version 1.61/ppc, National Institutes of Health, Bethesda). 
+PCSA (cm2) was
+calculated as the ratio of GL Vol (cm3) to Lf (cm). ","MVC, corrected for antagonist activation
+
+
+ Isometric plantarflexor MVC torque was recorded with the participants laying prone and the left foot secured to the foot adapter of an isokinetic dynamomete. Straps were used about the hips to prevent forward displacement of the body during maximal plantarflexions. Participants were positioned with the knee at full extension and the lateral malleolus aligned with the axis of rotation identified on the dynamometer.  Two isometric maximal voluntary plantarflexions (MVC) were performed at an ankle joint angle of *20° (the foot in dorsiflexion); 2 min separated each
+MVC attempt. The foot was placed at 20° as this has been shown previously to correspond to the optimum fascicle length within the
+physiological range of the gastrocnemius muscle (26). To ensure MVC was achieved, visual feedback was provided using an online graphical display, and consistent verbal encouragement was provided by the investigator. Maximal isometric dorsiflexions were performed after the plantarflexion MVC to obtain maximal dorsiflexor electromyographic (EMG) data for calculation of antagonist coactivation in
+the tibialis anterior
+","measured moment arm + lit assumptions of MA at MVC
+
+
+Tendon force was calculated by dividing the
+net plantarflexion torque (N m) by the Achilles tendon moment arm
+length (m). To estimate the contribution of the GL to Achilles tendon force, the relative PCSA of the GL within the triceps. surae was calculated. Previously, relative PCSA of the quadriceps
+muscle group has been used to determine the relative contribution of
+each constituent muscle to the production patella tendon force.",,,,,,179.0,3865.0,
+4040,2,11 boys,M,PF,,,,V,79.2 SD 21.5,2268 SD 507,,,,,,,,,,,,79.2,2268.0,
+4040,3,12 men,M,GL,178.9 SD 40.5,5.5 SD 1.1,32.3 SD 5.8,V,,416.2 SD 56,13.1 SD 2,,,,,"GL force determined using PCSA ratio.
+
+Once the GL component of the tendon force was calculated, this was divided by the cosine of the pennation angle measured during contraction to determine the fascicle force, Ff",Specific force was calculated by dividing GL fascicle force by the PCSA,MA=4.61 ± .32 cm,178.9,5.5,32.3,,416.2,13.1
+4040,4,11 boys,M,GL,64.5 SD 18.9,4.2 SD 0.8,15.5 SD 3.2,V,,242.5 SD 51.6,15.9 SD 2.7,,,,,,,MA=3.46 ± 0.2 cm,64.5,4.2,15.5,,242.5,15.9
+4040,5,,,,,,,,,,,,,,,,,,,,,,,
+4040,6,,,,,,,,,,,,,,,,,,,,,,,
+4040,7,,,,,,,,,,,,,,,,,,,,,,,
+4040,8,,,,,,,,,,,,,,,,,,,,,,,
+4040,9,,,,,,,,,,,,,,,,,,,,,,,
+4040,10,,,,,,,,,,,,,,,,,,,,,,,
+4040,11,,,,,,,,,,,,,,,,,,,,,,,
+2938,1,"12,young",m,PF,,,,mixed,179.9 SD 40.47,3864.5 SD 524.7,,"MRI, sum of GL ACSA
+
+Serial axial plane magnetic resonance imaging (MRI) scans were acquired along the length of the GL by using a fixed 0.2-T MRI scanner. In total, four scans were performed along the length of the GL consisting of seven contiguous axial slices (slice thickness * 8 mm
+and gap * 2 mm). To ensure that each section was reconstructed
+accurately, reference markers were placed along the leg to coincide
+with each 7-cm section","Ultrasound during MVC + doublet stim
+
+Fiber Lf and were measured using B-Mode, real time ultrasonograph. The head of the probe was held perpendicular to the dermal surface to provide an image including both superficial and deep aponeuroses and a number of clearly visible fasciculi that could be followed between the aponeuroses. In total, at least six fasciculi were analyzed per participant. Lf was defined as the length of the fascicle between the deep and superficial aponeuroses","GL Vol (cm3) to
+Lf (cm)."," PF MVC torque + DF torque + superimposed
+doublet torque
+
+
+Isometric plantar flexion (PF) MVC torque was recorded with the subjects lying prone, the left foot secured to the foot adapter of an isokinetic dynamometer. Subjects were positioned with the knee at full extension and the lateral malleolus aligned with the axis of rotation identified on the dynamometer. Before MVC, the participants performed three sub-
+maximal isokinetic plantar flexion and dorsiflexion contractions as a
+warm up. Two isometric maximal voluntary plantar flexion contrac-
+tions (MVC) were performed at an ankle joint angle of  20° (the foot in dorsiflexion), 2 min separated each MVC attempt. The foot was placed at  20° as this has previously been shown to be the optimum fascicle length (Lf) within the physiological range of the gastrocnemius muscle. ","In vivo MRI was performed to determine
+moment arm length of the Achilles tendon ankle at rest.
+F=TQ/AM
+
+
+tendonForce=MVC torque/MA
+
+GLforce=tendonForce*(GL PCSA/total PCSA)
+
+GL_Ff=GLforce/cos (alpha)",GL_Ff/PCSA,,,,,179.9,3864.5,
+2938,2,"19,old",m,PF,,,,,107 SD 19.1,2422.5 SD 450.5,,,,,,,,,,,,107.0,2422.5,
+2938,3,"12,young",m,GL,185.6 SD 38.8,5.5 SD 1.1,32.3 SD 5.8,,,416.2 SD 56,13.1 SD 2,,,,,,,,185.6,5.5,32.3,,416.2,13.1
+2938,4,"19,old",m,GL,133.3 SD 23.6,5.0 SD 0.8,27.1 SD 6.1,,,258.2 SD 48.5,9.2 SD 1.9,,,,,,,,133.3,5.0,27.1,,258.2,9.2
+2938,5,,,,,,,,,,,,,,,,,,,,,,,
+2938,6,,,,,,,,,,,,,,,,,,,,,,,
+2938,7,,,,,,,,,,,,,,,,,,,,,,,
+2938,8,,,,,,,,,,,,,,,,,,,,,,,
+2938,9,,,,,,,,,,,,,,,,,,,,,,,
+2938,10,,,,,,,,,,,,,,,,,,,,,,,
+2938,11,,,,,,,,,,,,,,,,,,,,,,,
+2820,1,4,M,BIC,,,11.6,V,,,35.6,,,"ACSA measured from CT
+
+an increase of 34% of the cross-sectional area of the flexed arm
+
+
+The scanning (EMI-scanner 1010) was performed at the 
+site of biopsy sampling with the subject in the supine 
+position, resting on one side with the arm abducted approximately 160"" and the elbow extended. Data obtained  from a scan was presented on a TV-viewer from which a polarioid print was taken (Fig. 1). The cross-sectional area 
+of the brachial biceps muscle was measured planimetrically.","The subject was sitting by the side of the apparatus with the upper arm abducted at right angles to the body, and in a line with the shoulder. The  subject grasped with supinated hand a handle which was  connected to one of the reels of the light flywheel through 
+a cable. The movement was performed in a vertical plane.  Force was registered through a strain gauge inserted in the  cable.","contribution of 34% from this muscle to MVC in elbow flexion (Hansen & Lindhard 1923); 2) a ratio of 1: 7 between ""force arm"" (distance from center of axis of rotation of the elbow joint at the condylus humeri and the point at which the brachial biceps muscle attaches tuberositas radii) and ""resistance arm"" (distance from the condylus humeri to handgrap) (Wilkie 1950); 3) ","specific tension of the brachial biceps muscle was calculated from 1) a contribution of 34% from this muscle to MVC in elbow flexion (Hansen & Lindhard 1923); 2) a ratio of 1: 7 between ""force arm"" (distance from center of axis of rotation of the elbow joint at the condylus humeri and the point at which the brachial biceps muscle attaches tuberositas radii) and ""resistance arm"" (distance from the condylus humeri to handgrap) (Wilkie 1950); 3) an increase of 34% of the cross-sectional area of the flexed arm",,,,11.6,,,35.6
+2820,2,4,F,BIC,,,8.7,,,,29.9,,,,,,,,,,8.7,,,29.9
+2820,3,,,,,,,,,,,,,,,,,,,,,,,
+2820,4,,,,,,,,,,,,,,,,,,,,,,,
+2820,5,,,,,,,,,,,,,,,,,,,,,,,
+2820,6,,,,,,,,,,,,,,,,,,,,,,,
+2820,7,,,,,,,,,,,,,,,,,,,,,,,
+2820,8,,,,,,,,,,,,,,,,,,,,,,,
+2820,9,,,,,,,,,,,,,,,,,,,,,,,
+2820,10,,,,,,,,,,,,,,,,,,,,,,,
+2820,11,,,,,,,,,,,,,,,,,,,,,,,
+2745,1,"11, Experimental, Full ROM, Pre Training",m,VL,724.8 SD 81.1,,86.6 SD 11.6,Mixed,,2710 SD 470,31.8 SD 6.8,"VL_volume (cm3) = ∑ ACSA × slice thickness
+
+Axial plane scans of the thighs were taken using a 1.5-T whole-body magnetic resonance imaging (MRI) scanner.
+VL=ACSA accumulation * slice thickness","Measured using ultrasound at MVC
+
+Vastus lateralis muscle architecture was assessed at rest 
+using B-mode ultrasound imaging. Muscle fascicle length (FL) was defined as the length 
+of the fascicular path between the superficial and deep aponeuroses","Vol_VL/lf_optimium
+
+ACSA by MRI scan. PCSA = Vol/length","Torque measured, corrected for activation and coactivation.
+
+
+Subjects were seated on the dynamometer chair and firmly strapped at the hip, at the chest and over the 
+thigh to minimize extraneous movement. The knee center  of rotation was carefully aligned with the dynamometer axis of rotation, and the lever arm of the dynamometer 
+was firmly attached to the lower leg with inextensible  straps. subjects were instructed to perform 1-rapid maximal voluntary isometric knee extension contraction (MVC) and to maintain this 
+maximal effort for ≈2 s. ","TQ/MA. MA acquired from MRI.
+
+Fpt=Torque_corrected/MA_corrected
+
+F_VL= Fpt*VL_PCSA_ratio
+
+F_VL_fascicle=F_VL/cos(alpha)",F_VL_fascicle/PCSA,,724.8,,86.6,,2710.0,31.8
+2745,2,"11, Experimental, Part ROM, pre Training",m,VL,715.9 SD 83.2,,84.9 SD 10.5,,,2740 SD 590,32.6 SD 7.4,,,,,,,,715.9,,84.9,,2740.0,32.6
+2745,3,"8, control, pre Training",m,VL,,,87.2 SD 9.1,,,2720 SD 320,31.6 SD 4.9,,,,,,,,,,87.2,,2720.0,31.6
+2745,4,"11, Experimental, Full ROM, post Training",m,VL,780.0 SD 87.8,,88.7 SD 10.9,,,3510 SD 530,40.0 SD 6.7,,,,,,,,780.0,,88.7,,3510.0,40.0
+2745,5,"11, Experimental, Part ROM, post Training",m,VL,763.7 SD 86.4,,91.5 SD 10.7,,,3290 SD 530,36.2 SD 5.5,,,,,,,,763.7,,91.5,,3290.0,36.2
+2745,6,"8, control, post Training",m,VL,,,86.8 SD 8.9,,,2640 SD 430,30.5 SD 4.7,,,,,,,,,,86.8,,2640.0,30.5
+2745,7,"11, Experimental, Full ROM, pre Training",m,QF,,,,,290.7 SD 45,7380 SD 1220,,,,,,,,"post training QF MVC
+383.8 ± 56.1
+post training QF patella force
+9440 ± 1330",,,,290.7,7380.0,
+2745,8,"11, Experimental, Part ROM, pre Training",m,QF,,,,,292.3 SD 54.6,7460 SD 1550,,,,,,,,"post training QF MVC
+365.4 ± 44.9
+post training QF patella force
+8780 ± 1330",,,,292.3,7460.0,
+2745,9,"8, control, pre Training",m,QF,,,,,298 SD 28.9,7290 SD 770,,,,,,,,"post training QF MVC
+296 ± 30.2
+post training QF patella force
+7040 ± 1000",,,,298.0,7290.0,
+2745,10,,,,,,,,,,,,,,,,,,,,,,,
+2745,11,,,,,,,,,,,,,,,,,,,,,,,
+2672,1,"7, RES",Mixed,QF,900 SD 200,5.6 SD 0.3,145 SD 33,S,166,3532,25 SD 6,"MRI, measured for activated portion only
+
+Muscle volume (cm3) was calculated
+by multiplying the activated CSA (cm2) 
+in each
+slice x 2 cm (slice thickness + interslice space). The slices
+were then added together to calculate the volume of acti-
+vated tissue.","VL fiber length :muscle length ratio from lit.= 0.23
+
+Adjustments were made to account for fiber length during isometric actions at different percentages of MVIT","[muscle volume * COS (pennation angle_VL)]/fiber length_VL
+
+The PCSA of mQF was calculated as follows.
+PCSA = [muscle volume x COS (pennation angle)]/
+Wber length (Edgerton et al. 1990; Fukunaga et al. 1992;
+Akima et al. 2000). ","Torque measured for 4 stim protocols , submax.
+
+","lit value of patella moment arm=0.047m
+ A moment arm length of
+0.047 m was used to correct torque to force. Dividing the
+torque by the moment arm provided the force applied by
+the knee extensors to the tendon ","Force/ active PCSA
+
+Specific tension was calculated by dividing the torque
+(Nm) obtained for the Wrst contraction of the four different SNMES protocols by the patellar tendon moment
+arm length of the mQF. ","the moment arm was derived
+from cadavers and knee joints of able bodies, 0.04 m, at
+the same knee joint angle used in our study (Baltzopou-
+los 1995; Wickiewicz et al. 1983, 1984).",900.0,5.6,145.0,166.0,3532.0,25.0
+2672,2,"7,PD",,,500 SD 300,6 SD 0.3,83 SD 47,S,78,1660,20 SD 7,,,,,,,,500.0,6.0,83.0,78.0,1660.0,20.0
+2672,3,"7, FREQ",,,1000 SD 250,5.7 SD 0.3,171 SD 35,S,138,2936,17 SD 4,,,,,,,,1000.0,5.7,171.0,138.0,2936.0,17.0
+2672,4,"7, AMP",,,600 SD 300,5.8 SD 0.3,101 SD 55,S,110,2340,26 SD 8,,,,,,,,600.0,5.8,101.0,110.0,2340.0,26.0
+2672,5,"7, Total",,,1900 SD 400,7.1 SD 0.3,253 SD 49,S,,,20 SD 3,,,,,,,,1900.0,7.1,253.0,,,20.0
+2672,6,,,,,,,,,,,,,,,,,,,,,,,
+2672,7,,,,,,,,,,,,,,,,,,,,,,,
+2672,8,,,,,,,,,,,,,,,,,,,,,,,
+2672,9,,,,,,,,,,,,,,,,,,,,,,,
+2672,10,,,,,,,,,,,,,,,,,,,,,,,
+2672,11,,,,,,,,,,,,,,,,,,,,,,,

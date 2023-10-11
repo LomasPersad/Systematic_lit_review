@@ -1,0 +1,32 @@
+Covidence #,Study ID,Title,Country in which the study conducted,Study design,Notes
+4184,Rutherford 1992,Measurement of fibre pennation using ultrasound in the human quadriceps in vivo,UK,Non-randomised experimental study,"The force/CSA for the group ranged from 65 kN m-2 to 100 kN m-2. The lower values could not be explained by submaximal activation of the quadriceps since it was demonstrated by the twitch-superimposition technique that the subjects were able to produce maximum contractions. The force measured was that generated at the ankle through the lever system of the knee and lower leg. Assuming a mechanical advantage of 0.132 (Narici et al. 1988; Smidt 1973), the forces generated in the patellar tendon would be 4515 N giving a specific force of 621 kN m-2 (calculated using the anatomical CSA). This value is comparable to those previously reported in the literature for the quadriceps."
+4162,McPhee 2018,"The contributions of fiber atrophy, fiber loss, in situ specific force, and voluntary activation to weakness in sarcopenia",UK,Cross sectional study,fascicle lengths for VL VI VM RF measured
+4135,Morse 2007,Gastrocnemius specific force is increased in elderly males following a 12-month physical training programme,UK,Randomised controlled trial,
+4128,Marchetta 2012,Image-based measurement of muscles parameters for the assessment of specific tension in elbow flexors,Other: Italy,Cohort study,conference paper
+4127,Akagi 2009,Muscle volume compared to cross-sectional area is more appropriate for evaluating muscle strength in young and elderly individuals,Other: Japan,Non-randomised experimental study,
+2995,Klein 2001,"Normalized force, activation, and coactivation in the arm muscles of young and old men.",Canada,Cross sectional study,tension calculation method not accurate since force at distal arm was used as muscle force.
+2837,Bamman 2000,Evaluation of the strength-size relationship in vivo using various muscle size indices.,United States,Cross sectional study,
+2833,Maden-Wilkinson 2020,"What makes long-term resistance-trained individuals so strong? A comparison of skeletal muscle morphology, architecture, and joint mechanics.",UK,Non-randomised experimental study,
+2821,Kubo 2006,Effects of low-load resistance training with vascular occlusion on the mechanical properties of muscle and tendon.,Other: Japan,Other: within-subjects design with a crossover element and a pre-test/post-test structure,"Before and after training, maximal isometric knee extension torque (MVC) and muscle volume were measured. Specific tension of vastus lateralis muscle (VL) was calculated from MVC, muscle volume, and muscle architecture measurements."
+2680,Erskine 2010,Resistance training increases in vivo quadriceps femoris muscle specific tension in young men.,UK,Non-randomised experimental study,
+2679,Kawakami 1995,Training-induced changes in muscle architecture and specific tension.,Other: Japan,Other: Within-subject control design,
+2677,Kawakami 1994,Specific tension of elbow flexor and extensor muscles based on magnetic resonance imaging.,Other: Japan,Case control study,Force and tension calculated from data in the paper
+2664,Erskine 2011,What causes in vivo muscle specific tension to increase following resistance training?,UK,Non-randomised experimental study,
+2653,Erskine 2010,Inter-individual variability in the adaptation of human muscle specific tension to progressive resistance training.,UK,Non-randomised experimental study,
+2651,Maganaris 2001,In vivo specific tension of human skeletal muscle.,Other: ,Other: cross over study,"this paper cited 7 papers that measured the tension of plantar flexors, are they all included in ours?"
+2649,Erskine 2009,In vivo specific tension of the human quadriceps femoris muscle.,UK,Cross sectional study,"
+MVC (Nm)
+ 264 ± 47
+Antagonist co-activation (%)
+ 16.5 ± 8.6
+Voluntary activation (%)
+ 92.8 ± 3.7
+dPT (cm)
+ 4.8 ± 0.3
+Patellar tendon force (N)
+ 6,335 ± 957
+MVC maximal voluntary contraction, dPT patellar tendon moment arm"
+2648,O'Brien 2010,In vivo measurements of muscle specific tension in adults and children.,UK,Cross sectional study,"The specific tensions reported here (∼55 N cm−2) are in line with those estimated in optimized musculoskeletal models (Cholewicki et al. 1995; Pain & Forrester, 2009),but notably higher than the typical values of ∼30 N cm−2reported in previous in vivo studies of the knee extensormuscles (Narici et al. 1992; Chow et al. 1999; Reeves et al. 2004). However, Chow et al. (1999) acknowledgedthat they had underestimated specific tension because of inaccurate estimates of fascicle pennation, failure to account for antagonist activation and the use of mean muscle force across a number of trials rather than maximal muscle force. Narici et al. (1992) and Reeves et al. (2004)did not account for the force that is lost in the transmission of quadriceps force through the patella to the tibia (Buffet al. 1988), and used F pt to calculate specific tension rather than Fquad. At the mean knee angle of 65 deg,this loss of force is equal to a third of Fquad. If the specific tension calculated in the present study had been calculated from the F pt, rather than Fquad, this would have resulted in estimates of ∼37 N cm−2, which are much closer to those previously reported. Additionally, in thepresent study F pt was calculated from PTMA lengthsmeasured at rest, which are smaller than those during contraction (Tsaopoulos et al. 2007). Had PTMA lengths during contraction been used, according to the findings of Tsaopoulos et al. (2007), the specific tension in the men would have been ∼34 N cm−2.
+
+The specific tension values obtained in the present study are also much higher than those reported by Maganaris et al.(2001; 15 N cm−2).Such a large difference is most probably due to the fact that specific tension in that study was underestimated because muscle forces were not maximal, since the muscles studied were activated by percutaneous electrical stimulation, which is unlikely to recruit the whole muscle"
+2646,Fukunaga 1996,Specific tension of human plantar flexors and dorsiflexors.,United States,Cross sectional study,

@@ -9,6 +9,12 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(tidyr)
+library(openxlsx)
+# library(ggplot2)
+library(plotly)
+library(ggpubr)
+# library(RColorBrewer)
+library(rcartocolor)
 ```
 
 ## Resources
@@ -30,106 +36,147 @@ https://bookdown.org/MathiasHarrer/Doing_Meta_Analysis_in_R/preface.html
 
 
 # Import the CSV file
-data <- read.csv("review_243232_20230830051716.csv")
-
+studyID <- read.csv("./included/my_data_batch1/studyID_details_B1.csv")
+data <- read.xlsx("./included/ALLdata_batch1.xlsx")
 # Step 1: Clean Data Remove columns with no data
-data_cleaned <- data %>% select_if(~ any(!is.na(.)))
+# data_cleaned <- data %>% select_if(~ any(!is.na(.)))
+# colnames(studyID)
 
-# Arrange the rows by ID
-data_cleaned <- df %>% arrange(data_cleaned$Covidence..)
-
-df_arranged <- data_cleaned[order(data_cleaned$Covidence..), ]
-
-
-# Find IDs that are not unique
-non_unique_ids <- df_arranged$Covidence..[duplicated(df_arranged$Covidence..) | duplicated(df_arranged$Covidence.., fromLast = TRUE)]
-
-# Display the non-unique IDs
-test <- unique(non_unique_ids)
-
-# output only those studies
-
-reduced_data <- df_arranged[df_arranged$Covidence.. %in% test, ]
-
-
-# Pivot the data frame to combine rows
-# combined_df <- reduced_data %>%
-#   pivot_wider(names_from = Reviewer.Name, values_from = Specific.tension..N.cm2., names_prefix = "Reviewer_")
-# 
-# # Print the combined data frame
-# print(combined_df)
+#reduce df
+# Select specific columns and rename them
+data_r <- data %>%
+  select(CovidenceID = CovidenceID, aveAge = "aveAge.(years)",aveHeight = "aveHeight.(cm)",
+         aveWeight="aveWeight.(kg)",N="Number.of.subjects,.N",Muscle=Muscle,Type=Type,
+         Gender=Gender,CSA=CSA,Miscellaneous=Miscellaneous,aveVol="aveVol.(cm3)",
+         aveFL="aveFL.(cm)",avePCSA="avePCSA.(cm2)",aveTorque="aveTorque.(Nm)",
+         aveForce="aveForce.(N)",aveST="aveST.(N/cm2)")
 
 
 
-write.table(reduced_data, file = "twoReviewers.csv", sep = ",", dec = ".", row.names = FALSE, quote = TRUE)
+# Combine the necessary columns in 'studyID' to create the mapping
+studyID_mapping <- studyID %>%
+  mutate(combined_text = paste('#', Covidence.., ' ', Study.ID, '-', Title))
+
+
+# Merge 'data' with 'studyID_mapping' based on 'CovidenceID'
+data_r <- data_r %>%
+  left_join(studyID_mapping, by = c('CovidenceID' = 'Covidence..'))
+
+# Rename the new column to 'Title'
+names(data) <- sub('combined_text', 'plt_Title', names(data))
+
+# colnames(data_r)
+
+# Extract the age range value
+data_r$age_range <- gsub(".*?(YNG|OLD|MID).*", "\\1", data_r$Type)
+
+
+# dataframeName$colName <- as.factor(datataframeName$colName)
+
+#-----------------------------DATA cleaning/reduction
+
+# Grouped plot..
+
+grp_data <- data_r %>%
+  group_by(CovidenceID, Muscle) %>%
+  summarise(avg_ST= mean(aveST, na.rm = FALSE), Ave_N=mean(as.numeric(N), na.rm = FALSE))
+
+
+# Create the plot
+ggplot(grp_data, aes(x = Muscle, y = avg_ST, size = Ave_N)) +
+  geom_point(size = 4) +
+  labs(title = "Muscle vs Specific Tension (N/cm2)", x = "Muscle", y = "Specific Tension (N/cm2)", color = "Age Range") +
+  # scale_shape_manual(values = c("F" = 3, "M" = 16)) + # Define shapes for Gender
+  # scale_color_manual(values = c("UT" = "blue", "T" = "red")) + # Define colors for Type
+  # scale_color_gradient(low = "blue", high = "red") +
+  theme_minimal() +
+  theme(legend.position = "right") 
+
 
 ```
-## Loading
+## Plots
 ```{r}
-# Load the required library
-#library(tidyr)
-
-# columns_to_stack <- c(
-#   "X.Number.of.subjects..N.5",
-#   "Gender.5",
-#   "Muscle.5",
-#   "Muscle.Volume..cm3..5",
-#   "Fascicle.length..cm..5",
-#   "PSCA.or.CSA...cm2..5",
-#   "Muscle.torque..Nm..5",
-#   "Muscle.Force..N..5",
-#   "Specific.tension..N.cm2..5",
-#   "Miscellaneous.5"
-# )
-
-df2 <- read.csv("review_243232_20230830051716.csv")
-df<-head(df2,1)
-
-# Use regular expressions to select columns with names ending in a period and a number
-columns_to_stack <- names(df)[grepl("\\.\\d+$", names(df))]
-
-# Use pivot_longer to stack the columns
-df_long <- pivot_longer(df, cols = all_of(columns_to_stack), names_to = "Variable", values_to = "Value")
-
-# View the resulting data frame
-head(df_long)
 
 
+# Assuming your data frame is named 'df'
+# Replace 'df' with the actual name of your data frame
 
+# Create the plot
+ggplot(data_r, aes(x = Muscle, y = aveST, color = age_range, shape = Gender)) +
+  geom_point(size = 4) +
+  labs(title = "Muscle vs Specific Tension (N/cm2)", x = "Muscle", y = "Specific Tension (N/cm2)", color = "Age Range") +
+  scale_shape_manual(values = c("F" = 3, "M" = 16)) + # Define shapes for Gender
+  # scale_color_manual(values = c("UT" = "blue", "T" = "red")) + # Define colors for Type
+  # scale_color_gradient(low = "blue", high = "red") +
+  theme_minimal() +
+  theme(legend.position = "right") 
+  # guides(color = guide_colorbar(title = "Count"))
+
+#--------------get color pallete
+#option1
+# n <- 14
+# qual_col_pals = brewer.pal.info[brewer.pal.info$category == 'qual',]
+# col_vector = unlist(mapply(brewer.pal, qual_col_pals$maxcolors, rownames(qual_col_pals)))
+# # pie(rep(1,n), col=sample(col_vector, n))
+
+#Option2
+nColor <- 14
+scales::show_col(carto_pal(nColor, "Safe"))
+manualcolors<-c('black','forestgreen', 'red2', 'orange', 'cornflowerblue', 
+                'magenta', 'darkolivegreen4', 'indianred1', 'tan4', 'darkblue', 
+                'mediumorchid1','firebrick4',  'yellowgreen', 'lightsalmon', 'tan3',
+                "tan1",'darkgray', 'wheat4', '#DDAD4B', 'chartreuse', 
+                'seagreen1', 'moccasin', 'mediumvioletred', 'seagreen','cadetblue1',
+                "darkolivegreen1" ,"tan2" ,   "tomato3" , "#7CE3D8","gainsboro")
+
+col_vector <- c(carto_pal(nColor, "Safe"), 'magenta', 'indianred1')
+
+#combine studyID and muscle
+ data_r$pltT <- paste(data_r$Study.ID, ',',data_r$Muscle)
+ data_r <- data_r %>% drop_na(aveST)
+ 
+ggdotchart(data_r, x="pltT", y="aveST",
+           color="Muscle",
+           palette = col_vector,
+           sorting = "descending",
+           add = "segments",
+           rotate=TRUE,
+           group="Study.ID",
+           dot.size=12,
+           label=round(data_r$aveST),
+           font.label = list(color="white", size=9, vjust=0.5),
+           ggtheme = theme_pubr(),
+           legend.title = "Muscle(s)",
+           ylab=FALSE,
+           xlab = "Horsepower")
+
++data_r
 
 ```
 
 ##Testing
 ```{r paper data}
+# Create the scatter plot
+plot <- plot_ly(data_r, x = ~Muscle, y = ~aveST, type = "scatter", mode = "markers",
+                marker = list(size = 10, opacity = 0.8))
+
+# Customize the layout
+layout <- list(
+  title = "Muscle vs aveST",
+  xaxis = list(title = "Muscle"),
+  yaxis = list(title = "aveST")
+)
+
+# Combine the plot and layout
+scatter_plot <- plot %>% layout(layout)
+
+# Display the plot
+scatter_plot
 
 
 
-# Step 2: Group rows with the same ID and different reviewers
-# data_grouped <- data_cleaned %>%
-#   group_by(ID) %>%
-#   summarise_all(list(~ paste(na.omit(.), collapse = ", ")))
 
-# Step 3: Calculate consensus (assuming consensus is calculated by majority agreement)
-get_consensus <- function(reviewers) {
-  reviewers <- unlist(strsplit(reviewers, ", "))
-  unique_reviewers <- unique(reviewers)
-  consensus <- NULL
-  
-  for (reviewer in unique_reviewers) {
-    count <- sum(reviewers == reviewer, na.rm = TRUE)
-    if (count > length(reviewers) / 2) { # Simple majority agreement
-      consensus <- reviewer
-      break
-    }
-  }
-  
-  return(consensus)
-}
 
-data_grouped$consensus <- sapply(data_cleaned$Reviewers, get_consensus)
-
-# Display the cleaned and processed data
-print(data_grouped)
 
 ```
 ## Including Plots
@@ -137,7 +184,84 @@ print(data_grouped)
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
+# Create the grouped bar chart
+bar_chart <- plot_ly(data_r, x = ~Muscle, y = ~aveST, color = ~age_range, type = "bar")
+
+# Customize the layout
+layout <- list(
+  title = "Muscle vs aveST (Grouped by Type)",
+  xaxis = list(title = "Muscle"),
+  yaxis = list(title = "aveST")
+)
+
+# Combine the plot and layout
+bar_chart <- bar_chart %>% layout(layout)
+
+# Display the plot
+bar_chart
+
+
+
+# Create the box plot
+box_plot <- plot_ly(data_r, x = ~Muscle, y = ~aveST, color = ~age_range, type = "box")
+
+# Customize the layout
+layout <- list(
+  title = "Box Plot of aveST (Grouped by Muscle and Type)",
+  xaxis = list(title = "Muscle"),
+  yaxis = list(title = "aveST")
+)
+
+# Combine the plot and layout
+box_plot <- box_plot %>% layout(layout)
+
+# Display the box plot
+box_plot
+
+
+
+
+
+# Create the box plot
+box_plot <- plot_ly(data_r, x = ~Muscle, y = ~aveST, color = ~age_range, type = "box") %>%
+  add_trace(x = ~Muscle, split = ~age_range)
+# Customize the layout
+layout <- list(
+  title = "Box Plot of aveST (Grouped by Muscle, Type, and Age)",
+  xaxis = list(title = "Muscle"),
+  yaxis = list(title = "aveST"),
+  boxmode = "group"
+)
+
+# Combine the plot and layout
+box_plot <- box_plot %>% layout(layout)
+
+# Display the box plot
+box_plot
+```
+
+#ggpubr plots
+
+```{r}
+box_plot <- ggboxplot(data_r, x = "Muscle", y = "aveST",
+                      color = "age_range",
+                      add = "jitter", 
+                      ylab = "Specific Tension (N/cm2)")
+
+
+box_plot + labs(title = "Box Plot of aveST",
+                x = "Muscle",
+                color = "age_range",
+                fill = "Gender")
+# Define the custom legend labels and their order
+
+custom_legend_labels <- c("CHD", "YNG", "MID", "OLD")
+custom_labels <- c("CHD" = "<18yrs", "YNG" = "18-35yrs", "MID" = "35-65yrs", "OLD" = ">65yrs")
+
+# Change the legend labels and order
+box_plot + scale_fill_manual(values = c("CHD" = "orange", "MID" = "green","OLD" = "blue", "YNG" = "purple"),
+                             breaks = custom_legend_labels,
+                             labels = custom_labels)
 
 ```
 
-Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

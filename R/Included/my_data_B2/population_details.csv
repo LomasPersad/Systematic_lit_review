@@ -1,0 +1,83 @@
+CovidenceID,Population, Type, Age (years), Height (cm), Weight (kg), other,aveAge (years),aveHeight (cm),aveWeight (kg)
+4196,1,12 mixed,,,,,,,
+4196,2,,,,,,,,
+4196,3,,,,,,,,
+4196,4,,,,,,,,
+4196,5,,,,,,,,
+4196,6,,,,,,,,
+4196,7,,,,,,,,
+4196,8,,,,,,,,
+4196,9,,,,,,,,
+4196,10,,,,,,,,
+4106,1,"6, healthy male",38 SD 8,176 SD 5,67.8 SD 6.5,,38.0,176.0,67.8
+4106,2,,,,,,,,
+4106,3,,,,,,,,
+4106,4,,,,,,,,
+4106,5,,,,,,,,
+4106,6,,,,,,,,
+4106,7,,,,,,,,
+4106,8,,,,,,,,
+4106,9,,,,,,,,
+4106,10,,,,,,,,
+4070,1,"9, mixed, experimental , pre training",74.3 SD 3.5,163 SD 9,69.7 SD 14.8, Eighteen subjects (10 women and 8 men),74.3,163.0,69.7
+4070,2,"9, mixed, control, pre training",67.1 SD 2,168 SD 12,73.5 SD 14.9,,67.1,168.0,73.5
+4070,3,"9, mixed, experimental , post training",74.3 SD 3.5,163 SD 9,69.7 SD 14.8,,74.3,163.0,69.7
+4070,4,"9, mixed, control , post training",67.1 SD 2,168 SD 12,73.5 SD 14.9,,67.1,168.0,73.5
+4070,5,,,,,,,,
+4070,6,,,,,,,,
+4070,7,,,,,,,,
+4070,8,,,,,,,,
+4070,9,,,,,,,,
+4070,10,,,,,,,,
+4040,1,"11, Boys",10.9 SD 0.3,145 SD 3,38.3 SD 8,,10.9,145.0,38.3
+4040,2,"12, Men",25.3 SD 4.4,176 SD 8,79.1 SD 11.9,,25.3,176.0,79.1
+4040,3,,,,,,,,
+4040,4,,,,,,,,
+4040,5,,,,,,,,
+4040,6,,,,,,,,
+4040,7,,,,,,,,
+4040,8,,,,,,,,
+4040,9,,,,,,,,
+4040,10,,,,,,,,
+2938,1,"19, Old men",73.8 SD 3.5,173.4  SD 4.4,78.4  SD 8.3,,73.8,173.4,78.4
+2938,2,"12, young men",25.3  SD 4.4,176.4 SD 7.7 ,79.1 SD 11.9,,25.3,176.4,79.1
+2938,3,,,,,,,,
+2938,4,,,,,,,,
+2938,5,,,,,,,,
+2938,6,,,,,,,,
+2938,7,,,,,,,,
+2938,8,,,,,,,,
+2938,9,,,,,,,,
+2938,10,,,,,,,,
+2820,1,"4, Male",38,175,76,,38.0,175.0,76.0
+2820,2,"4, Female",31,170,58,,31.0,170.0,58.0
+2820,3,,,,,,,,
+2820,4,,,,,,,,
+2820,5,,,,,,,,
+2820,6,,,,,,,,
+2820,7,,,,,,,,
+2820,8,,,,,,,,
+2820,9,,,,,,,,
+2820,10,,,,,,,,
+2745,1,"11, experimental, male, pre training",21.6 SD 3.5,175 SD 4,71 SD 6.9,"The participants were randomly assigned to one of two groups: a training group or a non-training group. The training group performed 15 weeks of isokinetic concentric training, three times per week for a total of 45 training sessions.
+
+the dominant and nondominant legs were randomly selected to be trained at either a shorter range of muscle length (partial ROM 0–60° of knee flexion, with 0° corresponding to full knee extension) or at a longer range of muscle length (full ROM 0–100° of knee flexion).",21.6,175.0,71.0
+2745,2,"8, control, male, pre training",26.6 SD 5.2,178 SD 6,75.7 SD 10.4,,26.6,178.0,75.7
+2745,3,"11, experimental, male, post training",21.6 SD 3.5,175 SD 4,71 SD 6.9,,21.6,175.0,71.0
+2745,4,"8, control, male , post training",26.6 SD 5.2,178 SD 6,75.7 SD 10.4,,26.6,178.0,75.7
+2745,5,,,,,,,,
+2745,6,,,,,,,,
+2745,7,,,,,,,,
+2745,8,,,,,,,,
+2745,9,,,,,,,,
+2745,10,,,,,,,,
+2672,1,n=7 mixed,28 SD 4,173 SD 9,68 SD 9,"RES, PD, FREQ, AMP",28.0,173.0,68.0
+2672,2,,,,,,,,
+2672,3,,,,,,,,
+2672,4,,,,,,,,
+2672,5,,,,,,,,
+2672,6,,,,,,,,
+2672,7,,,,,,,,
+2672,8,,,,,,,,
+2672,9,,,,,,,,
+2672,10,,,,,,,,
