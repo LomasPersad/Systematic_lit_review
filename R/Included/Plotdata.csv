@@ -1,7 +1,7 @@
 CovidenceID,aveAge (years),aveHeight (cm),aveWeight (kg)," Number of subjects, N", Muscle,Type,Gender,combined,CSA, Miscellaneous, Voluntary (V) or Stimulated (S) Force measurement,aveVol (cm3),aveFL (cm),avePCSA (cm2),aveTorque (Nm),aveForce (N),aveST (N/cm2),Age type,Training type,Muscle,name,fast/slow,Joint type,antigrav/grav,Joint action,secondary joint action,anatomical location
-4184,27,174,69.5,11,QF,YNG UT, mixed,"mixed 11, pre training",ACSA, not tendon force,V,,,67.5,,517,7.6,YNG,Untrained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
-4184,27,174,69.5,11,QF,YNG T, mixed,"mixed 11, post training",ACSA, not tendon force,V,,,70.6,,587,8.2,YNG,Trained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
-4184,27,174,69.5,11,QF,YNG , mixed,"mixed 11,average",ACSA,"Assuming a mechanical advantage of 0.132 (Narici et al. 1988; Smidt 1973), the forces generated in the patellar tendon would be 4515 N giving a specific force of 621 kN m-2 (calculated using the anatomical CSA)",V,,,72.7,,4515,62.1,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4184,27,174,69.5,11,QF,YNG UT,Mixed,"mixed 11, pre training",ACSA, not tendon force,V,,,67.5,,517,7.6,YNG,Untrained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4184,27,174,69.5,11,QF,YNG T,Mixed,"mixed 11, post training",ACSA, not tendon force,V,,,70.6,,587,8.2,YNG,Trained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4184,27,174,69.5,11,QF,YNG ,Mixed,"mixed 11,average",ACSA,"Assuming a mechanical advantage of 0.132 (Narici et al. 1988; Smidt 1973), the forces generated in the patellar tendon would be 4515 N giving a specific force of 621 kN m-2 (calculated using the anatomical CSA)",V,,,72.7,,4515,62.1,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
 4162,23,176,70.6,16,QF,YNG,M,M 16 young men,PCSA,,V,,9.06,231,262,5555,29,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
 4162,22,167,61.2,15,QF,YNG,F,F 15 young women,PCSA,,V,,8.66,175,182,4921,32,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
 4162,72,174,78.9,20,QF,OLD,M,M 20 old men,PCSA,,V,,9.5,174,164,3472,24,OLD,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
@@ -78,7 +78,7 @@ electrical stimulations",2011,8.61,79,262,,25.1,YNG,Trained,VL,Vastus Lateralis,
 2646,33.5,176.9,75,8,TS,YNG ,M,Male 8,PCSA,muscle length,V,898.3,25.9,346.7,,,10.8,YNG,Normal,TS,Triceps Surae,,mixed,,ankle plantar flexor,,Lower leg
 2646,33.5,176.9,75,8,PF,YNG ,M,Male 8,PCSA,Peak torque,V,1234,,434.6,174.7,3623,8,YNG,Normal,PF,Plantar Flexors,,mixed,,ankle plantar flexor,knee flexor,Lower leg
 2646,33.5,176.9,75,8,DF,YNG ,M,Male 8,PCSA,Peak torque,V,265.9,,34.6,32.9,832,24.5,YNG,Normal,DF,Dorsiflexor,,monoarticular,,ankle dorsiflexor,,Lower leg
-4196,,,,12,GRA,OLD ,Mixed,mixed 12,PCSA,,S,,12.9,13.1,,,17.1,OLD,Normal,GRA,Gracilis,,biarticular,,hip adductor, knee flexor,Lower leg
+4196,,,,12,GRA,MID,Mixed,mixed 12,PCSA,,S,,12.9,13.1,,,17.1,MID,Normal,GRA,Gracilis,,biarticular,,hip adductor, knee flexor,Lower leg
 4106,38,176,67.8,6,GM,MID ,M,m 6,PCSA,"fiber length at rest: 5.08 ± 0.36
 
 PCSA at rest: 46.5 ± 5.7
