@@ -189,7 +189,7 @@ loadPlotdata <- function(){
          aveForce="aveForce..N.",aveST="aveST..N.cm2.", agetype="Age.type", trainingtype="Training.type", muscleName="name",
          jointType="Joint.type", grav="antigrav.grav", jointAction="Joint.action", anatomicalLocation="anatomical.location")
   
-  
+  data_r <- data_r %>% drop_na(aveST) # remove muscles that had no ST vals
   # Define the order you want for the legend
   desired_order <- c("CHD", "YNG", "MID", "OLD")
   
@@ -279,6 +279,8 @@ result_df <- data_r %>%
 
 paperstats_r <- cbind(paperstats_r, result_df)  
 ```
+
+
 #create paperstat plots
 
 ```{r paper data}
@@ -371,7 +373,14 @@ muscle_data <- paperstats_r %>% distinct(`CovidenceID`, `Muscle`, .keep_all = TR
 # data_table <- table(journal_data$journal)
 # # Create a pie chart from the table
 # # # Choose a color palette from RColorBrewer
-custom_colors <- brewer.pal(12, "Set3")
+# custom_colors <- brewer.pal(12, "Set3")
+
+custom_colors<-c('black','forestgreen', 'red2', 'orange', 'cornflowerblue', 
+                'magenta', 'darkolivegreen4', 'indianred1', 'tan4', 'darkblue', 
+                'mediumorchid1','firebrick4',  'yellowgreen', 'lightsalmon', 'tan3',
+                "tan1",'darkgray', 'wheat4', '#DDAD4B', 'chartreuse', 
+                'seagreen1', 'moccasin', 'mediumvioletred', 'seagreen','cadetblue1',
+                "darkolivegreen1" ,"tan2" ,   "tomato3" , "#7CE3D8","gainsboro")
 # 
 # lbls <- paste(names(data_table)," (", data_table, ")", sep="")
 # pie(data_table, labels = lbls,
@@ -493,10 +502,8 @@ fig1 <- plot_grid(
 
 
 saveFig(fig1,"paperstats",16,11)
-
-
-
 saveFig(topplot2,"paperstats_author_journal",12,8)
+
 
 ```
 

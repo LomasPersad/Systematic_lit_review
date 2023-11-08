@@ -1,0 +1,110 @@
+CovidenceID,aveAge (years),aveHeight (cm),aveWeight (kg)," Number of subjects, N", Muscle,Type,Gender,combined,CSA, Miscellaneous, Voluntary (V) or Stimulated (S) Force measurement,aveVol (cm3),aveFL (cm),avePCSA (cm2),aveTorque (Nm),aveForce (N),aveST (N/cm2),Age type,Training type,Muscle,name,fast/slow,Joint type,antigrav/grav,Joint action,secondary joint action,anatomical location
+4184,27,174,69.5,11,QF,YNG UT,Mixed,"mixed 11, pre training",ACSA, not tendon force,V,,,67.5,,517,7.6,YNG,Untrained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4184,27,174,69.5,11,QF,YNG T,Mixed,"mixed 11, post training",ACSA, not tendon force,V,,,70.6,,587,8.2,YNG,Trained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4184,27,174,69.5,11,QF,YNG ,Mixed,"mixed 11,average",ACSA,"Assuming a mechanical advantage of 0.132 (Narici et al. 1988; Smidt 1973), the forces generated in the patellar tendon would be 4515 N giving a specific force of 621 kN m-2 (calculated using the anatomical CSA)",V,,,72.7,,4515,62.1,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4162,23,176,70.6,16,QF,YNG,M,M 16 young men,PCSA,,V,,9.06,231,262,5555,29,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4162,22,167,61.2,15,QF,YNG,F,F 15 young women,PCSA,,V,,8.66,175,182,4921,32,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4162,72,174,78.9,20,QF,OLD,M,M 20 old men,PCSA,,V,,9.5,174,164,3472,24,OLD,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4162,71,160,67.3,20,QF,OLD,F,F 20 old women,PCSA,,V,,8.84,130,116,2928,27,OLD,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+4135,72.7,169.3,78.4,11,GL,OLD UT EXP,M,"M 11, experiment, pre training",PCSA,,V,132.9,4.9,27.2,,262.9,8.9,OLD,Untrained,GL,Gastrocnemius Lateralis,,biarticular,,ankle plantar flexor,knee flexor,Lower leg
+4135,72.7,169.3,78.4,11,GL,OLD T EXP,M,"M 11, experiment, post training",PCSA,,V,161.8,5.2,31.8,,343.5,11.2,OLD,Trained,GL,Gastrocnemius Lateralis,,biarticular,,ankle plantar flexor,knee flexor,Lower leg
+4135,73.9,170.4,72.8,8,GL,OLD UT Control,M,"M 8, control , pre training",PCSA,,V,129.8,5.2,27.1,,254.6,9.8,OLD,Untrained,GL,Gastrocnemius Lateralis,,biarticular,,ankle plantar flexor,knee flexor,Lower leg
+4135,73.9,170.4,72.8,8,GL,OLD T Control,M,"M 8, control ,post training",PCSA,,V,133.6,5,28.5,,263.3,9.5,OLD,Untrained,GL,Gastrocnemius Lateralis,,biarticular,,ankle plantar flexor,knee flexor,Lower leg
+4128,30,,,7,BIC,YNG ,M,M 7,PCSA,,V,,,,4056.6,,53.407,YNG,Normal,BIC,Biceps Brachii,,mixed,,elbow flexor,,Upper arm
+4128,30,,,7,BRA,YNG ,M,M 7,PCSA,,V,,,,1598.6,,56.51,YNG,Normal,BRA,Brachialis,,monoarticular,,elbow flexor,,Upper arm
+4128,30,,,7,BRD,YNG ,M,M 7,PCSA,,V,,,,2106,,53.452,YNG,Normal,BRD,Brachioradialis,,monoarticular,,elbow flexor,,Upper arm
+4128,30,,,9,BIC,YNG ,F,F 9,PCSA,,V,,,,2118.3,,50.476,YNG,Normal,BIC,Biceps Brachii,,mixed,,elbow flexor,,Upper arm
+4128,30,,,9,BRA,YNG ,F,F 9,PCSA,,V,,,,783.6,,53.409,YNG,Normal,BRA,Brachialis,,monoarticular,,elbow flexor,,Upper arm
+4128,30,,,9,BRD,YNG ,F,F 9,PCSA,,V,,,,939.5,,50.519,YNG,Normal,BRD,Brachioradialis,,monoarticular,,elbow flexor,,Upper arm
+4127,24.3,172.8,67.5,30,EF,YNG,M,young men 30,ACSA,,V,257,,18.2,61.1,265,14.7,YNG,Normal,EF,Elbow Flexors,,mixed,,elbow flexor,,Upper arm
+4127,23.4,161.3,53.6,22,EF,YNG,F,young women 22,ACSA,,V,139,,10.3,31.9,150,14.7,YNG,Normal,EF,Elbow Flexors,,mixed,,elbow flexor,,Upper arm
+4127,68.5,165.9,65.2,19,EF,OLD,M,old men 19,ACSA,,V,207,,16.2,48.9,216,13.4,OLD,Normal,EF,Elbow Flexors,,mixed,,elbow flexor,,Upper arm
+4127,67.5,152.8,51.6,32,EF,OLD,F,old women 32,ACSA,,V,114,,9.7,26.2,127,13.1,OLD,Normal,EF,Elbow Flexors,,mixed,,elbow flexor,,Upper arm
+2995,22.6,177,76,20,EF,YNG,M,"M 20, Young",PCSA,Did not claim specific tension. not all EE or EF muscles included in volume/length measurement,Both,375,,28.2,,331,11.8,YNG,Normal,EF,Elbow Flexors,,mixed,,elbow flexor,,Upper arm
+2995,22.6,177,76,20,EE,YNG,M,"M 20, Young",PCSA,,Both,444,,53,,292,5.5,YNG,Normal,EE,Elbow Extendors,,mixed,,elbow extensor,,Upper arm
+2995,22.6,177,76,20,EF,YNG,M,"M 20, Young",ACSA,,Both,,,20.2,,,16.5,YNG,Normal,EF,Elbow Flexors,,mixed,,elbow flexor,,Upper arm
+2995,22.6,177,76,20,EE,YNG,M,"M 20, Young",ACSA,,Both,,,28.3,,,10.3,YNG,Normal,EE,Elbow Extendors,,mixed,,elbow extensor,,Upper arm
+2995,81,176,80,13,EF,OLD,M,"M 13, Old",PCSA,,Both,297,,22.9,,241,10.5,OLD,Normal,EF,Elbow Flexors,,mixed,,elbow flexor,,Upper arm
+2995,81,176,80,13,EE,OLD,M,"M 13, Old",PCSA,,Both,323,,38.1,,197,5.1,OLD,Normal,EE,Elbow Extendors,,mixed,,elbow extensor,,Upper arm
+2995,81,176,80,13,EF,OLD,M,"M 13, Old",ACSA,,Both,,,16.9,,,14.3,OLD,Normal,EF,Elbow Flexors,,mixed,,elbow flexor,,Upper arm
+2995,81,176,80,13,EE,OLD,M,"M 13, Old",ACSA,,Both,,,20.9,,,9.5,OLD,Normal,EE,Elbow Extendors,,mixed,,elbow extensor,,Upper arm
+2837,36,165,67.6,32,TS,MID UT,F,untrained Female 32,PCSA,,V,628,0.06,291.2,,568.2,1.97,MID,Untrained,TS,Triceps Surae,,mixed,,ankle plantar flexor,,Lower leg
+2837,36,165,67.6,32,TS,MID UT,F,untrained Female 32,ACSA,,V,628,,39.9,,568.2,14.3,MID,Untrained,TS,Triceps Surae,,mixed,,ankle plantar flexor,,Lower leg
+2837,34,165,55.6,7,TS,YNG T,F,Trained Female 7,PCSA,,V,730.9,,337.2,,637.7,1.87,YNG,Trained,TS,Triceps Surae,,mixed,,ankle plantar flexor,,Lower leg
+2837,34,165,55.6,7,TS,YNG T,F,Trained Female 7,ACSA,,V,730.9,,44.7,,637.7,14,YNG,Trained,TS,Triceps Surae,,mixed,,ankle plantar flexor,,Lower leg
+2833,25,176,73,52,QF,YNG UT,M,"M 52, Untrained",PCSA,,V,1838.2,106.4,174.4,,5576,33.3,YNG,Untrained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2833,22,183,91,16,QF,YNG T,M,"M 16, Trained",PCSA,,V,2881.9,118,245.7,,8564,36.1,YNG,Trained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2821,25,172,73,9,VL,YNG UT,M,"M 9,LLO before training",PCSA,co activation of BF measured,"V, activation level checked with supramaximal 
+electrical stimulations",1892,8.31,75.6,224,,23.1,YNG,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2821,25,172,73,9,VL,YNG T,M,"M 9,LLO after training",PCSA,,"V, activation level checked with supramaximal 
+electrical stimulations",2032,8.54,81.3,241,,23.9,YNG,Trained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2821,25,172,73,9,VL,YNG UT,M,"M 9,HL before training",PCSA,,"V, activation level checked with supramaximal 
+electrical stimulations",1878,8.42,74.5,225,,23.8,YNG,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2821,25,172,73,9,VL,YNG T,M,"M 9,HL after training",PCSA,,"V, activation level checked with supramaximal 
+electrical stimulations",2011,8.61,79,262,,25.1,YNG,Trained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2680,20.1,176.9,76.1,17,QF,YNG UT,M,Male 17 untrained,PCSA,,mixed,2074,,231,269,6296,29.5,YNG,Untrained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2680,20.1,176.9,76.1,17,VL,YNG UT,M,Male 17 untrained,PCSA,pennation angle: 16.2 ± 2.4,mixed,677,8.8,,,,25.5,YNG,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2680,20.1,176.9,76.1,17,QF,YNG T,M,Male 17 trained,PCSA,,mixed,2188,,245,350,8023,35.5,YNG,Trained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2679,29,169,63.4,5,TRI,YNG UT EXP,M,"M 5, experimental, pre training",PCSA,only isometric ST and torque values included ,V,338,10.7,31.3,57.5,,86.7,YNG,Untrained,TRI,Triceps Brachii,,mixed,,elbow extensor,,Upper arm
+2679,29,169,63.4,5,TRI,YNG T EXP,M,"M 5, experimental, post training",PCSA,,V,445,10.6,41.7,65.9,,77.7,YNG,Trained,TRI,Triceps Brachii,,mixed,,elbow extensor,,Upper arm
+2679,29,169,63.4,5,TRI,YNG UT Control,M,"M 5, control, pre training",PCSA,,V,384,10.7,35.6,60.1,,80.5,YNG,Untrained,TRI,Triceps Brachii,,mixed,,elbow extensor,,Upper arm
+2679,29,169,63.4,5,TRI,YNG T Control,M,"M 5, control, post training",PCSA,,V,398,10.9,36.5,65.1,,85.1,YNG,Untrained,TRI,Triceps Brachii,,mixed,,elbow extensor,,Upper arm
+2677,29,171,63,4,BIC,YNG ,M,M 4,PCSA,The relative contribution of each elbow flexor muscle to the flexion torque was calculated by PCSA times the moment arm (An et al. 1981; Edgerton et al. 1986). The BRA had a greater contribution (47%) than that of BIC (34%) and BRD (19%),V,181,20,9.1,28.2,660.3,71.8,YNG,Normal,BIC,Biceps Brachii,,mixed,,elbow flexor,,Upper arm
+2677,29,171,63,4,BRA,YNG ,M,M 4,PCSA,,V,152,12,12.7,20.4,910.9,72.3,YNG,Normal,BRA,Brachialis,,monoarticular,,elbow flexor,,Upper arm
+2677,29,171,63,4,BRD,YNG ,M,M 4,PCSA,,V,39,12,3.2,11.41,226.4,71.9,YNG,Normal,BRD,Brachioradialis,,monoarticular,,elbow flexor,,Upper arm
+2677,29,171,63,4,EF,YNG ,M,M 4,PCSA,,V,,,25,59.9,1819.5,72.7,YNG,Normal,EF,Elbow Flexors,,mixed,,elbow flexor,,Upper arm
+2677,29,171,63,4,EE,YNG ,M,M 4,PCSA,,V,388,8,46.8,67.7,3008.6,65.4,YNG,Normal,EE,Elbow Extendors,,mixed,,elbow extensor,,Upper arm
+2664,20,178,74,42,QF,YNG UT,M,"m Before training
+42",PCSA, Method 2 ,both,2084,8.9,238,248,5809,25.9,YNG,Untrained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2664,20,178,178,42,QF,YNG T,M,"m After training
+42",PCSA, Method 2 ,both,2200,8.9,253,315,7152,30.3,YNG,Trained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2664,20,178,178,17,QF,YNG UT,M,"m Before training
+17",PCSA,Method 1- more detailed. individual muscle volume measured from multiple MRI scans and individual fiber length,both,2116,9.1,235,244,5896,26.5,YNG,Untrained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2664,20,178,74,17,QF,YNG T,M,"m After training
+17 ",PCSA, Method 1 ,both,2237,9,252,315,7316,30.8,YNG,Trained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2653,20,178,77,53,QF,YNG UT,M,Male 53 Before training,PCSA,,V and S ,2080,8.9,237,246,5722,25.6,YNG,Untrained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2653,20,178,77,53,QF,YNG T,M,Male 53 after training ,PCSA,,V and S,2201,8.9,251,310,6968,29.8,YNG,Trained,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2651,28,175,75,6,Sol,YNG ,M,"M 6, Method A",PCSA,Method A  tendon force=1783 ± 18,S,497,3,161.7,107,2427,15,YNG,Normal,Sol,Soleus,,monoarticular,antigrav,ankle plantar flexor,,Lower leg
+2651,28,175,75,6,Sol,YNG ,M,"M 6, Method B",PCSA,Method B  tendon force=2470 ± 176,V,,1.9,264,121.5,2745,10.4,YNG,Normal,Sol,Soleus,,monoarticular,antigrav,ankle plantar flexor,,Lower leg
+2651,28,175,75,6,TA,YNG ,M,"M 6, Method A",PCSA,Method A  tendon force=458 ± 36,S,152.7,4.8,31.5,22.5,487,15.5,YNG,Normal,TA,Tibialis Anterior,,monoarticular,,ankle dorsiflexor,,Lower leg
+2651,28,175,75,6,TA,YNG ,M,"M 6, Method B",PCSA,Method B  tendon force=1324 ± 110,V,,7.5,20.3,44.7,1337,65.8,YNG,Normal,TA,Tibialis Anterior,,monoarticular,,ankle dorsiflexor,,Lower leg
+2649,21.3,177,76.2,27,QF,YNG ,M,m 27  Method 1,PCSA, Method 1 ,"Both
+",2054,9.4,226,264,6335,30.3,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2649,21.3,177,76.2,27,QF,YNG ,M,m 27 Method 2,PCSA, Method 2 ,Both,2117,9.1,236,264,6335,29.1,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2648,28.2,180,78.8,10,QF,YNG ,M,M 10 men,PCSA,,Mixed,2052.7,,231.8,328.85,11439,55.02,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2648,27.4,167,64,10,QF,YNG ,F,F 10 women,PCSA,,Mixed,1359.2,,162.8,214.74,8695,57.3,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2648,8.9,138,35.6,10,QF,CHD ,B,B 10 boys,PCSA,,Mixed,708.6,,104.6,110.6,5234,54.06,CHD,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2648,9.3,141,41.9,10,QF,CHD ,G,G 10 girls,PCSA,,Mixed,793.8,,108.2,142.6,6117,59.77,CHD,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2646,33.5,176.9,75,8,TS,YNG ,M,Male 8,PCSA,muscle length,V,898.3,25.9,346.7,,,10.8,YNG,Normal,TS,Triceps Surae,,mixed,,ankle plantar flexor,,Lower leg
+2646,33.5,176.9,75,8,PF,YNG ,M,Male 8,PCSA,Peak torque,V,1234,,434.6,174.7,3623,8,YNG,Normal,PF,Plantar Flexors,,mixed,,ankle plantar flexor,knee flexor,Lower leg
+2646,33.5,176.9,75,8,DF,YNG ,M,Male 8,PCSA,Peak torque,V,265.9,,34.6,32.9,832,24.5,YNG,Normal,DF,Dorsiflexor,,monoarticular,,ankle dorsiflexor,,Lower leg
+4196,,,,12,GRA,MID,Mixed,mixed 12,PCSA,,S,,12.9,13.1,,,17.1,MID,Normal,GRA,Gracilis,,biarticular,,hip adductor, knee flexor,Lower leg
+4106,38,176,67.8,6,GM,MID ,M,m 6,PCSA,"fiber length at rest: 5.08 ± 0.36
+
+PCSA at rest: 46.5 ± 5.7
+
+ST at rest: 9.6",V,245.9,3.29,62.5,,448,13.3,MID,Normal,GM,Gastrocnemius Medialis,,biarticular,,ankle plantar flexor,knee flexor,Lower leg
+4070,74.3,163,69.7,9,VL,OLD UT EXP,Mixed,"Mixed 9, experimental, pre training",PCSA,,Mixed,254.3,8.4,30.4,,847.9,27,OLD,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+4070,74.3,163,69.7,9,VL,OLD T EXP,Mixed,"Mixed 9, experimental, post training",PCSA,,Mixed,270.3,9.3,29.1,,939.3,32.1,OLD,Trained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+4070,67.1,168,73.5,9,VL,OLD UT Control,Mixed,"Mixed 9, Control, pre training",PCSA,,Mixed,291,8.4,34.5,,791.5,23.6,OLD,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+4070,67.1,168,73.5,9,VL,OLD T Control,Mixed,"Mixed 9, Control, post training",PCSA,,Mixed,291.1,8.6,34.1,,717.2,21.5,OLD,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+4040,25.3,176,79.1,12,GL,YNG ,M,M 12 men,PCSA,MA=4.61 ± .32 cm,V,178.9,5.5,32.3,,416.2,13.1,YNG,Normal,GL,Gastrocnemius Lateralis,,biarticular,,ankle plantar flexor,knee flexor,Lower leg
+4040,10.9,145,38.3,11,GL,CHD ,M,M 11 boys,PCSA,MA=3.46 ± 0.2 cm,V,64.5,4.2,15.5,,242.5,15.9,CHD,Normal,GL,Gastrocnemius Lateralis,,biarticular,,ankle plantar flexor,knee flexor,Lower leg
+2938,25.3,176.4,79.1,12,GL,YNG,M,"m 12,young",PCSA,,mixed,185.6,5.5,32.3,,416.2,13.1,YNG,Normal,GL,Gastrocnemius Lateralis,,biarticular,,ankle plantar flexor,knee flexor,Lower leg
+2938,73.8,173.4,78.4,19,GL,OLD,M,"m 19,old",PCSA,,mixed,133.3,5,27.1,,258.2,9.2,OLD,Normal,GL,Gastrocnemius Lateralis,,biarticular,,ankle plantar flexor,knee flexor,Lower leg
+2820,38,175,76,4,BIC,MID ,M,M 4,PCSA,,V,,,11.6,,,35.6,MID,Normal,BIC,Biceps Brachii,,mixed,,elbow flexor,,Upper arm
+2820,31,170,58,4,BIC,YNG ,F,F 4,PCSA,,V,,,8.7,,,29.9,YNG,Normal,BIC,Biceps Brachii,,mixed,,elbow flexor,,Upper arm
+2745,21.6,175,71,11,VL,YNG UT EXP,M,"m 11, Experimental, Full ROM, Pre Training",PCSA,,Mixed,724.8,,86.6,,2710,31.8,YNG,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2745,21.6,175,71,11,VL,YNG UT EXP,M,"m 11, Experimental, Part ROM, pre Training",PCSA,,Mixed,715.9,,84.9,,2740,32.6,YNG,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2745,26.6,178,75.7,8,VL,YNG UT Control,M,"m 8, control, pre Training",PCSA,,Mixed,,,87.2,,2720,31.6,YNG,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2745,21.6,175,71,11,VL,YNG T EXP,M,"m 11, Experimental, Full ROM, post Training",PCSA,,Mixed,780,,88.7,,3510,40,YNG,Trained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2745,21.6,175,71,11,VL,YNG T EXP,M,"m 11, Experimental, Part ROM, post Training",PCSA,,Mixed,763.7,,91.5,,3290,36.2,YNG,Trained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2745,26.6,178,75.7,8,VL,YNG T Control,M,"m 8, control, post Training",PCSA,,Mixed,,,86.8,,2640,30.5,YNG,Untrained,VL,Vastus Lateralis,,monoarticular,antigrav,knee extensor,,Thigh
+2672,28,173,68,7,QF,YNG ,Mixed,"Mixed 7, RES",PCSA,"the moment arm was derived
+from cadavers and knee joints of able bodies, 0.04 m, at
+the same knee joint angle used in our study (Baltzopou-
+los 1995; Wickiewicz et al. 1983, 1984).",S,900,5.6,145,166,3532,25,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2672,28,173,68,7,QF,YNG ,Mixed,"Mixed 7,PD",PCSA,,S,500,6,83,78,1660,20,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2672,28,173,68,7,QF,YNG ,Mixed,"Mixed 7, FREQ",PCSA,,S,1000,5.7,171,138,2936,17,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2672,28,173,68,7,QF,YNG ,Mixed,"Mixed 7, AMP",PCSA,,S,600,5.8,101,110,2340,26,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
+2672,28,173,68,7,QF,YNG ,Mixed,"Mixed 7, Total",PCSA,,S,1900,7.1,253,,,20,YNG,Normal,QF,Quadriceps Femoris,,mixed,antigrav,knee extensor,hip flexor,Thigh
