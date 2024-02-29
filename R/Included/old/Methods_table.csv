@@ -1,0 +1,615 @@
+"","CovidenceID","StudyID","Year","newScore","aveAge","N","Muscle","trainingtype","agetype","muscleName","Gender","CSA","V_or_S","Miscellaneous","avePCSA","aveTorque","aveForce","aveST","mv_method","fl_method","pa_method","t_method","ma_method","pcsa_method","f_method","Calc","Assumptions"
+"1",4162,"McPhee 2018",2018,23,23,16,"QF","Normal","YNG","Quadriceps Femoris","M","PCSA","V","",231,262,5555,29,"MRI, CSA x slice interval","US at MVC","Literature value","max MVC + ITT, Activation correction","MRI at rest, MVC & JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension in this study, the following steps were taken:
+1. Measurement of torque: The torque was measured using an isokinetic dynamometer (Biodex System 3, Biodex Medical Systems Inc., Shirley, NY) at an angular velocity of 60°/s. The participants performed three maximal voluntary contractions (MVC) for each leg, with a 30-second rest between each contraction. The highest torque value was recorded for each leg.
+2. Calculation of external force: The external force used in the calculation of specific tension was the ""true MVC,"" which was estimated using the following formula: True MVC = MVC immediately prior to the superimposed doublet/(1 - t/T). Where t was the amplitude of the superimposed doublet (ie, the size of the additional peak) and T was the value of the doublet applied to the resting muscle 1 s prior to MVC.
+3. Measurement of PCSA: The PCSA was calculated using the following formula: PCSA = (muscle area × pennation angle × cosine of the pennation angle)/2. The muscle area was measured using magnetic resonance imaging (MRI) scans, and the pennation angle was measured using ultrasound imaging.
+4. Calculation of specific tension: Specific tension was estimated using the following formula: Specific tension = (external torque/moment arm)/(PCSA * pennation angle) or simplified to: Patella tendon force/(PCSA * pennation angle). The external torque was calculated using the torque measured during the MVC, the moment arm was measured using anthropometric measurements, and the PCSA was calculated using the formula mentioned above. The pennation angle was measured using ultrasound imaging.
+5. Calculation of in situ specific force: To account for the reduction in transmission of forces from fibers to aponeurosis due to the angle between the fascicles and the line of pull through the patella tendon, in situ specific force was estimated using the following formula: (external torque/moment arm)/(PCSA * pennation angle). The external torque was calculated using the torque measured during the MVC, the moment arm was measured using anthropometric measurements, and the PCSA was calculated using the formula mentioned above. The pennation angle was measured using ultrasound imaging.","
+
+The calculation of specific force in this study involves dividing the external force used in the calculation by the product of PCSA (physiological cross-sectional area) and pennation angle. The external force used in the calculation of specific force was the ""true MVC,"" which is the estimated MVC if full voluntary activation was possible. This calculation assumes that the true MVC can be accurately measured using the superimposed doublet technique, which involves applying a doublet (a small additional peak) to the resting muscle and measuring the amplitude of the resulting peak. However, this technique may not accurately reflect the true MVC due to factors such as fatigue or variability in muscle activation. Additionally, the calculation assumes that PCSA can be accurately measured using muscle biopsies taken from midway along the length of the right vastus lateralis muscle (VL). However, this measurement may not accurately reflect the overall muscle volume due to variations in muscle fiber orientation and distribution throughout the muscle."
+"2",4135,"Morse 2007",2007,26,72.7,11,"GL","Untrained","OLD","Gastrocnemius Lateralis","M","PCSA","V","",27.2,NA,262.9,8.9,"MRI, CSA x slice interval","US at MVC","Measured","max MVC + ITT, Activation & Coactivation correction","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force using relative PCSA","
+To calculate specific tension (N/cm2) for the gastrocnemius (GL) muscle in this study, the following steps were taken:
+1. Measurement of torque (Nm) was obtained using an isokinetic dynamometer during voluntary plantarflexion contractions at an angular velocity of 60°/s.
+2. The moment arm length (cm) was calculated as the perpendicular distance from the center of rotation of the talocrural joint to the Achilles tendon action line.
+3. Achilles tendon force (N) was calculated by dividing PF torque by the moment arm length.
+4. The PCSA (cm2) of the GL muscle was calculated as the ratio of GL volume (cm3) to Lf (cm). Lf was measured using ultrasound at the time point of superimposed stimulation to ensure accuracy.
+5. The relative PCSA of the GL within the triceps surae was calculated to estimate the contribution of the GL to Achilles tendon force. This method has been previously reported (Narici et al., 1992).
+6. Specific tension (N/cm2) for the GL muscle was calculated by dividing GL fascicle force (N) by the PCSA (cm2).
+7. The specific tension for the GL muscle was then compared to previous studies to determine if it was increased during voluntary plantarflexion contractions at an angular velocity of 60°/s.","The calculation of specific tension in this study involves considering the sum of torque generated during the strongest MVC and that of the twitch-doublet at the true maximal MVC. However, the value of torque calculated with this method probably represents a peak MVC rather than the true maximal MVC that would have been obtained by adding a tetanus rather than a doublet to the voluntary torque. This assumption is made due to the fact that delivering a tetanic current is extremely painful for older individuals involved in the study. Therefore, the calculation of specific tension in this study may have some weakness in terms of accurately measuring muscle force or volume."
+"3",4128,"Marchetta 2012",2012,17,30,7,"BIC","Normal","YNG","Biceps Brachii","M","","V","",NA,4056.6,NA,53.407,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","max MVC","MRI at rest, JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force using relative (PCSA x MA)","
+
+To calculate specific tension (ST) for the analyzed muscles in this study, the following steps can be followed:
+1. Measure the torque (M) generated by each muscle using the inverse equation: M = Fi * r, where Fi is the force generated by the muscle's tendon and r is the moment arm length.
+2. Calculate the PCSA (physiological cross-sectional area) of each muscle using the formula: PCSA = MuscleVolu / (Lfiber * s * cos(θ)), where Lfiber is the length of muscle fibers, s is the ratio of fiber length to muscle length, and θ is the pennation angle.
+3. Calculate the specific tension (ST) of each muscle using the formula: ST = Fi / PCSA.
+4. Repeat steps 1-3 for each muscle in the study population.
+5. Analyze the results to determine if there is a correlation between PCSA and force generated by the muscles in the subjects who took part in the experiment (as shown in Fig. 3).","
+
+The study aims to compare the accuracy of measurements in determining specific tension through MRI imaging and literature data. The weakness in calculating specific tension may lie in the assumptions made in measuring muscle force or volume. For example, in measuring muscle force, the study may assume that the force recorded during maximal voluntary isometric contraction accurately represents the force generated by the muscle. However, this may not always be the case due to factors such as muscle fatigue or variability in muscle activation levels. In measuring muscle volume or cross-sectional area (CSA), the study may assume that the MRI images accurately represent the true size of the muscle. However, this may also be affected by factors such as muscle hydration levels or the quality of the MRI images themselves. These assumptions may affect the accuracy of the specific tension calculations, which could impact the results of the study."
+"4",4128,"Marchetta 2012",2012,17,30,7,"BRA","Normal","YNG","Brachialis","M","","V","",NA,1598.6,NA,56.51,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","max MVC","MRI at rest, JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force using relative (PCSA x MA)","
+
+To calculate specific tension (ST) for the analyzed muscles in this study, the following steps can be followed:
+1. Measure the torque (M) generated by each muscle using the inverse equation: M = Fi * r, where Fi is the force generated by the muscle's tendon and r is the moment arm length.
+2. Calculate the PCSA (physiological cross-sectional area) of each muscle using the formula: PCSA = MuscleVolu / (Lfiber * s * cos(θ)), where Lfiber is the length of muscle fibers, s is the ratio of fiber length to muscle length, and θ is the pennation angle.
+3. Calculate the specific tension (ST) of each muscle using the formula: ST = Fi / PCSA.
+4. Repeat steps 1-3 for each muscle in the study population.
+5. Analyze the results to determine if there is a correlation between PCSA and force generated by the muscles in the subjects who took part in the experiment (as shown in Fig. 3).","
+
+The study aims to compare the accuracy of measurements in determining specific tension through MRI imaging and literature data. The weakness in calculating specific tension may lie in the assumptions made in measuring muscle force or volume. For example, in measuring muscle force, the study may assume that the force recorded during maximal voluntary isometric contraction accurately represents the force generated by the muscle. However, this may not always be the case due to factors such as muscle fatigue or variability in muscle activation levels. In measuring muscle volume or cross-sectional area (CSA), the study may assume that the MRI images accurately represent the true size of the muscle. However, this may also be affected by factors such as muscle hydration levels or the quality of the MRI images themselves. These assumptions may affect the accuracy of the specific tension calculations, which could impact the results of the study."
+"5",4128,"Marchetta 2012",2012,17,30,7,"BRD","Normal","YNG","Brachioradialis","M","","V","",NA,2106,NA,53.452,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","max MVC","MRI at rest, JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force using relative (PCSA x MA)","
+
+To calculate specific tension (ST) for the analyzed muscles in this study, the following steps can be followed:
+1. Measure the torque (M) generated by each muscle using the inverse equation: M = Fi * r, where Fi is the force generated by the muscle's tendon and r is the moment arm length.
+2. Calculate the PCSA (physiological cross-sectional area) of each muscle using the formula: PCSA = MuscleVolu / (Lfiber * s * cos(θ)), where Lfiber is the length of muscle fibers, s is the ratio of fiber length to muscle length, and θ is the pennation angle.
+3. Calculate the specific tension (ST) of each muscle using the formula: ST = Fi / PCSA.
+4. Repeat steps 1-3 for each muscle in the study population.
+5. Analyze the results to determine if there is a correlation between PCSA and force generated by the muscles in the subjects who took part in the experiment (as shown in Fig. 3).","
+
+The study aims to compare the accuracy of measurements in determining specific tension through MRI imaging and literature data. The weakness in calculating specific tension may lie in the assumptions made in measuring muscle force or volume. For example, in measuring muscle force, the study may assume that the force recorded during maximal voluntary isometric contraction accurately represents the force generated by the muscle. However, this may not always be the case due to factors such as muscle fatigue or variability in muscle activation levels. In measuring muscle volume or cross-sectional area (CSA), the study may assume that the MRI images accurately represent the true size of the muscle. However, this may also be affected by factors such as muscle hydration levels or the quality of the MRI images themselves. These assumptions may affect the accuracy of the specific tension calculations, which could impact the results of the study."
+"6",4127,"Akagi 2009",2009,13,24.3,30,"EF","Normal","YNG","Elbow Flexors","M","ACSA","V","",18.2,61.1,265,14.7,"MRI, CSA x slice interval","none","none","max MVC","Limb length","MRI, max ACSA","External Force (Limb Force)","
+To calculate the specific tension of a muscle, we need to determine the muscle force (F), PCSA (physiological cross-sectional area), and muscle volume (MV). In this study, we can measure the joint torque (TQ) instead of muscle force. The steps to calculate specific tension using torque, PCSA, and MV are:
+1. Measure the joint torque (TQ) for the muscle of interest during a specific task (e.g., knee extension).
+2. Calculate the muscle force (F) using the following formula: F = TQ/lever arm (LA), where LA is the distance from the joint center to the line of action of the muscle force.
+3. Calculate the PCSA of the muscle using the following formula: PCSA = (MV/L) * (cos(θ) * sin(θ)) / (cos(θ) * sin(θ) + (L * tan(θ))), where MV is the muscle volume, L is the length of the muscle, and θ is the pennation angle (the angle between the muscle fibers and the line of action of the muscle force).
+4. Calculate the specific tension (ST) using the following formula: ST = F/PCSA.
+Note that the calculation of PCSA requires the measurement of muscle volume, which can be challenging in vivo. Therefore, some researchers have used the joint torque per muscle volume (TQ/MV) or muscle mass as an index of muscle strength per size. However, the relationship between TQ/MV and specific tension is not always equivalent to the PCSA-F relationship due to differences in muscle fiber/moment arm ratio among individuals.","
+
+The weakness in calculating specific tension in this study lies in the difficulty of precisely measuring all the variables required to calculate the PCSA of a muscle in vivo, notably in survey examining a large population. While theoretically, the specific tension of a muscle can be determined by dividing muscle force (F) by PCSA, the calculation of PCSA requires the determination of muscle volume (MV), muscle fiber length, and muscle fiber pennation angle. However, measuring all these variables in vivo can be challenging, especially in large population studies. Therefore, some researchers have used joint torque per muscle volume (TQ/MV) or muscle mass as an index of muscle strength per size, assuming an identical muscle fiber/moment arm ratio for different individuals. However, it is unclear whether TQ/MV is a substitute for specific tension in elderly individuals."
+"7",2995,"Klein 2001",2001,18,22.6,20,"EE","Normal","YNG","Elbow Extendors","M","PCSA","V","",53,NA,292,5.5,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","max MVC + ITT, Activation & Coactivation correction","none","(Muscle vol/Fiber length)*cos(Î¸)","External Force (Limb Force)","
+To calculate specific tension (N/cm2), the following steps can be followed:
+1. Measure the torque (Nm) generated by the muscle during an isometric contraction using a dynamometer or other appropriate equipment.
+2. Calculate the force (N) generated by the muscle by dividing the torque by the moment arm (cm) of the joint being tested.
+3. Determine the physiological cross-sectional area (PCSA) of the muscle using MRI and the estimated fascicle length (cm) determined from cadavers.
+4. Calculate the specific tension (N/cm2) by dividing the force (N) generated by the muscle by the PCSA (cm2).
+5. Normalize the specific tension for age by comparing it to the specific tension values obtained from young subjects in previous studies.
+6. Analyze the data to determine if there are significant differences in specific tension between young and elderly subjects for each muscle tested.","
+
+The study mentions that the EEs (elbow extensors) had weaker electromyographic (EMG) activity compared to the EFs (elbow flexors) despite having almost twice the physiological cross-sectional area (PCSA). This resulted in a lower normalized force (NF) in the EEs compared to the EFs by almost 50%. Part of the difference in NF between the muscle groups is due to the fact that the pronator teres and the extensor carpi radialis longus muscles, which can function as elbow flexors, were not included in the EF volume. Consequently, NF of the EFs was likely overestimated by 15% in the present study (38). A more important factor contributing to the lower NF in the EEs compared to the EFs is the smaller moment arm length of the triceps brachii compared to the EFs (38). Therefore, the study highlights that assumptions in measuring muscle force or volume can affect the calculation of specific tension. In this case, the exclusion of certain muscles in the EF volume led to an overestimation of NF in the EFs."
+"8",2995,"Klein 2001",2001,15,22.6,20,"EF","Normal","YNG","Elbow Flexors","M","PCSA","V","",20.2,NA,NA,16.5,"MRI, CSA x slice interval","MRI muscle length x literature ratio","none","max MVC + ITT, Activation & Coactivation correction","none","Muscle vol/Fiber length","External Force (Limb Force)","
+To calculate specific tension (N/cm2), the following steps can be followed:
+1. Measure the torque (Nm) generated by the muscle during an isometric contraction using a dynamometer or other appropriate equipment.
+2. Calculate the force (N) generated by the muscle by dividing the torque by the moment arm (cm) of the joint being tested.
+3. Determine the physiological cross-sectional area (PCSA) of the muscle using MRI and the estimated fascicle length (cm) determined from cadavers.
+4. Calculate the specific tension (N/cm2) by dividing the force (N) generated by the muscle by the PCSA (cm2).
+5. Normalize the specific tension for age by comparing it to the specific tension values obtained from young subjects in previous studies.
+6. Analyze the data to determine if there are significant differences in specific tension between young and elderly subjects for each muscle tested.","
+
+The study mentions that the EEs (elbow extensors) had weaker electromyographic (EMG) activity compared to the EFs (elbow flexors) despite having almost twice the physiological cross-sectional area (PCSA). This resulted in a lower normalized force (NF) in the EEs compared to the EFs by almost 50%. Part of the difference in NF between the muscle groups is due to the fact that the pronator teres and the extensor carpi radialis longus muscles, which can function as elbow flexors, were not included in the EF volume. Consequently, NF of the EFs was likely overestimated by 15% in the present study (38). A more important factor contributing to the lower NF in the EEs compared to the EFs is the smaller moment arm length of the triceps brachii compared to the EFs (38). Therefore, the study highlights that assumptions in measuring muscle force or volume can affect the calculation of specific tension. In this case, the exclusion of certain muscles in the EF volume led to an overestimation of NF in the EFs."
+"9",2837,"Bamman 2000",2000,11,36,32,"TS","Untrained","MID","Triceps Surae","F","PCSA","","",291.2,NA,568.2,1.97,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","none","none","(Muscle vol/Fiber length)*cos(Î¸)","External Force (Limb Force)","
+To calculate specific tension in this study, the following steps can be followed:
+1. Measure the torque produced by the muscle during maximum voluntary contraction (MVC) using a dynamometer.
+2. Calculate the force produced by the muscle by dividing the torque by the distance between the axis of rotation and the line of action of the force (assuming the muscle acts at right angles to the axis of rotation).
+3. Measure the cross-sectional area (CSA) of the muscle using magnetic resonance imaging (MRI) or computed tomography (CT) scans.
+4. Calculate the pennation angle (PA) of the muscle fibers using MRI or CT scans.
+5. Calculate the pennated CSA (PCSA) by multiplying the CSA by the cosine of the PA.
+6. Calculate the specific tension by dividing the force produced by the muscle by the PCSA.
+7. Analyze the correlation between specific tension and other muscle size measures (such as CSA) to determine the strength-size relationship.
+Note: In this study, the authors acknowledge that none of the muscle size measures are without error and that this error cannot be ignored when interpreting the muscle strength-size relationship. They also suggest that if true specific tension in vivo is a measurement of interest, PCSA and tendon tension should probably be determined accurately.","
+
+There is no weakness in the calculation of specific tension mentioned in the given context information. The study used linear regression to further study the relationship between MVC (dependent variable) and six assessments of lower leg muscle size (independent variable) (lower leg LM, circumference, estimated muscle 1boneCSA, ACSA, VOLm, and PCSA). The Y-intercept was considered different from zero if the 95% confidence limits did not contain zero for regression analysis. The study also tested group differences between endurance-trained (N=57) and untrained (N=532) subjects using one-tailed independent t-test with the apriori assumption that the trained group would have more LM in the lower leg than the untrained group. Significance for all tests was accepted at a P,0.05 level of confidence. Therefore, the weakness in calculation of specific tension is not mentioned in the study."
+"10",2833,"Maden-Wilkinson 2020",2020,24,25,52,"QF","Untrained","YNG","Quadriceps Femoris","M","PCSA","V","",174.4,NA,5576,33.3,"MRI, CSA x slice interval","US at rest","Measured","max MVC, Coactivation correction","MRI at rest, JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension (ST), the following steps were taken:
+1. Calculate maximal tendon force (FT) by correcting knee extension moment of force (MVT) for antagonist torque (HEMG at knee extensor MVT normalized to HEMG MAX (i.e., at KF MVT) multiplied by KF MVT).
+2. Calculate physiological cross-sectional area (PCSA) per constituent muscle by dividing individual muscle volume by F L (mean of sites for that constituent).
+3. Sum the PCSA of the four constituent muscles to get quadriceps physiological cross-sectional area (QPCSA).
+4. Calculate effective physiological cross-sectional area (EFFPCSA) by multiplying PCSA by cosine of mean /H9008P (28).
+5. Sum the EFFPCSA of the four constituent muscles to get quadriceps effective physiological cross-sectional area (Q EFFPCSA).
+6. Calculate specific tension (ST) by dividing maximal tendon force (FT) by quadriceps effective physiological cross-sectional area (Q EFFPCSA).","
+
+There is no weakness in calculation of specific tension mentioned in the given context information. The study found modest differences in specific tension ( /H110018%), even after the average 4 yr of regular, heavy RT of LTT. The authors did not mention any assumptions in measuring muscle force or volume that could have affected the calculation of specific tension."
+"11",2821,"Kubo 2006",2006,26,25,9,"VL","Untrained","YNG","Vastus Lateralis","M","PCSA","V","co activation of BF measured",75.6,224,NA,23.1,"MRI, CSA x slice interval","US at MVC","Measured","max MVC + ITT, Activation & Coactivation correction","US at MVC JA","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force using relative PCSA","
+
+To calculate specific tension for this study, the following steps were taken:
+1. Measurement of torque: The torque was measured using an isokinetic dynamometer (Cybex Norm, Stoughton, MA) at an angular velocity of 60°/s. The torque was recorded for each participant at baseline (pre-training) and after the training program (post-training).
+2. Calculation of force: The force was calculated by dividing the measured torque by the moment arm length (0.17 m) of the quadriceps muscle group. The force was recorded for each participant at baseline (pre-training) and after the training program (post-training).
+3. Calculation of physiological cross-sectional area (PCSA): The PCSA was calculated by multiplying the measured muscle thickness (MT) by the muscle width (MW) at the midpoint of the quadriceps muscle group (Reeves et al., 2003). The MT was measured using ultrasound (Acuson Sequoia 512, Mountain View, CA) at baseline (pre-training) and after the training program (post-training). The MW was measured using anthropometric measurements (height and leg length). The PCSA was calculated for each participant at baseline (pre-training) and after the training program (post-training).
+4. Calculation of fascicle force (FF): The FF was calculated by multiplying the force by the cosine of the angle of pennation (P) of the vastus lateralis (VL) muscle fascicles (Reeves et al., 2004). The angle of pennation was measured using ultrasound at baseline (pre-training) and after the training program (post-training). The FF was calculated for each participant at baseline (pre-training) and after the training program (post-training).
+5. Calculation of specific tension: The specific tension was calculated by dividing the FF by the PCSA (Reeves et al., 2004). The specific tension was calculated for each participant at baseline (pre-training) and after the training program (post-training).
+6. Statistical analysis: Descriptive data included means ± SD. A two-way ANOVA with repeated measures (2 groups × 2 test times) was used to analyze the data. The F ratios for main effects and interactions were considered significant at p < 0.05. Significant differences among means at p < 0.05 were detected using a Tukey post hoc test.","
+
+There is no weakness in the calculation of specific tension outlined in the study. The calculation involves dividing fascicle force by physiological CSA, which is a standard method used in muscle research (Reeves et al., 2004). The study did not mention any assumptions in measuring muscle force or volume that could affect the calculation of specific tension."
+"12",2680,"Erskine 2010",2010,27,20.1,17,"QF","Untrained","YNG","Quadriceps Femoris","M","PCSA","V","",231,269,6296,29.5,"MRI, CSA x slice interval","US at MVC","Measured","max MVC + ITT, Activation & Coactivation correction","MRI at rest, MVC & JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension in this study, the following steps were taken:
+1. Measurement of torque: The maximum voluntary contraction (MVC) torque was measured using an isokinetic dynamometer (Cybex Norm, Stoughton, MA) at an angular velocity of 60° s−1. The MVC torque was recorded for each leg at the knee joint angle that produced the highest torque (optimum knee joint angle).
+2. Measurement of force: Maximum patellar tendon force was measured using a force transducer (Kistler, Amherst, NY) attached to the patellar tendon via a custom-made strap. The force transducer was connected to an amplifier (Kistler, Amherst, NY) and then to a computer (Dell, Round Rock, TX) for data collection and analysis using a custom-made software program (LabView, National Instruments, Austin, TX). The maximum patellar tendon force was recorded for each leg during the MVC at the optimum knee joint angle.
+3. Measurement of PCSA: The PCSA of each quadriceps femoris (QF) muscle (vastus lateralis, vastus medialis, rectus femoris, and vastus intermedius) was calculated using the following steps:
+   a. Measurement of muscle volume: The volume of each QF muscle was measured using magnetic resonance imaging (MRI) (GE Signa Excite HDxt 3.0T, Milwaukee, WI) at baseline and post-training. The MRI images were analyzed using ImageJ software (National Institutes of Health, Bethesda, MD) to measure the cross-sectional area (CSA) of each muscle at three different levels (distal, mid-belly, and proximal) (Chow et al., 1999). The CSA of each muscle at each level was multiplied by the length of the muscle (Lf) between the measurement sites to calculate the muscle volume (V).
+   b. Calculation of PCSA: The PCSA of each QF muscle was calculated by dividing the muscle volume by the length of the muscle fibers (Lf) (Erskine et al., 2009). The Lf was calculated using the following formula: Lf = Lm * cos(h), where Lm is the length of the muscle measured from the MRI images and h is the angle between the muscle fibers and the line of action of the patellar tendon (Erskine et al., 2009). The sum of the four PCSA values gave the total QF PCSA.
+4. Calculation of specific tension: To calculate specific tension, the following steps were taken:
+   a. Calculation of reduced PCSA: The PCSA of each QF muscle was multiplied by the cosine of its respective h to provide four reduced PCSA values (Erskine et al., 2009). This was done because the force generated by each component QF muscle would be reduced according to the angle between the muscle fibers and the line of action of the patellar tendon (Erskine et al., 2009).
+   b. Calculation of maximum patellar tendon force: The maximum patellar tendon force was calculated from the force transducer data collected during the MVC at the optimum knee joint angle.
+   c. Calculation of specific tension: The specific tension was calculated by dividing the maximum patellar tendon force by the sum of the four reduced PCSA values (Erskine et al., 2009). This provided an estimate of the force per unit area of the QF muscles acting on the patellar tendon during the MVC at the optimum knee joint angle.","
+
+The study did not mention any weaknesses in the calculation of specific tension in terms of assumptions in measuring muscle force or volume. The study reported that an increase in human muscle specific tension appears to be a real consequence of resistance training rather than being an artefact of measuring errors. However, the underlying cause of this phenomenon remains to be determined. The study did not provide specific details on the methods used to measure muscle force or volume, but it did mention that the maximum force generated by skeletal muscle is primarily determined by the number of sarcomeres arranged in parallel, which is represented by the physiological cross-sectional area (PCSA) of the muscle."
+"13",2677,"Kawakami 1994",1994,15,29,4,"BIC","Normal","YNG","Biceps Brachii","M","PCSA","V","The relative contribution of each elbow flexor muscle to the flexion torque was calculated by PCSA times the moment arm (An et al. 1981; Edgerton et al. 1986). The BRA had a greater contribution (47%) than that of BIC (34%) and BRD (19%)",9.1,28.2,660.3,72.3,"MRI, CSA x slice interval","MRI muscle length x literature ratio","none","max MVC","MRI at MVC JA","Muscle vol/Fiber length","Tendon Force using relative (PCSA x MA)","
+To calculate specific tension in this study, the following steps can be taken:
+1. Measure the torque generated by the muscle during the experiment using a dynamometer.
+2. Calculate the force generated by the muscle by dividing the torque by the distance between the axis of rotation and the point of application of the force (lever arm).
+3. Determine the physiological cross-sectional area (PCSA) of the muscle by dividing the muscle volume by the muscle fibre length (Fukunaga et al., 1992; Wickiewicz et al., 1983).
+4. Calculate the specific tension by dividing the force generated by the muscle by the PCSA (Edgerton et al., 1986).
+5. Repeat steps 1-4 for each muscle being studied to obtain specific tension values for each muscle.","
+
+There is no weakness in the calculation of specific tension mentioned in the given context. The study mentions that the PCSA has been determined by dividing muscle volume by muscle fibre length, which has been done in previous studies by direct dissection of human cadaver specimens (Fukunaga et al., 1992; Wickiewicz et al., 1983). However, the weakness in measuring muscle force has been acknowledged in the study, where it is stated that the force exerted by muscle fibres is influenced and modified by various anatomical factors before it appears as the moment around a joint, making it difficult to evaluate the force-producing properties of the muscle itself from torque measurements."
+"14",2677,"Kawakami 1994",1994,15,29,4,"BRA","Normal","YNG","Brachialis","M","PCSA","V","",12.7,20.4,910.9,72.3,"MRI, CSA x slice interval","MRI muscle length x literature ratio","none","max MVC","MRI at MVC JA","Muscle vol/Fiber length","Tendon Force using relative (PCSA x MA)","
+To calculate specific tension in this study, the following steps can be taken:
+1. Measure the torque generated by the muscle during the experiment using a dynamometer.
+2. Calculate the force generated by the muscle by dividing the torque by the distance between the axis of rotation and the point of application of the force (lever arm).
+3. Determine the physiological cross-sectional area (PCSA) of the muscle by dividing the muscle volume by the muscle fibre length (Fukunaga et al., 1992; Wickiewicz et al., 1983).
+4. Calculate the specific tension by dividing the force generated by the muscle by the PCSA (Edgerton et al., 1986).
+5. Repeat steps 1-4 for each muscle being studied to obtain specific tension values for each muscle.","
+
+There is no weakness in the calculation of specific tension mentioned in the given context. The study mentions that the PCSA has been determined by dividing muscle volume by muscle fibre length, which has been done in previous studies by direct dissection of human cadaver specimens (Fukunaga et al., 1992; Wickiewicz et al., 1983). However, the weakness in measuring muscle force has been acknowledged in the study, where it is stated that the force exerted by muscle fibres is influenced and modified by various anatomical factors before it appears as the moment around a joint, making it difficult to evaluate the force-producing properties of the muscle itself from torque measurements."
+"15",2677,"Kawakami 1994",1994,15,29,4,"BRD","Normal","YNG","Brachioradialis","M","PCSA","V","",3.2,11.41,226.4,71.9,"MRI, CSA x slice interval","MRI muscle length x literature ratio","none","max MVC","MRI at MVC JA","Muscle vol/Fiber length","Tendon Force using relative (PCSA x MA)","
+To calculate specific tension in this study, the following steps can be taken:
+1. Measure the torque generated by the muscle during the experiment using a dynamometer.
+2. Calculate the force generated by the muscle by dividing the torque by the distance between the axis of rotation and the point of application of the force (lever arm).
+3. Determine the physiological cross-sectional area (PCSA) of the muscle by dividing the muscle volume by the muscle fibre length (Fukunaga et al., 1992; Wickiewicz et al., 1983).
+4. Calculate the specific tension by dividing the force generated by the muscle by the PCSA (Edgerton et al., 1986).
+5. Repeat steps 1-4 for each muscle being studied to obtain specific tension values for each muscle.","
+
+There is no weakness in the calculation of specific tension mentioned in the given context. The study mentions that the PCSA has been determined by dividing muscle volume by muscle fibre length, which has been done in previous studies by direct dissection of human cadaver specimens (Fukunaga et al., 1992; Wickiewicz et al., 1983). However, the weakness in measuring muscle force has been acknowledged in the study, where it is stated that the force exerted by muscle fibres is influenced and modified by various anatomical factors before it appears as the moment around a joint, making it difficult to evaluate the force-producing properties of the muscle itself from torque measurements."
+"16",2677,"Kawakami 1994",1994,17,29,4,"EF","Normal","YNG","Elbow Flexors","M","ACSA","V","",25,59.9,1819.5,72.7,"MRI, CSA x slice interval","MRI muscle length x literature ratio","none","max MVC","MRI at MVC JA","Muscle vol/Fiber length","Tendon Force ","
+To calculate specific tension in this study, the following steps can be taken:
+1. Measure the torque generated by the muscle during the experiment using a dynamometer.
+2. Calculate the force generated by the muscle by dividing the torque by the distance between the axis of rotation and the point of application of the force (lever arm).
+3. Determine the physiological cross-sectional area (PCSA) of the muscle by dividing the muscle volume by the muscle fibre length (Fukunaga et al., 1992; Wickiewicz et al., 1983).
+4. Calculate the specific tension by dividing the force generated by the muscle by the PCSA (Edgerton et al., 1986).
+5. Repeat steps 1-4 for each muscle being studied to obtain specific tension values for each muscle.","
+
+There is no weakness in the calculation of specific tension mentioned in the given context. The study mentions that the PCSA has been determined by dividing muscle volume by muscle fibre length, which has been done in previous studies by direct dissection of human cadaver specimens (Fukunaga et al., 1992; Wickiewicz et al., 1983). However, the weakness in measuring muscle force has been acknowledged in the study, where it is stated that the force exerted by muscle fibres is influenced and modified by various anatomical factors before it appears as the moment around a joint, making it difficult to evaluate the force-producing properties of the muscle itself from torque measurements."
+"17",2677,"Kawakami 1994",1994,20,29,4,"EE","Normal","YNG","Elbow Extendors","M","PCSA","V","",46.8,67.7,3008.6,65.4,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","max MVC","MRI at MVC JA","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension in this study, the following steps can be taken:
+1. Measure the torque generated by the muscle during the experiment using a dynamometer.
+2. Calculate the force generated by the muscle by dividing the torque by the distance between the axis of rotation and the point of application of the force (lever arm).
+3. Determine the physiological cross-sectional area (PCSA) of the muscle by dividing the muscle volume by the muscle fibre length (Fukunaga et al., 1992; Wickiewicz et al., 1983).
+4. Calculate the specific tension by dividing the force generated by the muscle by the PCSA (Edgerton et al., 1986).
+5. Repeat steps 1-4 for each muscle being studied to obtain specific tension values for each muscle.","
+
+There is no weakness in the calculation of specific tension mentioned in the given context. The study mentions that the PCSA has been determined by dividing muscle volume by muscle fibre length, which has been done in previous studies by direct dissection of human cadaver specimens (Fukunaga et al., 1992; Wickiewicz et al., 1983). However, the weakness in measuring muscle force has been acknowledged in the study, where it is stated that the force exerted by muscle fibres is influenced and modified by various anatomical factors before it appears as the moment around a joint, making it difficult to evaluate the force-producing properties of the muscle itself from torque measurements."
+"18",2664,"Erskine 2011",2011,20,20,42,"QF","Untrained","YNG","Quadriceps Femoris","M","PCSA","V"," Method 2 ",238,248,5809,25.9,"MRI, ACSA & literature regression relationship","US at MVC rep muscle","measured PA representative muscle","max MVC + ITT, Activation & Coactivation correction","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+
+To calculate specific tension (ST), we can use the formula:
+ST = (Ft × L) / (PCSA × L)
+where Ft is the maximal force resolved at the patellar tendon, L is the length of the muscle-tendon unit (MTU), and PCSA is the physiological cross-sectional area of the muscle.
+To obtain Ft, we first determine the true maximal torque (TMT) by correcting the measured maximal voluntary torque (MVC) for QF muscle activation and antagonist muscle coactivation. This can be done using the interpolated twitch technique (Rutherford et al., 1986b). The patellar tendon moment arm (dPT) can also be determined via MRI (Tsaopoulos et al., 2006).
+To calculate PCSA, we measure the anatomical cross-sectional area (ACSA) of each component QF muscle using transverse MRI scans at 40% femur length (Erskine et al., 2009). The physiological cross-sectional area (PCSA) can then be calculated by dividing the ACSA by the pennation angle (PA), which is the angle between the muscle fibers and the line of action of the muscle force (Hill, 1970). The PA can be estimated using ultrasonography (MyLab25, Esaote, Genova, Italy).
+Once we have Ft, TMT, dPT, ACSA, and PA, we can calculate ST using the formula provided above.","
+
+The method used to calculate in vivo QF muscle specific tension before and after strength training in the present study was based on an estimate of QF muscle volume from a single anatomical cross-sectional area (ACSA) of the QF muscle, together with the fascicle length (Lf) and pennation angle (θp) of the VL muscle. This method has provided similar QF musclespecific tension values to those obtained using a more comprehensive approach in which the volume and optimal architecture of each component muscle of the QF muscle group was considered in a large cohort of untrained young men (Erskine et al. 2009). However, the determination of QF muscle specific tension from measurements of all four of the constituent muscles is time-consuming and difficult to use with large numbers of subjects. Therefore, the present study used a simpler method to estimate QF muscle specific tension in all 42 participants. The weakness in this calculation method is that it assumes that the volume of the QF muscle can be accurately estimated from a single ACSA measurement, which may not be the case in all individuals due to variations in muscle shape and size. Additionally, the method assumes that the pennation angle of the VL muscle can be used to estimate the pennation angle of the other constituent muscles of the QF muscle group, which may also introduce errors in the calculation of specific tension."
+"19",2664,"Erskine 2011",2011,28,20,17,"QF","Untrained","YNG","Quadriceps Femoris","M","PCSA","V","Method 1- more detailed. individual muscle volume measured from multiple MRI scans and individual fiber length",235,244,5896,26.5,"MRI, CSA x slice interval","US at MVC","Measured","max MVC + ITT, Activation & Coactivation correction","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+
+To calculate specific tension (ST), we can use the formula:
+ST = (Ft × L) / (PCSA × L)
+where Ft is the maximal force resolved at the patellar tendon, L is the length of the muscle-tendon unit (MTU), and PCSA is the physiological cross-sectional area of the muscle.
+To obtain Ft, we first determine the true maximal torque (TMT) by correcting the measured maximal voluntary torque (MVC) for QF muscle activation and antagonist muscle coactivation. This can be done using the interpolated twitch technique (Rutherford et al., 1986b). The patellar tendon moment arm (dPT) can also be determined via MRI (Tsaopoulos et al., 2006).
+To calculate PCSA, we measure the anatomical cross-sectional area (ACSA) of each component QF muscle using transverse MRI scans at 40% femur length (Erskine et al., 2009). The physiological cross-sectional area (PCSA) can then be calculated by dividing the ACSA by the pennation angle (PA), which is the angle between the muscle fibers and the line of action of the muscle force (Hill, 1970). The PA can be estimated using ultrasonography (MyLab25, Esaote, Genova, Italy).
+Once we have Ft, TMT, dPT, ACSA, and PA, we can calculate ST using the formula provided above.","
+
+The method used to calculate in vivo QF muscle specific tension before and after strength training in the present study was based on an estimate of QF muscle volume from a single anatomical cross-sectional area (ACSA) of the QF muscle, together with the fascicle length (Lf) and pennation angle (θp) of the VL muscle. This method has provided similar QF musclespecific tension values to those obtained using a more comprehensive approach in which the volume and optimal architecture of each component muscle of the QF muscle group was considered in a large cohort of untrained young men (Erskine et al. 2009). However, the determination of QF muscle specific tension from measurements of all four of the constituent muscles is time-consuming and difficult to use with large numbers of subjects. Therefore, the present study used a simpler method to estimate QF muscle specific tension in all 42 participants. The weakness in this calculation method is that it assumes that the volume of the QF muscle can be accurately estimated from a single ACSA measurement, which may not be the case in all individuals due to variations in muscle shape and size. Additionally, the method assumes that the pennation angle of the VL muscle can be used to estimate the pennation angle of the other constituent muscles of the QF muscle group, which may also introduce errors in the calculation of specific tension."
+"20",2653,"Erskine 2010",2010,19,20,53,"QF","Untrained","YNG","Quadriceps Femoris","M","PCSA","V","",237,246,5722,25.6,"MRI, ACSA & literature regression relationship","US at MVC rep muscle","measured PA representative muscle","max MVC + ITT, Activation & Coactivation correction","MRI at rest, MVC & JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension, the following steps can be followed:
+1. Measure the maximum voluntary torque (MVT) of the quadriceps femoris (QF) muscle using an isokinetic dynamometer at a specific angular velocity (usually 60°/s).
+2. Calculate the maximum force (Fmax) produced by the QF muscle during the same test by dividing the measured torque by the moment arm length (r) of the dynamometer lever arm (usually 0.35 m).
+3. Measure the pennation angle (θ) of the QF muscle using ultrasound imaging to determine the angle between the muscle fibers and the tendon.
+4. Calculate the physiological cross-sectional area (PCSA) of the QF muscle using the following formula:
+   PCSA = (CSA × cosθ) / Lf
+   where CSA is the measured cross-sectional area of the QF muscle at the mid-point of the muscle length (Lf), and cosθ is the cosine of the pennation angle (θ).
+5. Calculate the specific tension (ST) of the QF muscle by dividing the maximum force (Fmax) by the physiological cross-sectional area (PCSA):
+   ST = Fmax / PCSA
+   where ST represents the force per unit area of the QF muscle.
+6. Repeat steps 1-5 for each participant in the study to obtain individual values for MVC torque, Fmax, PCSA, and ST.
+7. Analyze the data using statistical methods to determine the range of human muscle responses to resistance training with regard to changes in QF muscle strength and size.","
+
+One weakness in calculating specific tension in this study could be the assumption that the level of non-contractile material in the muscle of young, healthy male individuals is relatively small (Holmback et al., 2002). This assumption may not hold true for all individuals, especially those with pre-existing conditions or those who have undergone previous strength training programs. Additionally, the accuracy of measuring muscle force and volume may also affect the calculation of specific tension."
+"21",2651,"Maganaris 2001",2001,26,28,6,"SOL","Normal","YNG","Soleus","M","PCSA","S","Method A  tendon force=1783 Â± 18",161.7,107,2427,15,"MRI, CSA x slice interval","US at MVC","Measured","max MVC from stimulation, Coactivation correction","MRI at MVC JA","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+
+Step 1: Measurement of torque and force
+During MVC, muscle moments were measured using a dynamometer (Biodex Medical Systems, New York, NY) and joint angles were measured using an electrogoniometer (Polhemus, Colchester, VT). Muscle force was calculated by multiplying the measured muscle moment by the moment arm length at rest (1).
+
+Step 2: Calculation of fascicular length
+Fascicular length was measured using MRI (1.5 T, Siemens, Erlangen, Germany) in the transverse plane at the midpoint of the muscle belly (2). The fascicular length was calculated by measuring the distance between the tendon insertions of the muscle (3).
+
+Step 3: Calculation of pennation angle
+Pennation angle was measured using MRI in the transverse plane at the midpoint of the muscle belly (2). The pennation angle was calculated by measuring the angle between the fascicle and the longitudinal axis of the muscle (4).
+
+Step 4: Calculation of muscle volume
+Muscle volume was calculated by multiplying the sum of the ACSAs in all slices times the MRI slice thickness (5).
+
+Step 5: Calculation of PCSA using fascicular length
+Estimations of PCSA were obtained from the ratio of muscle volume to fascicular length (2, 9, 13).
+
+Step 6: Calculation of PCSA using pennation angle
+PCSA can also be calculated using the pennation angle (6). The formula for this calculation is:
+PCSA = (muscle volume × cos² pennation angle) / fascicular length
+
+Step 7: Calculation of PCSA using traditional approach
+Sol was treated as a unipennate muscle (2, 10), and TA was treated as twoseparate equidimensional unipennate parts, each one occupying half the whole muscle volume (7). The whole TA PCSA was obtained by adding the PCSA of the two unipennate halves (see also Ref. 33).
+
+Step 8: Calculation of specific tension using torque and PCSA
+Speciﬁc tension was estimated and compared from the ratio of muscle force to PCSA using two data sets (8). The first data set used muscle moments during electrical stimulation and in vivo moment arm lengths, fascicular lengths, and pennation angles during MVC (data set A). The second data set used net MVC joint moments, moment arm lengths at rest, and cadaveric fascicular lengths and pennation angles (data set B).
+
+Step 9: Calculation of specific tension using force and PCSA
+Speciﬁc tension was also calculated using the ratio of muscle force to PCSA (9). This calculation was done using the force measured during MVC and the PCSA calculated using the traditional approach (7).
+
+Step 10: Comparison of specific tension between data sets A and B
+Speciﬁc tension was compared between data sets A and B to determine which method provided more accurate results (10).
+
+Step 11: Analysis of results
+The results were analyzed using statistical methods to determine if there were significant differences between the specific tension values obtained using data sets A and B (11).
+
+Step 12: Conclusion
+The study concluded that the traditional approach provided more accurate results for calculating specific tension in human skeletal muscle (12).","
+
+The study outlined in the provided context information aims to calculate specific tension in human skeletal muscle using eight steps. The weakness in calculation of specific tension in this study may lie in the assumptions made in measuring muscle force or volume. While the study mentions that muscle force was calculated from steps 3 and 4, it does not specify the method used to measure muscle force. Similarly, while muscle volume was calculated from steps 6 and 7, it does not specify the method used to measure muscle volume. Without this information, it is unclear whether there were any assumptions made in measuring muscle force or volume that could affect the accuracy of the specific tension calculation."
+"22",2651,"Maganaris 2001",2001,21,28,6,"SOL","Normal","YNG","Soleus","M","PCSA","V","Method B  tendon force=2470 Â± 176",264,121.5,2745,10.4,"MRI, CSA x slice interval","Literature value","Literature value","max MVC, Gravity correction","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+
+Step 1: Measurement of torque and force
+During MVC, muscle moments were measured using a dynamometer (Biodex Medical Systems, New York, NY) and joint angles were measured using an electrogoniometer (Polhemus, Colchester, VT). Muscle force was calculated by multiplying the measured muscle moment by the moment arm length at rest (1).
+
+Step 2: Calculation of fascicular length
+Fascicular length was measured using MRI (1.5 T, Siemens, Erlangen, Germany) in the transverse plane at the midpoint of the muscle belly (2). The fascicular length was calculated by measuring the distance between the tendon insertions of the muscle (3).
+
+Step 3: Calculation of pennation angle
+Pennation angle was measured using MRI in the transverse plane at the midpoint of the muscle belly (2). The pennation angle was calculated by measuring the angle between the fascicle and the longitudinal axis of the muscle (4).
+
+Step 4: Calculation of muscle volume
+Muscle volume was calculated by multiplying the sum of the ACSAs in all slices times the MRI slice thickness (5).
+
+Step 5: Calculation of PCSA using fascicular length
+Estimations of PCSA were obtained from the ratio of muscle volume to fascicular length (2, 9, 13).
+
+Step 6: Calculation of PCSA using pennation angle
+PCSA can also be calculated using the pennation angle (6). The formula for this calculation is:
+PCSA = (muscle volume × cos² pennation angle) / fascicular length
+
+Step 7: Calculation of PCSA using traditional approach
+Sol was treated as a unipennate muscle (2, 10), and TA was treated as twoseparate equidimensional unipennate parts, each one occupying half the whole muscle volume (7). The whole TA PCSA was obtained by adding the PCSA of the two unipennate halves (see also Ref. 33).
+
+Step 8: Calculation of specific tension using torque and PCSA
+Speciﬁc tension was estimated and compared from the ratio of muscle force to PCSA using two data sets (8). The first data set used muscle moments during electrical stimulation and in vivo moment arm lengths, fascicular lengths, and pennation angles during MVC (data set A). The second data set used net MVC joint moments, moment arm lengths at rest, and cadaveric fascicular lengths and pennation angles (data set B).
+
+Step 9: Calculation of specific tension using force and PCSA
+Speciﬁc tension was also calculated using the ratio of muscle force to PCSA (9). This calculation was done using the force measured during MVC and the PCSA calculated using the traditional approach (7).
+
+Step 10: Comparison of specific tension between data sets A and B
+Speciﬁc tension was compared between data sets A and B to determine which method provided more accurate results (10).
+
+Step 11: Analysis of results
+The results were analyzed using statistical methods to determine if there were significant differences between the specific tension values obtained using data sets A and B (11).
+
+Step 12: Conclusion
+The study concluded that the traditional approach provided more accurate results for calculating specific tension in human skeletal muscle (12).","
+
+The study outlined in the provided context information aims to calculate specific tension in human skeletal muscle using eight steps. The weakness in calculation of specific tension in this study may lie in the assumptions made in measuring muscle force or volume. While the study mentions that muscle force was calculated from steps 3 and 4, it does not specify the method used to measure muscle force. Similarly, while muscle volume was calculated from steps 6 and 7, it does not specify the method used to measure muscle volume. Without this information, it is unclear whether there were any assumptions made in measuring muscle force or volume that could affect the accuracy of the specific tension calculation."
+"23",2651,"Maganaris 2001",2001,26,28,6,"TA","Normal","YNG","Tibialis Anterior","M","PCSA","S","Method A  tendon force=458 Â± 36",31.5,22.5,487,15.5,"MRI, CSA x slice interval","US at MVC","Measured","max MVC from stimulation, Coactivation correction","MRI at MVC JA","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+
+Step 1: Measurement of torque and force
+During MVC, muscle moments were measured using a dynamometer (Biodex Medical Systems, New York, NY) and joint angles were measured using an electrogoniometer (Polhemus, Colchester, VT). Muscle force was calculated by multiplying the measured muscle moment by the moment arm length at rest (1).
+
+Step 2: Calculation of fascicular length
+Fascicular length was measured using MRI (1.5 T, Siemens, Erlangen, Germany) in the transverse plane at the midpoint of the muscle belly (2). The fascicular length was calculated by measuring the distance between the tendon insertions of the muscle (3).
+
+Step 3: Calculation of pennation angle
+Pennation angle was measured using MRI in the transverse plane at the midpoint of the muscle belly (2). The pennation angle was calculated by measuring the angle between the fascicle and the longitudinal axis of the muscle (4).
+
+Step 4: Calculation of muscle volume
+Muscle volume was calculated by multiplying the sum of the ACSAs in all slices times the MRI slice thickness (5).
+
+Step 5: Calculation of PCSA using fascicular length
+Estimations of PCSA were obtained from the ratio of muscle volume to fascicular length (2, 9, 13).
+
+Step 6: Calculation of PCSA using pennation angle
+PCSA can also be calculated using the pennation angle (6). The formula for this calculation is:
+PCSA = (muscle volume × cos² pennation angle) / fascicular length
+
+Step 7: Calculation of PCSA using traditional approach
+Sol was treated as a unipennate muscle (2, 10), and TA was treated as twoseparate equidimensional unipennate parts, each one occupying half the whole muscle volume (7). The whole TA PCSA was obtained by adding the PCSA of the two unipennate halves (see also Ref. 33).
+
+Step 8: Calculation of specific tension using torque and PCSA
+Speciﬁc tension was estimated and compared from the ratio of muscle force to PCSA using two data sets (8). The first data set used muscle moments during electrical stimulation and in vivo moment arm lengths, fascicular lengths, and pennation angles during MVC (data set A). The second data set used net MVC joint moments, moment arm lengths at rest, and cadaveric fascicular lengths and pennation angles (data set B).
+
+Step 9: Calculation of specific tension using force and PCSA
+Speciﬁc tension was also calculated using the ratio of muscle force to PCSA (9). This calculation was done using the force measured during MVC and the PCSA calculated using the traditional approach (7).
+
+Step 10: Comparison of specific tension between data sets A and B
+Speciﬁc tension was compared between data sets A and B to determine which method provided more accurate results (10).
+
+Step 11: Analysis of results
+The results were analyzed using statistical methods to determine if there were significant differences between the specific tension values obtained using data sets A and B (11).
+
+Step 12: Conclusion
+The study concluded that the traditional approach provided more accurate results for calculating specific tension in human skeletal muscle (12).","
+
+The study outlined in the provided context information aims to calculate specific tension in human skeletal muscle using eight steps. The weakness in calculation of specific tension in this study may lie in the assumptions made in measuring muscle force or volume. While the study mentions that muscle force was calculated from steps 3 and 4, it does not specify the method used to measure muscle force. Similarly, while muscle volume was calculated from steps 6 and 7, it does not specify the method used to measure muscle volume. Without this information, it is unclear whether there were any assumptions made in measuring muscle force or volume that could affect the accuracy of the specific tension calculation."
+"24",2651,"Maganaris 2001",2001,21,28,6,"TA","Normal","YNG","Tibialis Anterior","M","PCSA","V","Method B  tendon force=1324 Â± 110",20.3,44.7,1337,65.8,"MRI, CSA x slice interval","Literature value","Literature value","max MVC, Gravity correction","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+
+Step 1: Measurement of torque and force
+During MVC, muscle moments were measured using a dynamometer (Biodex Medical Systems, New York, NY) and joint angles were measured using an electrogoniometer (Polhemus, Colchester, VT). Muscle force was calculated by multiplying the measured muscle moment by the moment arm length at rest (1).
+
+Step 2: Calculation of fascicular length
+Fascicular length was measured using MRI (1.5 T, Siemens, Erlangen, Germany) in the transverse plane at the midpoint of the muscle belly (2). The fascicular length was calculated by measuring the distance between the tendon insertions of the muscle (3).
+
+Step 3: Calculation of pennation angle
+Pennation angle was measured using MRI in the transverse plane at the midpoint of the muscle belly (2). The pennation angle was calculated by measuring the angle between the fascicle and the longitudinal axis of the muscle (4).
+
+Step 4: Calculation of muscle volume
+Muscle volume was calculated by multiplying the sum of the ACSAs in all slices times the MRI slice thickness (5).
+
+Step 5: Calculation of PCSA using fascicular length
+Estimations of PCSA were obtained from the ratio of muscle volume to fascicular length (2, 9, 13).
+
+Step 6: Calculation of PCSA using pennation angle
+PCSA can also be calculated using the pennation angle (6). The formula for this calculation is:
+PCSA = (muscle volume × cos² pennation angle) / fascicular length
+
+Step 7: Calculation of PCSA using traditional approach
+Sol was treated as a unipennate muscle (2, 10), and TA was treated as twoseparate equidimensional unipennate parts, each one occupying half the whole muscle volume (7). The whole TA PCSA was obtained by adding the PCSA of the two unipennate halves (see also Ref. 33).
+
+Step 8: Calculation of specific tension using torque and PCSA
+Speciﬁc tension was estimated and compared from the ratio of muscle force to PCSA using two data sets (8). The first data set used muscle moments during electrical stimulation and in vivo moment arm lengths, fascicular lengths, and pennation angles during MVC (data set A). The second data set used net MVC joint moments, moment arm lengths at rest, and cadaveric fascicular lengths and pennation angles (data set B).
+
+Step 9: Calculation of specific tension using force and PCSA
+Speciﬁc tension was also calculated using the ratio of muscle force to PCSA (9). This calculation was done using the force measured during MVC and the PCSA calculated using the traditional approach (7).
+
+Step 10: Comparison of specific tension between data sets A and B
+Speciﬁc tension was compared between data sets A and B to determine which method provided more accurate results (10).
+
+Step 11: Analysis of results
+The results were analyzed using statistical methods to determine if there were significant differences between the specific tension values obtained using data sets A and B (11).
+
+Step 12: Conclusion
+The study concluded that the traditional approach provided more accurate results for calculating specific tension in human skeletal muscle (12).","
+
+The study outlined in the provided context information aims to calculate specific tension in human skeletal muscle using eight steps. The weakness in calculation of specific tension in this study may lie in the assumptions made in measuring muscle force or volume. While the study mentions that muscle force was calculated from steps 3 and 4, it does not specify the method used to measure muscle force. Similarly, while muscle volume was calculated from steps 6 and 7, it does not specify the method used to measure muscle volume. Without this information, it is unclear whether there were any assumptions made in measuring muscle force or volume that could affect the accuracy of the specific tension calculation."
+"25",2649,"Erskine 2009",2009,27,21.3,27,"QF","Normal","YNG","Quadriceps Femoris","M","PCSA","V"," Method 1 ",226,264,6335,30.3,"MRI, CSA x slice interval","US at MVC","Measured","max MVC + ITT, Activation & Coactivation correction","MRI at rest, MVC & JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension in this study, the following steps were taken:
+1. Calculate the PCSA of the quadriceps femoris (QF) using the estimated QF volume divided by the fascicle length (Lf) measured during MVC at optimum joint angle, assuming that VL Lf measured during MVC at optimum joint angle was representative of the mean Lf for the entire QF.
+2. Calculate QFrPCSA by dividing QF PCSA by C1coshpVL, where VL hp was assumed to be representative of the mean QF hp.
+3. Calculate QF specific tension by dividing Ft (tendon force) by rPCSA QF.
+4. The standard error of the estimate (SEE) of the regression equation was assessed to determine the accuracy of the estimate of PCSA and specific tension using Method 2 compared to Method 1 and was calculated using the following equation: SEE = SD/C1p1/C0R2/C0/C1. The absolute value was then expressed as a percentage of the mean value of Method 1.
+5. A one-way analysis of variance (ANOVA) was used to compare the mean fascicle length and pennation angle of each component muscle with the weighted mean QF fascicle length and pennation angle measured in Method 1. If statistical significance was detected, Dunnett's multiple comparison post hoc test was used to locate the difference(s). Statistical significance was accepted when P < 0.05.","
+
+The study did not explicitly mention weaknesses in the calculation of specific tension in terms of assumptions in measuring muscle force or volume. However, the study did acknowledge that there are extrinsic factors that may affect the measured force, such as voluntary muscle activation, antagonist muscle co-contraction, moment arm length, the angle at which the muscle fibers insert into the tendon, and the infiltration of non-contractile material within the muscle. These factors may explain some of the variation in muscle strength between healthy, untrained individuals of similar age, but some of the variation remains unexplained, implying differences in maximum force per unit cross-sectional area of muscle between people. The study aimed to determine a minimal set of measurements that may be used to provide reliable estimates of QF specific tension in vivo by investigating the extent to which extrinsic factors affect the measured force."
+"26",2649,"Erskine 2009",2009,19,21.3,27,"QF","Normal","YNG","Quadriceps Femoris","M","PCSA","V"," Method 2 ",236,264,6335,29.1,"MRI, ACSA & literature regression relationship","US at MVC rep muscle","measured PA representative muscle","max MVC + ITT, Activation & Coactivation correction","MRI at rest, MVC & JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension in this study, the following steps were taken:
+1. Calculate the PCSA of the quadriceps femoris (QF) using the estimated QF volume divided by the fascicle length (Lf) measured during MVC at optimum joint angle, assuming that VL Lf measured during MVC at optimum joint angle was representative of the mean Lf for the entire QF.
+2. Calculate QFrPCSA by dividing QF PCSA by C1coshpVL, where VL hp was assumed to be representative of the mean QF hp.
+3. Calculate QF specific tension by dividing Ft (tendon force) by rPCSA QF.
+4. The standard error of the estimate (SEE) of the regression equation was assessed to determine the accuracy of the estimate of PCSA and specific tension using Method 2 compared to Method 1 and was calculated using the following equation: SEE = SD/C1p1/C0R2/C0/C1. The absolute value was then expressed as a percentage of the mean value of Method 1.
+5. A one-way analysis of variance (ANOVA) was used to compare the mean fascicle length and pennation angle of each component muscle with the weighted mean QF fascicle length and pennation angle measured in Method 1. If statistical significance was detected, Dunnett's multiple comparison post hoc test was used to locate the difference(s). Statistical significance was accepted when P < 0.05.","
+
+The study did not explicitly mention weaknesses in the calculation of specific tension in terms of assumptions in measuring muscle force or volume. However, the study did acknowledge that there are extrinsic factors that may affect the measured force, such as voluntary muscle activation, antagonist muscle co-contraction, moment arm length, the angle at which the muscle fibers insert into the tendon, and the infiltration of non-contractile material within the muscle. These factors may explain some of the variation in muscle strength between healthy, untrained individuals of similar age, but some of the variation remains unexplained, implying differences in maximum force per unit cross-sectional area of muscle between people. The study aimed to determine a minimal set of measurements that may be used to provide reliable estimates of QF specific tension in vivo by investigating the extent to which extrinsic factors affect the measured force."
+"27",2648,"O'Brien 2010",2010,28,28.2,10,"QF","Normal","YNG","Quadriceps Femoris","M","PCSA","V","",231.8,328.85,11439,55.02,"MRI, CSA x slice interval","US at MVC","Measured","max MVC + ITT, Activation & Coactivation correction","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension in this study, the following steps were taken:
+1. Measurement of torque: The maximal quadriceps tendon force was calculated from the knee extension maximal voluntary contraction (MVC) by accounting for EMG-based estimates of antagonist co-activation, incomplete quadriceps activation using the interpolation twitch technique, and magnetic resonance imaging (MRI)-based measurements of the patellar tendon moment arm.
+2. Calculation of PCSA: The PCSA was calculated as the muscle volume, measured from MRI scans, divided by optimal fascicle length, measured from ultrasound images during MVC at the estimated angle of peak quadriceps muscle force.
+3. Calculation of specific tension: Specific tension was calculated as the ratio between the quadriceps tendon force and the sum of the physiological cross-sectional area (PCSA) multiplied by the cosine of the angle of pennation of each head within the quadriceps muscle. The formula used was:
+Speciﬁc tension =(tendon force ×cosθ−1)/PCSA (3)
+where θis the angle of pennation and therefore tendon force×cosθ−1is equal to the fascicle force, and PCSA is equal to the ratio between muscle volume and optimal fascicle length. By incorporating the size and architecture measurements of all four quadriceps heads in the calculation of a specific tension for the entire quadriceps muscle, the errors associated with distributing the tendon force between the separate heads were minimized. The PCSA ×cosθof the entire quadriceps was therefore calculated as the sum of the PCSA ×cosθof each quadriceps head. The F quad w a st h e nd i v i d e db yt h e quadriceps PCSA ×cosθto determine the speciﬁc tension of the entire quadriceps muscle.","
+The potential error introduced by measuring muscle architecture at MVC and in some instances not at optimal joint angle was small (∼4%), but it may still have an impact on the validity of the specific tension estimates. Additionally, the fact that muscle forces were not maximal due to the use of percutaneous electrical stimulation in a previous study may have led to an underestimation of specific tension values reported in that study. Cross-talk between quadriceps and hamstrings EMG may also affect the estimated level of antagonistic joint moment, but it has been shown that the magnitude of cross-talk between knee extensors and flexors is generally small, hence unlikely to have had a significant effect for the EMG measurements in the adults. However, the fact that the large size of the magnetic stimulation coil prevented the placement of the ultrasound probe over the necessary region of the muscles may have compromised the validity of the calculated specific tension due to the assumption that the muscle force and volume were measured at optimal sarcomere length and during voluntary activation rather than full activation."
+"28",2646,"Fukunaga 1996",1996,20,33.5,8,"TS","Normal","YNG","Triceps Surae","M","PCSA","V","muscle length",346.7,NA,NA,10.8,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","max MVC","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension in this study, the following steps were taken:
+1. Measurement of torque: The maximum isometric torque was measured for plantar flexors and dorsiflexors at different ankle angles using a custom-made dynamometer. The torque was measured in Nm (Newton-meters).
+2. Calculation of force: The force was calculated by dividing the measured torque by the moment arm (distance between the line of action of the force and the axis of rotation). The force was measured in N (Newtons).
+3. Calculation of PCSA: The PCSA (physiological cross-sectional area) was calculated for triceps surae (plantar flexors) and tibialis anterior (dorsiflexors) using MRI scans. The PCSA was measured in cm2 (square centimeters).
+4. Calculation of specific tension: Specific tension was calculated by dividing the force by the PCSA. The specific tension was measured in N/cm2 (Newtons per square centimeter).
+5. Comparison of specific tension: The specific tension was compared between plantar flexors and dorsiflexors at different ankle angles to determine if there were any differences in specific tension between the two muscle groups. The correlation coefficients between PCSA and tendon tension were also calculated to determine if there were any changes in the relationship between PCSA and tendon tension with changes in ankle angle.","
+
+According to the paper ""Specific tension of human plantar flexor,"" there are significant limitations in the methods used to estimate the parameters necessary to calculate specific tension in human muscles. These limitations include assumptions in measuring muscle force or volume. The paper suggests that variations in muscle volume, fiber length, fiber pinnation, fiber type, joint mechanics, and maximum voluntary contraction cannot account for the twofold difference in specific tension observed between dorsiflexors and plantar flexors. Instead, the differences in specific tension may be due to how the force of fibers is transmitted through the muscle matrix and to the tendon rather than to a difference in the fundamental mechanics of force generation within the sarcomeres."
+"29",2646,"Fukunaga 1996",1996,20,33.5,8,"PF","Normal","YNG","Plantar Flexors","M","PCSA","V","Peak torque",434.6,174.7,3623,8,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","max MVC","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension in this study, the following steps were taken:
+1. Measurement of torque: The maximum isometric torque was measured for plantar flexors and dorsiflexors at different ankle angles using a custom-made dynamometer. The torque was measured in Nm (Newton-meters).
+2. Calculation of force: The force was calculated by dividing the measured torque by the moment arm (distance between the line of action of the force and the axis of rotation). The force was measured in N (Newtons).
+3. Calculation of PCSA: The PCSA (physiological cross-sectional area) was calculated for triceps surae (plantar flexors) and tibialis anterior (dorsiflexors) using MRI scans. The PCSA was measured in cm2 (square centimeters).
+4. Calculation of specific tension: Specific tension was calculated by dividing the force by the PCSA. The specific tension was measured in N/cm2 (Newtons per square centimeter).
+5. Comparison of specific tension: The specific tension was compared between plantar flexors and dorsiflexors at different ankle angles to determine if there were any differences in specific tension between the two muscle groups. The correlation coefficients between PCSA and tendon tension were also calculated to determine if there were any changes in the relationship between PCSA and tendon tension with changes in ankle angle.","
+
+According to the paper ""Specific tension of human plantar flexor,"" there are significant limitations in the methods used to estimate the parameters necessary to calculate specific tension in human muscles. These limitations include assumptions in measuring muscle force or volume. The paper suggests that variations in muscle volume, fiber length, fiber pinnation, fiber type, joint mechanics, and maximum voluntary contraction cannot account for the twofold difference in specific tension observed between dorsiflexors and plantar flexors. Instead, the differences in specific tension may be due to how the force of fibers is transmitted through the muscle matrix and to the tendon rather than to a difference in the fundamental mechanics of force generation within the sarcomeres."
+"30",2646,"Fukunaga 1996",1996,20,33.5,8,"DF","Normal","YNG","Dorsiflexor","M","PCSA","V","Peak torque",34.6,32.9,832,24.5,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","max MVC","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension in this study, the following steps were taken:
+1. Measurement of torque: The maximum isometric torque was measured for plantar flexors and dorsiflexors at different ankle angles using a custom-made dynamometer. The torque was measured in Nm (Newton-meters).
+2. Calculation of force: The force was calculated by dividing the measured torque by the moment arm (distance between the line of action of the force and the axis of rotation). The force was measured in N (Newtons).
+3. Calculation of PCSA: The PCSA (physiological cross-sectional area) was calculated for triceps surae (plantar flexors) and tibialis anterior (dorsiflexors) using MRI scans. The PCSA was measured in cm2 (square centimeters).
+4. Calculation of specific tension: Specific tension was calculated by dividing the force by the PCSA. The specific tension was measured in N/cm2 (Newtons per square centimeter).
+5. Comparison of specific tension: The specific tension was compared between plantar flexors and dorsiflexors at different ankle angles to determine if there were any differences in specific tension between the two muscle groups. The correlation coefficients between PCSA and tendon tension were also calculated to determine if there were any changes in the relationship between PCSA and tendon tension with changes in ankle angle.","
+
+According to the paper ""Specific tension of human plantar flexor,"" there are significant limitations in the methods used to estimate the parameters necessary to calculate specific tension in human muscles. These limitations include assumptions in measuring muscle force or volume. The paper suggests that variations in muscle volume, fiber length, fiber pinnation, fiber type, joint mechanics, and maximum voluntary contraction cannot account for the twofold difference in specific tension observed between dorsiflexors and plantar flexors. Instead, the differences in specific tension may be due to how the force of fibers is transmitted through the muscle matrix and to the tendon rather than to a difference in the fundamental mechanics of force generation within the sarcomeres."
+"31",4196,"Binder-Markey 2023",2023,25,NA,12,"GRA","Normal","OLD","Gracilis","Mixed","PCSA","","",13.1,NA,NA,17.1,"3D photogrammetry reconstruction","Directly measured muscle length & literature FWHM-optimal fiber length relationship","Literature value","none","none","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force activation correction","
+To calculate specific tension (Si), we first determined the force (F) for each muscle at each length (L) during the intraoperative measurement of torque. The cross-sectional area (CSA) of each muscle was calculated using the measured muscle volume (V) and the measured muscle length (L) using the following equation: CSA = V/L. The pennation angle (θ) was measured for each muscle using ultrasound imaging during the intraoperative measurement of torque. The pennation angle was used to calculate the physiological cross-sectional area (PCSA) using the following equation: PCSA = CSA * cos(θ). The specific tension (Si) was then calculated using the following equation: Si = F/PCSA. The specific tension was calculated for each muscle at each length during the intraoperative measurement of torque.","
+The study acknowledges that the calculation of specific tension involves multiple assumptions and steps, including converting joint torque to tendon force based on the relationship between joint angle and moment arm. The study also assumes that twitch tension force scales equivalently to tetanic tension force with increasing recruitment. However, the study estimates that these assumptions would affect the calculations by less than 10%. Therefore, the weakness in calculation of specific tension in this study lies in the assumptions made in measuring muscle force and volume, which may introduce some level of error in the calculations."
+"32",4106,"Narici 1996",1996,15,38,6,"GM","Normal","MID","Gastrocnemius Medialis","M","PCSA","","fiber length at rest: 5.08 Â± 0.36
+
+PCSA at rest: 46.5 Â± 5.7
+
+ST at rest: 9.6",62.5,NA,448,13.3,"MRI, CSA x slice interval","US at MVC","Measured","none","none","(Muscle vol/Fiber length)*cos(Î¸)","External Force (Limb Force)","
+
+To calculate specific tension (N/cm2), we need to know the torque (Nm), force (N), and PCSA (cm2) of the muscle being studied. The specific tension can be calculated using the following formula:
+
+Specific tension (N/cm2) = (torque (Nm) / PCSA (cm2)) / force (N)
+
+In this study, the torque was measured during isometric plantarflexions of increasing intensity up to MVC (maximum voluntary contraction). The force was calculated by dividing the torque by the moment arm (distance from the joint axis to the line of action of the force). The PCSA was calculated using the equation:
+
+PCSA = (V / Lf) cos0
+
+where V is the muscle volume (cm3) and Lf is the fibre length (cm). The angle of pennation (0) was measured using ultrasound imaging. The muscle volume was calculated by multiplying the muscle thickness (cm) by the muscle width (cm) and the length of the muscle (cm).
+
+To calculate the specific tension for this study, we would need to measure the torque, force, PCSA, muscle thickness, muscle width, and fibre length for each muscle being studied during each contraction at each joint angle. The specific tension would then be calculated for each contraction at each joint angle using the above formula.","
+The weakness in calculation of specific tension in this study is highlighted by the authors themselves when they state that ""calculations of muscle specific tension made without using the PCSA relating to the joint angle at which the force was measured maybe considerably wrong."" This implies that the PCSA (physiological cross-sectional area) of the muscle may vary depending on the joint angle at which the force was measured, which was not taken into account in previous calculations of specific tension. This highlights the importance of considering the joint angle when calculating specific tension in order to obtain accurate results."
+"33",4070,"Reeves 2004",2004,22,74.3,9,"VL","Untrained","OLD","Vastus Lateralis","Mixed","PCSA","V","",30.4,NA,847.9,27,"MRI, CSA x slice interval","US at rest","Measured","max MVC + ITT, Activation & Coactivation correction","MRI at rest, JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon force, % contribution from literature","
+To calculate specific tension (N/cm²) in this study, the following steps need to be taken:
+1. Measure maximal isometric muscle force (N) using an appropriate method such as an isokinetic dynamometer or force plate.
+2. Calculate the tendon moment arm length (cm) using anatomical landmarks and goniometry.
+3. Measure muscle pennation angle (degrees) using ultrasound imaging or MRI.
+4. Calculate muscle physiological cross-sectional area (PCSA) using muscle volume (cm³) and muscle fiber or fascicle length (cm). Muscle volume can be calculated using the formula:
+   V = (L × W × H) × 0.5236
+   where L = muscle length (cm), W = muscle width (cm), and H = muscle height (cm).
+   Muscle fiber or fascicle length can be measured using ultrasound imaging or MRI.
+5. Calculate specific tension (N/cm²) using the formula:
+   Specific tension = (maximal isometric muscle force × tendon moment arm length) / (PCSA × muscle pennation angle)
+   where PCSA = muscle volume × (1 - cos²(muscle pennation angle)) / (muscle fiber or fascicle length × muscle pennation angle)
+   Note: The cosine squared function is used to correct for the fact that muscle fibers or fascicles are not perfectly aligned with the tendon moment arm.
+6. Repeat the above steps for each muscle being studied to obtain specific tension values for each muscle.","
+
+The weakness in calculation of specific tension in previous attempts to assess alterations in specific force with strength training in elderly humans lies in errors in assessing one or both of the factors necessary for specific force determination. Instead of measuring muscle force, joint torque or weight lifting capacity has been used, which does not accurately reflect only the agonist muscle forces (25). Additionally, a single anatomic cross-sectional area (ACSA) has typically been used to normalize these strength measurements to muscle size (44, 49), but this approach seems inappropriate because it does not take into account muscle geometry and training-induced changes thereof (35), thus underestimating the physiological cross-sectional area (PCSA) of a pennate muscle (1, 16, 21)."
+"34",4040,"Morse 2008",2008,22,25.3,12,"GL","Normal","YNG","Gastrocnemius Lateralis","M","PCSA","V","MA=4.61 Â± .32 cm",32.3,NA,416.2,13.1,"MRI, CSA x slice interval","US at MVC","Measured","max MVC, Coactivation correction","MRI at rest, JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force using relative PCSA","
+To calculate specific tension in this study, the following steps were taken:
+1. The GL component of plantarflexor torque was measured during MVC and normalized to the GL ACSA to obtain the torque per unit ACSA (MVC/ACSA).
+2. The GL component of tendon force was calculated by multiplying the measured tendon force by the cosine of the pennation angle measured during contraction.
+3. The fascicle force was calculated by dividing the GL component of tendon force by the cosine of the pennation angle.
+4. The PCSA was measured using the method described in the study.
+5. Specific tension was calculated by dividing the fascicle force by the PCSA.
+6. The results were presented as means with standard deviation.
+7. Differences between groups were assessed using independent samples Student's t-tests, with distribution and homogeneity of variance assessed using the Shapiro-Wilk test and Levene test, respectively. The level of significance was set at the 5% level.","
+The present method of assessing specific force in vivohas been derived from techniques utilized previously in the soleus, tibialis anterior, and vastus lateralis muscles (28, 35, 39). However, the study did not mention any weakness in calculation of specific tension such as assumptions in measuring muscle force or volume. The weakness in calculation of specific tension could be due to factors such as differences in moment arm length, muscle activation, or architecture, which were mentioned in the results section but were not addressed in the methodology section. This finding could not be explained by differences in moment arm length, muscle activation, or architecture, and other factors, such as tendinous characteristics and/or changes in moment arm length with contraction, may be held responsible. These observations warrant further investigation."
+"35",2938,"Morse 2005",2005,26,25.3,12,"GL","Normal","YNG","Gastrocnemius Lateralis","M","PCSA","V","",32.3,NA,416.2,13.1,"MRI, CSA x slice interval","US at MVC","Measured","max MVC + ITT, Activation & Coactivation correction","MRI at rest","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force using relative PCSA","
+
+To calculate specific tension in this study, the following steps were taken:
+1. Measurement of torque: The peak torque (PT) was measured using an isokinetic dynamometer (Cybex Norm, Stoughton, MA) during plantarflexion of the ankle joint at an angular velocity of 60°/s. The torque was measured in Nm.
+2. Measurement of force: The Achilles tendon force (PF) was calculated by dividing PT by the Achilles tendon moment arm length (Fig. 3). The force was measured in N.
+3. Calculation of PCSA: The pennate angle (θ) was measured from the ultrasound images of the GL muscle (Fig. 1). The pennate angle was used to calculate the pennation angle-corrected physiological cross-sectional area (PCSA) of the GL muscle using the following formula:
+PCSA = (1/cosθ) * (muscle area) * (fascicle length) * (fascicle number)
+The PCSA was measured in cm2.
+4. Calculation of specific tension: The specific tension (ST) was calculated by dividing PF by the PCSA:
+ST = PF / PCSA
+The specific tension was measured in N/cm2.
+In summary, the specific tension was calculated by dividing the Achilles tendon force (PF) by the pennate angle-corrected physiological cross-sectional area (PCSA) of the GL muscle.","
+The calculation of specific tension in this study may have some weaknesses in measuring muscle force or volume due to the fact that the value of torque calculated with the method used probably represents a peak MVC rather than the true maximal MVC that would have been obtained by adding a tetanus rather than doublet to the voluntary torque. This is because the delivery of a tetanic current is extremely painful and the population studied included older individuals, so a doublet was used instead. However, the authors acknowledge that this method may not accurately represent the true maximal MVC and have previously presented data on muscle activation capacity (34) and the possible influence of tendon compliance on the assessment of activation in the elderly (32)."
+"36",2820,"Nygaard 1983",1983,7,38,4,"BIC","Normal","MID","Biceps Brachii","M","ACSA","V","",11.6,NA,NA,35.6,"none","none","none","max MVC","Literature value at experimental JA","CT ACSA, literature MVC correction","Tendon force- % contribution from literature","
+To calculate specific tension in this study, the following steps were taken:
+1. The highest force value was adopted from three trials at each velocity.
+2. The specific tension was calculated using the following formula:
+   Specific tension = (highest force value x 1000) / (PCSA x L)
+   where:
+   - Highest force value: the highest force value obtained from the three trials at each velocity
+   - PCSA: physiological cross-sectional area (PCSA) of the brachial biceps muscle, calculated using the formula:
+     PCSA = (1/7) x (force arm) x (cross-sectional area of the flexed arm) x (1 + (resistance arm/force arm) x (cosine of the angle between the force arm and the resistance arm))
+     - Force arm: distance from the center of axis of rotation of the elbow joint at the condylus humeri to the point at which the brachial biceps muscle attaches to the tuberositas radii (3492 cm)
+     - Cross-sectional area of the flexed arm: measured using the formula:
+       Cross-sectional area of the flexed arm = (0.74 x (diameter of the forearm at the midpoint) x (diameter of the upper arm at the midpoint))^2
+       - Diameter of the forearm at the midpoint: measured using a tape measure at the midpoint between the olecranon and the styloid process of the ulna
+       - Diameter of the upper arm at the midpoint: measured using a tape measure at the midpoint between the acromion and the medial epicondyle of the humerus
+     - Resistance arm: distance from the condylus humeri to the handgrip (70 cm)
+     - Angle between the force arm and the resistance arm: measured using a goniometer
+3. The highest force value was obtained from three trials at each velocity.
+4. The specific tension was calculated using the formula provided above.
+5. The specific tension was calculated for each subject and compared between subjects of different fibre compositions using non-parametric statistical procedures (Wilcoxon test for two-sample related cases and Mann-Whitney U test for two-sample independent cases).","
+
+There is no weakness in calculation of specific tension mentioned in the given context information. The study reports that the specific tension (maximal isometric tension) of the muscle averaged 33 Nkm2 with no demonstrable difference between subjects of widely different fiber compositions, suggesting that maximal tetanic tension is similar in fast- and slow-twitch fibers in man. No assumptions in measuring muscle force or volume were mentioned that could potentially weaken the calculation of specific tension."
+"37",2745,"Valamatos 2018",2018,24,21.6,11,"VL","Untrained","YNG","Vastus Lateralis","M","PCSA","V","",86.6,NA,2710,31.8,"MRI, CSA x slice interval","US at rest","Measured","max MVC + ITT, Activation & Coactivation correction","MRI at rest, MVC & JA correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force using relative PCSA","
+To calculate the specific tension of the VL muscle in this study, the following steps were taken:
+1. Measure the torque produced by the VL muscle during maximum voluntary contraction (MVC) using an isokinetic dynamometer.
+2. Calculate the force produced by the VL muscle during MVC by dividing the torque by the moment arm (MA) of the VL muscle (MA = 0.08 m).
+3. Measure the pennation angle (PA) of the VL muscle during MVC using ultrasound imaging.
+4. Calculate the fascicle force of the VL muscle by dividing the VL muscle force by the cosine of the PA (fascicle force = VL muscle force / cos(PA)).
+5. Measure the optimal fiber length (FL) of the VL muscle during MVC using ultrasound imaging.
+6. Calculate the physiological cross-sectional area (PCSA) of the VL muscle by dividing the muscle volume by the FL (PCSA = muscle volume / FL^2).
+7. Calculate the specific tension of the VL muscle by dividing the fascicle force by the PCSA (specific tension = fascicle force / PCSA).
+8. Statistical analyses were performed using the software pack SPSS 23 (IBM Corp, Armonk, NY).","
+There are no weaknesses in the calculation of specific tension outlined in the study. The authors calculated the specific tension of the VL muscle by dividing the VL fascicle force by the VL PCSA (Maga-naris et al., 2001; Narici et al., 1992), which was calculated by dividing the muscle volume by the optimum FL (measured at optimal angle during MVCs). The authors ensured that the right region of the muscle was scanned by holding the probe in place using an external device secured by the experimenter and fixed with double-sided adhesive skin interfaces. The use of an echo-absorptive external marker ensured that no probe movement occurred in relation to the digitized structure. The authors also verified the assumption of normality using the Shapiro–Wilk test."
+"38",2672,"Gorgey 2006",2006,17,28,7,"QF","Normal","YNG","Quadriceps Femoris","Mixed","PCSA","S","the moment arm was derived
+from cadavers and knee joints of able bodies, 0.04 m, at
+the same knee joint angle used in our study (Baltzopou-
+los 1995; Wickiewicz et al. 1983, 1984).",145,166,3532,25,"MRI, CSA x slice interval","MRI muscle length x literature ratio","Literature value","max MVC from stimulation","Literature value at experimental JA, MVC & cadaver shrinkinge correction","(Muscle vol/Fiber length)*cos(Î¸)","Tendon Force ","
+To calculate specific tension (Wc tension in N/cm2) in this study, the following steps were taken:
+1. Measure torque using an isokinetic dynamometer during an electrical stimulation protocol.
+2. Calculate the moment arm length (0.047 m) to convert torque to force (N).
+3. Divide the force by the PCSA of activated skeletal muscle to obtain specific tension (N/cm2).
+4. Calculate the PCSA of mQF (muscle quadriceps femoris) using the following formula:
+   PCSA = [muscle volume (cm3) £ COS (pennation angle)] / Wber length (Edgerton et al., 1990; Fukunaga et al., 1992; Akima et al., 2000).
+5. Calculate muscle volume (cm3) by multiplying the activated CSA (cm2) in each slice by 2 cm (slice thickness + interslice space) and adding the slices together to obtain the volume of activated tissue.
+6. Use a pennation angle of 15.6° (Fukunaga et al., 2001) to calculate the PCSA of mQF.","
+
+In this study, the calculation of specific tension involves dividing the torque obtained for the Wrst contraction of the four di Ver-ent SNMES protocols by the patellar tendon moment arm length of the mQF. The moment arm was derived from cadavers and knee joints of able bodies at the same knee joint angle used in the study. However, the weakness in this calculation lies in the assumption that the moment arm increases with muscle contraction and that the moment arm from cadavers shrinks after death. The percentage increase in the moment arm during ankle extension, which is 18%, was used in the calculation of the moment arm length for this lower extremity, extensor muscle group (Maganaris et al., 2001). This assumption may not be entirely accurate for all muscle groups and may result in inaccurate specific tension calculations. Additionally, the calculation of specific tension relies on the accurate measurement of muscle force and volume, which may also introduce errors in the calculation."
+"39",4205,"Sims 2018",2018,20,22,18,"VL","Normal","YNG","Vastus Lateralis","M","PCSA","V"," With the VL being
+one of the larger muscles in the body, invariably, the dimensions of the
+probe was not large enough to capture a full fascicle; for these cases,
+linear extrapolation was used to determine fascicle length, as little
+error (2â€“7%) is observed at the midpoint of the muscle 
+
+
+coactivation measured",74.7,NA,1704,23.6,"US, ACSA & literature regression relationship","US at MVC","Measured","max MVC + ITT, Activation & Coactivation correction","Xray at MVC JA","(Muscle vol/Fiber length)*cos(Î¸)","Tendon force, % contribution from literature","
+To calculate specific tension (N/cm2), the following steps can be followed:
+1. Measure torque (Nm) using an isokinetic dynamometer (e.g., Biodex System 3).
+2. Calculate force (N) by dividing torque by the moment arm length (m) of the patella tendon (PT MA) (Nm/m).
+3. Calculate PCSA (cm2) using the formula: PCSA = (muscle volume/fascicle length) * (1/π) * (diameter/2)2 (30).
+4. Calculate specific force (N/cm2) by dividing force (N) by PCSA (cm2).
+5. Statistical analysis can be performed using SPSS (version 22.0) to compare specific force between groups or to perform correlations between related dependent variables.
+6. Power analysis can be performed using G*Power to ensure study power above 0.8.
+7. Results can be reported as means (SD).","
+
+There is no weakness in calculation of specific tension mentioned in the given context information. The study aims to measure specific force in the vastus lateralis muscle of achondroplasic populations to compare with the reference data set published for adult men (50). The study does not mention any assumptions in measuring muscle force or volume."
+"40",4050,"Aagaard 2001",2001,16,27,11,"QF","Untrained","YNG","Quadriceps Femoris","M","PCSA","V","",NA,282.6,NA,42.6,"MRI, CSA x slice interval","Literature value","Measured","max MVC, Gravity correction","Literature value at experimental JA","(Muscle vol/Fiber length)*cos(Î¸)","Tendon force, % contribution from literature","
+To calculate specific tension (N cm^-3) for this study, the following steps were taken:
+1. Measurement of torque: The maximal knee extension moment was measured using an isokinetic dynamometer (Cybex Norm). The moment arm for the patella tendon was assumed to be 4.0 cm (Wickiewicz et al., 1984; Marshall et al., 1990).
+2. Estimation of quadriceps force: Quadriceps force (Fquad) was estimated from the measurement of maximal knee extension moment using the following formula: Fquad = Mmax/cos( p), where Mmax is the maximal knee extension moment and p is the angle of knee flexion (Wickiewicz et al., 1984; Marshall et al., 1990).
+3. Estimation of patella tendon force: The ratio of patella tendon force to quadriceps tendon force was assumed to be 0.70 at 70 deg knee flexion (Nisell et al., 1989). Therefore, patella tendon force (Fpat) was calculated using the following formula: Fpat = Fquad x 0.70.
+4. Calculation of PCSA: The cross-sectional area of the quadriceps muscle (PCSA) was estimated using the following formula: PCSA = (Fquad/cos( p))/(maximal specific tension), where maximal specific tension was assumed to be 42.6 N cm^-3 before the period of strength training and 45.3 N cm^-3 after the period of strength training (based on previous studies).
+5. Calculation of specific tension: Specific tension was calculated using the following formula: Specific tension = Fpat/PCSA (N cm^-3).
+It should be noted that the above calculations are highly sensitive to even small changes in muscle fibre length. For example, a 5% change in muscle fibre length (~0.4 cm) would result in a specific muscle tension of 42.5 N cm^-3 post-training.","
+
+The calculation of specific tension in this study is based on the assumption that the muscle force and volume remain constant during the period of strength training. However, this assumption may not be entirely accurate due to various factors such as changes in muscle fiber length, muscle activation level, and muscle fiber type composition. A 5% change in muscle fiber length (~0.4 cm) would result in a significant change in specific muscle tension post-training. Therefore, the calculation of specific tension may be less reliable due to the sensitivity of this measurement to small changes in muscle fiber length. Additionally, the measurement of muscle force may also be affected by factors such as the type of contraction (isometric vs. isotonic), the speed of contraction, and the level of muscle activation. These factors may lead to variations in the measurement of muscle force and subsequently affect the calculation of specific tension."
+"41",4204,"Narici 1992",1992,21,34,6,"VL","Normal","YNG","Vastus Lateralis","M","PCSA","","formula used in the present study cor- 
+responds to the formula for non-reduced physiological 
+cross-sectional area of Alexander and Vernon (1975), as 
+in their study n.a = (m/p*t
+sin 0 (where n = number of 
+fibres and a= cross-sectional area of each fibre) and 
+should thus correspond to the non-reduced physiological 
+cross-sectional area calculated by Haxton (1944).",62.4,NA,1451.9,23.7,"MRI, CSA x slice interval","MRI at rest","Measured","none","Literature value at experimental JA","(vol/muscle thickness)*sin(alpha)","Force equilibrium model  and Tendon Force using relative PCSA","
+To calculate specific tension (stress) of each muscle, the following steps need to be taken:
+1. Calculate the moment arm for the patellar ligament (Rpt) at the angle corresponding to the highest MVC from the data of Smidt (1973).
+2. Convert the force measured at the ankle (Fa) to its tendon component (Ft) by dividing by the mechanical advantage given by Rp~/
+3. Estimate the force acting along the fibers (Ff) of each of the four muscles composing the quadriceps by dividing the force along the tendon (Ft), acting at an angle 0 with respect to the fibers (Fig. 1), by cos0 and then multiplying by the proportionate fraction of the total CSAp occupied by each muscle.
+4. Calculate the stress of each muscle by dividing Ff (Eq. 3) by its CSAp.
+5. The specific tension (stress) of each muscle can be calculated by dividing the force acting along the fibers (Ff) by the physiological cross-sectional area (CSAp).
+6. The mean values of muscle volumes (V), distance between tendons (t), angles of pennation (0), and the physiological cross-sectional areas (CSAp) computed from these data can be reported in a table (Table 1).","
+One potential weakness in the calculation of specific tension in this study is the assumption that the force developed at the ankle rather than that acting along the tendon is used to calculate muscle stress. This can result in an undervaluation of the stress by more than eight times due to the mechanical advantage of the joint. Additionally, the study does not take into account the fibre type composition of the muscles, which may also contribute to differences in specific tension."
+"42",4204,"Narici 1992",1992,21,34,6,"VI","Normal","YNG","Vastus Intermedius","M","PCSA","","",83.5,NA,1997.1,24.1,"MRI, CSA x slice interval","MRI at rest","Measured","none","Literature value at experimental JA","(vol/muscle thickness)*sin(alpha)","Force equilibrium model  and Tendon Force using relative PCSA","
+To calculate specific tension (stress) of each muscle, the following steps need to be taken:
+1. Calculate the moment arm for the patellar ligament (Rpt) at the angle corresponding to the highest MVC from the data of Smidt (1973).
+2. Convert the force measured at the ankle (Fa) to its tendon component (Ft) by dividing by the mechanical advantage given by Rp~/
+3. Estimate the force acting along the fibers (Ff) of each of the four muscles composing the quadriceps by dividing the force along the tendon (Ft), acting at an angle 0 with respect to the fibers (Fig. 1), by cos0 and then multiplying by the proportionate fraction of the total CSAp occupied by each muscle.
+4. Calculate the stress of each muscle by dividing Ff (Eq. 3) by its CSAp.
+5. The specific tension (stress) of each muscle can be calculated by dividing the force acting along the fibers (Ff) by the physiological cross-sectional area (CSAp).
+6. The mean values of muscle volumes (V), distance between tendons (t), angles of pennation (0), and the physiological cross-sectional areas (CSAp) computed from these data can be reported in a table (Table 1).","
+One potential weakness in the calculation of specific tension in this study is the assumption that the force developed at the ankle rather than that acting along the tendon is used to calculate muscle stress. This can result in an undervaluation of the stress by more than eight times due to the mechanical advantage of the joint. Additionally, the study does not take into account the fibre type composition of the muscles, which may also contribute to differences in specific tension."
+"43",4204,"Narici 1992",1992,21,34,6,"VM","Normal","YNG","Vastus Medialis","M","PCSA","","",68,NA,1913.2,27.9,"MRI, CSA x slice interval","MRI at rest","Measured","none","Literature value at experimental JA","(vol/muscle thickness)*sin(alpha)","Force equilibrium model  and Tendon Force using relative PCSA","
+To calculate specific tension (stress) of each muscle, the following steps need to be taken:
+1. Calculate the moment arm for the patellar ligament (Rpt) at the angle corresponding to the highest MVC from the data of Smidt (1973).
+2. Convert the force measured at the ankle (Fa) to its tendon component (Ft) by dividing by the mechanical advantage given by Rp~/
+3. Estimate the force acting along the fibers (Ff) of each of the four muscles composing the quadriceps by dividing the force along the tendon (Ft), acting at an angle 0 with respect to the fibers (Fig. 1), by cos0 and then multiplying by the proportionate fraction of the total CSAp occupied by each muscle.
+4. Calculate the stress of each muscle by dividing Ff (Eq. 3) by its CSAp.
+5. The specific tension (stress) of each muscle can be calculated by dividing the force acting along the fibers (Ff) by the physiological cross-sectional area (CSAp).
+6. The mean values of muscle volumes (V), distance between tendons (t), angles of pennation (0), and the physiological cross-sectional areas (CSAp) computed from these data can be reported in a table (Table 1).","
+One potential weakness in the calculation of specific tension in this study is the assumption that the force developed at the ankle rather than that acting along the tendon is used to calculate muscle stress. This can result in an undervaluation of the stress by more than eight times due to the mechanical advantage of the joint. Additionally, the study does not take into account the fibre type composition of the muscles, which may also contribute to differences in specific tension."
+"44",4204,"Narici 1992",1992,21,34,6,"RF","Normal","YNG","Rectus Femoris","M","PCSA","","",66.2,NA,1601.3,24.3,"MRI, CSA x slice interval","MRI at rest","Measured","none","Literature value at experimental JA","(vol/muscle thickness)*sin(alpha)","Force equilibrium model  and Tendon Force using relative PCSA","
+To calculate specific tension (stress) of each muscle, the following steps need to be taken:
+1. Calculate the moment arm for the patellar ligament (Rpt) at the angle corresponding to the highest MVC from the data of Smidt (1973).
+2. Convert the force measured at the ankle (Fa) to its tendon component (Ft) by dividing by the mechanical advantage given by Rp~/
+3. Estimate the force acting along the fibers (Ff) of each of the four muscles composing the quadriceps by dividing the force along the tendon (Ft), acting at an angle 0 with respect to the fibers (Fig. 1), by cos0 and then multiplying by the proportionate fraction of the total CSAp occupied by each muscle.
+4. Calculate the stress of each muscle by dividing Ff (Eq. 3) by its CSAp.
+5. The specific tension (stress) of each muscle can be calculated by dividing the force acting along the fibers (Ff) by the physiological cross-sectional area (CSAp).
+6. The mean values of muscle volumes (V), distance between tendons (t), angles of pennation (0), and the physiological cross-sectional areas (CSAp) computed from these data can be reported in a table (Table 1).","
+One potential weakness in the calculation of specific tension in this study is the assumption that the force developed at the ankle rather than that acting along the tendon is used to calculate muscle stress. This can result in an undervaluation of the stress by more than eight times due to the mechanical advantage of the joint. Additionally, the study does not take into account the fibre type composition of the muscles, which may also contribute to differences in specific tension."
+"45",3042,"Dowling 1994",1994,8,23.9,14,"EF","Normal","YNG","Elbow Flexors","Mixed","","V","assumption all muscles equally active
+
+EF are bicep and brachialis",NA,NA,NA,69,"none","none","none","max MVC","Literature value at experimental JA","CT ACSA","Tendon Force using relative (PCSA x MA)","
+To calculate specific tension (force per cross-sectional area) for this study, the following steps can be followed:
+1. Measure the torque produced by the muscle during an isometric contraction using a dynamometer or other appropriate device.
+2. Calculate the force produced by the muscle by dividing the torque by the moment arm length (the distance between the axis of rotation and the line of action of the force).
+3. Measure the physiological cross-sectional area (PCSA) of the muscle using histological techniques or other appropriate methods.
+4. Calculate the specific tension (force per cross-sectional area) by dividing the force produced by the muscle by the PCSA.
+5. Repeat steps 1-4 for multiple contractions to obtain an average specific tension value for the muscle.
+6. Compare the specific tension values obtained for this study to those reported in the literature to determine if the values fall within the range of normal values for the muscle type being studied.","
+
+The study by Dowling (1994) emphasizes the importance of using the best fitting specific tension in the calculation of individual muscle forces rather than relying on a single value taken from literature. However, the study also acknowledges that even when electrical stimulation is used to eliminate motivational differences, a considerable range of specific tensions still persists. This highlights a weakness in the calculation of specific tension, which may involve assumptions in measuring muscle force or volume. The study by Haggmark et al. (1994) also suggests that the correlation between muscle CSA and limb size may be higher if the muscle is related to the extensor area rather than the total thigh musculature due to differences in functional muscle groups within the limb. Therefore, the calculation of specific tension may require more precise measurements of muscle force and volume to better isolate the effect of inter-subject differences of muscle force per CSA on individual muscle force predictions."
+"46",2899,"Klitgaard 1990",1990,7,28,6,"EF","Normal","YNG","Elbow Flexors","","ACSA","V","EF- biceps brachii, brachialis",15.3,NA,NA,65.4,"none","none","none","max MVC","Literature value at experimental JA","CT ACSA, literature MVC correction","Tendon force, % contribution from literature","
+
+To calculate the specific tension of m. quadriceps femoris, the following steps were taken:
+1. Measurement of maximal isometric torque: The highest recording was multiplied by cos 35"" times the lever arm (distance from knee joint to ankle cuff) (see Table 1). This value was defined as the maximal isometric torque.
+2. Measurement of force: Force was then recorded at velocities between 40 and 800"" s-'. Velocity was measured with the two photocells placed at 120"" and 130"" of knee extension. Registration was performed at the ankle cuff.
+3. Calculation of PCSA: The ratio of moment arm (0.038 m in young subjects according to Ekholm et al. 1984) and lever arm (0.39 m within the young group) was assumed to be 1/10 for all subjects.
+4. Calculation of specific tension: The specific tension of m. quadriceps femoris was calculated by dividing the maximal isometric torque (step 1) by the PCSA (step 3). This value represents the force per unit cross-sectional area of the muscle.","
+
+One potential weakness in the calculation of specific tension in this study is the assumption that the ratio of Ef (the ratio of the force exerted by the muscle to the force exerted by the tendon) is the same for all subjects between the moment arm (0.038 m and 0.029 m in young subjects according to Edgerton et al., 1986) and the lever arm (0.35 m within the young group) (page_label: 3, file_path: /content/processed_pdf/2899 Klitgaard et al. - 1990 - Function, morphology and protein expression of age.pdf). This assumption may not hold true for all subjects due to variations in muscle length, tendon stiffness, and other factors that can affect the Ef ratio. Additionally, the study assumes a 31% contribution to total force output by m. biceps brachii and a 30% contribution to total force output by m. brachialis respectively (Edgerton et al., 1986), which may also be subject to variability between individuals. Finally, the study assumes an increase of 34% in the cross-sectional area in the flexed position (Ikai & Fukunaga, 1968), which may also be subject to variability between individuals and may not hold true for all subjects in this study."

@@ -1,0 +1,1145 @@
+---
+title: "ProcessDataV2"
+author: "LPersad"
+date: "2024-01-26"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+
+library(dplyr)
+library(tidyr)
+library(openxlsx)
+# library(ggplot2)
+library(plotly)
+library(ggpubr)
+library(RColorBrewer)
+# library(rcartocolor)
+library(cowplot)
+library(stringr)
+library(webr)
+#read muscle information table
+# library(gt)
+library(jsonlite)
+library("grid")
+
+
+# library(esquisse)
+# esquisser(data_r)
+
+```
+
+## Import and clean data
+
+```{r cars}
+# Utility Functions
+saveFig <- function(fig,name,wdth,hght){
+  # Save final image
+  savename <- paste(name,".png",sep = '')
+  ggsave(filename = savename,
+       plot = fig,
+       width = wdth,
+       height = hght,
+       units = "in",
+       dpi = 300)
+  
+}
+
+
+corrections <- function(df){
+  #this functions removes studies and rows 
+  
+  # Remove rows based on IDs
+df <- subset(df, !(CovidenceID == 4184))
+df <- subset(df, !(CovidenceID == 2679))
+  # Remove rows where ID is 2837 and CSA is 'ACSA'
+df <- subset(df, !(CovidenceID == 2837 & CSA == 'ACSA'))
+df <- subset(df, !(CovidenceID == 2995 & CSA == 'ACSA'))
+
+return (df)
+}
+
+#<---------------load and process paperstats - paperstats_r, paperstats_r_filtered
+
+loadPaperStats <- function(){
+  paperstats <- read.csv("./included/Paperstats.csv")
+  #remove mistakes
+  paperstats=corrections(paperstats)
+  
+  # Select specific columns and rename them
+  paperstats_r <- paperstats %>%
+  select(CovidenceID = CovidenceID, aveAge = "aveAge..years.",aveHeight = "aveHeight..cm.",
+         aveWeight="aveWeight..kg.",N="X.Number.of.subjects..N",Muscle=Muscle,Type=Type,
+         Gender=Gender,CSA=CSA,Miscellaneous=Miscellaneous,volORstim="Voluntary..V..or.Stimulated..S..Force.measurement",
+         combineTitle="Title_x", studyID="Study.ID", country="Country", studyDesign="Study.design", year="Year",
+         journal="Journal",aveST="aveST..N.cm2.",musclename="name")
+  
+  # colnames(paperstats)
+  
+  paperstats_r$journal <- as.factor(paperstats_r$journal)
+  paperstats_r$musclename <- as.factor(paperstats_r$musclename)
+  
+  
+  paperstats_r <- paperstats_r %>% drop_na(aveST) # remove muscles that had no ST vals
+  paperstats_r <- paperstats_r[!paperstats_r$Muscle == '', ] # remove empty muscle rows
+  # levels(paperstats_r$journal)[levels(paperstats_r$journal) == "J Appl Physiol (1985)"] <- "J Appl Physiol" # rename this journal
+  levels(paperstats_r$journal)[levels(paperstats_r$journal) == "GNB"] <- "GNB2012 Conference" # rename this journal
+  levels(paperstats_r$journal)[levels(paperstats_r$journal) == "Journal of Applied Physiology"] <- "J Appl Physiol" # rename this journal
+  levels(paperstats_r$journal)[levels(paperstats_r$journal) == "The journal of physiology"] <- "J Physiol" # rename this journal
+  
+  levels(paperstats_r$country)[levels(paperstats_r$country) == "UK"] <- "United Kingdom"
+  
+  
+  #remove repeated to get proper paperstats
+  paperstats_r_filtered <- paperstats_r %>% distinct(`CovidenceID`, `Muscle`, .keep_all = TRUE)
+  
+  # colnames(paperstats_r)
+  
+  output<-list(paperstats_r,paperstats_r_filtered)
+  return(output)
+
+}
+
+# convert to just using one doc
+# test <- read_excel("./included/ST_review_ALLdata_Lomas_processed.csv", sheet = "Plotdata")
+
+
+#<---------------nowload and process plotdata - data_r
+
+loadPlotdata <- function(){
+  data <- read.csv("./included/Plotdata_scored.csv")
+
+  #remove mistakes
+  data=corrections(data)
+  
+  # Select specific columns and rename them
+  data_r <- data %>%
+  select(CovidenceID = CovidenceID, aveAge = "aveAge..years.",aveHeight = "aveHeight..cm.",
+         aveWeight="aveWeight..kg.",N="X.Number.of.subjects..N",Muscle=Muscle,Type=Type,
+         Gender=Gender,CSA=CSA,Miscellaneous=Miscellaneous,aveVol="aveVol..cm3.",
+         aveFL="aveFL..cm.",avePCSA="avePCSA..cm2.",aveTorque="aveTorque..Nm.",
+         aveForce="aveForce..N.",aveST="aveST..N.cm2.", agetype="Age.type", trainingtype="Training.type", muscleName="name",
+         jointType="Joint.type", grav="antigrav.grav", jointAction="Joint.action", anatomicalLocation="anatomical.location", FastSlow="fast.slow", Score="Score",mv_method="Muscle.volume.method",fl_method="Fascicle.length.method",pa_method="Pennation.angle.method",t_method="Torque.method", ma_method="Moment.arm.method", pcsa_method="PCSA.method", f_method="Force.method",newScore, studyID="Study.ID")
+  
+  data_r <- data_r %>% drop_na(aveST) # remove muscles that had no ST vals
+  # Define the order you want for the legend
+  desired_order <- c("CHD", "YNG", "MID", "OLD")
+  
+  
+  # Convert to factors
+  data_r$Gender <- as.factor(data_r$Gender)
+  data_r$Muscle <- as.factor(data_r$Muscle)
+  data_r$agetype <- factor(data_r$agetype, levels = desired_order)
+  data_r$trainingtype <- as.factor(data_r$trainingtype)
+  data_r$muscleName <- as.factor(data_r$muscleName)
+  data_r$jointType <- as.factor(data_r$jointType)
+  data_r$jointAction <- as.factor(data_r$jointAction)
+  data_r$anatomicalLocation <- as.factor(data_r$anatomicalLocation)
+  
+  # # Returns string without leading white space
+  # trim.leading <- function (x)  sub("^\\s+", "", x)
+  # 
+  # # Returns string without trailing white space
+  # trim.trailing <- function (x) sub("\\s+$", "", x)
+  # 
+  # # Returns string without leading or trailing white space
+  # trim <- function (x) gsub("^\\s+|\\s+$", "", x)
+  # 
+  # data_r$Gender <- trim(data_r$Gender)
+  
+  
+  levels(data_r$agetype)[levels(data_r$agetype) == "CHD"] <- "Child (<18)" 
+  levels(data_r$agetype)[levels(data_r$agetype) == "YNG"] <- "Young (18-34)" 
+  levels(data_r$agetype)[levels(data_r$agetype) == "MID"] <- "Middle (35-65)" 
+  levels(data_r$agetype)[levels(data_r$agetype) == "OLD"] <- "Old (>65)"
+  
+  data_r$trainingtype2 <- data_r$trainingtype
+  
+  levels(data_r$trainingtype2)[levels(data_r$trainingtype2) == "Untrained"] <- "Normal" 
+  
+  levels(data_r$Gender)[levels(data_r$Gender) == "M"] <- "Male" 
+  levels(data_r$Gender)[levels(data_r$Gender) == "F"] <- "Female" 
+  levels(data_r$Gender)[levels(data_r$Gender) == "B"] <- "Male" 
+  levels(data_r$Gender)[levels(data_r$Gender) == "G"] <- "Female" 
+  
+  
+  levels(data_r$anatomicalLocation)[levels(data_r$anatomicalLocation) == "Thigh"] <- "Upper leg" 
+  
+  
+  levels(data_r$jointAction)[levels(data_r$jointAction) == "knee extensor"] <- "Knee Ext." 
+  levels(data_r$jointAction)[levels(data_r$jointAction) == "elbow extensor"] <- "Elbow Ext." 
+  levels(data_r$jointAction)[levels(data_r$jointAction) == "ankle plantar flexor"] <- "Plantarflex" 
+  levels(data_r$jointAction)[levels(data_r$jointAction) == "elbow flexor"] <- "Elbow Flex." 
+  levels(data_r$jointAction)[levels(data_r$jointAction) == "ankle dorsiflexor"] <- "Dorsiflex" 
+  levels(data_r$jointAction)[levels(data_r$jointAction) == "hip adductor"] <- "Hip Adduct." 
+  
+  data_r$mv_method[data_r$mv_method == ""] <- "MV_none"
+  data_r$fl_method[data_r$fl_method == ""] <- "fl_none"
+  data_r$pa_method[data_r$pa_method == ""] <- "Pa_none"
+  data_r$t_method[data_r$t_method == ""] <- "Torq_none"
+  data_r$ma_method[data_r$ma_method == ""] <- "MA_none"
+  data_r$pcsa_method[data_r$pcsa_method == ""] <- "PCSA_none"
+  data_r$f_method[data_r$f_method == ""] <- "Force_none"
+  
+  
+  #remove repeated to get proper paperstats
+  data_r_filtered <- data_r %>% distinct(`CovidenceID`, `Muscle`, .keep_all = TRUE)
+  
+  # colnames(paperstats_r)
+  
+  output<-list(data_r,data_r_filtered)
+  
+  return(output)
+  
+}
+
+
+
+result <- loadPaperStats()
+# Access the returned variables from the list
+paperstats_r <- result[[1]]
+# paperstats_r_filtered <-result[[2]]
+
+
+
+result2 <- loadPlotdata()
+# Access the returned variables from the list
+data_r <- result2[[1]]
+# data_r_filtered <-result2[[2]]
+
+
+
+# now join both data sets
+# colnames(data_r)
+
+#<-----------strict studystats vs muscle analysis
+# NB muscle rows are distinct. so can only aggregate variables related to distinct muscles. so age range cannot be coinsidered since those rows are removed 
+
+# Join the data frames based on the 'ID' column
+# result_df <- paperstats_r_filtered %>%
+#   left_join(data_r_filtered, by = c("CovidenceID","Muscle")) %>%
+#   select(muscleName, jointType,jointAction,anatomicalLocation)
+
+
+result_df <- data_r %>%
+  select(muscleName, jointType,jointAction,anatomicalLocation)
+
+paperstats_r <- cbind(paperstats_r, result_df)  
+
+# unique(data_r$jointAction)
+
+# unique(paperstats_r$journal)
+
+
+
+# data <- read.csv("./included/Plotdata.csv")
+# colnames(data)
+# 
+# 
+#  mv_method="Muscle.volume.method",fl_method="Fascicle.length.method",pa_method-"Pennation.angle.method"
+#  t_method="Torque.method", ma_method="Moment.arm.method", pcsa_method="PCSA.method", f_method="Force.method"
+muscle_order <- c("Biceps Brachii", "Brachialis", "Brachioradialis", "Elbow Flexors",
+                  "Triceps Brachii", "Elbow Extendors",
+                  "Quadriceps Femoris", "Rectus Femoris","Vastus Intermedius", "Vastus Medialis", "Vastus Lateralis",
+                  "Gracilis",
+                  "Plantar Flexors","Soleus","Gastrocnemius Lateralis", "Gastrocnemius Medialis","Triceps Surae","Dorsiflexor", "Tibialis Anterior")
+
+custom_colors<-c('black','forestgreen', 'red2', 'orange', 'cornflowerblue', 
+                'magenta', 'darkolivegreen4', 'indianred1', 'tan4', 'darkblue', 
+                'mediumorchid1','firebrick4',  'yellowgreen', 'lightsalmon', 'tan3',
+                "tan1",'darkgray', 'wheat4', '#DDAD4B', 'chartreuse', 
+                'seagreen1', 'moccasin', 'mediumvioletred', 'seagreen','cadetblue1',
+                "darkolivegreen1" ,"tan2" ,   "tomato3" , "#7CE3D8","gainsboro")
+
+custom_colors <- c(brewer.pal(6, "Set2"),custom_colors)
+
+
+colnames(paperstats_r)
+```
+
+## Plots
+
+```{r pressure, echo=FALSE}
+
+# journal_data <- paperstats_r %>% distinct(`CovidenceID`, `journal`, .keep_all = TRUE)
+muscle_data <- paperstats_r %>% distinct(`CovidenceID`, `aveAge`,`aveHeight`,`aveWeight`,`N`,`Muscle`, .keep_all = TRUE)
+
+
+#<------------- PieChart
+# use 'muscle_data' to get distinct muscle groups per study or use all ST values
+
+pie_data_summary <- paperstats_r %>%
+  count(jointAction)
+
+# Calculate percentages
+# pie_data_summary <- mutate(pie_data_summary, percentage = n / sum(n) * 100)
+# labs <- paste0(round(pie_data_summary$percentage,0), "%")
+
+# Replace multiple labels in jointAction
+pie_data_summary <- pie_data_summary %>%
+  mutate(jointAction = case_when(
+    jointAction == "Dorsiflex" ~ "Dorsiflexion",
+    jointAction == "Plantarflex" ~ "Plantarflexion",
+    jointAction == "Elbow Ext." ~ "Elbow extension",
+    jointAction == "Elbow Flex." ~ "Elbow flexion",
+    jointAction == "Hip Adduct." ~ "Hip adduction",
+    jointAction == "Knee Ext." ~ "Knee extension",
+    # Add more conditions as needed
+    TRUE ~ jointAction  # Keep other labels unchanged
+  ))
+
+muscle_order1 <- c( "Elbow extension","Elbow flexion", "Hip adduction",
+                    "Knee extension" ,"Plantarflexion", "Dorsiflexion")
+# Replace multiple labels in jointAction
+pie_data_summary <- pie_data_summary %>%
+  mutate(jointAction = factor(jointAction, levels = muscle_order1))
+
+pieChartplot <- ggdonutchart(pie_data_summary, "n", label = "n",
+   lab.pos = "out", lab.font = "black",
+   fill = "jointAction", color = "white",
+   palette = custom_colors) +
+  labs_pubr()+
+  theme(
+    axis.title.x = element_blank(),  # Remove x-axis label
+    axis.title.y = element_blank(),  # Remove y-axis label
+    axis.text  = element_blank(),    # Remove axis text
+    axis.text.y =  element_blank(),    # Remove axis ticks
+    legend.position = "right"
+  )+
+  labs(fill = "Muscle function") #title = "Muscle function distribution",
+
+#---new pie-donut plot https://statdoe.com/pie-donut-chart-in-r/
+PD = data_r %>%  
+  count(agetype)
+
+# PieDonut(PD, aes(agetype, count=n), explodeDonut=TRUE,showRatioThreshold = F,showPieName  = F)
+# ,explode = 2 ,r0 = 0.45, r1 = 0.9
+
+pieChartplot_b <- ggdonutchart(PD, "n", label = "n",
+   lab.pos = "out", lab.font = "black",
+   fill = "agetype", color = "white",
+   palette = custom_colors) +
+  labs_pubr()+
+  theme(
+    axis.title.x = element_blank(),  # Remove x-axis label
+    axis.title.y = element_blank(),  # Remove y-axis label
+    axis.text  = element_blank(),    # Remove axis text
+    axis.text.y =  element_blank(),    # Remove axis ticks
+    legend.position = "right"
+  )+
+  labs(fill = "Subject age") #title = "Muscle function distribution
+
+
+PD2 = muscle_data %>% group_by(muscleName) %>% summarise(n = sum(N))
+# sum(PD2$n)
+
+# pieChartplot_c <- ggdonutchart(PD2, "n", label = "n",
+#    lab.pos = "out", lab.font = "black",
+#    fill = "muscleName", color = "white",
+#    palette = custom_colors) +
+#   labs_pubr()+
+#   theme(
+#     axis.title.x = element_blank(),  # Remove x-axis label
+#     axis.title.y = element_blank(),  # Remove y-axis label
+#     axis.text  = element_blank(),    # Remove axis text
+#     axis.text.y =  element_blank(),    # Remove axis ticks
+#     legend.position = "right"
+#   )+
+#   labs(fill = "Muscle (s)") #title = "Muscle function distribution
+
+
+stacked_bar_chart_N <-  ggplot(PD2, aes(x = reorder(muscleName, -n), y = n)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = custom_colors) +  # Use the defined color palette
+  labs( x = "Reported muscle(s)", y = "Number of subjects") + #title = "Number of specific tension values reported by muscle and journal",
+  theme_pubr() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + # Rotate x-axis labels
+  scale_y_continuous(breaks = seq(0, 420, by = 20)) + # Display whole numbers on the y-axis
+   
+  # coord_cartesian(ylim = c(0, 10)) +
+ theme(
+    plot.title = element_text(size = 14, hjust = 0.5),  # Title size and position
+    # plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"),  # Margins
+    # plot.background = element_rect(colour = "black", fill="white", size=1),  # Background color
+    plot.background = element_rect(fill="white"),  # Background color
+    panel.background = element_rect("white"),  # Panel background color
+    panel.grid.major = element_line(color = "lightgray", size = 0.2),  # Gridlines
+    axis.title = element_text(size = 14),  # Axis label size
+    axis.text = element_text(size = 10)
+    )
+
+
+#----pie chart plot 2
+pie_data_summary2 <- paperstats_r %>%
+  count(country)
+pie_data_summary2$country <- trimws(pie_data_summary2$country)
+
+pieChartplot2 <-ggdonutchart(pie_data_summary2, "n", label = "n",
+    lab.font = "black",
+   fill = "country", color = "white",
+   palette = custom_colors) +
+  labs_pubr()+
+  theme(
+    axis.title.x = element_blank(),  # Remove x-axis label
+    axis.title.y = element_blank(),  # Remove y-axis label
+    axis.text  = element_blank(),    # Remove axis text
+    axis.text.y =  element_blank(),    # Remove axis ticks
+    legend.position = "right"
+  )+
+  labs(fill = "Country")
+
+pie_data_summary3 <- paperstats_r %>%
+  count(journal)
+pie_data_summary3$journal <- trimws(pie_data_summary3$journal)
+
+pieChartplot3 <-ggdonutchart(pie_data_summary3, "n", label = "n",
+    lab.font = "black",
+   fill = "journal", color = "white",
+   palette = custom_colors) +
+  labs_pubr()+
+  theme(
+    axis.title.x = element_blank(),  # Remove x-axis label
+    axis.title.y = element_blank(),  # Remove y-axis label
+    axis.text  = element_blank(),    # Remove axis text
+    axis.text.y =  element_blank(),    # Remove axis ticks
+    legend.position = "right"
+    # legend.text=element_text(size=9),
+    
+  )+
+  labs(fill = "Journal")+
+  guides(fill = guide_legend(ncol = 1)) 
+  # labs(title = "Body part distribution", fill = "Anatomical location")
+
+
+data_summary_b <- paperstats_r %>%
+  count(muscleName)
+
+stacked_bar_chart <-  ggplot(data_summary_b, aes(x = reorder(muscleName, -n), y = n)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = custom_colors) +  # Use the defined color palette
+  labs( x = "Reported muscle(s)", y = "Number of reported ST Values") + #title = "Number of specific tension values reported by muscle and journal",
+  theme_pubr() +
+  theme(axis.text.x = element_text(angle = 45, hjust = 1)) + # Rotate x-axis labels
+  scale_y_continuous(breaks = seq(0, 30, by = 2)) + # Display whole numbers on the y-axis
+   
+  # coord_cartesian(ylim = c(0, 10)) +
+ theme(
+    plot.title = element_text(size = 14, hjust = 0.5),  # Title size and position
+    # plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"),  # Margins
+    # plot.background = element_rect(colour = "black", fill="white", size=1),  # Background color
+    plot.background = element_rect(fill="white"),  # Background color
+    panel.background = element_rect("white"),  # Panel background color
+    panel.grid.major = element_line(color = "lightgray", size = 0.2),  # Gridlines
+    axis.title = element_text(size = 14),  # Axis label size
+    axis.text = element_text(size = 10)
+    )
+
+
+data_summary_c <- paperstats_r %>%
+  count(year)
+# Create the stacked bar chart
+stacked_bar_chart_c <- ggplot(data_summary_c, aes(x = factor(year), y = n)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = custom_colors) +
+  labs(x = "Year", y = "Number of reported ST Values") +
+  theme_pubr() +  # Change to a minimal theme for a cleaner look
+  scale_y_continuous(breaks = seq(0, 15, by = 2)) + # Display whole numbers on the y-axis
+
+  # Keep only x-axis ticks that have a y-value
+  scale_x_discrete(drop = TRUE) +
+  
+  theme(
+    axis.text.x = element_text(angle = 45, hjust = 1),
+    # plot.title = element_text(size = 14, hjust = 0.5),
+    plot.background = element_rect(fill = "white"),
+    panel.background = element_rect(fill = "white"),
+    panel.grid.major = element_line(color = "lightgray", size = 0.2),
+    axis.title = element_text(size = 14),
+    axis.text = element_text(size = 12)
+  )
+
+
+ #<---- Compile plots
+#paper stats plot1
+piechartplots <- plot_grid(pieChartplot3,pieChartplot2,nrow = 1,labels = c("B","C"), rel_widths = c(1, 1), rel_heights = c(1,1))
+fig1 <- plot_grid(stacked_bar_chart_c,piechartplots,
+nrow = 2, rel_heights = c( 1,0.9),labels = c("A"))+ theme(panel.background = element_rect(color = "white",fill = "white")) 
+saveFig(fig1,"paperstats",12,9)
+
+# saveFig(topplot2,"paperstats_author_journal",12,8)
+
+
+piechartplots2 <- plot_grid(pieChartplot,pieChartplot_b,nrow = 1,labels = c("C","D"), rel_widths = c(1, 1), rel_heights = c(1,1))
+fig1b <- plot_grid(stacked_bar_chart,stacked_bar_chart_N,piechartplots2,
+nrow = 3, rel_heights = c( 1,1,0.5),rel_widths = c(1,1,1),labels = c("A","B"))+ theme(panel.background = element_rect(color = "white",fill = "white")) 
+fig1b
+
+
+saveFig(fig1b,"paperstats2",11,12)
+```
+
+### Ave ST values
+```{r pressure, echo=FALSE}
+
+muscle_order2 <- c("BIC", "BRA", "BRD", "EF",
+                  "TRI", "EE",
+                  "QF", "RF","VI", "VM", "VL",
+                  "GRA",
+                  "PF","SOL","GL", "GM","TS","DF", "TA")
+
+paperstats_r <- paperstats_r %>%
+  mutate(Muscle = factor(Muscle, levels = muscle_order2))
+
+topplot <- ggplot(paperstats_r, aes(x = aveST, y = reorder(studyID, year))) +
+  geom_point(aes(color = Muscle)) +  #musclename , size= N
+  labs(
+    y = "Author",
+    x = expression("Specific tension "~(N/cm^2)),
+    color = "Muscles",
+    size="Number of subjects"
+  )+
+# reorder(musclename, muscle_order)
+# , shape = jointAction
+  theme_pubr(legend='right')+  # Custom theme settings
+  theme(
+    plot.title = element_text(size = 14, hjust = 0.5),  # Title size and position
+    plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"),  # Margins
+    plot.background = element_rect(fill = "white"),  # Background color
+    panel.background = element_rect(fill = "white"),  # Panel background color
+    panel.grid.major = element_line(color = "lightgray", size = 0.2),  # Gridlines
+    axis.title = element_text(size = 14),  # Axis label size
+    axis.text = element_text(size = 10),  # Axis tick label size
+    
+  )
+
+
+#<------------group by journal
+# minor_breaks <- seq(0, 75, by = 5)
+# topplot2 <-ggplot(paperstats_r, aes(x = aveST, y = reorder(studyID, year))) +
+#   geom_point(aes(color = musclename), size=3) +
+#   facet_grid(journal ~ ., scales = "free", space = "free") +
+#   theme_pubr()+ 
+#   theme(strip.text.y = element_text(angle = 0),
+#         panel.grid.major = element_line(color = "gray", size = 0.2),
+#         panel.grid.minor = element_line(color = "gray", size = 0.1))+
+#   labs(
+#     y = "Author",
+#     x = expression("Specific tension "~(N/cm^2)),
+#     color = "Muscles"
+#   )+ scale_x_continuous(breaks = minor_breaks, minor_breaks = minor_breaks)
+  
+data_r <- data_r %>%
+  mutate(Muscle = factor(Muscle, levels = muscle_order2))
+
+ fig8complete <- ggplot(data_r, aes(y = aveST)) +
+  geom_boxplot(outlier.shape = NA, width = 0.08) +  # Turn off the outliers outlier.shape = NA
+  geom_jitter(aes(x = 0, color=Muscle), width = 0.009, alpha = 1) +  # Show all data points with jitter
+   # stat_summary(aes(x = 0),fun = median, geom = "point", shape = 18, size = 0, color = "red", position = position_dodge(0.75))+
+     annotate("text", x = 0, y = median(data_r$aveST), label = median(data_r$aveST), vjust = -0.5, hjust = -0.4, size = 4) +
+
+   # geom_text(aes(x = 0, y = median(aveST), label = median(aveST), color = "red"), hjust = -1, size = 4) +
+  theme_pubr(legend='right') + labs(y = expression("Specific tension "~(N/cm^2))) +
+   theme(axis.title.x = element_blank(),axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),axis.title = element_text(size = 14),  # Axis label size
+    axis.text = element_text(size = 10),) +
+   labs(color="Muscle")
+ 
+ # fig8complete
+
+ # saveFig(fig8complete,'breakdown5',4,6)
+
+
+
+fig_five <- plot_grid(topplot,fig8complete,ncol = 2, rel_widths = c(1, 0.5),labels = c("A","B"))
+saveFig(fig_five,'breakdown5',9,7)
+
+range(data_r$aveST)
+
+```
+
+### plot muscle function, location etc vs ST
+
+```{r}
+plot_box_no_grps <- function(xcol,xlabel){
+   my_comparisons <- list( c("Male", "Female") )
+   
+   
+  grp2 <- ggboxplot(data_r, x = xcol, y = "aveST",
+                palette ="jco",add = "jitter",
+                xlab = xlabel)+ stat_compare_means(comparisons = xcol)
+ 
+ 
+ grp2 <- grp2+theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2)))+theme(axis.text = element_text(size = 12))   
+ 
+
+ 
+   # stat_compare_means(comparisons = my_comparisons)+ # Add pairwise comparisons p-value
+  # stat_compare_means(label.y = 50)
+
+ return (grp2)
+  
+}
+
+
+
+
+data_r <- data_r %>%
+  mutate(anatomicalLocation = factor(anatomicalLocation, levels = c("Upper arm","Upper leg", "Lower leg")))
+
+data_r <- data_r %>%
+  mutate(jointAction = factor(jointAction, levels = c("Elbow Flex.","Elbow Ext.", "Hip Adduct.", "Knee Ext.", "Plantarflex", "Dorsiflex")))
+
+box1c <- plot_box_no_grps("anatomicalLocation","Anatomical location")+
+  theme(legend.position = "none") 
+
+box2c <- plot_box_no_grps("jointAction","Function")
+box3c <- plot_box_no_grps("trainingtype","Training status")+
+  theme(legend.position = "none") 
+box4c <- plot_box_no_grps("jointType","Mono/Biarticular")+
+  theme(legend.position = "none") 
+box5c <- plot_box_no_grps("FastSlow","Fiber type (Fast/Slow)")+
+  theme(legend.position = "none") 
+
+#<-----add stats
+# unique(data_r$anatomicalLocation)
+
+ # box1c <-ggboxplot(data_r, x = "anatomicalLocation", y = "aveST",
+ #                 palette ="jco",add = "jitter",
+ #                 xlab = "Anatomical location")+
+ #   stat_compare_means(label = "p.signif", method = "t.test",ref.group = "Upper arm", hide.ns = TRUE)
+ #   
+ #  
+#
+   # stat_compare_means(aes(group = "anatomicalLocation"),map_signif_level=TRUE)
+
+        # Add global annova p-value
+                # stat_compare_means(label = "p.signif", method = "t.test",ref.group = ".all.", hide.ns = TRUE)
+
+
+                # + stat_compare_means(method = "anova", label.y = 55)
+     
+box1c <-ggboxplot(data_r, x = "anatomicalLocation", y = "aveST",
+          palette = "jco", add = "jitter",
+          xlab = "Anatomical location") +
+  stat_compare_means(comparisons = list( c("Upper arm", "Lower leg"), c("Upper leg", "Lower leg")), hide.ns = TRUE,map_signif_level = TRUE,annotations="***")+theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2)))+theme(axis.text = element_text(size = 12)) 
+
+# , c("Normal", "Trained") c("Normal", "Untrained"),
+box3c <-ggboxplot(data_r, x = "trainingtype", y = "aveST",
+          palette = "jco", add = "jitter",
+          xlab = "Training status") +
+  stat_compare_means(comparisons = list( c("Trained", "Untrained")), hide.ns = TRUE,map_signif_level = TRUE,annotations="***")+theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2)))+theme(axis.text = element_text(size = 12)) 
+
+
+
+box5c <-ggboxplot(data_r, x = "FastSlow", y = "aveST",
+          palette = "jco", add = "jitter",
+          xlab = "Training status") +
+  stat_compare_means(comparisons =list(c("60/40", "Slow")), hide.ns = TRUE,map_signif_level = TRUE,annotations="***")+theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2)))+theme(axis.text = element_text(size = 12)) 
+#removed Bi articular etc
+# fig7complete <- compile_plot(box2c,box1c,box3c,box4c,box5c)
+# saveFig(fig7complete,'breakdown4',15,8)
+
+
+
+#--Add table
+# Provided JSON-like data
+json_data <- fromJSON(txt  = "tableConvert.com_gh9ywa.json") 
+# Rename the column
+colnames(json_data)[1] <- "Abbreviation"
+colnames(json_data)[3] <- "Fiber composition (fast % / slow %)"
+
+# Replace multiple labels in jointAction
+json_data <- json_data %>%
+  mutate(`Muscle function` = case_when(
+    `Muscle function` == "ankle dorsiflexor" ~ "Ankle dorsiflexion",
+    `Muscle function` == "ankle plantar flexor" ~ "Ankle plantarflexion",
+    `Muscle function` == "elbow extensor" ~ "Elbow extension",
+    `Muscle function` == "elbow flexor" ~ "Elbow flexion",
+    `Muscle function` == "hip adductor" ~ "Hip adduction",
+    `Muscle function` == "knee extensor" ~ "Knee extension",
+    # Add more conditions as needed
+    TRUE ~ `Muscle function`  # Keep other labels unchanged
+  ))
+
+#Sort
+custom_order <- c( "Upper arm","Upper Leg","Lower leg")
+# Sort the data frame based on custom orders
+json_data <- json_data %>%
+  arrange(factor(`Anatomical location`, levels = custom_order),factor(`Muscle Name`, levels = muscle_order))
+
+# Create a gt table
+# table_gt <- json_data %>%
+#   gt() %>%
+#   tab_header(
+#     title = "Muscle Information",
+#     # subtitle = "Fiber Composition, Function and location"
+#   ) 
+
+# Print the table
+# table_gt
+
+
+breakdown4_t <- plot_grid(box2c,box5c,rel_widths = c(1,0.6),rel_heights = c(1,1),labels = c("A","B"))
+breakdown4_b <- plot_grid(box1c,box3c,rel_widths = c(1,1),rel_heights = c(1,1),labels = c("C","D"))
+
+breakdown4_b2 <- plot_grid(breakdown4_t,breakdown4_b, ncol = 1,align = 'v',axis = 'lr')
+
+#ttheme("blank")
+
+
+tbl <- ggtexttable(json_data, rows = NULL, theme = ttheme("blank")) %>%
+  tab_add_hline(at.row = 1:2, row.side = "top", linewidth = 2) %>%
+  tab_add_hline(at.row = 20, row.side = "bottom", linewidth = 3, linetype = 1)
+
+
+
+
+fig7complete <- plot_grid(tbl+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2,rel_heights = c(0.8,1))
+
+# fig7complete <-ggarrange(tbl, breakdown4_b2,
+#           ncol = 1, nrow = 2)
+
+fig7complete
+
+saveFig(fig7complete,'breakdown4',12,14)
+
+
+
+```
+
+
+
+
+### FL vs ST
+
+```{r}
+
+# # Define the custom legend labels and their order
+# 
+# custom_legend_labels <- c("CHD", "YNG", "MID", "OLD")
+# custom_labels <- c("CHD" = "<18yrs", "YNG" = "18-35yrs", "MID" = "35-65yrs", "OLD" = ">65yrs")
+# 
+# # Change the legend labels and order
+# box_plot + scale_fill_manual(values = c("CHD" = "orange", "MID" = "green","OLD" = "blue", "YNG" = "purple"),
+#                              breaks = custom_legend_labels,
+#                              labels = custom_labels)
+# 
+# 
+
+#-------------new plots
+
+# Create a scatter plot with a beautiful template
+scatter_plot <- ggscatter(data_r, x = "muscleName", y = "aveST",color = "agetype",
+                           # add = "reg.line",   # Add regression line
+                           # conf.int = TRUE,    # Add confidence interval
+                           # cor.coef = TRUE,    # Add correlation coefficient
+                           # cor.method = "pearson", # Use Pearson correlation
+                           # xlab = "X-axis Label",
+                           # ylab = "Specific Tension (N/cm2)",
+                           # title = "Beautiful Scatter Plot",
+                           # xtick = TRUE,       # Show x-axis ticks
+                           # ytick = TRUE,       # Show y-axis ticks
+                           legend.title = "Age Groups",  # Legend title
+                           # legend.label = "Group",  # Legend label
+                           # legend.position = "right", # Legend position
+                           # legend.justification = "top", # Legend justification
+                           # add.params = list(color = "blue") # Specify color
+)
+
+
+# ellipse = TRUE
+# Customize the theme for a beautiful appearance
+scatter_plot <- scatter_plot +
+  theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2))) +         # Apply the ggpubr theme
+  theme(
+    plot.title = element_text(hjust = 0.5, size = 18), # Title customization
+    axis.title.x = element_blank(),            # X-axis label size
+    axis.title.y = element_text(size = 16),            # Y-axis label size
+    legend.title = element_text(size = 14),            # Legend title size
+    legend.text = element_text(size = 12),              # Legend label size
+    axis.text.x = element_text(angle = 45, vjust =1, hjust=1), #
+    legend.position = "right"
+  )
+
+#--------scatter fiber length
+# aveFL avePCSA aveVol aveForce
+# anatomicalLocation  jointAction  agetype  trainingtype jointType CSA
+
+# Create a scatter plot with a beautiful template
+# FLvST1 <- ggscatter(data_r, x = "aveFL", y = "aveST",color = "anatomicalLocation",
+#                            # add = "reg.line",   # Add regression line
+#                            # conf.int = TRUE,    # Add confidence interval
+#                            # cor.coef = TRUE,    # Add correlation coefficient
+#                            # cor.method = "pearson", # Use Pearson correlation
+#                            # xlab = "X-axis Label",
+#                            # ylab = "Specific Tension (N/cm2)",
+#                            xlab = "Fiber length (cm)",
+#                            # title = "Beautiful Scatter Plot",
+#                            legend.title = "Anatomical location",  # Legend title
+#                            ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+# ) + xlim(0, max(data_r$aveFL))
+# FLvST1 <- FLvST1+
+#   theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2))) + theme(legend.position = "right")           # Apply the ggpubr theme
+#   # + theme(
+#   #   plot.title = element_text(hjust = 0.5, size = 18), # Title customization
+#   #   axis.title.x = element_text(size = 16),            # X-axis label size
+#   #   axis.title.y = element_text(size = 16),            # Y-axis label size
+#   #   legend.title = element_text(size = 14),            # Legend title size
+#   #   legend.text = element_text(size = 12),              # Legend label size
+#   #   # axis.text.x = element_text(angle = 45, vjust =1, hjust=1), #
+#   #   # legend.position = "right"
+#   # )
+
+
+# Create a scatter plot with a beautiful template
+FLvST2 <- ggscatter(data_r, x = "aveFL", y = "aveST",color = "jointAction",
+                           # add = "reg.line",   # Add regression line
+                           # conf.int = TRUE,    # Add confidence interval
+                           # cor.coef = TRUE,    # Add correlation coefficient
+                           # cor.method = "pearson", # Use Pearson correlation
+                           # xlab = "X-axis Label",
+                           # ylab = "Specific Tension (N/cm2)",
+                           xlab = "Fiber length (cm)",
+                           # title = "Beautiful Scatter Plot",
+                           legend.title = "Function",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+)
+FLvST2 <- FLvST2+
+  theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2))) + theme(legend.position = "top")            # Apply the ggpubr theme
+  # + theme(
+  #   plot.title = element_text(hjust = 0.5, size = 18), # Title customization
+  #   axis.title.x = element_text(size = 16),            # X-axis label size
+  #   axis.title.y = element_text(size = 16),            # Y-axis label size
+  #   legend.title = element_text(size = 14),            # Legend title size
+  #   legend.text = element_text(size = 12),              # Legend label size
+  #   # axis.text.x = element_text(angle = 45, vjust =1, hjust=1), #
+  #   # legend.position = "right"
+  # )
+
+
+# Create a scatter plot with a beautiful template
+FLvST3 <- ggscatter(data_r, x = "aveFL", y = "aveST",color = "trainingtype",
+                           # add = "reg.line",   # Add regression line
+                           # conf.int = TRUE,    # Add confidence interval
+                           # cor.coef = TRUE,    # Add correlation coefficient
+                           # cor.method = "pearson", # Use Pearson correlation
+                           # xlab = "X-axis Label",
+                           # ylab = "Specific Tension (N/cm2)",
+                           xlab = "Fiber length (cm)",
+                           # title = "Beautiful Scatter Plot",
+                           legend.title = "Training status",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+                           # label =data_r$Muscle
+)
+FLvST3 <- FLvST3+
+  theme_pubr()+ labs(y = expression("Specific tension "~(N/cm^2))) + theme(legend.position = "top")             # Apply the ggpubr theme
+  # + theme(
+  #   plot.title = element_text(hjust = 0.5, size = 18), # Title customization
+  #   axis.title.x = element_text(size = 16),            # X-axis label size
+  #   axis.title.y = element_text(size = 16),            # Y-axis label size
+  #   legend.title = element_text(size = 14),            # Legend title size
+  #   legend.text = element_text(size = 12),              # Legend label size
+  #   # axis.text.x = element_text(angle = 45, vjust =1, hjust=1), #
+  #   # legend.position = "right"
+  # )
+
+# # Marginal densities along x axis
+# xdens <- axis_canvas(FLvST3, axis = "x")+
+#   geom_density(data = data_r, aes(x = aveFL, fill = trainingtype),
+#               alpha = 0.7, size = 0.2)+
+#   ggpubr::fill_palette("jco")
+# # Marginal densities along y axis
+# # Need to set coord_flip = TRUE, if you plan to use coord_flip()
+# ydens <- axis_canvas(FLvST3, axis = "y", coord_flip = TRUE)+
+#   geom_density(data = data_r, aes(x = aveST, fill = trainingtype),
+#                 alpha = 0.7, size = 0.2)+
+#   coord_flip()+
+#   ggpubr::fill_palette("jco")
+# p1 <- insert_xaxis_grob(FLvST3, xdens, grid::unit(.2, "null"), position = "top")
+# p2<- insert_yaxis_grob(p1, ydens, grid::unit(.2, "null"), position = "right")
+# ggdraw(p2)
+
+# Create a scatter plot with a beautiful template
+# FLvST4 <- ggscatter(data_r, x = "aveFL", y = "aveST",color = "jointType",
+#                            # add = "reg.line",   # Add regression line
+#                            # conf.int = TRUE,    # Add confidence interval
+#                            # cor.coef = TRUE,    # Add correlation coefficient
+#                            # cor.method = "pearson", # Use Pearson correlation
+#                            # xlab = "X-axis Label",
+#                            # ylab = "ylabel",
+#                            xlab = "Fiber length (cm)",
+#                            # title = "Beautiful Scatter Plot",
+#                            legend.title = "Mono/Biarticular",  # Legend title
+#                            ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+#                            # label =data_r$Muscle
+# )
+#  FLvST4 <-  FLvST4 +
+#   theme_pubr() +  labs(y = expression("Specific tension "~(N/cm^2))) +
+#   theme(legend.position = "top")     # Apply the ggpubr theme
+#   #+ theme(
+#   #   plot.title = element_text(hjust = 0.5, size = 18), # Title customization
+#   #   axis.title.x = element_text(size = 16),            # X-axis label size
+#   #   axis.title.y = element_text(size = 16),            # Y-axis label size
+#   #   legend.title = element_text(size = 14),            # Legend title size
+#   #   legend.text = element_text(size = 12),              # Legend label size
+#   #   # axis.text.x = element_text(angle = 45, vjust =1, hjust=1), #
+#   #   # legend.position = "right"
+#   # )
+
+
+ 
+ FLvST5 <- ggscatter(data_r, x = "aveFL", y = "aveST",color = "FastSlow",
+                           # add = "reg.line",   # Add regression line
+                           # conf.int = TRUE,    # Add confidence interval
+                           # cor.coef = TRUE,    # Add correlation coefficient
+                           # cor.method = "pearson", # Use Pearson correlation
+                           # xlab = "X-axis Label",
+                           # ylab = "ylabel",
+                           xlab = "Fiber length (cm)",
+                           # title = "Beautiful Scatter Plot",
+                           legend.title = "Fiber type (Fast/Slow)",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+                           # label =data_r$Muscle
+)
+ FLvST5 <-  FLvST5 +
+  theme_pubr() +  labs(y = expression("Specific tension "~(N/cm^2))) +
+  theme(legend.position = "top") 
+ 
+ 
+ 
+ # old combination
+#<-------------------------------------------------
+# grp_plt1 <- plot_grid(
+#   FLvST1, FLvST2,
+#   labels = c('B', 'C'),
+#   ncol = 2
+# )
+# 
+# grp_plt2 <- plot_grid(
+#   FLvST3,FLvST4,
+#   labels = c('D','E'),
+#   ncol = 2
+# )
+# 
+# # plot_grid(
+# #   scatter_plot, grp_plt,
+# #   align = "h", axis = "tb",
+# #   nrow = 2, rel_widths = c(1, 2)
+# # )
+# 
+# 
+# 
+# # Arrange the rows of the figure
+# first_row <- plot_grid(
+#   scatter_plot,
+#   labels = c("A"),
+#   nrow = 1)
+# 
+# second_row <- plot_grid(
+#   grp_plt1,
+#   nrow = 1)
+# 
+# third_row <- plot_grid(
+#   grp_plt2,
+#   nrow = 1)
+# 
+# # fourth_row <- plot_grid(
+# #   FLvST5,
+# #   nrow = 1)
+# 
+# # fourth_row <- plot_grid(
+# #   all_figs$fig4ij,
+# #   nrow = 1)
+# 
+# # Combine images into the full figure
+# fig4complete <- plot_grid(first_row,
+#                           second_row,
+#                           third_row,
+#                           ncol = 1,
+#                           align = 'v',
+#                           axis = 'lr',
+#                           rel_heights = c(1.27,0.8,0.8),
+#                           rel_widths = c(1,1,1))
+# 
+# 
+# fig4complete
+# # Save final image
+# # ggsave(filename = "figure2.png",
+# #        plot = fig4complete,
+# #        width = 8.5,
+# #        height = 10,
+# #        units = "in",
+# #        dpi = 500)
+# saveFig(fig4complete,'breakdown1',8.5,10)
+# 
+# saveFig(FLvST5,'breakdown1b',4,3)
+
+#<-------------------------------------------------
+
+# no fiber length data use ACSA
+# FLvST4_test <- ggscatter(data_r, x = "aveFL", y = "aveST",color = "CSA",
+#                            # add = "reg.line",   # Add regression line
+#                            # conf.int = TRUE,    # Add confidence interval
+#                            # cor.coef = TRUE,    # Add correlation coefficient
+#                            # cor.method = "pearson", # Use Pearson correlation
+#                            # xlab = "X-axis Label",
+#                            # ylab = "ylabel",
+#                            xlab = "Fiber length (cm)",
+#                            # title = "Beautiful Scatter Plot",
+#                            legend.title = "CSA",  # Legend title
+#                            ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+#                            # label =data_r$Muscle
+# ) 
+#  FLvST4_test + theme_pubr()
+
+
+
+#reduced include fiber vs st plots
+
+
+# grp_plt1 <- plot_grid(
+#   FLvST1, FLvST2,
+#   labels = c('A', 'B'),
+#   ncol = 2
+# )
+# 
+ 
+# grp_plt2 <- plot_grid(
+#   FLvST3,FLvST5,
+#   labels = c('B','C'),
+#   ncol = 2
+# )
+
+
+
+
+# fig4complete <- plot_grid(grp_plt1,
+#                           grp_plt2,
+#                           ncol = 1,
+#                           align = 'v',
+#                           axis = 'lr',
+#                           rel_heights = c(1,1),
+#                           rel_widths = c(1,1))
+
+
+
+# fig4complete <- plot_grid(FLvST2,
+#                           FLvST3,
+#                           FLvST5,
+#                           labels = c('A','B','c'),
+#                           ncol = 3,
+#                           align = 'h',
+#                           axis = 'lr',
+#                           rel_heights = c(1,1,1),
+#                           rel_widths = c(1,1,1))
+#  
+ fig4complete <- FLvST2
+saveFig(fig4complete,'breakdown1c',5,3)
+
+```
+#Investigate PCSA, VOL, F, vs ST
+```{r}
+#create to
+
+Plot_other_variables <- function(grpVariable,label_name){
+  # Create a scatter plot with a beautiful template
+
+#--------scatter fiber length
+# aveFL avePCSA aveVol aveForce
+# anatomicalLocation  jointAction  agetype  trainingtype jointType CSA
+
+# Create a scatter plot with a beautiful template
+FLvST1 <- ggscatter(data_r, x = {{grpVariable}}, y = "aveST",color = "anatomicalLocation",
+                           xlab = {{label_name}},
+                           legend.title = "Anatomical location",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+) + xlim(0, max(data_r$aveFL))
+FLvST1 <- FLvST1+
+  theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2))) + theme(legend.position = "right")           # Apply the ggpubr theme
+ 
+
+# Create a scatter plot with a beautiful template
+FLvST2 <- ggscatter(data_r, x = {{grpVariable}}, y = "aveST",color = "jointAction",
+                           xlab = {{label_name}},
+                           # title = "Beautiful Scatter Plot",
+                           legend.title = "Function",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+)
+FLvST2 <- FLvST2+
+  theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2))) + theme(legend.position = "right")            # Apply the ggpubr theme
+ 
+
+# Create a scatter plot with a beautiful template
+FLvST3 <- ggscatter(data_r, x = {{grpVariable}}, y = "aveST",color = "trainingtype",
+                           xlab = {{label_name}},
+                           # title = "Beautiful Scatter Plot",
+                           legend.title = "Training status",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+                           # label =data_r$Muscle
+)
+FLvST3 <- FLvST3+
+  theme_pubr()+ labs(y = expression("Specific tension "~(N/cm^2))) + theme(legend.position = "right")             # Apply the ggpubr theme
+ 
+
+# Create a scatter plot with a beautiful template
+FLvST4 <- ggscatter(data_r, x = {{grpVariable}}, y = "aveST",color = "jointType",
+                            xlab = {{label_name}},
+                           # title = "Beautiful Scatter Plot",
+                           legend.title = "Mono/Biarticular",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+                           # label =data_r$Muscle
+)
+ FLvST4 <-  FLvST4 +
+  theme_pubr() +  labs(y = expression("Specific tension "~(N/cm^2))) +
+  theme(legend.position = "right")     # Apply the ggpubr theme
+ 
+ 
+ FLvST5 <- ggscatter(data_r, x = {{grpVariable}}, y = "aveST",color = "FastSlow",
+                            xlab = {{label_name}},
+                           # title = "Beautiful Scatter Plot",
+                           legend.title = "Fiber type (Fast/Slow)",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+                           # label =data_r$Muscle
+)
+ FLvST5 <-  FLvST5 +
+  theme_pubr() +  labs(y = expression("Specific tension "~(N/cm^2))) +
+  theme(legend.position = "right") 
+ 
+ 
+ 
+ grp_plt1 <- plot_grid(
+  FLvST1, FLvST2,
+  labels = c('A', 'B'),
+  ncol = 2
+)
+
+grp_plt2 <- plot_grid(
+  FLvST3,FLvST5,
+  labels = c('D','E'),
+  ncol = 2
+)
+
+
+plot_grid(grp_plt1,
+          grp_plt2,
+          ncol = 1,
+          align = 'v',
+          axis = 'lr',
+          rel_heights = c(1,1,1),
+          rel_widths = c(1,1,1))
+ 
+}
+
+# aveVol aveFL avePCSA aveTorque aveForce
+
+chosen <- 'avePCSA'
+
+Plot_other_variables(chosen,chosen)
+
+
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

@@ -1,0 +1,135 @@
+﻿[
+  {
+    "Muscle Abbreviation": "QF",
+    "Muscle Name": "Quadriceps Femoris",
+    "Fiber composition (fast/slow)": "60/40",
+    "Muscle function": "knee extensor",
+    "Anatomical location": "Upper Leg"
+  },
+  {
+    "Muscle Abbreviation": "PF",
+    "Muscle Name": "Plantar Flexors",
+    "Fiber composition (fast/slow)": "Slow",
+    "Muscle function": "ankle plantar flexor",
+    "Anatomical location": "Lower leg"
+  },
+  {
+    "Muscle Abbreviation": "GL",
+    "Muscle Name": "Gastrocnemius Lateralis",
+    "Fiber composition (fast/slow)": "50/50",
+    "Muscle function": "ankle plantar flexor",
+    "Anatomical location": "Lower leg"
+  },
+  {
+    "Muscle Abbreviation": "BIC",
+    "Muscle Name": "Biceps Brachii",
+    "Fiber composition (fast/slow)": "50/50",
+    "Muscle function": "elbow flexor",
+    "Anatomical location": "Upper arm"
+  },
+  {
+    "Muscle Abbreviation": "BRA",
+    "Muscle Name": "Brachialis",
+    "Fiber composition (fast/slow)": "Fast",
+    "Muscle function": "elbow flexor",
+    "Anatomical location": "Upper arm"
+  },
+  {
+    "Muscle Abbreviation": "BRD",
+    "Muscle Name": "Brachioradialis",
+    "Fiber composition (fast/slow)": "60/40",
+    "Muscle function": "elbow flexor",
+    "Anatomical location": "Upper arm"
+  },
+  {
+    "Muscle Abbreviation": "EF",
+    "Muscle Name": "Elbow Flexors",
+    "Fiber composition (fast/slow)": "50/50",
+    "Muscle function": "elbow flexor",
+    "Anatomical location": "Upper arm"
+  },
+  {
+    "Muscle Abbreviation": "EE",
+    "Muscle Name": "Elbow Extensors",
+    "Fiber composition (fast/slow)": "Fast",
+    "Muscle function": "elbow extensor",
+    "Anatomical location": "Upper arm"
+  },
+  {
+    "Muscle Abbreviation": "TS",
+    "Muscle Name": "Triceps Surae",
+    "Fiber composition (fast/slow)": "Slow",
+    "Muscle function": "ankle plantar flexor",
+    "Anatomical location": "Lower leg"
+  },
+  {
+    "Muscle Abbreviation": "VM",
+    "Muscle Name": "Vastus Medialis",
+    "Fiber composition (fast/slow)": "Slow",
+    "Muscle function": "knee extensor",
+    "Anatomical location": "Upper Leg"
+  },
+  {
+    "Muscle Abbreviation": "VI",
+    "Muscle Name": "Vastus Intermedius",
+    "Fiber composition (fast/slow)": "60/40",
+    "Muscle function": "knee extensor",
+    "Anatomical location": "Upper Leg"
+  },
+  {
+    "Muscle Abbreviation": "VL",
+    "Muscle Name": "Vastus Lateralis",
+    "Fiber composition (fast/slow)": "Slow",
+    "Muscle function": "knee extensor",
+    "Anatomical location": "Upper Leg"
+  },
+  {
+    "Muscle Abbreviation": "RF",
+    "Muscle Name": "Rectus Femoris",
+    "Fiber composition (fast/slow)": "60/40",
+    "Muscle function": "knee extensor",
+    "Anatomical location": "Upper Leg"
+  },
+  {
+    "Muscle Abbreviation": "TRI",
+    "Muscle Name": "Triceps Brachii",
+    "Fiber composition (fast/slow)": "Fast",
+    "Muscle function": "elbow extensor",
+    "Anatomical location": "Upper arm"
+  },
+  {
+    "Muscle Abbreviation": "Sol",
+    "Muscle Name": "Soleus",
+    "Fiber composition (fast/slow)": "Slow",
+    "Muscle function": "ankle plantar flexor",
+    "Anatomical location": "Lower leg"
+  },
+  {
+    "Muscle Abbreviation": "TA",
+    "Muscle Name": "Tibialis Anterior",
+    "Fiber composition (fast/slow)": "Slow",
+    "Muscle function": "ankle dorsiflexor",
+    "Anatomical location": "Lower leg"
+  },
+  {
+    "Muscle Abbreviation": "GM",
+    "Muscle Name": "Gastrocnemius Medialis",
+    "Fiber composition (fast/slow)": "50/50",
+    "Muscle function": "ankle plantar flexor",
+    "Anatomical location": "Lower leg"
+  },
+  {
+    "Muscle Abbreviation": "DF",
+    "Muscle Name": "Dorsiflexor",
+    "Fiber composition (fast/slow)": "Slow",
+    "Muscle function": "ankle dorsiflexor",
+    "Anatomical location": "Lower leg"
+  },
+  {
+    "Muscle Abbreviation": "GRA",
+    "Muscle Name": "Gracilis",
+    "Fiber composition (fast/slow)": "Slow",
+    "Muscle function": "hip adductor",
+    "Anatomical location": "Lower leg"
+  }
+]

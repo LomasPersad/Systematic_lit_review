@@ -1,0 +1,200 @@
+---
+title: "Topic_modeling"
+author: "LPersad"
+date: "2023-11-25"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+library(openxlsx)
+library(DT)
+library(ggpubr)
+```
+
+## R Markdown
+
+Load data
+```{r cars}
+#process raw data for first time, (when "Inclusion_status" col missing) 
+ # Create a new column based on conditions
+  statusData <- function(topic_data,included_id,excluded_id){
+     topic_data <- topic_data %>%
+      mutate(Inclusion_Status = case_when(
+      Covidence.. %in% included_id ~ 'included',
+      Covidence.. %in% excluded_id ~ 'excluded',  # Replace 'other_ids_list' with your other list of IDs
+      TRUE ~ 'irrelevant'
+  ))
+    return (topic_data)
+  }
+
+
+getFilteredTopics <- function(topic_data) {
+  included_topics <- unique(topic_data[topic_data$Inclusion_Status == 'included', ]$CustomName)
+  excluded_topics <- unique(topic_data[topic_data$Inclusion_Status == 'excluded', ]$CustomName)
+  irrelevant_topics <- unique(topic_data$CustomName)
+  
+  return(list(included_topics = included_topics, excluded_topics = excluded_topics, irrelevant_topics = irrelevant_topics))
+}
+
+correction <- function(topic_data){
+  topic_data$Covidence.. <- gsub('#', '', topic_data$Covidence..)
+  return (topic_data)
+  }
+
+
+process_raw_topic_data <- function(){
+  excluded_data <- read.csv("./review_243232_excluded_csv_20231104072316_processed.csv")
+  included_data <- read.csv("./included/Plotdata.csv")
+  topic_data1 <- read.csv("./topic_modeling/output_dataset_with_topics.csv")
+  topic_data2 <- read.csv("./topic_modeling/output_dataset_with_topics2.csv")
+  topic_data3 <- read.csv("./topic_modeling/output_dataset_with_topics3.csv")
+  
+  topic_data1 <-  correction(topic_data1)
+  topic_data2 <-  correction(topic_data2)
+  topic_data3 <-  correction(topic_data3)
+  excluded_data <-  correction(excluded_data)
+  # topic_data$Covidence.. <- gsub('#', '', topic_data$Covidence..)
+  # excluded_data$Covidence.. <- gsub('#', '', excluded_data$Covidence..)
+  
+  
+  # summary(cars)
+  included_id <- unique(included_data$CovidenceID)
+  excluded_id <- unique(excluded_data$Covidence..)
+  
+  
+ 
+ 
+topic_data1 <- statusData(topic_data1,included_id,excluded_id)
+topic_data2 <- statusData(topic_data2,included_id,excluded_id)
+topic_data3 <- statusData(topic_data3,included_id,excluded_id)
+  
+  # Write data status data
+  # write.csv(topic_data, file = './topic_modeling/output_dataset_with_topic_processed.csv', row.names = FALSE)
+  
+  
+  # Filter the dataframe 'your_dataframe' based on the 'ID' column
+
+
+ # Get filtered topics
+  filtered_topics <- lapply(list(topic_data1, topic_data2, topic_data3), getFilteredTopics)
+  return(filtered_topics)  
+}
+
+filtered_topics <- process_raw_topic_data()
+
+
+# topic_data <- read.csv("./topic_modeling/output_dataset_with_topic_processed.csv")
+# 
+# included_topics <- unique(topic_data[topic_data$Inclusion_Status == 'included', 'CustomName'])
+# excluded_topics <- unique(topic_data[topic_data$Inclusion_Status == 'excluded', 'CustomName'])
+# irrelevant_topics <- unique(topic_data[topic_data$Inclusion_Status == 'irrelevant', 'CustomName'])
+# 
+filtered_topics[[2]]$irrelevant_topics
+
+
+
+
+
+writeTopicsToExcel <- function(filtered_topics) {
+  # Create a workbook
+wb <- createWorkbook()
+
+# Add worksheets for each type of topic
+addWorksheet(wb, "Included Topics")
+writeData(wb, "Included Topics", filtered_topics[[1]]$included_topics)
+
+addWorksheet(wb, "Excluded Topics")
+writeData(wb, "Excluded Topics", filtered_topics[[1]]$excluded_topics)
+
+addWorksheet(wb, "Irrelevant Topics")
+writeData(wb, "Irrelevant Topics", filtered_topics[[1]]$irrelevant_topics)
+
+# Save the workbook to an Excel file
+saveWorkbook(wb, file = "topicsz.xlsx")
+}
+
+# Call the function with the list of filtered topics
+writeTopicsToExcel(filtered_topics)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+included_topics
+```
+
+
+```{r pressure, echo=FALSE}
+excluded_topics
+```
+
+
+```{r pressure, echo=FALSE}
+irrelevant_topics
+```
+
+
+```{r pressure, echo=FALSE}
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+# Group by Group and Status, count the occurrences of each TopicName
+topic_counts <- topic_data %>%
+  group_by(Inclusion_Status, CustomName) %>%
+  summarise(Count = n()) %>%
+  ungroup()
+
+relevant_topics <-  unique(c(included_topics, excluded_topics))
+
+
+Filtered_topic_data <-topic_data[topic_data$CustomName %in% relevant_topics, ]
+
+
+Filtered_topic_data[Filtered_topic_data$CustomName==relevant_topics[1]]
+
+ lp <- Filtered_topic_data[Filtered_topic_data$CustomName == relevant_topics[1], c("Title","Inclusion_Status")]
+
+# Assuming your data frame is named 'df'
+datatable(lp, options = list(pageLength = 10))
+ colnames(Filtered_topic_data)
+```
+
+## Plots
+```{r}
+
+ggbarplot(Filtered_topic_data, x = "Inclusion_Status", 
+          title = "Count of Studies per Status Category",
+          xlab = "Status", ylab = "Count",
+          add = "mean_se")
+
+ggbarplot(Filtered_topic_data, x = "Inclusion_Status", 
+          y = "CustomName",
+          fill = "CustomName",
+          title = "Status vs Topics",
+          xlab = "Status", ylab = "Count")
+
+# Assuming df is your data frame
+ggboxplot(Filtered_topic_data, x = "Inclusion_Status", y = "CustomName",
+          title = "Topic Distribution by Status",
+          xlab = "Status", ylab = "Topic")
+
+
+ggviolin(Filtered_topic_data, x = "Inclusion_Status", y = "CustomName",
+          title = "Topic Distribution by Status",
+          xlab = "Status", ylab = "Topic")
+
+ggscatter(Filtered_topic_data, x = "CustomName", y = "CustomName", label = "CustomName", 
+              color = "Inclusion_Status", palette = c("green", "red", "blue"),
+              size = 3, alpha = 0.7, legend.title = "Status",
+              ggtheme = theme_minimal())
+
+
+
+
+```
