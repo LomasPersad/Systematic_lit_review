@@ -9,15 +9,15 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 library(dplyr)
 library(tidyr)
-library(openxlsx)
+# library(openxlsx)
 # library(ggplot2)
-library(plotly)
+# library(plotly)
 library(ggpubr)
 library(RColorBrewer)
 # library(rcartocolor)
 library(cowplot)
 library(stringr)
-library(webr)
+# library(webr)
 #read muscle information table
 # library(gt)
 library(jsonlite)
@@ -1761,7 +1761,7 @@ data_r$studyID_new <- paste(data_r$studyID,'(',data_r$Muscle,',',round(data_r$av
 # data_r_filtered <- data_r %>% filter(Normalized_Score > 0.60)
 
 
-data_r_filtered <- data_r %>% filter(newScore > (24))
+data_r_filtered <- data_r %>% filter(newScore > (22))
 
 
 fig9ccomplete <- ggplot(data_r_filtered, aes(y = aveST)) +
@@ -1853,7 +1853,9 @@ df=data_r
 # Normalize 'Score'
 # df$Normalized_Score <- (df$newScore - min(df$newScore)) / (max(df$newScore) - min(df$newScore))
 
-df$Normalized_Score <- (df$newScore - min(df$newScore)) / (34 - min(df$newScore))
+df$Normalized_Score <- (df$newScore ) / max(df$newScore)
+
+# df$Normalized_Score <- (df$newScore - min(df$newScore)) / (31 - min(df$newScore))
 
 
 # Multiply 'Normalized_Score' by 'ST'
@@ -1861,7 +1863,7 @@ df$Adjusted_Score <- df$Normalized_Score * df$aveST
 
 mean(df$Adjusted_Score, na.rm = TRUE)
 
-df$studyID <- paste(data_r$Study.ID,'(',data_r$Muscle,',',round(df$Adjusted_Score,1), 'N/cm² )')
+df$studyID <- paste(data_r$studyID,'(',data_r$Muscle,',',round(df$Adjusted_Score,1), 'N/cm² )')
 
 
 
@@ -1881,6 +1883,20 @@ df$studyID <- paste(data_r$Study.ID,'(',data_r$Muscle,',',round(df$Adjusted_Scor
  
  fig9bcomplete
  saveFig(fig9bcomplete,'breakdown6b',18,8)
+ 
+ 
+ 
+ fig9bcomplete_linear <- ggplot(df, aes(x = studyID, y = Adjusted_Score)) +
+  geom_point(position = position_jitter(width = 0.2), alpha = 0.5) +
+  geom_smooth(method = "lm", se = FALSE, aes(group = 1), color = "black") +
+  stat_summary(fun.y = median, geom = "point", shape = 18, size = 3, color = "red", position = position_dodge(width = 0.75)) +
+  # annotate("text", x = 1, y = median(df$Adjusted_Score), label = round(median(df$Adjusted_Score), 1), vjust = -0.5, hjust = -0.5, size = 4) +
+  # theme_pubr(legend = 'right') + 
+  labs(x = "Study", y = expression("Specific tension "~(N/cm^2))) +
+  theme(axis.title.x = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1), axis.ticks.x = element_blank())
+
+ fig9bcomplete_linear
+ 
 ```
 
 #Create methods table

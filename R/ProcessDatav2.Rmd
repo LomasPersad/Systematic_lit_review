@@ -11,15 +11,15 @@ knitr::opts_chunk$set(echo = TRUE)
 
 library(dplyr)
 library(tidyr)
-library(openxlsx)
+# library(openxlsx)
 # library(ggplot2)
-library(plotly)
+# library(plotly)
 library(ggpubr)
 library(RColorBrewer)
 # library(rcartocolor)
 library(cowplot)
 library(stringr)
-library(webr)
+# library(webr)
 #read muscle information table
 # library(gt)
 library(jsonlite)
@@ -84,7 +84,7 @@ loadPaperStats <- function(){
   
   paperstats_r <- paperstats_r %>% drop_na(aveST) # remove muscles that had no ST vals
   paperstats_r <- paperstats_r[!paperstats_r$Muscle == '', ] # remove empty muscle rows
-  # levels(paperstats_r$journal)[levels(paperstats_r$journal) == "J Appl Physiol (1985)"] <- "J Appl Physiol" # rename this journal
+  levels(paperstats_r$journal)[levels(paperstats_r$journal) == "J Appl Physiol (1985)"] <- "J Appl Physiol" # rename this journal
   levels(paperstats_r$journal)[levels(paperstats_r$journal) == "GNB"] <- "GNB2012 Conference" # rename this journal
   levels(paperstats_r$journal)[levels(paperstats_r$journal) == "Journal of Applied Physiology"] <- "J Appl Physiol" # rename this journal
   levels(paperstats_r$journal)[levels(paperstats_r$journal) == "The journal of physiology"] <- "J Physiol" # rename this journal
@@ -110,6 +110,7 @@ loadPaperStats <- function(){
 
 loadPlotdata <- function(){
   data <- read.csv("./included/Plotdata_scored.csv")
+  
 
   #remove mistakes
   data=corrections(data)
@@ -153,7 +154,7 @@ loadPlotdata <- function(){
   levels(data_r$agetype)[levels(data_r$agetype) == "CHD"] <- "Child (<18)" 
   levels(data_r$agetype)[levels(data_r$agetype) == "YNG"] <- "Young (18-34)" 
   levels(data_r$agetype)[levels(data_r$agetype) == "MID"] <- "Middle (35-65)" 
-  levels(data_r$agetype)[levels(data_r$agetype) == "OLD"] <- "Old (>65)"
+  levels(data_r$agetype)[levels(data_r$agetype) == "OLD"] <- "Elder (>65)"
   
   data_r$trainingtype2 <- data_r$trainingtype
   
@@ -241,7 +242,7 @@ paperstats_r <- cbind(paperstats_r, result_df)
 #  mv_method="Muscle.volume.method",fl_method="Fascicle.length.method",pa_method-"Pennation.angle.method"
 #  t_method="Torque.method", ma_method="Moment.arm.method", pcsa_method="PCSA.method", f_method="Force.method"
 muscle_order <- c("Biceps Brachii", "Brachialis", "Brachioradialis", "Elbow Flexors",
-                  "Triceps Brachii", "Elbow Extendors",
+                  "Triceps Brachii", "Elbow Extensors",
                   "Quadriceps Femoris", "Rectus Femoris","Vastus Intermedius", "Vastus Medialis", "Vastus Lateralis",
                   "Gracilis",
                   "Plantar Flexors","Soleus","Gastrocnemius Lateralis", "Gastrocnemius Medialis","Triceps Surae","Dorsiflexor", "Tibialis Anterior")
@@ -256,7 +257,7 @@ custom_colors<-c('black','forestgreen', 'red2', 'orange', 'cornflowerblue',
 custom_colors <- c(brewer.pal(6, "Set2"),custom_colors)
 
 
-colnames(paperstats_r)
+# colnames(paperstats_r)
 ```
 
 ## Plots
@@ -466,6 +467,8 @@ stacked_bar_chart_c <- ggplot(data_summary_c, aes(x = factor(year), y = n)) +
 piechartplots <- plot_grid(pieChartplot3,pieChartplot2,nrow = 1,labels = c("B","C"), rel_widths = c(1, 1), rel_heights = c(1,1))
 fig1 <- plot_grid(stacked_bar_chart_c,piechartplots,
 nrow = 2, rel_heights = c( 1,0.9),labels = c("A"))+ theme(panel.background = element_rect(color = "white",fill = "white")) 
+
+
 saveFig(fig1,"paperstats",12,9)
 
 # saveFig(topplot2,"paperstats_author_journal",12,8)
@@ -1052,7 +1055,7 @@ Plot_other_variables <- function(grpVariable,label_name){
 
 # Create a scatter plot with a beautiful template
 FLvST1 <- ggscatter(data_r, x = {{grpVariable}}, y = "aveST",color = "anatomicalLocation",
-                           xlab = {{label_name}},
+                           xlab = as.character({{label_name}}),
                            legend.title = "Anatomical location",  # Legend title
                            ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
 ) + xlim(0, max(data_r$aveFL))
@@ -1135,9 +1138,158 @@ plot_grid(grp_plt1,
 # aveVol aveFL avePCSA aveTorque aveForce
 
 chosen <- 'avePCSA'
-
 Plot_other_variables(chosen,chosen)
+```
 
+
+```{r}
+ # library(paletteer)
+
+data_r$anatomicalLocation <- factor(data_r$anatomicalLocation, levels = c("Upper arm", "Upper leg", "Lower leg"))
+
+data_r$muscleName <- factor(data_r$muscleName, levels = muscle_order)
+
+
+
+#Plot PCSA and FL vs ST 
+
+Plot_PCSA <- function(grpVariable){
+  # Create a scatter plot with a beautiful template
+
+#--------scatter fiber length
+# aveFL avePCSA aveVol aveForce
+# anatomicalLocation  jointAction  agetype  trainingtype jointType CSA
+
+# Create a scatter plot with a beautiful template
+FLvST1 <- ggscatter(data_r, x = {{grpVariable}}, y = "aveST",color = "muscleName",
+                           legend.title = "Anatomical location",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+) +
+  facet_grid(anatomicalLocation ~ ., scales = "fixed", space = "free") +
+   xlim(0, max(data_r$aveFL))
+
+
+FLvST1 <- FLvST1+
+  theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2)), x=expression("PCSA "~(cm^2))) + theme(legend.position = "right")           # Apply the ggpubr theme
+
+FLvST1
+}
+
+
+Plot_PCSA <- function(grpVariable) { 
+  # Use a predefined color palette with more variations
+    my_Color_palette <- paletteer_c("grDevices::Zissou 1", 18)
+
+  # my_Color_palette <- c("red", "blue", "green", "orange", "purple", "cyan", "magenta", "yellow", "pink", "brown", "black", "gray", "darkgreen", "darkblue", "darkred", "darkorange", "darkcyan", "darkmagenta", "darkyellow")
+  
+  # Create a scatter plot with a beautiful template
+  FLvST1 <- ggscatter(data_r, x = {{grpVariable}}, y = "aveST", color = "muscleName", 
+                      legend.title = "Muscle",  # Legend title
+                      ellipse = FALSE, mean.point = FALSE, star.plot = FALSE
+  ) + scale_color_manual(values = my_Color_palette) +
+    facet_wrap(anatomicalLocation ~ ., scales = "fixed") +
+    xlim(0, max(data_r$aveFL))
+  
+  FLvST1 <- FLvST1  +
+    theme_pubr() + 
+    labs(y = expression("Specific tension "~(N/cm^2)), x = expression("PCSA "~(cm^2))) +
+    theme(legend.position = "right")  # Apply the ggpubr theme
+  
+  return(FLvST1)
+}
+
+
+Plot_PCSA <- function(grpVariable) { 
+  # Use a predefined color palette with more variations
+  # my_Color_palette <- paletteer_c("grDevices::Dark 3", 8)
+  my_Color_palette <- brewer.pal(8, "Set2")
+  # my_Color_palette <-custom_colors
+  
+  # Group the data by anatomicalLocation
+  grouped_data <- data_r %>% group_by(anatomicalLocation)
+  
+  # Create an empty list to store individual plots
+  plots_list <- list()
+  
+  Location_order <- c("Upper arm", "Upper leg", "Lower leg") #unique(data_r$anatomicalLocation)
+  # Iterate over each group and create a scatter plot
+  for (group_name in Location_order) {
+    # Filter data for the current group
+    group_data <- grouped_data %>% filter(anatomicalLocation == group_name)
+    
+    # Create scatter plot for the current group
+    plot <- ggscatter(group_data, x = {{grpVariable}}, y = "aveST", color = "muscleName",
+                      legend.title = paste(group_name," muscles"),  # Legend title
+                      ellipse = FALSE, mean.point = FALSE, star.plot = FALSE
+    ) + scale_color_manual(values = my_Color_palette)+
+    xlim(0, 450) + ylim(0, 80) + 
+      labs(y = expression("Specific tension "~(N/cm^2)), x = expression("PCSA "~(cm^2))) +
+      theme(legend.position = "right")  # Apply the ggpubr theme
+    
+    # Store the plot in the list
+    plots_list[[group_name]] <- plot
+  }
+  
+  # Combine all individual plots into a single plot arranged in rows
+  combined_plot <- plot_grid(plotlist = plots_list, nrow = length(unique(data_r$anatomicalLocation)))
+  
+  return(combined_plot)
+}
+
+
+chosen <- 'avePCSA'
+STpcsa <- Plot_PCSA(chosen)
+STpcsa
+saveFig(STpcsa,'STvsPCSA',8,6)
+
+
+Plot_FL <- function(grpVariable) { 
+  # Use a predefined color palette with more variations
+  # my_Color_palette <- paletteer_c("grDevices::Dark 3", 8)
+  my_Color_palette <- brewer.pal(8, "Set2")
+  # my_Color_palette <-custom_colors
+  
+  # Group the data by anatomicalLocation
+  grouped_data <- data_r %>% group_by(anatomicalLocation)
+  
+  # Create an empty list to store individual plots
+  plots_list <- list()
+  
+  Location_order <- c("Upper arm", "Upper leg", "Lower leg") #unique(data_r$anatomicalLocation)
+  # Iterate over each group and create a scatter plot
+  for (group_name in Location_order) {
+    # Filter data for the current group
+    group_data <- grouped_data %>% filter(anatomicalLocation == group_name)
+    
+    # Create scatter plot for the current group
+    plot <- ggscatter(group_data, x = {{grpVariable}}, y = "aveST", color = "muscleName",
+                      legend.title = paste(group_name," muscles"),  # Legend title
+                      ellipse = FALSE, mean.point = FALSE, star.plot = FALSE
+    ) + scale_color_manual(values = my_Color_palette)+
+    xlim(0, 20) + ylim(0, 80) +
+      labs(y = expression("Specific tension "~(N/cm^2)), x = expression("Fiber length "~(cm))) +
+      theme(legend.position = "right")  # Apply the ggpubr theme
+    
+    # Store the plot in the list
+    plots_list[[group_name]] <- plot
+  }
+  
+  # Combine all individual plots into a single plot arranged in rows
+  combined_plot <- plot_grid(plotlist = plots_list, nrow = length(unique(data_r$anatomicalLocation)))
+  
+  return(combined_plot)
+}
+
+chosen <- 'aveFL'
+ST_FL <- Plot_FL(chosen)
+ST_FL
+
+saveFig(ST_FL,'STvsFL',8,6)
+
+
+# my_Color_palette <- paletteer_c("grDevices::Zissou 1", 8)
+# ggplot()+ geom_point(data = data_r, aes(x = avePCSA, y = aveST, color = muscleName, shape = anatomicalLocation),size=2)
+# + scale_color_manual(values = brewer.pal(8, "Accent"))
 
 
 ```
