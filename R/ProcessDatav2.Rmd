@@ -122,7 +122,7 @@ loadPlotdata <- function(){
          Gender=Gender,CSA=CSA,Miscellaneous=Miscellaneous,aveVol="aveVol..cm3.",
          aveFL="aveFL..cm.",avePCSA="avePCSA..cm2.",aveTorque="aveTorque..Nm.",
          aveForce="aveForce..N.",aveST="aveST..N.cm2.", agetype="Age.type", trainingtype="Training.type", muscleName="name",
-         jointType="Joint.type", grav="antigrav.grav", jointAction="Joint.action", anatomicalLocation="anatomical.location", FastSlow="fast.slow", Score="Score",mv_method="Muscle.volume.method",fl_method="Fascicle.length.method",pa_method="Pennation.angle.method",t_method="Torque.method", ma_method="Moment.arm.method", pcsa_method="PCSA.method", f_method="Force.method",newScore, studyID="Study.ID")
+         jointType="Joint.type", grav="antigrav.grav", jointAction="Joint.action", anatomicalLocation="anatomical.location", FastSlow="fast.slow", Type1="X.MHC.1_mean", Type2A="X.MHC.2A_mean", Type2X="X.MHC.2X_mean", Score="Score",mv_method="Muscle.volume.method",fl_method="Fascicle.length.method",pa_method="Pennation.angle.method",t_method="Torque.method", ma_method="Moment.arm.method", pcsa_method="PCSA.method", f_method="Force.method",newScore, studyID="Study.ID")
   
   data_r <- data_r %>% drop_na(aveST) # remove muscles that had no ST vals
   # Define the order you want for the legend
@@ -258,6 +258,10 @@ custom_colors <- c(brewer.pal(6, "Set2"),custom_colors)
 
 
 # colnames(paperstats_r)
+
+# data <- read.csv("./included/Plotdata_scored.csv")
+# colnames(data)
+
 ```
 
 ## Plots
@@ -710,6 +714,47 @@ saveFig(fig7complete,'breakdown4',12,14)
 
 
 
+ggscatter(data_r, x = "Type1", y = "aveST",color = "muscleName",
+                           legend.title = "Anatomical location",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+) 
+
+ggscatter(data_r, x = "Type2A", y = "aveST",color = "muscleName",
+                           legend.title = "Anatomical location",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+) 
+
+
+ggscatter(data_r, x = "Type2X", y = "aveST",color = "muscleName",
+                           legend.title = "Anatomical location",  # Legend title
+                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
+) 
+
+
+
+# 4. Violin Plot
+ggplot(data_r, aes(x = Type1, y = aveST, fill = muscleName)) +
+  geom_violin() +
+  labs(title = "Violin Plot", x = "Fiber Type", y = "Specific Tension")
+
+# 5. Line Plot
+ggplot(data_r, aes(x = Type1, y = aveST, group = Type1, color = muscleName)) +
+  geom_line() +
+  labs(title = "Line Plot", x = "Muscle ID", y = "Specific Tension")
+
+# 6. Correlation Plot
+correlation_matrix <- cor(select(Type1, -Muscle_ID))  # Calculate correlation matrix
+correlation_plot <- ggplot(data = NULL, aes(x = colnames(correlation_matrix), y = colnames(correlation_matrix))) +
+  geom_tile(aes(fill = correlation_matrix), color = "white") +
+  scale_fill_gradient(low = "lightblue", high = "darkblue") +
+  theme_minimal() +
+  labs(title = "Correlation Plot", x = "Variable", y = "Variable", fill = "Correlation")
+
+
+  # facet_grid(anatomicalLocation ~ ., scales = "fixed", space = "free") +
+  #  xlim(0, max(data_r$aveFL))
+
+
 ```
 
 
@@ -1136,7 +1181,7 @@ plot_grid(grp_plt1,
 }
 
 # aveVol aveFL avePCSA aveTorque aveForce
-
+F
 chosen <- 'avePCSA'
 Plot_other_variables(chosen,chosen)
 ```
