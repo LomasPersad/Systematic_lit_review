@@ -1,135 +1,173 @@
-﻿[
-  {
-    "Muscle Abbreviation": "QF",
-    "Muscle Name": "Quadriceps Femoris",
-    "Fiber composition (fast/slow)": "60/40",
-    "Muscle function": "knee extensor",
-    "Anatomical location": "Upper Leg"
-  },
-  {
-    "Muscle Abbreviation": "PF",
-    "Muscle Name": "Plantar Flexors",
-    "Fiber composition (fast/slow)": "Slow",
-    "Muscle function": "ankle plantar flexor",
-    "Anatomical location": "Lower leg"
-  },
-  {
-    "Muscle Abbreviation": "GL",
-    "Muscle Name": "Gastrocnemius Lateralis",
-    "Fiber composition (fast/slow)": "50/50",
-    "Muscle function": "ankle plantar flexor",
-    "Anatomical location": "Lower leg"
-  },
-  {
-    "Muscle Abbreviation": "BIC",
-    "Muscle Name": "Biceps Brachii",
-    "Fiber composition (fast/slow)": "50/50",
-    "Muscle function": "elbow flexor",
-    "Anatomical location": "Upper arm"
-  },
-  {
-    "Muscle Abbreviation": "BRA",
-    "Muscle Name": "Brachialis",
-    "Fiber composition (fast/slow)": "Fast",
-    "Muscle function": "elbow flexor",
-    "Anatomical location": "Upper arm"
-  },
-  {
-    "Muscle Abbreviation": "BRD",
-    "Muscle Name": "Brachioradialis",
-    "Fiber composition (fast/slow)": "60/40",
-    "Muscle function": "elbow flexor",
-    "Anatomical location": "Upper arm"
-  },
-  {
-    "Muscle Abbreviation": "EF",
-    "Muscle Name": "Elbow Flexors",
-    "Fiber composition (fast/slow)": "50/50",
-    "Muscle function": "elbow flexor",
-    "Anatomical location": "Upper arm"
-  },
-  {
-    "Muscle Abbreviation": "EE",
-    "Muscle Name": "Elbow Extensors",
-    "Fiber composition (fast/slow)": "Fast",
-    "Muscle function": "elbow extensor",
-    "Anatomical location": "Upper arm"
-  },
-  {
-    "Muscle Abbreviation": "TS",
-    "Muscle Name": "Triceps Surae",
-    "Fiber composition (fast/slow)": "Slow",
-    "Muscle function": "ankle plantar flexor",
-    "Anatomical location": "Lower leg"
-  },
-  {
-    "Muscle Abbreviation": "VM",
-    "Muscle Name": "Vastus Medialis",
-    "Fiber composition (fast/slow)": "Slow",
-    "Muscle function": "knee extensor",
-    "Anatomical location": "Upper Leg"
-  },
-  {
-    "Muscle Abbreviation": "VI",
-    "Muscle Name": "Vastus Intermedius",
-    "Fiber composition (fast/slow)": "60/40",
-    "Muscle function": "knee extensor",
-    "Anatomical location": "Upper Leg"
-  },
-  {
-    "Muscle Abbreviation": "VL",
-    "Muscle Name": "Vastus Lateralis",
-    "Fiber composition (fast/slow)": "Slow",
-    "Muscle function": "knee extensor",
-    "Anatomical location": "Upper Leg"
-  },
-  {
-    "Muscle Abbreviation": "RF",
-    "Muscle Name": "Rectus Femoris",
-    "Fiber composition (fast/slow)": "60/40",
-    "Muscle function": "knee extensor",
-    "Anatomical location": "Upper Leg"
-  },
-  {
-    "Muscle Abbreviation": "TRI",
-    "Muscle Name": "Triceps Brachii",
-    "Fiber composition (fast/slow)": "Fast",
-    "Muscle function": "elbow extensor",
-    "Anatomical location": "Upper arm"
-  },
-  {
-    "Muscle Abbreviation": "Sol",
-    "Muscle Name": "Soleus",
-    "Fiber composition (fast/slow)": "Slow",
-    "Muscle function": "ankle plantar flexor",
-    "Anatomical location": "Lower leg"
-  },
-  {
-    "Muscle Abbreviation": "TA",
-    "Muscle Name": "Tibialis Anterior",
-    "Fiber composition (fast/slow)": "Slow",
-    "Muscle function": "ankle dorsiflexor",
-    "Anatomical location": "Lower leg"
-  },
-  {
-    "Muscle Abbreviation": "GM",
-    "Muscle Name": "Gastrocnemius Medialis",
-    "Fiber composition (fast/slow)": "50/50",
-    "Muscle function": "ankle plantar flexor",
-    "Anatomical location": "Lower leg"
-  },
-  {
-    "Muscle Abbreviation": "DF",
-    "Muscle Name": "Dorsiflexor",
-    "Fiber composition (fast/slow)": "Slow",
-    "Muscle function": "ankle dorsiflexor",
-    "Anatomical location": "Lower leg"
-  },
-  {
-    "Muscle Abbreviation": "GRA",
-    "Muscle Name": "Gracilis",
-    "Fiber composition (fast/slow)": "Slow",
-    "Muscle function": "hip adductor",
-    "Anatomical location": "Lower leg"
-  }
+[
+    {
+        "Muscle Abbreviation": "BIC",
+        "Muscle Name": "Biceps Brachii",
+        "%MHC-1": "55.6",
+        "%MHC-2A": "25.5",
+        "%MHC-2X": "19.0",
+        "Muscle function": "elbow flexor",
+        "Anatomical location": "Upper arm"
+    },
+    {
+        "Muscle Abbreviation": "BRA",
+        "Muscle Name": "Brachialis",
+        "%MHC-1": "65.9",
+        "%MHC-2A": "20.1",
+        "%MHC-2X": "13.9",
+        "Muscle function": "elbow flexor",
+        "Anatomical location": "Upper arm"
+    },
+    {
+        "Muscle Abbreviation": "BRD",
+        "Muscle Name": "Brachioradialis",
+        "%MHC-1": "45.5",
+        "%MHC-2A": "32.0",
+        "%MHC-2X": "22.5",
+        "Muscle function": "elbow flexor",
+        "Anatomical location": "Upper arm"
+    },
+    {
+        "Muscle Abbreviation": "DF",
+        "Muscle Name": "Dorsiflexor",
+        "%MHC-1": "72.4",
+        "%MHC-2A": "21.0",
+        "%MHC-2X": "6.5",
+        "Muscle function": "ankle dorsiflexor",
+        "Anatomical location": "Lower leg"
+    },
+    {
+        "Muscle Abbreviation": "EE",
+        "Muscle Name": "Elbow Extensors",
+        "%MHC-1": "49.7",
+        "%MHC-2A": "32.9",
+        "%MHC-2X": "17.5",
+        "Muscle function": "elbow extensor",
+        "Anatomical location": "Upper arm"
+    },
+    {
+        "Muscle Abbreviation": "EF",
+        "Muscle Name": "Elbow Flexors",
+        "%MHC-1": "54.6",
+        "%MHC-2A": "25.9",
+        "%MHC-2X": "19.5",
+        "Muscle function": "elbow flexor",
+        "Anatomical location": "Upper arm"
+    },
+    {
+        "Muscle Abbreviation": "GL",
+        "Muscle Name": "Gastrocnemius Lateralis",
+        "%MHC-1": "65.4",
+        "%MHC-2A": "15.0",
+        "%MHC-2X": "19.6",
+        "Muscle function": "ankle plantar flexor",
+        "Anatomical location": "Lower leg"
+    },
+    {
+        "Muscle Abbreviation": "GM",
+        "Muscle Name": "Gastrocnemius Medialis",
+        "%MHC-1": "57.9",
+        "%MHC-2A": "16.9",
+        "%MHC-2X": "25.1",
+        "Muscle function": "ankle plantar flexor",
+        "Anatomical location": "Lower leg"
+    },
+    {
+        "Muscle Abbreviation": "GRA",
+        "Muscle Name": "Gracilis",
+        "%MHC-1": "65.5",
+        "%MHC-2A": "19.0",
+        "%MHC-2X": "15.6",
+        "Muscle function": "hip adductor",
+        "Anatomical location": "Lower leg"
+    },
+    {
+        "Muscle Abbreviation": "PF",
+        "Muscle Name": "Plantar Flexors",
+        "%MHC-1": "63.4",
+        "%MHC-2A": "18.0",
+        "%MHC-2X": "18.5",
+        "Muscle function": "ankle plantar flexor",
+        "Anatomical location": "Lower leg"
+    },
+    {
+        "Muscle Abbreviation": "QF",
+        "Muscle Name": "Quadriceps Femoris",
+        "%MHC-1": "53.5",
+        "%MHC-2A": "30.9",
+        "%MHC-2X": "15.7",
+        "Muscle function": "knee extensor",
+        "Anatomical location": "Upper Leg"
+    },
+    {
+        "Muscle Abbreviation": "RF",
+        "Muscle Name": "Rectus Femoris",
+        "%MHC-1": "49.7",
+        "%MHC-2A": "26.9",
+        "%MHC-2X": "23.4",
+        "Muscle function": "knee extensor",
+        "Anatomical location": "Upper Leg"
+    },
+    {
+        "Muscle Abbreviation": "Sol",
+        "Muscle Name": "Soleus",
+        "%MHC-1": "68.1",
+        "%MHC-2A": "20.1",
+        "%MHC-2X": "11.8",
+        "Muscle function": "ankle plantar flexor",
+        "Anatomical location": "Lower leg"
+    },
+    {
+        "Muscle Abbreviation": "TA",
+        "Muscle Name": "Tibialis Anterior",
+        "%MHC-1": "79.4",
+        "%MHC-2A": "15.4",
+        "%MHC-2X": "5.1",
+        "Muscle function": "ankle dorsiflexor",
+        "Anatomical location": "Lower leg"
+    },
+    {
+        "Muscle Abbreviation": "TRI",
+        "Muscle Name": "Triceps Brachii",
+        "%MHC-1": "45.3",
+        "%MHC-2A": "34.0",
+        "%MHC-2X": "20.8",
+        "Muscle function": "elbow extensor",
+        "Anatomical location": "Upper arm"
+    },
+    {
+        "Muscle Abbreviation": "TS",
+        "Muscle Name": "Triceps Surae",
+        "%MHC-1": "63.8",
+        "%MHC-2A": "17.3",
+        "%MHC-2X": "18.8",
+        "Muscle function": "ankle plantar flexor",
+        "Anatomical location": "Lower leg"
+    },
+    {
+        "Muscle Abbreviation": "VI",
+        "Muscle Name": "Vastus Intermedius",
+        "%MHC-1": "63.0",
+        "%MHC-2A": "25.3",
+        "%MHC-2X": "11.7",
+        "Muscle function": "knee extensor",
+        "Anatomical location": "Upper Leg"
+    },
+    {
+        "Muscle Abbreviation": "VL",
+        "Muscle Name": "Vastus Lateralis",
+        "%MHC-1": "48.3",
+        "%MHC-2A": "37.5",
+        "%MHC-2X": "14.2",
+        "Muscle function": "knee extensor",
+        "Anatomical location": "Upper Leg"
+    },
+    {
+        "Muscle Abbreviation": "VM",
+        "Muscle Name": "Vastus Medialis",
+        "%MHC-1": "52.8",
+        "%MHC-2A": "33.7",
+        "%MHC-2X": "13.5",
+        "Muscle function": "knee extensor",
+        "Anatomical location": "Upper Leg"
+    }
 ]

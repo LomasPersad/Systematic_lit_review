@@ -24,6 +24,7 @@ library(stringr)
 # library(gt)
 library(jsonlite)
 library("grid")
+library("gt")
 
 
 # library(esquisse)
@@ -261,6 +262,9 @@ custom_colors <- c(brewer.pal(6, "Set2"),custom_colors)
 
 # data <- read.csv("./included/Plotdata_scored.csv")
 # colnames(data)
+
+
+
 
 ```
 
@@ -655,7 +659,7 @@ box5c <-ggboxplot(data_r, x = "FastSlow", y = "aveST",
 json_data <- fromJSON(txt  = "tableConvert.com_gh9ywa.json") 
 # Rename the column
 colnames(json_data)[1] <- "Abbreviation"
-colnames(json_data)[3] <- "Fiber composition (fast % / slow %)"
+# colnames(json_data)[3] <- "Fiber composition (fast % / slow %)"
 
 # Replace multiple labels in jointAction
 json_data <- json_data %>%
@@ -701,8 +705,6 @@ tbl <- ggtexttable(json_data, rows = NULL, theme = ttheme("blank")) %>%
   tab_add_hline(at.row = 20, row.side = "bottom", linewidth = 3, linetype = 1)
 
 
-
-
 fig7complete <- plot_grid(tbl+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2,rel_heights = c(0.8,1))
 
 # fig7complete <-ggarrange(tbl, breakdown4_b2,
@@ -712,48 +714,71 @@ fig7complete
 
 saveFig(fig7complete,'breakdown4',12,14)
 
+# <----------------------------------------------New plot
+Fiber_data <- data_r %>% select(c('muscleName','aveST','Type1','Type2A','Type2X'))
+melted_df <- pivot_longer(Fiber_data, cols = starts_with('Type'), names_to = 'fiber_type', values_to = 'percentage')
+
+# p <- ggplot(melted_df, aes(percentage, aveST, color = fiber_type)) +
+#   geom_point() +
+#   stat_smooth(aes(fill = fiber_type, color = fiber_type), method = "lm", formula = y ~ x) +
+#   stat_regline_equation(
+#     aes(label =  paste(..eq.label.., ..adj.rr.label.., sep = "~~~~")),
+#     formula = formula
+#   ) +
+#   theme_bw()
+# ggpar(p, palette = "jco")
+
+ # my_Color_palette <- paletteer_c("grDevices::Zissou 1", 18)
+
+Fiber_ST <- ggscatter(
+  melted_df, x = "percentage", y = "aveST",
+  color = "muscleName", palette = custom_colors
+  # add = "reg.line", 
+  # line.color = "red" 
+  ) + geom_smooth(method = "lm", se = FALSE, color = "black")+
+  facet_wrap(~fiber_type) +
+  stat_cor(label.y = 70) +
+  stat_regline_equation(label.y = 67)+
+  labs(x = "Fiber composotion (%)", y = expression("Specific tension "~(N/cm^2)),
+       color = "Muscle", title = "Specific Tension vs. Fiber Composition ")
+
+# saveFig(Fiber_ST,'ST_FiberComp',10,7)
 
 
-ggscatter(data_r, x = "Type1", y = "aveST",color = "muscleName",
-                           legend.title = "Anatomical location",  # Legend title
-                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
-) 
+box5c <- ggscatter(
+  melted_df, x = "percentage", y = "aveST")+ 
+  geom_smooth(method = "lm", color = "red", size = 1.5, se = FALSE) +
+  facet_wrap(~fiber_type) +
+  stat_cor(label.y = 70) +
+  stat_regline_equation(label.y = 67)+
+  labs(x = "Fiber composotion (%)", y = expression("Specific tension "~(N/cm^2)),
+       color = "Muscle")
 
-ggscatter(data_r, x = "Type2A", y = "aveST",color = "muscleName",
-                           legend.title = "Anatomical location",  # Legend title
-                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
-) 
+box5c
 
-
-ggscatter(data_r, x = "Type2X", y = "aveST",color = "muscleName",
-                           legend.title = "Anatomical location",  # Legend title
-                           ellipse = FALSE, mean.point = FALSE,star.plot = FALSE
-) 
-
-
-
-# 4. Violin Plot
-ggplot(data_r, aes(x = Type1, y = aveST, fill = muscleName)) +
-  geom_violin() +
-  labs(title = "Violin Plot", x = "Fiber Type", y = "Specific Tension")
-
-# 5. Line Plot
-ggplot(data_r, aes(x = Type1, y = aveST, group = Type1, color = muscleName)) +
-  geom_line() +
-  labs(title = "Line Plot", x = "Muscle ID", y = "Specific Tension")
-
-# 6. Correlation Plot
-correlation_matrix <- cor(select(Type1, -Muscle_ID))  # Calculate correlation matrix
-correlation_plot <- ggplot(data = NULL, aes(x = colnames(correlation_matrix), y = colnames(correlation_matrix))) +
-  geom_tile(aes(fill = correlation_matrix), color = "white") +
-  scale_fill_gradient(low = "lightblue", high = "darkblue") +
-  theme_minimal() +
-  labs(title = "Correlation Plot", x = "Variable", y = "Variable", fill = "Correlation")
+tbl <- json_data %>%
+  gt() %>%
+  tab_spanner(label = "Fiber composition", columns = c("%MHC-1", "%MHC-2A", "%MHC-2X")) %>%
+  tab_style(
+    style = list(
+      cell_text(color = "black", align = "center")
+    ),
+    locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
+  )
 
 
-  # facet_grid(anatomicalLocation ~ ., scales = "fixed", space = "free") +
-  #  xlim(0, max(data_r$aveFL))
 
+breakdown4_t <- plot_grid(box2c,box1c,rel_widths = c(1,0.6),rel_heights = c(1,1),labels = c("A","B"))
+breakdown4_b <- plot_grid(box5c,box3c,rel_widths = c(1,0.6),rel_heights = c(1,1),labels = c("C","D"))
+
+breakdown4_b2 <- plot_grid(breakdown4_t,breakdown4_b, ncol = 1,align = 'v',axis = 'lr')
+
+breakdown4_b2
+
+fig7complete <- plot_grid(tbl+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2,rel_heights = c(0.8,1))
+
+
+saveFig(fig7complete,'breakdown4b',12,14)
 
 ```
 
