@@ -3,6 +3,8 @@ title: "ProcessDataV2"
 author: "LPersad"
 date: "2024-01-26"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -680,17 +682,6 @@ custom_order <- c( "Upper arm","Upper Leg","Lower leg")
 json_data <- json_data %>%
   arrange(factor(`Anatomical location`, levels = custom_order),factor(`Muscle Name`, levels = muscle_order))
 
-# Create a gt table
-# table_gt <- json_data %>%
-#   gt() %>%
-#   tab_header(
-#     title = "Muscle Information",
-#     # subtitle = "Fiber Composition, Function and location"
-#   ) 
-
-# Print the table
-# table_gt
-
 
 breakdown4_t <- plot_grid(box2c,box5c,rel_widths = c(1,0.6),rel_heights = c(1,1),labels = c("A","B"))
 breakdown4_b <- plot_grid(box1c,box3c,rel_widths = c(1,1),rel_heights = c(1,1),labels = c("C","D"))
@@ -718,6 +709,12 @@ saveFig(fig7complete,'breakdown4',12,14)
 Fiber_data <- data_r %>% select(c('muscleName','aveST','Type1','Type2A','Type2X'))
 melted_df <- pivot_longer(Fiber_data, cols = starts_with('Type'), names_to = 'fiber_type', values_to = 'percentage')
 
+
+# Assuming df is your dataframe and the column is named 'type_column'
+melted_df$fiber_type <- gsub("Type1", "Type 1", melted_df$fiber_type)
+melted_df$fiber_type <- gsub("Type2A", "Type 2A", melted_df$fiber_type)
+melted_df$fiber_type <- gsub("Type2X", "Type 2X", melted_df$fiber_type)
+
 # p <- ggplot(melted_df, aes(percentage, aveST, color = fiber_type)) +
 #   geom_point() +
 #   stat_smooth(aes(fill = fiber_type, color = fiber_type), method = "lm", formula = y ~ x) +
@@ -737,28 +734,38 @@ Fiber_ST <- ggscatter(
   # line.color = "red" 
   ) + geom_smooth(method = "lm", se = FALSE, color = "black")+
   facet_wrap(~fiber_type) +
-  stat_cor(label.y = 70) +
-  stat_regline_equation(label.y = 67)+
-  labs(x = "Fiber composotion (%)", y = expression("Specific tension "~(N/cm^2)),
+  stat_cor(label.y = 80) +
+  stat_regline_equation(label.y = 77)+
+  labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
        color = "Muscle", title = "Specific Tension vs. Fiber Composition ")
 
-# saveFig(Fiber_ST,'ST_FiberComp',10,7)
+saveFig(Fiber_ST,'ST_FiberComp',10,7)
 
 
 box5c <- ggscatter(
   melted_df, x = "percentage", y = "aveST")+ 
   geom_smooth(method = "lm", color = "red", size = 1.5, se = FALSE) +
   facet_wrap(~fiber_type) +
-  stat_cor(label.y = 70) +
-  stat_regline_equation(label.y = 67)+
-  labs(x = "Fiber composotion (%)", y = expression("Specific tension "~(N/cm^2)),
+  stat_cor(aes(label = ..r.label..),
+           label.y = 80) +
+  stat_regline_equation(label.y = 77)+
+  labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
        color = "Muscle")
 
 box5c
 
+
+# colnames(json_data)
+
+json_data <- json_data %>%
+  rename("Type 1" = "%MHC-1",
+         "Type 2A" = "%MHC-2A",
+         "Type 2X" = "%MHC-2X")
+
+# columns = c("%MHC-1", "%MHC-2A", "%MHC-2X")
 tbl <- json_data %>%
   gt() %>%
-  tab_spanner(label = "Fiber composition", columns = c("%MHC-1", "%MHC-2A", "%MHC-2X")) %>%
+  tab_spanner(label = "Fiber composition (%)", columns = c("Type 1", "Type 2A", "Type 2X")) %>%
   tab_style(
     style = list(
       cell_text(color = "black", align = "center")
@@ -766,6 +773,20 @@ tbl <- json_data %>%
     locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
   )
 
+tbl
+
+# Assuming tbl is your table object
+tbl_left <- tbl %>%
+  slice(1:(nrow(tbl) / 2))
+
+tbl_right <- tbl %>%
+  slice(((nrow(tbl) / 2) + 1):nrow(tbl))
+
+# Plotting side by side
+tbl_left + tbl_right
+
+
+tbl %>%gtsave("Fig5_table.png")
 
 
 breakdown4_t <- plot_grid(box2c,box1c,rel_widths = c(1,0.6),rel_heights = c(1,1),labels = c("A","B"))
@@ -774,11 +795,21 @@ breakdown4_b <- plot_grid(box5c,box3c,rel_widths = c(1,0.6),rel_heights = c(1,1)
 breakdown4_b2 <- plot_grid(breakdown4_t,breakdown4_b, ncol = 1,align = 'v',axis = 'lr')
 
 breakdown4_b2
+saveFig(breakdown4_b2,'breakdown4b',12,10)
 
-fig7complete <- plot_grid(tbl+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2,rel_heights = c(0.8,1))
+
+# fig7complete <- plot_grid(tbl+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2,rel_heights = c(0.8,1))
+
+p111 <- ggdraw() + draw_image("Fig5_table.png", scale = 1)
+
+fig7complete <- plot_grid(p111,breakdown4_b2, nrow = 2,rel_heights = c(0.6,1))
+
+fig7complete
+saveFig(fig7complete,'breakdown4c',12,14)
 
 
-saveFig(fig7complete,'breakdown4b',12,14)
+
+
 
 ```
 
