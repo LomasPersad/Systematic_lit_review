@@ -738,6 +738,7 @@ Fiber_ST <- ggscatter(
   stat_regline_equation(label.y = 77)+
   labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
        color = "Muscle", title = "Specific Tension vs. Fiber Composition ")
+# Fiber_ST
 
 saveFig(Fiber_ST,'ST_FiberComp',10,7)
 
@@ -774,13 +775,43 @@ tbl <- json_data %>%
   )
 
 tbl
+nrow(json_data)
 
 # Assuming tbl is your table object
-tbl_left <- tbl %>%
-  slice(1:(nrow(tbl) / 2))
+n_rows <- nrow(json_data)
+half_rows <- ceiling(n_rows / 2)
+half_rows
 
-tbl_right <- tbl %>%
-  slice(((nrow(tbl) / 2) + 1):nrow(tbl))
+tbl_left <- json_data[1:half_rows, ]
+tbl_right <- json_data[(half_rows + 1):n_rows, ]
+
+
+tbla <- tbl_left %>%
+  gt() %>%
+  tab_spanner(label = "Fiber composition (%)", columns = c("Type 1", "Type 2A", "Type 2X")) %>%
+  tab_style(
+    style = list(
+      cell_text(color = "black", align = "center")
+    ),
+    locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
+  )
+
+tblb <- tbl_right %>%
+  gt() %>%
+  tab_spanner(label = "Fiber composition (%)", columns = c("Type 1", "Type 2A", "Type 2X")) %>%
+  tab_style(
+    style = list(
+      cell_text(color = "black", align = "center")
+    ),
+    locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
+  )
+
+tbla
+
+p111 <- ggdraw() + draw_image(tbla, scale = 1)
+
+plot_grid(tbla,tblb)
+
 
 # Plotting side by side
 tbl_left + tbl_right
