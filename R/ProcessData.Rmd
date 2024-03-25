@@ -22,7 +22,7 @@ library(stringr)
 # library(gt)
 library(jsonlite)
 library("grid")
-library(readxl)
+# library(readxl)
 
 
 # library(esquisse)
@@ -1731,10 +1731,10 @@ plotFacet <- function(data_r, grpVariable, title){
 # fig10complete <- plotFacet(data_r,"Score","Assumption count")
 
 
-# trainingtype muscleName jointAction  aveForce anatomicalLocation  FastSlow
+# trainingtype muscleName jointAction  aveForce anatomicalLocation  FastSlow agetype
 # fl_method ma_method pa_method mv_method f_method t_method
 
-plotFacet(data_r,"jointAction","placeholder")
+plotFacet(data_r,"agetype","placeholder")
 
 # list(c("Young (18-34)", "Old (>65)"))
 

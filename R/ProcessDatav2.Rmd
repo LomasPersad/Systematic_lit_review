@@ -26,8 +26,8 @@ library(stringr)
 # library(gt)
 library(jsonlite)
 library("grid")
-library("gt")
-
+# library("gt")
+library("flextable")
 
 # library(esquisse)
 # esquisser(data_r)
@@ -749,7 +749,7 @@ box5c <- ggscatter(
   facet_wrap(~fiber_type) +
   stat_cor(aes(label = ..r.label..),
            label.y = 80) +
-  stat_regline_equation(label.y = 77)+
+  stat_regline_equation(label.y = 75)+
   labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
        color = "Muscle")
 
@@ -763,19 +763,21 @@ json_data <- json_data %>%
          "Type 2A" = "%MHC-2A",
          "Type 2X" = "%MHC-2X")
 
-# columns = c("%MHC-1", "%MHC-2A", "%MHC-2X")
-tbl <- json_data %>%
-  gt() %>%
-  tab_spanner(label = "Fiber composition (%)", columns = c("Type 1", "Type 2A", "Type 2X")) %>%
-  tab_style(
-    style = list(
-      cell_text(color = "black", align = "center")
-    ),
-    locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
-  )
 
-tbl
-nrow(json_data)
+#<----------Using gt
+
+# columns = c("%MHC-1", "%MHC-2A", "%MHC-2X")
+# tbl <- json_data %>%
+#   gt() %>%
+#   tab_spanner(label = "Fiber composition (%)", columns = c("Type 1", "Type 2A", "Type 2X")) %>%
+#   tab_style(
+#     style = list(
+#       cell_text(color = "black", align = "center")
+#     ),
+#     locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
+#   )
+# tbl %>%gtsave("Fig5_table.png")
+
 
 # Assuming tbl is your table object
 n_rows <- nrow(json_data)
@@ -808,16 +810,30 @@ tblb <- tbl_right %>%
 
 tbla
 
-p111 <- ggdraw() + draw_image(tbla, scale = 1)
-
-plot_grid(tbla,tblb)
 
 
-# Plotting side by side
-tbl_left + tbl_right
+tbl <- json_data %>%
+  flextable() %>% 
+  theme_vanilla() %>% 
+  align(align = "center", part = "all") %>% 
+  autofit() %>% width(j = 1, width = 1.2)%>%   
+  add_header_row(values = c("","Fiber composition (%)",""),
+  colwidths = c(2,3,2)) %>%
+  hline(i =1,border = fp_border_default(width = 0), 
+            part = "header")%>%
+  hline(i =1,j=3:5,border = fp_border_default(width = 1), 
+            part = "header") %>% as_raster()
 
 
-tbl %>%gtsave("Fig5_table.png")
+tbl 
+
+# library(ftExtra)
+
+gg2 <- ggplot() + 
+  theme_void() + 
+  annotation_custom(rasterGrob(tbl), xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf)
+
+gg2
 
 
 breakdown4_t <- plot_grid(box2c,box1c,rel_widths = c(1,0.6),rel_heights = c(1,1),labels = c("A","B"))
@@ -825,15 +841,15 @@ breakdown4_b <- plot_grid(box5c,box3c,rel_widths = c(1,0.6),rel_heights = c(1,1)
 
 breakdown4_b2 <- plot_grid(breakdown4_t,breakdown4_b, ncol = 1,align = 'v',axis = 'lr')
 
-breakdown4_b2
-saveFig(breakdown4_b2,'breakdown4b',12,10)
+# breakdown4_b2
+# saveFig(breakdown4_b2,'breakdown4b',12,10)
 
 
 # fig7complete <- plot_grid(tbl+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2,rel_heights = c(0.8,1))
 
-p111 <- ggdraw() + draw_image("Fig5_table.png", scale = 1)
+# p111 <- ggdraw() + draw_image("Fig5_table.png", scale = 1)
 
-fig7complete <- plot_grid(p111,breakdown4_b2, nrow = 2,rel_heights = c(0.6,1))
+fig7complete <- plot_grid(gg2+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2, ncol = 1,rel_heights = c(0.7,1))
 
 fig7complete
 saveFig(fig7complete,'breakdown4c',12,14)
