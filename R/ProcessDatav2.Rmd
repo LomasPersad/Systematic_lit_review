@@ -259,6 +259,29 @@ custom_colors<-c('black','forestgreen', 'red2', 'orange', 'cornflowerblue',
 
 custom_colors <- c(brewer.pal(6, "Set2"),custom_colors)
 
+# brewer.pal(8, "Accent") 
+# paletteer_c("grDevices::Dark 3", 8)
+# paletteer_c("grDevices::Zissou 1", 8)  
+# my_Color_palette <- c("red", "blue", "green", "orange", "purple", "cyan", "magenta", "yellow", "pink", "brown", "black", "gray", "darkgreen", "darkblue", "darkred", "darkorange", "darkcyan", "darkmagenta", "darkyellow")
+# 
+# custom_colors2  <- c(
+#   "dodgerblue2", "#E31A1C", # red
+#   "green4",
+#   "#6A3D9A", # purple
+#   "#FF7F00", # orange
+#   "black", "gold1",
+#   "skyblue2", "#FB9A99", # lt pink
+#   "palegreen2",
+#   "#CAB2D6", # lt purple
+#   "#FDBF6F", # lt orange
+#   "gray70", "khaki2",
+#   "maroon", "orchid1", "deeppink1", "blue1", "steelblue4",
+#   "darkturquoise", "green1", "yellow4", "yellow3",
+#   "darkorange4", "brown"
+# )
+
+
+
 
 # colnames(paperstats_r)
 
@@ -495,6 +518,7 @@ saveFig(fig1b,"paperstats2",11,12)
 
 ### Ave ST values
 ```{r pressure, echo=FALSE}
+custom_colors2 <- c(brewer.pal(8, "Dark2"),custom_colors)
 
 muscle_order2 <- c("BIC", "BRA", "BRD", "EF",
                   "TRI", "EE",
@@ -503,30 +527,53 @@ muscle_order2 <- c("BIC", "BRA", "BRD", "EF",
                   "PF","SOL","GL", "GM","TS","DF", "TA")
 
 paperstats_r <- paperstats_r %>%
-  mutate(Muscle = factor(Muscle, levels = muscle_order2))
+  mutate(Muscle = factor(Muscle, levels = muscle_order2)) %>% 
+  mutate(anatomicalLocation = factor(anatomicalLocation, levels = c("Upper arm","Upper leg", "Lower leg")))
+
+## Plot with legend
+# topplot <- ggplot(paperstats_r, aes(x = aveST, y = reorder(studyID, year))) +
+#   geom_point(aes(color = Muscle, shape=anatomicalLocation)) +  #musclename 
+#   labs(
+#     y = "Author",
+#     x = expression("Specific tension "~(N/cm^2)),
+#     color = "Muscles",
+#     size="Number of subjects",
+#     shape="Anatomical location"
+#   )+
+# # reorder(musclename, muscle_order)
+# # , shape = jointAction
+#   theme_pubr(legend='right')+  # Custom theme settings
+#   theme(
+#     plot.title = element_text(size = 14, hjust = 0.5),  # Title size and position
+#     plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"),  # Margins
+#     plot.background = element_rect(fill = "white"),  # Background color
+#     panel.background = element_rect(fill = "white"),  # Panel background color
+#     panel.grid.major = element_line(color = "lightgray", size = 0.2),  # Gridlines
+#     axis.title = element_text(size = 14),  # Axis label size
+#     axis.text = element_text(size = 10),  # Axis tick label size
+#     
+#   )+
+#   scale_color_manual(values = custom_colors2)
 
 topplot <- ggplot(paperstats_r, aes(x = aveST, y = reorder(studyID, year))) +
-  geom_point(aes(color = Muscle)) +  #musclename , size= N
+  geom_point(aes(color = Muscle, shape = anatomicalLocation)) +
   labs(
     y = "Author",
-    x = expression("Specific tension "~(N/cm^2)),
-    color = "Muscles",
-    size="Number of subjects"
-  )+
-# reorder(musclename, muscle_order)
-# , shape = jointAction
-  theme_pubr(legend='right')+  # Custom theme settings
+    x = expression("Specific tension "~(N/cm^2))
+  ) +
+  theme_pubr(legend = 'none') +  # Remove legends
   theme(
-    plot.title = element_text(size = 14, hjust = 0.5),  # Title size and position
-    plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"),  # Margins
-    plot.background = element_rect(fill = "white"),  # Background color
-    panel.background = element_rect(fill = "white"),  # Panel background color
-    panel.grid.major = element_line(color = "lightgray", size = 0.2),  # Gridlines
-    axis.title = element_text(size = 14),  # Axis label size
-    axis.text = element_text(size = 10),  # Axis tick label size
-    
-  )
+    plot.title = element_text(size = 14, hjust = 0.5),
+    plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"),
+    plot.background = element_rect(fill = "white"),
+    panel.background = element_rect(fill = "white"),
+    panel.grid.major = element_line(color = "lightgray", size = 0.2),
+    axis.title = element_text(size = 14),
+    axis.text = element_text(size = 10)
+  )+
+  scale_color_manual(values = custom_colors2)
 
+# topplot
 
 #<------------group by journal
 # minor_breaks <- seq(0, 75, by = 5)
@@ -542,30 +589,50 @@ topplot <- ggplot(paperstats_r, aes(x = aveST, y = reorder(studyID, year))) +
 #     x = expression("Specific tension "~(N/cm^2)),
 #     color = "Muscles"
 #   )+ scale_x_continuous(breaks = minor_breaks, minor_breaks = minor_breaks)
-  
+
+ 
 data_r <- data_r %>%
   mutate(Muscle = factor(Muscle, levels = muscle_order2))
 
+
+
  fig8complete <- ggplot(data_r, aes(y = aveST)) +
   geom_boxplot(outlier.shape = NA, width = 0.08) +  # Turn off the outliers outlier.shape = NA
-  geom_jitter(aes(x = 0, color=Muscle), width = 0.009, alpha = 1) +  # Show all data points with jitter
+  geom_jitter(aes(x = 0, color=Muscle, shape=anatomicalLocation), width = 0.009, alpha = 1) +  # Show all data points with jitter
    # stat_summary(aes(x = 0),fun = median, geom = "point", shape = 18, size = 0, color = "red", position = position_dodge(0.75))+
      annotate("text", x = 0, y = median(data_r$aveST), label = median(data_r$aveST), vjust = -0.5, hjust = -0.4, size = 4) +
 
    # geom_text(aes(x = 0, y = median(aveST), label = median(aveST), color = "red"), hjust = -1, size = 4) +
-  theme_pubr(legend='right') + labs(y = expression("Specific tension "~(N/cm^2))) +
+  theme_pubr(legend='right') + labs(y = expression("Specific tension "~(N/cm^2)),color="Muscle",
+    shape="Anatomical location") +
    theme(axis.title.x = element_blank(),axis.text.x = element_blank(),
         axis.ticks.x = element_blank(),axis.title = element_text(size = 14),  # Axis label size
     axis.text = element_text(size = 10),) +
-   labs(color="Muscle")
+  scale_color_manual(values = custom_colors2)
  
- # fig8complete
 
+ 
+ ## Plot with BOLD legend text
+ # fig8complete <- ggplot(data_r, aes(y = aveST)) +
+ #  geom_boxplot(outlier.shape = NA, width = 0.08) +
+ #  geom_jitter(aes(x = 0, color = Muscle, shape = anatomicalLocation), width = 0.009, alpha = 1) +
+ #  annotate("text", x = 0, y = median(data_r$aveST), label = median(data_r$aveST), vjust = -0.5, hjust = -0.4, size = 4) +
+ #  theme_pubr(legend='right') + 
+ #  labs(y = expression("Specific tension "~(N/cm^2))) +
+ #  theme(axis.title.x = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank(),
+ #        axis.title = element_text(size = 14), axis.text = element_text(size = 10),
+ #        legend.title = element_text(color = "black", face = "bold", size = 12),
+ #        legend.text = element_text(color = "black", size = 10)) +
+ #  labs(color = "Muscle", shape = "Anatomical location") +
+ #  scale_color_manual(values = custom_colors2)
+
+ # fig8complete
  # saveFig(fig8complete,'breakdown5',4,6)
 
 
 
-fig_five <- plot_grid(topplot,fig8complete,ncol = 2, rel_widths = c(1, 0.5),labels = c("A","B"))
+fig_five <- plot_grid(topplot,fig8complete,ncol = 2, rel_widths = c(1, 0.7),labels = c("A","B"))
+fig_five
 saveFig(fig_five,'breakdown5',9,7)
 
 range(data_r$aveST)
@@ -1389,8 +1456,7 @@ chosen <- 'avePCSA'
 STpcsa <- Plot_PCSA(chosen)
 STpcsa
 saveFig(STpcsa,'STvsPCSA',8,6)
-
-
+ 
 Plot_FL <- function(grpVariable) { 
   # Use a predefined color palette with more variations
   # my_Color_palette <- paletteer_c("grDevices::Dark 3", 8)

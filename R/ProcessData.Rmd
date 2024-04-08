@@ -3,6 +3,8 @@ title: "Process data"
 author: "LPersad"
 date: "2023-08-29"
 output: html_document
+editor_options: 
+  chunk_output_type: console
 ---
 
 ```{r setup, include=FALSE}
@@ -1527,110 +1529,110 @@ new_list
 #---------------Create scoring (not working- done in Google colab)
 #<----------individual methods to create scores
 
-methods_scores_df <- read_excel("./included/ST_review_ALLdata_Lomas_processed.xlsx", sheet = "score")
-# Create a scoring scheme dictionary
-scoring_scheme <- setNames(methods_scores_df$Score, methods_scores_df$Method)
-# Assuming All_Force_method is a vector of method names
-calculate_score <- function(scoring_scheme,All_Force_method){
-  method_names <- names(scoring_scheme)
-scores <- rep(NA, length(All_Force_method))
-
-for (i in seq_along(All_Force_method)) {
-  match_index <- match(All_Force_method[i], method_names)
-  if (!is.na(match_index)) {
-    scores[i] <- scoring_scheme[[method_names[match_index]]]
-  } else {
-    # Handle cases where method name is not found
-    # For example, assign a default score of 0
-    scores[i] <- 0  # Adjust this as needed
-  }
-}
-return(scores)
-  
-}
-
-calculate_score <- function(scoring_scheme, All_Force_method) {
-  method_names <- names(scoring_scheme)
-  scores <- rep(NA, length(All_Force_method))
-  
-  for (i in seq_along(All_Force_method)) {
-    match_indices <- sapply(method_names, function(x) grepl(x, All_Force_method[i], ignore.case = TRUE))
-    matched_methods <- method_names[match_indices]
-    
-    if (matched %in% names(scoring_scheme)) {
-  scores[i] <- scoring_scheme[[matched]]
-} else {
-  # Handle cases where matched is not found in scoring_scheme
-  # For example, assign a default score of 0
-  scores[i] <- 0  # Adjust this as needed
-}
-  }
-  return(scores)
-}
-
-
-
-custom_match_function <- function(method_name, method_names) {
-  # Your custom matching logic here
-  # For example, you could try fuzzy matching or case-insensitive matching
-  match(method_name, method_names, nomatch = NA)
-}
-
-
-Score1 <- calculate_score(scoring_scheme,data_r$t_method)
-Score2 <- calculate_score(scoring_scheme,data_r$ma_method)
-Score3 <- calculate_score(scoring_scheme,data_r$f_method)
-Score4 <- calculate_score(scoring_scheme,data_r$mv_method)
-Score5 <- calculate_score(scoring_scheme,data_r$fl_method)
-Score6 <- calculate_score(scoring_scheme,data_r$pa_method)
-
-data_r$newScore=Score1+Score2
-
-write.csv(data_r, file = "New_Scored.csv", row.names = FALSE)
-
-#<---------Scoring
-
-# Load the readxl package
-library(readxl)
-
-# Read the scoring data from the 'score' sheet in the Excel file
-methods_scores_df <- read_excel("./included/ST_review_ALLdata_Lomas_processed.xlsx", sheet = "new score")
-
-# Create a scoring scheme dictionary
-scoring_scheme <- setNames(methods_scores_df$Score, methods_scores_df$Method)
-
-
-
-All_Force_method <- paste(data_r$t_method,data_r$ma_method,data_r$f_method, sep = "-")
-
-All_PCSA_method <-paste(data_r$mv_method,data_r$fl_method,data_r$pa_method, sep = "-")
-
-methods_df <- data.frame(All_Force_method,All_PCSA_method)
-
-
-# Assuming All_Force_method is a vector of method names
-calculate_score <- function(scoring_scheme,All_Force_method){
-  method_names <- names(scoring_scheme)
-scores <- rep(NA, length(All_Force_method))
-
-for (i in seq_along(All_Force_method)) {
-  match_index <- match(All_Force_method[i], method_names)
-  if (!is.na(match_index)) {
-    scores[i] <- scoring_scheme[[method_names[match_index]]]
-  } else {
-    # Handle cases where method name is not found
-    # For example, assign a default score of 0
-    scores[i] <- 0  # Adjust this as needed
-  }
-}
-return(scores)
-  
-}
-
-# Apply the scoring function to each row of Methods_df
-Score1 <- calculate_score(scoring_scheme,All_Force_method)
-Score2 <- calculate_score(scoring_scheme,All_PCSA_method)
-data_r$newScore=Score1+Score2
+# methods_scores_df <- read_excel("./included/ST_review_ALLdata_Lomas_processed.xlsx", sheet = "score")
+# # Create a scoring scheme dictionary
+# scoring_scheme <- setNames(methods_scores_df$Score, methods_scores_df$Method)
+# # Assuming All_Force_method is a vector of method names
+# calculate_score <- function(scoring_scheme,All_Force_method){
+#   method_names <- names(scoring_scheme)
+# scores <- rep(NA, length(All_Force_method))
+# 
+# for (i in seq_along(All_Force_method)) {
+#   match_index <- match(All_Force_method[i], method_names)
+#   if (!is.na(match_index)) {
+#     scores[i] <- scoring_scheme[[method_names[match_index]]]
+#   } else {
+#     # Handle cases where method name is not found
+#     # For example, assign a default score of 0
+#     scores[i] <- 0  # Adjust this as needed
+#   }
+# }
+# return(scores)
+#   
+# }
+# 
+# calculate_score <- function(scoring_scheme, All_Force_method) {
+#   method_names <- names(scoring_scheme)
+#   scores <- rep(NA, length(All_Force_method))
+#   
+#   for (i in seq_along(All_Force_method)) {
+#     match_indices <- sapply(method_names, function(x) grepl(x, All_Force_method[i], ignore.case = TRUE))
+#     matched_methods <- method_names[match_indices]
+#     
+#     if (matched %in% names(scoring_scheme)) {
+#   scores[i] <- scoring_scheme[[matched]]
+# } else {
+#   # Handle cases where matched is not found in scoring_scheme
+#   # For example, assign a default score of 0
+#   scores[i] <- 0  # Adjust this as needed
+# }
+#   }
+#   return(scores)
+# }
+# 
+# 
+# 
+# custom_match_function <- function(method_name, method_names) {
+#   # Your custom matching logic here
+#   # For example, you could try fuzzy matching or case-insensitive matching
+#   match(method_name, method_names, nomatch = NA)
+# }
+# 
+# 
+# Score1 <- calculate_score(scoring_scheme,data_r$t_method)
+# Score2 <- calculate_score(scoring_scheme,data_r$ma_method)
+# Score3 <- calculate_score(scoring_scheme,data_r$f_method)
+# Score4 <- calculate_score(scoring_scheme,data_r$mv_method)
+# Score5 <- calculate_score(scoring_scheme,data_r$fl_method)
+# Score6 <- calculate_score(scoring_scheme,data_r$pa_method)
+# 
+# data_r$newScore=Score1+Score2
+# 
+# write.csv(data_r, file = "New_Scored.csv", row.names = FALSE)
+# 
+# #<---------Scoring
+# 
+# # Load the readxl package
+# library(readxl)
+# 
+# # Read the scoring data from the 'score' sheet in the Excel file
+# methods_scores_df <- read_excel("./included/ST_review_ALLdata_Lomas_processed.xlsx", sheet = "new score")
+# 
+# # Create a scoring scheme dictionary
+# scoring_scheme <- setNames(methods_scores_df$Score, methods_scores_df$Method)
+# 
+# 
+# 
+# All_Force_method <- paste(data_r$t_method,data_r$ma_method,data_r$f_method, sep = "-")
+# 
+# All_PCSA_method <-paste(data_r$mv_method,data_r$fl_method,data_r$pa_method, sep = "-")
+# 
+# methods_df <- data.frame(All_Force_method,All_PCSA_method)
+# 
+# 
+# # Assuming All_Force_method is a vector of method names
+# calculate_score <- function(scoring_scheme,All_Force_method){
+#   method_names <- names(scoring_scheme)
+# scores <- rep(NA, length(All_Force_method))
+# 
+# for (i in seq_along(All_Force_method)) {
+#   match_index <- match(All_Force_method[i], method_names)
+#   if (!is.na(match_index)) {
+#     scores[i] <- scoring_scheme[[method_names[match_index]]]
+#   } else {
+#     # Handle cases where method name is not found
+#     # For example, assign a default score of 0
+#     scores[i] <- 0  # Adjust this as needed
+#   }
+# }
+# return(scores)
+#   
+# }
+# 
+# # Apply the scoring function to each row of Methods_df
+# Score1 <- calculate_score(scoring_scheme,All_Force_method)
+# Score2 <- calculate_score(scoring_scheme,All_PCSA_method)
+# data_r$newScore=Score1+Score2
   
   
 # If you're working with a specific dataframe (Methods_df2), replace Methods_df with Methods_df2
@@ -1681,12 +1683,37 @@ saveFig(fig9complete,'breakdown6',18,8)
     axis.text = element_text(size = 10),
     plot.title = element_text(size = 14, hjust = 0.5),
     axis.title.x = element_blank(), axis.text.x = element_blank(), axis.ticks.x = element_blank(),panel.background = element_rect(color = "white",fill = "white"))
- 
- 
- 
- 
- fig10complete
  saveFig(fig10complete,'Scores',12,5)
+ 
+ #Linear regression
+ 
+ fig10complete <- ggplot(data_r, aes(x = newScore, y = aveST)) +
+  geom_point(color = "black", alpha = 0.5, size=2) +  # Scatter plot for all points
+  geom_smooth(method = "lm", se = FALSE, color = "red", formula = y ~ x) +  # Linear regression line
+   stat_regline_equation(label.x = 20, label.y = 5,
+    aes(label =  paste(..eq.label.., ..adj.rr.label.., sep = "~~~~")))+
+   theme_bw() +
+  labs(y = expression("Specific tension "~(N/cm^2)), x='Score') +
+  theme(
+    axis.title = element_text(size = 14),  
+    axis.text = element_text(size = 10),
+    plot.title = element_text(size = 14, hjust = 0.5),
+    panel.background = element_rect(color = "white", fill = "white")
+  )
+ fig10complete
+saveFig(fig10complete,'Scores',8,5)
+ 
+ 
+ 
+ # p <- ggplot(melted_df, aes(percentage, aveST, color = fiber_type)) +
+#   geom_point() +
+#   stat_smooth(aes(fill = fiber_type, color = fiber_type), method = "lm", formula = y ~ x) +
+#   stat_regline_equation(
+#     aes(label =  paste(..eq.label.., ..adj.rr.label.., sep = "~~~~")),
+#     formula = formula
+#   ) +
+#   theme_bw()
+# ggpar(p, palette = "jco")
  # 
  # 
  # 
@@ -1761,7 +1788,7 @@ data_r$studyID_new <- paste(data_r$studyID,'(',data_r$Muscle,',',round(data_r$av
 # data_r_filtered <- data_r %>% filter(Normalized_Score > 0.60)
 
 
-data_r_filtered <- data_r %>% filter(newScore > (22))
+data_r_filtered <- data_r %>% filter(newScore > (20))
 
 
 fig9ccomplete <- ggplot(data_r_filtered, aes(y = aveST)) +
@@ -1775,6 +1802,22 @@ fig9ccomplete <- ggplot(data_r_filtered, aes(y = aveST)) +
    theme(axis.title.x = element_blank(),axis.text.x = element_blank(),
         axis.ticks.x = element_blank()) +
    labs(color="Study",shape="Age") #,shape="Training status"
+
+##Linear regression
+ fig9ccomplete <- ggplot(data_r_filtered, aes(x = newScore, y = aveST)) +
+  geom_point(color = "black", shape = 16) +  # Scatter plot for all points
+  geom_smooth(method = "lm", se = FALSE, color = "red") +  # Single linear regression line
+  stat_regline_equation(label.x = 20, label.y = 10, aes(label = paste(..eq.label.., ..adj.rr.label.., sep = "~~~~"))) +
+  theme_bw() +
+  labs(y = expression("Specific tension "~(N/cm^2)), x = 'Score') +
+  theme(
+    axis.title = element_text(size = 14),  
+    axis.text = element_text(size = 10),
+    plot.title = element_text(size = 14, hjust = 0.5),
+    panel.background = element_rect(color = "white", fill = "white")
+  )
+ 
+
  
 fig9ccomplete
 saveFig(fig9ccomplete,'Threshold_Score',8,5)
@@ -1812,10 +1855,14 @@ library("ggsci")
 
 # Rotate the muscle names by 90 degrees
 ggplot(highest_score_per_muscle2, aes(x = reorder(muscleName, -aveST), y = aveST, color = newScore)) +
-  geom_point() +  # Set custom color palette
+  geom_point(palette="jco") +  # Set custom color palette
   labs(x = "Muscle Name", y = "Average Specific Tension (ST_val)", title = "ST_val vs. Quality Score for Each Muscle") +
   theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))  # Rotate x-axis labels
 
+ggplot(highest_score_per_muscle2, aes(x = reorder(muscleName, -aveST), y = aveST, color = as.factor(newScore))) +
+  geom_point() +  # Remove palette argument
+  labs(x = "Muscle Name", y = "Average Specific Tension (N/cm^2)", title = "Specific Tension vs. Quality Score for Each Muscle") +
+  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))  # Rotate x-axis labels
 
 ggplot(highest_score_per_muscle2, aes(y = aveST)) +
   geom_boxplot(outlier.shape = NA, width = 0.08) +  # Turn off the outliers outlier.shape = NA
@@ -1853,7 +1900,7 @@ df=data_r
 # Normalize 'Score'
 # df$Normalized_Score <- (df$newScore - min(df$newScore)) / (max(df$newScore) - min(df$newScore))
 
-df$Normalized_Score <- (df$newScore ) / max(df$newScore)
+df$Normalized_Score <- (df$newScore ) /31 # max(df$newScore)
 
 # df$Normalized_Score <- (df$newScore - min(df$newScore)) / (31 - min(df$newScore))
 
@@ -1862,6 +1909,8 @@ df$Normalized_Score <- (df$newScore ) / max(df$newScore)
 df$Adjusted_Score <- df$Normalized_Score * df$aveST
 
 mean(df$Adjusted_Score, na.rm = TRUE)
+
+median(df$Adjusted_Score, na.rm = TRUE)
 
 df$studyID <- paste(data_r$studyID,'(',data_r$Muscle,',',round(df$Adjusted_Score,1), 'N/cm² )')
 
