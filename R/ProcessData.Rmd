@@ -831,7 +831,7 @@ scatter_plot
 
 # glimpse(data_r)
 # summarise(data_r, mean_ST=mean(aveST),mean_fl=mean(aveFL,na.rm=TRUE))
-data_r %>% 
+data_r_test <- data_r %>% 
   group_by(muscleName) %>%
   summarise(mean_ST=mean(aveST),min_ST=min(aveST), max_ST=max(aveST),mean_fl=mean(aveFL,na.rm=TRUE), count=n())
 
@@ -1893,10 +1893,22 @@ plotFacet(data_r_filtered,"t_method","placeholder")
 ```
 #Adjusted ST values
 ```{r}
+ Study_order <- paperstats_r %>%
+  arrange(desc(year)) %>%  # Arrange rows based on the 'year' variable
+  select(studyID, year)
+
+
+
+
 # max(data_r$newScore)
+
 
 # Assuming df is your dataframe with 'Score' and 'ST' columns
 df=data_r
+
+df <- df %>%
+  mutate(studyID = factor(studyID, levels = rev(unique(Study_order$studyID))))
+
 # Normalize 'Score'
 # df$Normalized_Score <- (df$newScore - min(df$newScore)) / (max(df$newScore) - min(df$newScore))
 
@@ -1912,7 +1924,8 @@ mean(df$Adjusted_Score, na.rm = TRUE)
 
 median(df$Adjusted_Score, na.rm = TRUE)
 
-df$studyID <- paste(data_r$studyID,'(',data_r$Muscle,',',round(df$Adjusted_Score,1), 'N/cm² )')
+df$studyID_adjusted <- paste(data_r$studyID,'(',data_r$Muscle,',',round(df$Adjusted_Score,1), 'N/cm² )')
+
 
 
 
@@ -1920,7 +1933,7 @@ df$studyID <- paste(data_r$studyID,'(',data_r$Muscle,',',round(df$Adjusted_Score
 
  fig9bcomplete <- ggplot(df, aes(y = Adjusted_Score)) +
   geom_boxplot(outlier.shape = NA, width = 0.08) +  # Turn off the outliers outlier.shape = NA
-  geom_jitter(aes(x = 0, color=studyID), width = 0.009, alpha = 0.5) +  # Show all data points with jitter
+  geom_jitte(aes(x = 0, color=studyID), width = 0.009, alpha = 0.5) +  # Show all data points with jitter
    # stat_summary(aes(x = 0),fun = median, geom = "point", shape = 18, size = 0, color = "red", position = position_dodge(0.75))+
      annotate("text", x = 0, y = median(df$Adjusted_Score), label = round(median(df$Adjusted_Score),1), vjust = -0.5, hjust = -0.5, size = 4) +
 
@@ -1946,6 +1959,129 @@ df$studyID <- paste(data_r$studyID,'(',data_r$Muscle,',',round(df$Adjusted_Score
 
  fig9bcomplete_linear
  
+ #Create plot to show before and after 
+ df$studyID_adjusted1 <- paste(data_r$studyID,'(',data_r$Muscle,')')
+ 
+ df <- df %>% 
+  group_by(studyID_adjusted1) %>% 
+  mutate(group_number = row_number())
+ 
+ 
+ 
+ df$studyID_adjusted2 <- paste(df$studyID,'(',df$Muscle, df$group_number,')')
+ 
+df$year <- str_extract(df$studyID,"\\d{4}")
+df$year <- factor(df$year)
+df$studyID_adjusted2 <- factor(df$studyID_adjusted2)
+df$studyID_adjusted2 <- factor(df$studyID_adjusted2, levels = unique(df$studyID_adjusted2[order(df$year)]))
+
+ ggplot(df) +
+  geom_segment(aes(x = aveST, xend = Adjusted_Score, y = studyID_adjusted2, yend = studyID_adjusted2), color = "grey") +
+  geom_point(aes(x = aveST, y = studyID_adjusted2), color = rgb(0.2, 0.7, 0.1, 0.5), size = 3) +
+  geom_point(aes(x = Adjusted_Score, y = studyID_adjusted2), color = rgb(0.7, 0.2, 0.1, 0.5), size = 3) +
+  geom_vline(xintercept = mean(df$aveST), linetype = "dashed", color = "green") +  # Vertical line for green average
+  geom_vline(xintercept = mean(df$Adjusted_Score), linetype = "dashed", color = "red") +  # Vertical line for red average
+  theme_pubr() +
+  theme(legend.position = "right") +
+  xlab("") +
+  ylab(expression("Specific tension "~(N/cm^2)))
+ 
+ 
+
+ 
+  # df$studyID_adjusted3 <- paste(df$Muscle, df$group_number)
+ 
+ # Define breaks and labels for the grouped Y label
+ #<----- using facet
+  
+ 
+  #   
+  
+  
+  # ggplot(df) +
+  # geom_segment(aes(x = aveST, xend = Adjusted_Score, y = studyID_adjusted2, yend = studyID_adjusted2), color = "grey") +
+  # geom_point(aes(x = aveST, y = studyID_adjusted2), color = rgb(0.2, 0.7, 0.1, 0.5), size = 3) +
+  # geom_point(aes(x = Adjusted_Score, y = studyID_adjusted2), color = rgb(0.7, 0.2, 0.1, 0.5), size = 3) +
+  # facet_grid(muscleName ~ ., scales = "free", space = "free") +
+  # geom_vline(xintercept = mean(df$aveST), linetype = "dashed", color = "green") +  # Vertical line for green average
+  # geom_vline(xintercept = mean(df$Adjusted_Score), linetype = "dashed", color = "red") +
+  # theme_pubr() +
+  # theme(strip.text.y = element_text(angle = 0))+
+  # labs(
+  #   y = "Author",
+  #   x = expression("Specific tension "~(N/cm^2)),
+  #   color = "Muscles"
+  # )
+  
+  # ggplot(df) +
+  # geom_segment(aes(x = aveST, xend = Adjusted_Score, y = muscleName, yend = muscleName), color = "grey") +
+  # geom_point(aes(x = aveST, y = muscleName), color = "black", size = 3) +
+  # geom_point(aes(x = Adjusted_Score, y = muscleName), color = 'darkgrey', size = 3) +
+  # facet_grid(reorder(studyID,Study_order$studyID) ~ ., scales = "free", space = "free") +
+  # geom_vline(xintercept = mean(df$aveST), linetype = "solid", color = "black") +  # Vertical line for green average
+  # geom_vline(xintercept = mean(df$Adjusted_Score), linetype = "solid", color = "darkgrey") +
+  # theme_pubr() +
+  # theme(strip.text.y = element_text(angle = 0))+
+  # labs(
+  #   y = "Author",
+  #   x = expression("Specific tension "~(N/cm^2)),
+  #   color = "Muscles"
+  # )
+  
+ 
+ ST_change <- ggplot(df) +
+  geom_segment(aes(x = aveST, xend = Adjusted_Score, y = studyID_adjusted2, yend = studyID_adjusted2), color = "grey") +
+  geom_point(aes(x = aveST, y = studyID_adjusted2, color = "Unweighted"), size = 3) +
+  geom_point(aes(x = Adjusted_Score, y = studyID_adjusted2, color = "Weighted"), size = 3) +
+ scale_color_manual(values = c("Unweighted" = "black", "Weighted" = "darkgrey"), 
+                    labels = c(bquote(Unweighted ~ ST ~ "," ~ average ~ "=" ~ .(round(mean(df$aveST))) ~ N/cm^2),
+                               bquote(Weighted ~ ST ~ "," ~ average ~ "=" ~ .(round(mean(df$Adjusted_Score))) ~ N/cm^2))) +
+  geom_vline(xintercept = mean(df$aveST), linetype = "dashed", color = "black") +  # Vertical line for green average
+  geom_vline(xintercept = mean(df$Adjusted_Score), linetype = "dashed", color = "darkgrey") +
+  theme_pubr() +
+  labs(
+    y = "Author",
+    x = expression("Specific tension "~(N/cm^2)),
+    color = " "
+  )+
+  theme(legend.position = "bottom")
+  
+ 
+ saveFig(ST_change,'Weighted_change',8,15)
+ 
+ 
+ 
+ 
+
+ 
+ ST_change2 <- ggplot(df) +
+  geom_segment(aes(x = aveST, xend = Adjusted_Score, y = studyID, yend = studyID), color = "grey") +
+  geom_point(aes(x = aveST, y = studyID, color = "Unweighted"), size = 3) +
+  geom_point(aes(x = Adjusted_Score, y = studyID, color = "Weighted"), size = 3) +
+ scale_color_manual(values = c("Unweighted" = "black", "Weighted" = "darkgrey"), 
+                    labels = c(bquote(Unweighted ~ ST ~ "," ~ average ~ "=" ~ .(round(mean(df$aveST))) ~ N/cm^2),
+                               bquote(Weighted ~ ST ~ "," ~ average ~ "=" ~ .(round(mean(df$Adjusted_Score))) ~ N/cm^2))) +
+  geom_vline(xintercept = mean(df$aveST), linetype = "dashed", color = "black") +  # Vertical line for green average
+  geom_vline(xintercept = mean(df$Adjusted_Score), linetype = "dashed", color = "darkgrey") +
+  theme_pubr() +
+  labs(
+    y = "Author",
+    x = expression("Specific tension "~(N/cm^2)),
+    color = " "
+  )+
+  theme(legend.position = "bottom")
+
+  
+  
+ saveFig(ST_change2,'Weighted_change_v2',8,15)
+
+
+
+
+ 
+# minor_breaks <- seq(0, 75, by = 5)
+# scale_x_continuous(breaks = minor_breaks, minor_breaks = minor_breaks)
+#  
 ```
 
 #Create methods table
