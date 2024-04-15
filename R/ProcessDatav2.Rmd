@@ -847,35 +847,35 @@ json_data <- json_data %>%
 
 
 # Assuming tbl is your table object
-n_rows <- nrow(json_data)
-half_rows <- ceiling(n_rows / 2)
-half_rows
-
-tbl_left <- json_data[1:half_rows, ]
-tbl_right <- json_data[(half_rows + 1):n_rows, ]
-
-
-tbla <- tbl_left %>%
-  gt() %>%
-  tab_spanner(label = "Fiber composition (%)", columns = c("Type 1", "Type 2A", "Type 2X")) %>%
-  tab_style(
-    style = list(
-      cell_text(color = "black", align = "center")
-    ),
-    locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
-  )
-
-tblb <- tbl_right %>%
-  gt() %>%
-  tab_spanner(label = "Fiber composition (%)", columns = c("Type 1", "Type 2A", "Type 2X")) %>%
-  tab_style(
-    style = list(
-      cell_text(color = "black", align = "center")
-    ),
-    locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
-  )
-
-tbla
+# n_rows <- nrow(json_data)
+# half_rows <- ceiling(n_rows / 2)
+# half_rows
+# 
+# tbl_left <- json_data[1:half_rows, ]
+# tbl_right <- json_data[(half_rows + 1):n_rows, ]
+# 
+# 
+# tbla <- tbl_left %>%
+#   gt() %>%
+#   tab_spanner(label = "*Fiber composition (%)", columns = c("Type 1", "Type 2A", "Type 2X")) %>%
+#   tab_style(
+#     style = list(
+#       cell_text(color = "black", align = "center")
+#     ),
+#     locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
+#   )
+# 
+# tblb <- tbl_right %>%
+#   gt() %>%
+#   tab_spanner(label = "Fiber composition (%)", columns = c("Type 1", "Type 2A", "Type 2X")) %>%
+#   tab_style(
+#     style = list(
+#       cell_text(color = "black", align = "center")
+#     ),
+#     locations = list(cells_column_labels(), cells_stubhead(),cells_body()) 
+#   )
+# 
+# tbla
 
 
 
@@ -919,7 +919,7 @@ breakdown4_b2 <- plot_grid(breakdown4_t,breakdown4_b, ncol = 1,align = 'v',axis 
 fig7complete <- plot_grid(gg2+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2, ncol = 1,rel_heights = c(0.7,1))
 
 fig7complete
-saveFig(fig7complete,'breakdown4c',12,14)
+saveFig(fig7complete,'Fig5 ST_musclegrps',12,14)
 
 
 

@@ -1948,6 +1948,9 @@ df$studyID_adjusted <- paste(data_r$studyID,'(',data_r$Muscle,',',round(df$Adjus
  
  
  
+  
+ 
+ 
  fig9bcomplete_linear <- ggplot(df, aes(x = studyID, y = Adjusted_Score)) +
   geom_point(position = position_jitter(width = 0.2), alpha = 0.5) +
   geom_smooth(method = "lm", se = FALSE, aes(group = 1), color = "black") +
