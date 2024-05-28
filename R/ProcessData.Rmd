@@ -2127,5 +2127,14 @@ Methods_detail_df
 write.csv(Methods_detail_df, file = "./included/new_Methods_table.csv")
 ```
 
+##Export data for Dr. Lieber
+```{r}
+# smaller_data <- df %>% select(studyID,year,unweighted_ST=aveST,Score=newScore, weighted_ST=newScore)
+smaller_data <- df %>% select(studyID_adjusted1,unweighted_ST=aveST,Score=newScore, weighted_ST=Adjusted_Score)
+
+
+writexl::write_xlsx(smaller_data,"./Weighted_ST.xlsx")
+
+```
 
 

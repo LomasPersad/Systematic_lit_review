@@ -865,6 +865,11 @@ cal_CI(df$aveST)
 
 median(df$Adjusted_Score, na.rm = TRUE)
 
+library(spatstat)
+weighted.median(df$aveST, df$Normalized_Score)
+
+
+
 df$studyID_adjusted <- paste(data_r$studyID,'(',data_r$Muscle,',',round(df$Adjusted_Score,1), 'N/cm² )')
 
 
