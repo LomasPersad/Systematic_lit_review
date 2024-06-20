@@ -36,7 +36,7 @@ library("flextable")
 
 ## Import and clean data
 
-```{r cars}
+```{r load}
 # Utility Functions
 saveFig <- function(fig,name,wdth,hght){
   # Save final image
@@ -295,7 +295,7 @@ custom_colors <- c(brewer.pal(6, "Set2"),custom_colors)
 
 ## Plots
 
-```{r pressure, echo=FALSE}
+```{r Fig3, 4, echo=FALSE}
 
 # journal_data <- paperstats_r %>% distinct(`CovidenceID`, `journal`, .keep_all = TRUE)
 muscle_data <- paperstats_r %>% distinct(`CovidenceID`, `aveAge`,`aveHeight`,`aveWeight`,`N`,`Muscle`, .keep_all = TRUE)
@@ -517,7 +517,7 @@ saveFig(fig1b,"Fig4 STstats",11,12)
 ```
 
 ### Ave ST values
-```{r pressure, echo=FALSE}
+```{r Fig6 , echo=FALSE}
 custom_colors2 <- c(brewer.pal(8, "Dark2"),custom_colors)
 
 muscle_order2 <- c("BIC", "BRA", "BRD", "EF",
@@ -558,7 +558,7 @@ data_r <- data_r %>%
   geom_boxplot(outlier.shape = NA, width = 0.08) +  # Turn off the outliers outlier.shape = NA
   geom_jitter(aes(x = 0, color=Muscle, shape=anatomicalLocation), width = 0.009, alpha = 1) +  # Show all data points with jitter
    # stat_summary(aes(x = 0),fun = median, geom = "point", shape = 18, size = 0, color = "red", position = position_dodge(0.75))+
-     annotate("text", x = 0, y = median(data_r$aveST), label = median(data_r$aveST), vjust = -0.5, hjust = -0.4, size = 4) +
+     annotate("text", x = 0, y = median(data_r$aveST), label = round(median(data_r$aveST),1), vjust = -0.5, hjust = -0.4, size = 4) +
 
    # geom_text(aes(x = 0, y = median(aveST), label = median(aveST), color = "red"), hjust = -1, size = 4) +
   theme_pubr(legend='right') + labs(y = expression("Specific tension "~(N/cm^2)),color="Muscle",
@@ -572,13 +572,13 @@ fig_five <- plot_grid(topplot,fig8complete,ncol = 2, rel_widths = c(1, 0.7),labe
 fig_five
 saveFig(fig_five,'Fig6 ST_overall',9,7)
 
-range(data_r$aveST)
+
 
 ```
 
 ### plot muscle function, location etc vs ST
 
-```{r}
+```{r Fig5}
 plot_box_no_grps <- function(xcol,xlabel){
    my_comparisons <- list( c("Male", "Female") )
    
@@ -734,16 +734,62 @@ melted_df$fiber_type <- gsub("Type2X", "Type 2X", melted_df$fiber_type)
 # saveFig(Fiber_ST,'ST_FiberComp',10,7)
 
 
-box5c <- ggscatter(
-  melted_df, x = "percentage", y = "aveST")+ 
-  geom_smooth(method = "lm", color = "red", size = 1.5, se = FALSE) +
-  facet_wrap(~fiber_type) +
-  stat_cor(aes(label = ..r.label..),
-           label.y = 80) +
-  stat_regline_equation(label.y = 75)+
-  labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
-       color = "Muscle")
+# box5c <- ggscatter(
+#   melted_df, x = "percentage", y = "aveST")+ 
+#   geom_smooth(method = "lm", color = "red", size = 1.5, se = FALSE) +
+#   facet_wrap(~fiber_type) +
+#   stat_cor(aes(label = ..r.label..),
+#            label.y = 80) +
+#   stat_regline_equation(label.y = 75)+
+#   labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
+#        color = "Muscle")
 
+# ggscatter(
+#   melted_df, x = "percentage", y = "aveST")+
+#   geom_smooth(method = "lm", color = "red", size = 1.5, se = FALSE) +
+#   facet_wrap(~fiber_type) +
+#   stat_cor(aes(label = ..r.label..),
+#            label.y = 80) +
+#   stat_regline_equation(label.y = 75)+
+#   labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
+#        color = "Muscle")+
+# stat_cor(method = "spearman", label.x = -5, label.y = 30)  # pearson spearman kendall
+
+# library(ggpmisc)
+#  # Plotting with linear regression lines and p-values
+# ggplot(melted_df, aes(x = percentage, y = aveST)) +
+#   geom_point() +  # Scatter plot
+#   geom_smooth(method = "lm", aes(color = "Linear fit"), size = 1.5, se = FALSE) +  # Linear regression line
+#   stat_poly_eq(
+#     aes(label = paste(..eq.label.., sep = "~~~", "p = ", format.pval(..p.value.., digits = 2))),
+#     formula = y ~ x, parse = TRUE,
+#     size = 3, label.x = "right", label.y = "top",
+#     color = "red", fill = "white"
+#   ) +
+#   facet_wrap(~ fiber_type, scales = "free") +  # Facet by fiber_type
+#   labs(
+#     x = "Fiber composition (%)",
+#     y = expression("Specific tension "~(N/cm^2)),
+#     color = "Fit"
+#   ) +
+#   theme_minimal()
+
+
+
+# Plotting with customized linear regression per facet 
+box5c <-ggplot(melted_df, aes(x = percentage, y = aveST)) + 
+  geom_point() +  # Scatter plot
+  labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
+       color = "Muscle") +
+  facet_wrap(~ fiber_type, nrow = 1, ncol = 3, scales = "free") +  # Facet by fiber_type in 1 row and 3 columns
+  # geom_smooth(
+  #   data = subset(melted_df, fiber_type == unique(melted_df$fiber_type)[2]),  # Filter for the second fiber_type
+  #   method = "lm", color = "red", size = 1.5, se = FALSE  # Customize linear regression appearance
+  # ) +
+  theme_pubr()+
+  
+  theme(strip.background = element_blank(),  # Remove facet strip background for cleaner appearance
+        strip.text = element_text(size = 12, face = "bold"))  # Adjust facet strip text appearance
 
 
 
@@ -864,13 +910,32 @@ cal_CI(df$Adjusted_Score)
 cal_CI(df$aveST)
 
 median(df$Adjusted_Score, na.rm = TRUE)
+range(df$aveST)
+range(df$Adjusted_Score)
 
-library(spatstat)
-weighted.median(df$aveST, df$Normalized_Score)
+Q1 <- quantile(df$Adjusted_Score, 0.25)
+Q3 <- quantile(df$Adjusted_Score, 0.75)
+IQR_value <- Q3 - Q1
+# Print the IQR
+print(IQR_value)
+
+library(matrixStats)
+# Weighted_mean <- 
+  matrixStats::weightedMedian(df$aveST, df$Normalized_Score)  
+
+# median <- 
+  median(df$aveST)  
+
+
+
+# library(spatstat)
+# weighted.median(df$aveST, df$Normalized_Score)
+
 
 
 
 df$studyID_adjusted <- paste(data_r$studyID,'(',data_r$Muscle,',',round(df$Adjusted_Score,1), 'N/cm² )')
+
 
 
 
