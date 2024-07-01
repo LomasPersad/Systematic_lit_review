@@ -390,7 +390,7 @@ stacked_bar_chart_N <-  ggplot(PD2, aes(x = reorder(muscleName, -n), y = n)) +
   labs( x = "Reported muscle(s)", y = "Number of subjects") + #title = "Number of specific tension values reported by muscle and journal",
   theme_pubr() +
   theme(axis.text.x = element_text(angle = 45, hjust = 1)) + # Rotate x-axis labels
-  scale_y_continuous(breaks = seq(0, 420, by = 20)) + # Display whole numbers on the y-axis
+  scale_y_continuous(breaks = seq(0, 500, by = 20)) + # Display whole numbers on the y-axis
    
   # coord_cartesian(ylim = c(0, 10)) +
  theme(
@@ -471,6 +471,7 @@ stacked_bar_chart <-  ggplot(data_summary_b, aes(x = reorder(muscleName, -n), y 
     )
 
 
+
 data_summary_c <- paperstats_r %>%
   count(year)
 # Create the stacked bar chart
@@ -511,6 +512,7 @@ piechartplots2 <- plot_grid(pieChartplot,pieChartplot_b,nrow = 1,labels = c("C",
 fig1b <- plot_grid(stacked_bar_chart,stacked_bar_chart_N,piechartplots2,
 nrow = 3, rel_heights = c( 1,1,0.5),rel_widths = c(1,1,1),labels = c("A","B"))+ theme(panel.background = element_rect(color = "white",fill = "white")) 
 fig1b
+
 
 
 saveFig(fig1b,"Fig4 STstats",11,12)
@@ -803,28 +805,54 @@ json_data <- json_data %>%
 
 
 
-tbl <- json_data %>%
+
+####<-------------export table to word
+library(flextable)
+library(officer)
+
+json_data_table <- json_data %>%
   flextable() %>% 
   theme_vanilla() %>% 
   align(align = "center", part = "all") %>% 
-  autofit() %>% width(j = 1, width = 1.2)%>%   
+  autofit() %>% 
+  width(j = 1, width = 1.2) %>%   
   add_header_row(values = c("","*Fiber composition (%)",""),
-  colwidths = c(2,3,2)) %>%
-  hline(i =1,border = fp_border_default(width = 0), 
-            part = "header")%>%
-  hline(i =1,j=3:5,border = fp_border_default(width = 1), 
-            part = "header") %>% as_raster()
+                 colwidths = c(2, 3, 2)) %>%
+  hline(i = 1, border = fp_border_default(width = 0), part = "header") %>%
+  hline(i = 1, j = 3:5, border = fp_border_default(width = 1), part = "header")
+
+json_data_table
+
+# Create a new Word document
+doc <- read_docx()
+# Add flextable to the Word document
+doc <- body_add_flextable(doc, value = json_data_table)
+# Save the Word document
+print(doc, target = "output_document.docx")
 
 
-# tbl 
 
-# library(ftExtra)
 
-gg2 <- ggplot() + 
-  theme_void() + 
-  annotation_custom(rasterGrob(tbl), xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf)
-
-# gg2
+# tbl <- json_data %>%
+#   flextable() %>% 
+#   theme_vanilla() %>% 
+#   align(align = "center", part = "all") %>% 
+#   autofit() %>% width(j = 1, width = 1.2)%>%   
+#   add_header_row(values = c("","*Fiber composition (%)",""),
+#   colwidths = c(2,3,2)) %>%
+#   hline(i =1,border = fp_border_default(width = 0), 
+#             part = "header")%>%
+#   hline(i =1,j=3:5,border = fp_border_default(width = 1), 
+#             part = "header") %>% as_raster()
+# 
+# 
+# # library(ftExtra)
+# 
+# gg2 <- ggplot() + 
+#   theme_void() + 
+#   annotation_custom(rasterGrob(tbl), xmin=-Inf, xmax=Inf, ymin=-Inf, ymax=Inf)
+# 
+# # gg2
 
 
 breakdown4_t <- plot_grid(box2c,box1c,rel_widths = c(1,0.6),rel_heights = c(1,1),labels = c("A","B"))
@@ -840,10 +868,12 @@ breakdown4_b2 <- plot_grid(breakdown4_t,breakdown4_b, ncol = 1,align = 'v',axis 
 
 # p111 <- ggdraw() + draw_image("Fig5_table.png", scale = 1)
 
-fig7complete <- plot_grid(gg2+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2, ncol = 1,rel_heights = c(0.7,1))
+# fig7complete <- plot_grid(gg2+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2, ncol = 1,rel_heights = c(0.7,1))
+
+fig7complete <- breakdown4_b2
 
 # fig7complete
-saveFig(fig7complete,'Fig5 ST_musclegrps',12,14)
+saveFig(fig7complete,'Fig5 ST_musclegrps',10,8)
 
 
 
@@ -875,6 +905,7 @@ df$Normalized_Score <- (df$newScore ) /31 # max(df$newScore)
 
 # df$Normalized_Score <- (df$newScore - min(df$newScore)) / (31 - min(df$newScore))
 
+df$Normalized_Cumulative <- cumsum(df$Normalized_Score)
 
 # Multiply 'Normalized_Score' by 'ST'
 df$Adjusted_Score <- df$Normalized_Score * df$aveST
@@ -913,19 +944,52 @@ median(df$Adjusted_Score, na.rm = TRUE)
 range(df$aveST)
 range(df$Adjusted_Score)
 
-Q1 <- quantile(df$Adjusted_Score, 0.25)
-Q3 <- quantile(df$Adjusted_Score, 0.75)
+Q1 <- quantile(df$aveST, 0.25)
+Q3 <- quantile(df$aveST, 0.75)
 IQR_value <- Q3 - Q1
 # Print the IQR
 print(IQR_value)
 
 library(matrixStats)
 # Weighted_mean <- 
-  matrixStats::weightedMedian(df$aveST, df$Normalized_Score)  
+  matrixStats::weightedMedian(df$aveST, df$Normalized_Cumulative)  
 
 # median <- 
   median(df$aveST)  
+  
+  mean(df$aveST) 
+  sd(df$aveST) 
 
+  Q1
+  Q3
+  
+  
+IQR_weighted_median <- function(df) {
+  
+# Sort data by aveST (if not already sorted)
+df <- df[order(df$aveST), ]
+
+# Calculate cumulative weights
+df$cum_weights <- cumsum(df$Normalized_Cumulative)
+
+# Find the total weight
+total_weight <- sum(df$Normalized_Cumulative)
+
+# Calculate weighted quartiles
+weighted_Q1 <- approx(df$cum_weights, df$aveST, xout = total_weight / 4)$y
+weighted_Q3 <- approx(df$cum_weights, df$aveST, xout = 3 * total_weight / 4)$y
+
+# Calculate weighted IQR
+weighted_IQR <- weighted_Q3 - weighted_Q1
+
+# Print the results
+cat("Weighted Q1:", weighted_Q1, "\n")
+cat("Weighted Q3:", weighted_Q3, "\n")
+cat("Weighted IQR:", weighted_IQR, "\n")
+  
+}  
+
+IQR_weighted_median(df)
 
 
 # library(spatstat)
@@ -971,16 +1035,16 @@ df$year <- factor(df$year)
 df$studyID_adjusted2 <- factor(df$studyID_adjusted2)
 df$studyID_adjusted2 <- factor(df$studyID_adjusted2, levels = unique(df$studyID_adjusted2[order(df$year)]))
 
- ggplot(df) +
-  geom_segment(aes(x = aveST, xend = Adjusted_Score, y = studyID_adjusted2, yend = studyID_adjusted2), color = "grey") +
-  geom_point(aes(x = aveST, y = studyID_adjusted2), color = rgb(0.2, 0.7, 0.1, 0.5), size = 3) +
-  geom_point(aes(x = Adjusted_Score, y = studyID_adjusted2), color = rgb(0.7, 0.2, 0.1, 0.5), size = 3) +
-  geom_vline(xintercept = mean(df$aveST), linetype = "dashed", color = "green") +  # Vertical line for green average
-  geom_vline(xintercept = mean(df$Adjusted_Score), linetype = "dashed", color = "red") +  # Vertical line for red average
-  theme_pubr() +
-  theme(legend.position = "right") +
-  xlab("") +
-  ylab(expression("Specific tension "~(N/cm^2)))
+ # ggplot(df) +
+ #  geom_segment(aes(x = aveST, xend = Adjusted_Score, y = studyID_adjusted2, yend = studyID_adjusted2), color = "grey") +
+ #  geom_point(aes(x = aveST, y = studyID_adjusted2), color = rgb(0.2, 0.7, 0.1, 0.5), size = 3) +
+ #  geom_point(aes(x = Adjusted_Score, y = studyID_adjusted2), color = rgb(0.7, 0.2, 0.1, 0.5), size = 3) +
+ #  geom_vline(xintercept = mean(df$aveST), linetype = "dashed", color = "green") +  # Vertical line for green average
+ #  geom_vline(xintercept = mean(df$Adjusted_Score), linetype = "dashed", color = "red") +  # Vertical line for red average
+ #  theme_pubr() +
+ #  theme(legend.position = "right") +
+ #  xlab("") +
+ #  ylab(expression("Specific tension "~(N/cm^2)))
  
   # df$studyID_adjusted3 <- paste(df$Muscle, df$group_number)
  
@@ -990,12 +1054,16 @@ df$studyID_adjusted2 <- factor(df$studyID_adjusted2, levels = unique(df$studyID_
   geom_point(aes(x = aveST, y = studyID_adjusted2, color = "Unweighted"), size = 3) +
   geom_point(aes(x = Adjusted_Score, y = studyID_adjusted2, color = "Weighted"), size = 3) +
  scale_color_manual(values = c("Unweighted" = "black", "Weighted" = "darkgrey"), 
-                    labels = c(bquote(Unweighted ~ ST ~ "," ~ average ~ "=" ~ .(round(mean(df$aveST))) ~ N/cm^2),
-                               bquote(Weighted ~ ST ~ "," ~ average ~ "=" ~ .(round(mean(df$Adjusted_Score))) ~ N/cm^2))) +
-  geom_vline(xintercept = mean(df$aveST), linetype = "dashed", color = "black") +  # Vertical line for green average
-  geom_vline(xintercept = mean(df$Adjusted_Score), linetype = "dashed", color = "darkgrey") +
+                    labels = c(
+                      # bquote(Unweighted ~ ST ~ "," ~ average ~ "=" ~ .(round(mean(df$aveST))) ~ N/cm^2),
+                      # bquote(Weighted ~ ST ~ "," ~ average ~ "=" ~ .(round(mean(df$Adjusted_Score))) ~ N/cm^2))
+                      bquote(Unweighted ~ ST),
+                      bquote(Weighted ~ ST ~ "," ~ median ~ "= 26.8" ~ N/cm^2))
+                    ) +
+  # geom_vline(xintercept = mean(df$aveST), linetype = "dashed", color = "black") +  # Vertical line for green average
+  geom_vline(xintercept =26.8 , linetype = "dashed", color = "darkgrey") + #mean(df$Adjusted_Score)
   theme_pubr() +
-  labs(
+labs(
     y = "Author",
     x = expression("Specific tension "~(N/cm^2)),
     color = " "
@@ -1003,6 +1071,7 @@ df$studyID_adjusted2 <- factor(df$studyID_adjusted2, levels = unique(df$studyID_
   theme(legend.position = "bottom")
  saveFig(ST_change,'Fig8 unweighted_weighted',8,15)
 
+ ST_change
  
  # ST_change2 <- ggplot(df) +
  #  geom_segment(aes(x = aveST, xend = Adjusted_Score, y = studyID, yend = studyID), color = "grey") +
