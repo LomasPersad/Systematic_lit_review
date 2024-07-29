@@ -577,6 +577,282 @@ saveFig(fig_five,'Fig6 ST_overall',9,7)
 
 
 ```
+# grouped figure for abstract
+```{r abstract_Fig}
+
+abstract_fig_data <- data_r %>% select(CovidenceID,studyID,Muscle,muscleName,newScore,aveST,anatomicalLocation)
+
+
+
+# Convert muscleName to a factor with levels in the predefined order
+abstract_fig_data$muscleName <- factor(abstract_fig_data$muscleName, levels = muscle_order)
+
+
+summary_stats <- abstract_fig_data %>%
+  group_by(anatomicalLocation, muscleName, newScore) %>%
+  summarise(
+    mean_aveST = mean(aveST, na.rm = TRUE),
+    sd_aveST = sd(aveST, na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  arrange(desc(newScore))
+
+library(write_xlsx)
+writexl::write_xlsx(summary_stats,"./grouped_data2.xlsx")
+
+# ggplot(summary_stats, aes(x = mean_ST, y = reorder(muscleName, newScore), size = newScore, fill = anatomicalLocation)) +
+#         geom_point(shape = 21)
+
+# Dodging function
+# reorder(anatomicalLocation, newScore)
+
+
+
+ggplot(summary_stats, aes(x=reorder(anatomicalLocation, newScore), y=mean_ST, ymin=lower, ymax=upper,fill=factor(newScore))) + 
+#specify position here
+  geom_linerange(size=5,position=position_dodge(width = 0.5)) +
+#specify position here too
+  geom_point(size=3, shape=21, colour="white", stroke = 0.5,position=position_dodge(width = 0.5)) +
+  coord_flip() +
+  theme_minimal()
+
+
+plot_anatomical_loc_grp <- function(abstract_fig_data) {
+  # Calculate mean and standard deviation for each muscleName and newScore group
+summary_stats <- abstract_fig_data %>%
+  group_by(anatomicalLocation,newScore) %>%
+  summarise(
+    mean_ST = mean(aveST, na.rm = TRUE),
+    sd_ST = sd(aveST, na.rm = TRUE)
+    # anatomicalLocation = unique(anatomicalLocation)
+  ) %>%
+  ungroup()%>%
+  # mutate(
+  #   lower = mean_ST - sd_ST,
+  #   upper = mean_ST + sd_ST
+  # ) %>%
+  arrange(desc(newScore)) 
+
+fig <- ggplot(summary_stats, aes(y = mean_ST, x =anatomicalLocation,group=newScore, fill = newScore)) +
+  geom_errorbar(aes(ymin = mean_ST-sd_ST, ymax = mean_ST+sd_ST),data = summary_stats, width = 0.2, position=position_dodge(0.65)) +
+  geom_point(shape = 21,size=5, position=position_dodge(0.65)) + 
+ scale_fill_continuous(low = "grey80", high = "black") +
+  # coord_flip()+
+  theme_pubr(legend='right')+
+  
+  labs(
+    # title = "Mean aveST with Standard Deviation by Muscle Group and Score",
+    x = "Anatomical Location",
+    y = expression("Specific tension "~(N/cm^2)),
+    size = "Score",
+    fill = "Score"
+  )
+return (fig)
+}
+
+
+############ group by muscle name
+
+plot_muscle_group <- function(abstract_fig_data) {
+  # Calculate mean and standard deviation for each muscleName and newScore group
+summary_stats <- abstract_fig_data %>%
+  group_by(anatomicalLocation, muscleName, newScore) %>%
+  summarise(
+    mean_aveST = mean(aveST, na.rm = TRUE),
+    sd_aveST = sd(aveST, na.rm = TRUE)
+  ) %>%
+  ungroup() %>%
+  arrange(desc(newScore))
+
+# Create the staggered plot with subgroups for each anatomical location
+fig <- ggplot(summary_stats, aes(y = mean_aveST, x = reorder(muscleName, newScore),group=newScore, fill = newScore)) +
+  geom_errorbar(aes(ymin = mean_aveST - sd_aveST, ymax = mean_aveST + sd_aveST), width = 0.2, color = "black", position = position_dodge(0.65)) +
+  geom_point(shape = 21, size = 5, color = "black", stroke = 0.5, position = position_dodge(0.65)) +
+  scale_fill_continuous(low = "grey80", high = "black") +
+  coord_flip() +
+  theme_pubr(legend = 'right') +
+  labs(
+    # title = "Mean aveST with Standard Deviation by Muscle Group and Score",
+    x = "Muscle(s)",
+    y = expression("Specific tension " ~ (N/cm^2)),
+    size = "Score",
+    fill = "Score"
+  ) +
+  theme(axis.text.y = element_text(angle = 0, hjust = 1))
+
+return (fig)
+}
+
+#plot and save results
+# new_plot1 <- plot_anatomical_loc_grp(abstract_fig_data)
+# 
+# new_plot2 <- plot_muscle_group(abstract_fig_data)
+# 
+# saveFig(new_plot1,'abstract figure- groupby anatomical location and score',8,6)
+# saveFig(new_plot2,'group by muscle and score',8,6)
+# 
+
+
+############# redo to make look same but changed
+
+abstract_fig_data2 <-abstract_fig_data %>%
+  group_by(studyID,muscleName,newScore) %>%
+  summarise(
+    mean_ST = mean(aveST, na.rm = TRUE),
+    sd_ST = sd(aveST, na.rm = TRUE),
+    # anatomicalLocation = unique(anatomicalLocation),
+    studyID = unique(studyID)
+    
+  ) %>%
+  ungroup()%>%
+  arrange(desc(newScore)) %>% 
+  # mutate(studyID = reorder(studyID, newScore))
+  mutate(studyID = factor(studyID, levels = unique(studyID[order(newScore)])))
+
+
+
+
+
+
+
+
+# minor_breaks <- seq(0, 75, by = 5)
+
+# + scale_x_continuous(breaks = minor_breaks, minor_breaks = minor_breaks)
+
+
+# new_plot3 <-
+ ggplot(abstract_fig_data2, aes(x = mean_ST, y = studyID,fill = muscleName)) + # fill = newScore
+  geom_errorbarh(aes(xmin = mean_ST - sd_ST, xmax = mean_ST + sd_ST), color = "black") +
+  geom_point(shape = 21, size = newScore) +
+  # scale_fill_continuous(low = "grey80", high = "black") +
+   # scale_fill_continuous(low = "#E6E6FA", high = "#800099")+
+  facet_grid(muscleName ~ ., scales = "free", space = "free") +
+  theme_pubr() +
+  theme(strip.text.y = element_text(angle = 0),
+        panel.grid.major = element_line(color = "gray", size = 0.2),
+        panel.grid.minor = element_line(color = "gray", size = 0.1)) +
+  labs(
+    y = "Author",
+    x = expression("Specific tension "~(N/cm^2)),
+    fill = "Score"  # Changed from 'color' to 'fill' to match the fill aesthetic
+  )
+  
+
+
+saveFig(new_plot3,'abstract figure',9,9)
+
+
+
+
+
+# ggplot(abstract_fig_data, aes(x = aveST, y = reorder(studyID, newScore))) +
+#   geom_point(aes(color = Muscle, shape = '0',size=newScore)) + #shape = anatomicalLocation
+#   facet_grid(muscleName  ~ ., scales = "free", space = "free") +
+#   labs(
+#     y = "Author",
+#     x = expression("Specific tension "~(N/cm^2))
+#   ) +
+#   theme_pubr(legend = 'none') +  # Remove legends
+#   theme(strip.text.y = element_text(angle = 0),
+#     plot.title = element_text(size = 14, hjust = 0.5),
+#     plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"),
+#     plot.background = element_rect(fill = "white"),
+#     panel.background = element_rect(fill = "white"),
+#     panel.grid.major = element_line(color = "lightgray", size = 0.2),
+#     axis.title = element_text(size = 14),
+#     axis.text = element_text(size = 10)
+#   )+
+#   scale_color_manual(values = custom_colors2)
+
+
+
+
+# option1 <- ggplot(abstract_fig_data2, aes(x = mean_ST, y = studyID)) +
+#   geom_errorbarh(aes(xmin = mean_ST - sd_ST, xmax = mean_ST + sd_ST), color = "black")+
+#   geom_point(aes(color = muscleName, shape = '0',size=newScore)) + #shape = anatomicalLocation
+#   
+#   facet_grid(muscleName  ~ ., scales = "free", space = "free") +
+#   labs(
+#     y = "Author",
+#     x = expression("Specific tension "~(N/cm^2)),
+#     size = "Score",
+#   ) +
+#   theme_pubr(legend = 'none') +  # Remove legends
+#   theme(strip.text.y = element_text(angle = 0),
+#     plot.title = element_text(size = 14, hjust = 0.5),
+#     plot.margin = margin(0.5, 0.5, 0.5, 0.5, "cm"),
+#     plot.background = element_rect(fill = "white"),
+#     panel.background = element_rect(fill = "white"),
+#     panel.grid.major = element_line(color = "lightgray", size = 0.2),
+#     axis.title = element_text(size = 14),
+#     axis.text = element_text(size = 10)
+#   )
+# 
+# option1
+
+revisied_color <- ggplot(abstract_fig_data2, aes(x = mean_ST, y = studyID)) + 
+  geom_errorbarh(aes(xmin = mean_ST - sd_ST, xmax = mean_ST + sd_ST), color = "black") +
+  geom_point(aes(shape = '0', size = newScore, color = muscleName)) +  # Adjust size if needed; use a fixed value or map to a variable
+  scale_color_discrete(guide = "none") + 
+  # scale_shape_manual(guide = "none") +
+  facet_grid(muscleName ~ ., scales = "free", space = "free")+
+  theme_pubr() +
+  theme(strip.text.y = element_text(angle = 0),
+        panel.grid.major = element_line(color = "gray", size = 0.2),
+        panel.grid.minor = element_line(color = "gray", size = 0.1)) +
+    labs(
+    y = "Author",
+    x = expression("Specific tension "~(N/cm^2)),
+    # shape='',
+    size='Score'
+    # fill = "Score"  # Use 'fill' for the fill aesthetic
+    # color = "Muscle Name"  # Use 'color' for the color aesthetic
+  ) +
+  guides(
+    color = "none",  # Turn off the legend for color
+    shape = "none",  # Turn off the legend for shape
+)
+
+saveFig(revisied_color,'abstract figure colored',9,11)
+
+####add color
+
+library(patchwork)
+
+# List of unique muscle names
+muscle_names <- unique(abstract_fig_data2$muscleName)
+
+# Create individual plots
+plot_list <- lapply(muscle_names, function(muscle) {
+  data_subset <- subset(abstract_fig_data2, muscleName == muscle)
+  
+  ggplot(data_subset, aes(x = mean_ST, y = studyID, fill = newScore)) +
+    geom_errorbarh(aes(xmin = mean_ST - sd_ST, xmax = mean_ST + sd_ST), color = "black") +
+    geom_point(shape = 21, size = 3) +
+    # scale_fill_gradientn(colors = c("#E6E6FA", "#800080")) +  # Adjust color gradient
+    theme_pubr() +
+    theme(strip.text.y = element_text(angle = 0),
+          panel.grid.major = element_line(color = "gray", size = 0.2),
+          panel.grid.minor = element_line(color = "gray", size = 0.1)) +
+    labs(
+      y = "Author",
+      x = expression("Specific tension "~(N/cm^2)),
+      fill = "Score"
+    ) +
+    ggtitle(muscle)  # Add facet label as title for clarity
+})
+
+# Combine plots into a single plot
+combined_plot <- wrap_plots(plot_list, ncol = 1)  # Adjust `ncol` as needed
+
+combined_plot
+
+
+plot_list
+```
+
+
 
 ### plot muscle function, location etc vs ST
 
@@ -874,7 +1150,6 @@ fig7complete <- breakdown4_b2
 
 # fig7complete
 saveFig(fig7complete,'Fig5 ST_musclegrps',10,8)
-
 
 
 
