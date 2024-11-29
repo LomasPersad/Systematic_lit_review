@@ -554,6 +554,40 @@ topplot <- ggplot(paperstats_r, aes(x = aveST, y = reorder(studyID, year))) +
 data_r <- data_r %>%
   mutate(Muscle = factor(Muscle, levels = muscle_order2))
 
+# data_r$newScore/31
+
+median(data_r$aveST)
+
+# 30 papers
+# paperstats_r %>%
+#   distinct(CovidenceID) %>%
+#   count()
+
+
+matrixStats::weightedMedian(data_r$aveST,data_r$newScore/31)
+
+ggplot(df, aes(x = category, y = value, weight = weight)) + 
+  geom_boxplot(width=0.6,  colour = I("#3366FF")) + 
+  geom_point(data=df.wm,aes(x=category,y=wmean),shape = 23, 
+             size = 3, fill ="white",inherit.aes=FALSE)
+
+ggplot(data_r, aes(y = aveST)) +
+  geom_boxplot(outlier.shape = NA, width = 0.08) +  # Turn off the outliers
+  geom_jitter(aes(x = 0, color = Muscle, shape = anatomicalLocation), width = 0.009, alpha = 1) +  # Jittered points
+  stat_summary(aes(x = 0), fun = function(y) weightedMedian(y, data_r$newScore/31), geom = "point", shape = 18, size = 3, color = "red") +  # Weighted median
+  annotate("text", x = 0, y = weightedMedian(data_r$aveST, data_r$newScore/31), 
+           label = round(weightedMedian(data_r$aveST, data_r$newScore/31), 1), 
+           vjust = -0.5, hjust = -0.4, size = 4, color = "red") +
+  theme_pubr(legend = 'right') +
+  labs(y = expression("Specific tension "~(N/cm^2)), color = "Muscle", shape = "Anatomical location") +
+  theme(axis.title.x = element_blank(), 
+        axis.text.x = element_blank(),
+        axis.ticks.x = element_blank(),
+        axis.title = element_text(size = 14),
+        axis.text = element_text(size = 10)) +
+  scale_color_manual(values = custom_colors2)
+
+
 
 
  fig8complete <- ggplot(data_r, aes(y = aveST)) +
@@ -914,7 +948,7 @@ box3c <-ggboxplot(data_r, x = "trainingtype", y = "aveST",
 # box5c <-ggboxplot(data_r, x = "FastSlow", y = "aveST",
 #           palette = "jco", add = "jitter",
 #           xlab = "Training status") +
-#   stat_compare_means(comparisons =list(c("60/40", "Slow")), hide.ns = TRUE,map_signif_level = TRUE,annotations="***")+theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2)))+theme(axis.text = element_text(size = 12)) 
+#   stat_compare_means(comparisons =list(c("60/40", "Slow")), hide.ns = TRUE,map_signif_level = TRUE,annotations="***")+theme_pubr() + labs(y = expression("Specific tension "~(N/cm^2)))+theme(axis.text = element_text(size = 12))
 
 
 #removed Bi articular etc
@@ -1013,7 +1047,7 @@ melted_df$fiber_type <- gsub("Type2X", "Type 2X", melted_df$fiber_type)
 
 
 # box5c <- ggscatter(
-#   melted_df, x = "percentage", y = "aveST")+ 
+#   melted_df, x = "percentage", y = "aveST")+
 #   geom_smooth(method = "lm", color = "red", size = 1.5, se = FALSE) +
 #   facet_wrap(~fiber_type) +
 #   stat_cor(aes(label = ..r.label..),
@@ -1054,21 +1088,43 @@ melted_df$fiber_type <- gsub("Type2X", "Type 2X", melted_df$fiber_type)
 
 
 
-# Plotting with customized linear regression per facet 
-box5c <-ggplot(melted_df, aes(x = percentage, y = aveST)) + 
-  geom_point() +  # Scatter plot
-  labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
-       color = "Muscle") +
-  facet_wrap(~ fiber_type, nrow = 1, ncol = 3, scales = "free") +  # Facet by fiber_type in 1 row and 3 columns
-  # geom_smooth(
-  #   data = subset(melted_df, fiber_type == unique(melted_df$fiber_type)[2]),  # Filter for the second fiber_type
-  #   method = "lm", color = "red", size = 1.5, se = FALSE  # Customize linear regression appearance
-  # ) +
-  theme_pubr()+
-  
-  theme(strip.background = element_blank(),  # Remove facet strip background for cleaner appearance
-        strip.text = element_text(size = 12, face = "bold"))  # Adjust facet strip text appearance
+# Plotting with customized linear regression per facet -old 
+# box5c <-ggplot(melted_df, aes(x = percentage, y = aveST)) + 
+#   geom_point() +  # Scatter plot
+#   labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2)),
+#        color = "Muscle") +
+#   facet_wrap(~ fiber_type, nrow = 1, ncol = 3, scales = "free") +  # Facet by fiber_type in 1 row and 3 columns
+#   # geom_smooth(
+#   #   data = subset(melted_df, fiber_type == unique(melted_df$fiber_type)[2]),  # Filter for the second fiber_type
+#   #   method = "lm", color = "red", size = 1.5, se = FALSE  # Customize linear regression appearance
+#   # ) +
+#   theme_pubr()+
+#   
+#   theme(strip.background = element_blank(),  # Remove facet strip background for cleaner appearance
+#         strip.text = element_text(size = 12, face = "bold"))  # Adjust facet strip text appearance
 
+# Convert 5c to box plot
+# Define bins
+breaks <- seq(0, 100, by = 10)
+labels <- paste0(seq(0, 90, by = 10), "-", seq(10, 100, by = 10))
+melted_df$bin <- cut(melted_df$percentage, breaks = breaks, labels = labels, right = FALSE)
+
+box5c <-ggboxplot(melted_df, x = "bin", y = "aveST",
+          palette = "jco", add = "jitter") +
+   # stat_compare_means(method = "t.test", 
+   #                   comparisons = list(c("40-50", "50-60")), 
+   #                   hide.ns = TRUE, 
+   #                   map_signif_level = TRUE, 
+   #                   annotations = "***") +
+  # stat_compare_means(method = "t.test") +
+  theme_pubr() + 
+  labs(x = "Fiber composition (%)", y = expression("Specific tension "~(N/cm^2))) +
+  facet_wrap(~ fiber_type, nrow = 1, ncol = 3, scales = "free") +  # Facet by fiber_type in 1 row and 3 columns
+  theme_pubr()+  
+  theme(strip.background = element_blank(),  # Remove facet strip background for cleaner appearance
+        strip.text = element_text(size = 12, face = "bold"),
+        axis.text = element_text(size = 12),
+        axis.text.x = element_text(size = 9))  # Adjust facet strip text appearance
 
 
 # colnames(json_data)
@@ -1147,6 +1203,8 @@ breakdown4_b2 <- plot_grid(breakdown4_t,breakdown4_b, ncol = 1,align = 'v',axis 
 # fig7complete <- plot_grid(gg2+ theme(panel.background = element_rect(color = "white",fill = "white")),breakdown4_b2, nrow = 2, ncol = 1,rel_heights = c(0.7,1))
 
 fig7complete <- breakdown4_b2
+
+fig7complete
 
 # fig7complete
 saveFig(fig7complete,'Fig5 ST_musclegrps',10,8)
