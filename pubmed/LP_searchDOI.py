@@ -34,7 +34,7 @@ def search_pubmed_by_doi(doi):
             "db": "pubmed",
             "term": f"{doi}[DOI]",
             "retmode": "xml",
-            "api_key": "af9b0bd586db47b2db6e510ad3afbd8ef709"
+            "api_key": ""
         }
 
         # Send a GET request to PubMed's ESearch utility
@@ -104,7 +104,7 @@ def searchPMIDgetALL(pmid):
         "db": "pubmed",
         "id": f"{pmid}[PMID]",
         "retmode": "xml",
-        "api_key": "af9b0bd586db47b2db6e510ad3afbd8ef709"
+        "api_key": "" 
     }
 
     # Make the API request to retrieve article metadata
